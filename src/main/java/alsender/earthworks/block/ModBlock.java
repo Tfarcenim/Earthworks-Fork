@@ -16,8 +16,6 @@ import net.minecraftforge.registries.IForgeRegistry;
  */
 public class ModBlock extends Block {
 
-    public final String name;
-
     public ModBlock(IForgeRegistry<Block> registry, String name, Material mat, SoundType sound, float hardness, float resistance) {
         super(mat);
         this.setSoundType(sound);
@@ -29,7 +27,5 @@ public class ModBlock extends Block {
         setCreativeTab(Earthworks.creativeTab);
 
         registry.register(this);
-
-        this.name = name;
     }
 }

@@ -34,11 +34,6 @@ public class ModItemSlab extends ItemBlock {
         registry.register(this);
     }
 
-    @SideOnly(Side.CLIENT)
-    public void initModel() {
-        ModelLoader.setCustomModelResourceLocation(this, 0, new ModelResourceLocation(block.getRegistryName().toString()));
-    }
-
     @Override
     public int getMetadata(int meta) {
         return meta;

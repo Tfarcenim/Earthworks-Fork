@@ -22,17 +22,7 @@ import java.lang.reflect.Field;
 public class ClientProxy {
 
      public static void initBlockModels() {
-         Field[] fields = BlockRegistry.class.getFields();
-
-         for (Field field : fields) {
-             try {
-                 if (field.get(null) instanceof Block) {
-                     makeModel((Block) field.get(null));
-                 }
-             } catch (IllegalAccessException e) {
-                 e.printStackTrace();
-             }
-         }
+         BlockRegistry.getAllBlocks().forEach(ClientProxy::makeModel);
      }
 
     @SubscribeEvent

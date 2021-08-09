@@ -18,6 +18,10 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.registries.IForgeRegistry;
 
+import java.lang.reflect.Field;
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by alsender on 12/12/16.
  */
@@ -25,181 +29,302 @@ import net.minecraftforge.registries.IForgeRegistry;
 public class BlockRegistry {
 
     public static Block
-            block_adobe,
-            block_chalk,
-            block_chalk_dust,
-            block_cinder,
-            block_cob,
-            block_concrete,
-            block_cordwood,
-            block_dry_stone,
-            block_gabion0, block_gabion1, block_gabion2,
-            block_gabion_falling0, block_gabion_falling1, block_gabion_falling2,
-            block_mud,
-            block_mud_bottom,
-            oak_planks_vert,
-            birch_planks_vert,
-            jungle_planks_vert,
-            spruce_planks_vert,
-            acacia_planks_vert,
-            dark_oak_planks_vert,
+            block_adobe;
+    public static Block block_chalk;
+    public static Block block_chalk_dust;
+    public static Block block_cinder;
+    public static Block block_cob;
+    public static Block block_concrete;
+    public static Block block_cordwood;
+    public static Block block_dry_stone;
+    public static Block block_gabion0;
+    public static Block block_gabion1;
+    public static Block block_gabion2;
+    public static Block block_gabion_falling0;
+    public static Block block_gabion_falling1;
+    public static Block block_gabion_falling2;
+    public static Block block_mud;
+    public static Block block_mud_bottom;
+    public static Block oak_planks_vert;
+    public static Block birch_planks_vert;
+    public static Block jungle_planks_vert;
+    public static Block spruce_planks_vert;
+    public static Block acacia_planks_vert;
+    public static Block dark_oak_planks_vert;
 
-    block_plaster,
-            block_rammed_earth,
-            block_reed,
-            block_slate, block_slate_green, block_slate_purple,
-            block_slate_slab, block_slate_slab_green, block_slate_slab_purple,
-            block_slate_shingle, block_slate_shingle_verte, block_slate_shingle_purple,
-            block_slate_tile, block_slate_tile_verte, block_slate_tile_purple,
-            block_thatch,
-            block_timber_oak, block_timber_birch, block_timber_spruce,
-            block_timber_jungle, block_timber_acacia, block_timber_dark_oak,
-            block_wattle,
-            block_wicker,
-            oak_wood_shingle,
-            birch_wood_shingle,
-            jungle_wood_shingle,
-            spruce_wood_shingle,
-            acacia_wood_shingle,
-            dark_oak_wood_shingle
-                    ;
-    
-    public static Block
-            fence_planks_vert0, fence_planks_vert1, fence_planks_vert2,
-            fence_planks_vert3, fence_planks_vert4, fence_planks_vert5;
+    public static Block block_plaster;
+    public static Block block_rammed_earth;
+    public static Block block_reed;
+    public static Block block_slate;
+    public static Block block_slate_green;
+    public static Block block_slate_purple;
+    public static Block block_slate_slab;
+    public static Block block_slate_slab_green;
+    public static Block block_slate_slab_purple;
+    public static Block block_slate_shingle;
+    public static Block block_slate_shingle_verte;
+    public static Block block_slate_shingle_purple;
+    public static Block block_slate_tile;
+    public static Block block_slate_tile_verte;
+    public static Block block_slate_tile_purple;
+    public static Block block_thatch;
+    public static Block block_timber_oak;
+    public static Block block_timber_birch;
+    public static Block block_timber_spruce;
+    public static Block block_timber_jungle;
+    public static Block block_timber_acacia;
+    public static Block block_timber_dark_oak;
+    public static Block block_wattle;
+    public static Block block_wicker;
+    public static Block oak_wood_shingle;
+    public static Block birch_wood_shingle;
+    public static Block jungle_wood_shingle;
+    public static Block spruce_wood_shingle;
+    public static Block acacia_wood_shingle;
+    public static Block dark_oak_wood_shingle;
+
+    public static Block fence_planks_vert0;
+    public static Block fence_planks_vert1;
+    public static Block fence_planks_vert2;
+    public static Block fence_planks_vert3;
+    public static Block fence_planks_vert4;
+    public static Block fence_planks_vert5;
+
+    public static Block slab_adobe;
+    public static Block slab_chalk;
+    public static Block slab_cinder;
+    public static Block slab_cob;
+    public static Block slab_concrete;
+    public static Block slab_cordwood;
+    public static Block slab_dry_stone;
+    public static Block slab_gabion0;
+    public static Block slab_gabion1;
+    public static Block slab_gabion2;
+    public static Block slab_mud;
+    public static Block slab_planks_vert0;
+    public static Block slab_planks_vert1;
+    public static Block slab_planks_vert2;
+    public static Block slab_planks_vert3;
+    public static Block slab_planks_vert4;
+    public static Block slab_planks_vert5;
+    public static Block slab_plaster;
+    public static Block slab_rammed_earth;
+    public static Block slab_reed;
+    public static Block slab_slate;
+    public static Block slab_slate_green;
+    public static Block slab_slate_purple;
+    public static Block slab_slate_slab;
+    public static Block slab_slate_slab_green;
+    public static Block slab_slate_slab_purple;
+    public static Block slab_slate_shingle;
+    public static Block slab_slate_shingle_verte;
+    public static Block slab_slate_shingle_purple;
+    public static Block slab_slate_tile;
+    public static Block slab_slate_tile_verte;
+    public static Block slab_slate_tile_purple;
+    public static Block slab_thatch;
+    public static Block slab_timber_oak;
+    public static Block slab_timber_birch;
+    public static Block slab_timber_spruce;
+    public static Block slab_timber_jungle;
+    public static Block slab_timber_acacia;
+    public static Block slab_timber_dark_oak;
+    public static Block slab_wattle;
+    public static Block slab_wicker;
+    public static Block slab_wood_shingle_oak;
+    public static Block slab_wood_shingle_spruce;
+    public static Block slab_wood_shingle_birch;
+    public static Block slab_wood_shingle_jungle;
+    public static Block slab_wood_shingle_acacia;
+    public static Block slab_wood_shingle_dark_oak;
 
     public static Block
-            slab_adobe,
-            slab_chalk,
-            slab_cinder,
-            slab_cob,
-            slab_concrete,
-            slab_cordwood,
-            slab_dry_stone,
-            slab_gabion0, slab_gabion1, slab_gabion2,
-            slab_mud,
-            slab_planks_vert0, slab_planks_vert1, slab_planks_vert2,
-            slab_planks_vert3, slab_planks_vert4, slab_planks_vert5,
-            slab_plaster,
-            slab_rammed_earth,
-            slab_reed,
-            slab_slate, slab_slate_green, slab_slate_purple,
-            slab_slate_slab, slab_slate_slab_green, slab_slate_slab_purple,
-            slab_slate_shingle, slab_slate_shingle_verte, slab_slate_shingle_purple,
-            slab_slate_tile, slab_slate_tile_verte, slab_slate_tile_purple,
-            slab_thatch,
-            slab_timber_oak, slab_timber_birch, slab_timber_spruce,
-            slab_timber_jungle, slab_timber_acacia, slab_timber_dark_oak,
-            slab_wattle,
-            slab_wicker,
-            slab_wood_shingle_oak, slab_wood_shingle_spruce, slab_wood_shingle_birch,
-            slab_wood_shingle_jungle, slab_wood_shingle_acacia, slab_wood_shingle_dark_oak;
+            stair_adobe;
+    public static Block stair_chalk;
+    public static Block stair_cinder;
+    public static Block stair_cob;
+    public static Block stair_concrete;
+    public static Block stair_cordwood;
+    public static Block stair_dry_stone;
+    public static Block stair_gabion0;
+    public static Block stair_gabion1;
+    public static Block stair_gabion2;
+    public static Block stair_mud;
+    public static Block stair_planks_vert0;
+    public static Block stair_planks_vert1;
+    public static Block stair_planks_vert2;
+    public static Block stair_planks_vert3;
+    public static Block stair_planks_vert4;
+    public static Block stair_planks_vert5;
+    public static Block stair_plaster;
+    public static Block stair_rammed_earth;
+    public static Block stair_reed;
+    public static Block stair_slate;
+    public static Block stair_slate_green;
+    public static Block stair_slate_purple;
+    public static Block stair_slate_slab;
+    public static Block stair_slate_slab_green;
+    public static Block stair_slate_slab_purple;
+    public static Block stair_slate_shingle;
+    public static Block stair_slate_shingle_verte;
+    public static Block stair_slate_shingle_purple;
+    public static Block stair_slate_tile;
+    public static Block stair_slate_tile_verte;
+    public static Block stair_slate_tile_purple;
+    public static Block stair_thatch;
+    public static Block stair_timber_oak;
+    public static Block stair_timber_birch;
+    public static Block stair_timber_spruce;
+    public static Block stair_timber_jungle;
+    public static Block stair_timber_acacia;
+    public static Block stair_timber_dark_oak;
+    public static Block stair_wattle;
+    public static Block stair_wicker;
+    public static Block stair_wood_shingle_oak;
+    public static Block stair_wood_shingle_spruce;
+    public static Block stair_wood_shingle_birch;
+    public static Block stair_wood_shingle_jungle;
+    public static Block stair_wood_shingle_acacia;
+    public static Block stair_wood_shingle_dark_oak;
 
-    public static Block
-            stair_adobe,
-            stair_chalk,
-            stair_cinder,
-            stair_cob,
-            stair_concrete,
-            stair_cordwood,
-            stair_dry_stone,
-            stair_gabion0, stair_gabion1, stair_gabion2,
-            stair_mud,
-            stair_planks_vert0, stair_planks_vert1, stair_planks_vert2,
-            stair_planks_vert3, stair_planks_vert4, stair_planks_vert5,
-            stair_plaster,
-            stair_rammed_earth,
-            stair_reed,
-            stair_slate, stair_slate_green, stair_slate_purple,
-            stair_slate_slab, stair_slate_slab_green, stair_slate_slab_purple,
-            stair_slate_shingle, stair_slate_shingle_verte, stair_slate_shingle_purple,
-            stair_slate_tile, stair_slate_tile_verte, stair_slate_tile_purple,
-            stair_thatch,
-            stair_timber_oak, stair_timber_birch, stair_timber_spruce,
-            stair_timber_jungle, stair_timber_acacia, stair_timber_dark_oak,
-            stair_wattle,
-            stair_wicker,
-            stair_wood_shingle_oak, stair_wood_shingle_spruce, stair_wood_shingle_birch,
-            stair_wood_shingle_jungle, stair_wood_shingle_acacia, stair_wood_shingle_dark_oak;
-
-    public static Block
-            wall_adobe,
-            wall_chalk,
-            wall_cinder,
-            wall_cob,
-            wall_concrete,
-            wall_cordwood,
-            wall_dry_stone,
-            wall_gabion0, wall_gabion1, wall_gabion2,
-            wall_mud,
-            wall_plaster,
-            wall_rammed_earth,
-            wall_reed,
-            wall_slate, wall_slate_green, wall_slate_purple,
-            wall_slate_slab, wall_slate_slab_green, wall_slate_slab_purple,
-            wall_slate_shingle, wall_slate_shingle_verte, wall_slate_shingle_purple,
-            wall_slate_tile, wall_slate_tile_verte, wall_slate_tile_purple,
-            wall_thatch,
-            wall_timber_oak, wall_timber_birch, wall_timber_spruce,
-            wall_timber_jungle, wall_timber_acacia, wall_timber_dark_oak,
-            wall_wattle,
-            wall_wicker,
-            wall_wood_shingle_oak, wall_wood_shingle_spruce, wall_wood_shingle_birch,
-            wall_wood_shingle_jungle, wall_wood_shingle_acacia, wall_wood_shingle_dark_oak;
+    public static Block wall_adobe;
+    public static Block wall_chalk;
+    public static Block wall_cinder;
+    public static Block wall_cob;
+    public static Block wall_concrete;
+    public static Block wall_cordwood;
+    public static Block wall_dry_stone;
+    public static Block wall_gabion0;
+    public static Block wall_gabion1;
+    public static Block wall_gabion2;
+    public static Block wall_mud;
+    public static Block wall_plaster;
+    public static Block wall_rammed_earth;
+    public static Block wall_reed;
+    public static Block wall_slate;
+    public static Block wall_slate_green;
+    public static Block wall_slate_purple;
+    public static Block wall_slate_slab;
+    public static Block wall_slate_slab_green;
+    public static Block wall_slate_slab_purple;
+    public static Block wall_slate_shingle;
+    public static Block wall_slate_shingle_verte;
+    public static Block wall_slate_shingle_purple;
+    public static Block wall_slate_tile;
+    public static Block wall_slate_tile_verte;
+    public static Block wall_slate_tile_purple;
+    public static Block wall_thatch;
+    public static Block wall_timber_oak;
+    public static Block wall_timber_birch;
+    public static Block wall_timber_spruce;
+    public static Block wall_timber_jungle;
+    public static Block wall_timber_acacia;
+    public static Block wall_timber_dark_oak;
+    public static Block wall_wattle;
+    public static Block wall_wicker;
+    public static Block wall_wood_shingle_oak;
+    public static Block wall_wood_shingle_spruce;
+    public static Block wall_wood_shingle_birch;
+    public static Block wall_wood_shingle_jungle;
+    public static Block wall_wood_shingle_acacia;
+    public static Block wall_wood_shingle_dark_oak;
 
     public static ModItemSlab
-            itemslab_adobe,
-            itemslab_chalk,
-            itemslab_cinder,
-            itemslab_cob,
-            itemslab_concrete,
-            itemslab_cordwood,
-            itemslab_dry_stone,
-            itemslab_gabion0, itemslab_gabion1, itemslab_gabion2,
-            itemslab_mud,
-            itemslab_planks_vert0, itemslab_planks_vert1, itemslab_planks_vert2,
-            itemslab_planks_vert3, itemslab_planks_vert4, itemslab_planks_vert5,
-            itemslab_plaster,
-            itemslab_rammed_earth,
-            itemslab_reed,
-            itemslab_slate, itemslab_slate_green, itemslab_slate_purple,
-            itemslab_slate_slab, itemslab_slate_slab_green, itemslab_slate_slab_purple,
-            itemslab_slate_shingle, itemslab_slate_shingle_verte, itemslab_slate_shingle_purple,
-            itemslab_slate_tile, itemslab_slate_tile_verte, itemslab_slate_tile_purple,
-            itemslab_thatch,
-            itemslab_timber_oak, itemslab_timber_birch, itemslab_timber_spruce,
-            itemslab_timber_jungle, itemslab_timber_acacia, itemslab_timber_dark_oak,
-            itemslab_wattle,
-            itemslab_wicker,
-            itemslab_wood_shingle_oak, itemslab_wood_shingle_spruce, itemslab_wood_shingle_birch,
-            itemslab_wood_shingle_jungle, itemslab_wood_shingle_acacia, itemslab_wood_shingle_dark_oak;
+            itemslab_adobe;
+    public static ModItemSlab itemslab_chalk;
+    public static ModItemSlab itemslab_cinder;
+    public static ModItemSlab itemslab_cob;
+    public static ModItemSlab itemslab_concrete;
+    public static ModItemSlab itemslab_cordwood;
+    public static ModItemSlab itemslab_dry_stone;
+    public static ModItemSlab itemslab_gabion0;
+    public static ModItemSlab itemslab_gabion1;
+    public static ModItemSlab itemslab_gabion2;
+    public static ModItemSlab itemslab_mud;
+    public static ModItemSlab itemslab_planks_vert0;
+    public static ModItemSlab itemslab_planks_vert1;
+    public static ModItemSlab itemslab_planks_vert2;
+    public static ModItemSlab itemslab_planks_vert3;
+    public static ModItemSlab itemslab_planks_vert4;
+    public static ModItemSlab itemslab_planks_vert5;
+    public static ModItemSlab itemslab_plaster;
+    public static ModItemSlab itemslab_rammed_earth;
+    public static ModItemSlab itemslab_reed;
+    public static ModItemSlab itemslab_slate;
+    public static ModItemSlab itemslab_slate_green;
+    public static ModItemSlab itemslab_slate_purple;
+    public static ModItemSlab itemslab_slate_slab;
+    public static ModItemSlab itemslab_slate_slab_green;
+    public static ModItemSlab itemslab_slate_slab_purple;
+    public static ModItemSlab itemslab_slate_shingle;
+    public static ModItemSlab itemslab_slate_shingle_verte;
+    public static ModItemSlab itemslab_slate_shingle_purple;
+    public static ModItemSlab itemslab_slate_tile;
+    public static ModItemSlab itemslab_slate_tile_verte;
+    public static ModItemSlab itemslab_slate_tile_purple;
+    public static ModItemSlab itemslab_thatch;
+    public static ModItemSlab itemslab_timber_oak;
+    public static ModItemSlab itemslab_timber_birch;
+    public static ModItemSlab itemslab_timber_spruce;
+    public static ModItemSlab itemslab_timber_jungle;
+    public static ModItemSlab itemslab_timber_acacia;
+    public static ModItemSlab itemslab_timber_dark_oak;
+    public static ModItemSlab itemslab_wattle;
+    public static ModItemSlab itemslab_wicker;
+    public static ModItemSlab itemslab_wood_shingle_oak;
+    public static ModItemSlab itemslab_wood_shingle_spruce;
+    public static ModItemSlab itemslab_wood_shingle_birch;
+    public static ModItemSlab itemslab_wood_shingle_jungle;
+    public static ModItemSlab itemslab_wood_shingle_acacia;
+    public static ModItemSlab itemslab_wood_shingle_dark_oak;
 
-    public static ModDoubleSlab
-            doubleslab_adobe,
-            doubleslab_chalk,
-            doubleslab_cinder,
-            doubleslab_cob,
-            doubleslab_concrete,
-            doubleslab_cordwood,
-            doubleslab_dry_stone,
-            doubleslab_gabion0, doubleslab_gabion1, doubleslab_gabion2,
-            doubleslab_mud,
-            doubleslab_planks_vert0, doubleslab_planks_vert1, doubleslab_planks_vert2,
-            doubleslab_planks_vert3, doubleslab_planks_vert4, doubleslab_planks_vert5,
-            doubleslab_plaster,
-            doubleslab_rammed_earth,
-            doubleslab_reed,
-            doubleslab_slate, doubleslab_slate_green, doubleslab_slate_purple,
-            doubleslab_slate_slab, doubleslab_slate_slab_green, doubleslab_slate_slab_purple,
-            doubleslab_slate_shingle, doubleslab_slate_shingle_verte, doubleslab_slate_shingle_purple,
-            doubleslab_slate_tile, doubleslab_slate_tile_verte, doubleslab_slate_tile_purple,
-            doubleslab_thatch,
-            doubleslab_timber_oak, doubleslab_timber_birch, doubleslab_timber_spruce,
-            doubleslab_timber_jungle, doubleslab_timber_acacia, doubleslab_timber_dark_oak,
-            doubleslab_wattle,
-            doubleslab_wicker,
-            doubleslab_wood_shingle_oak, doubleslab_wood_shingle_spruce, doubleslab_wood_shingle_birch,
-            doubleslab_wood_shingle_jungle, doubleslab_wood_shingle_acacia, doubleslab_wood_shingle_dark_oak;
+    public static ModDoubleSlab doubleslab_adobe;
+    public static ModDoubleSlab doubleslab_chalk;
+    public static ModDoubleSlab doubleslab_cinder;
+    public static ModDoubleSlab doubleslab_cob;
+    public static ModDoubleSlab doubleslab_concrete;
+    public static ModDoubleSlab doubleslab_cordwood;
+    public static ModDoubleSlab doubleslab_dry_stone;
+    public static ModDoubleSlab doubleslab_gabion0;
+    public static ModDoubleSlab doubleslab_gabion1;
+    public static ModDoubleSlab doubleslab_gabion2;
+    public static ModDoubleSlab doubleslab_mud;
+    public static ModDoubleSlab doubleslab_planks_vert0;
+    public static ModDoubleSlab doubleslab_planks_vert1;
+    public static ModDoubleSlab doubleslab_planks_vert2;
+    public static ModDoubleSlab doubleslab_planks_vert3;
+    public static ModDoubleSlab doubleslab_planks_vert4;
+    public static ModDoubleSlab doubleslab_planks_vert5;
+    public static ModDoubleSlab doubleslab_plaster;
+    public static ModDoubleSlab doubleslab_rammed_earth;
+    public static ModDoubleSlab doubleslab_reed;
+    public static ModDoubleSlab doubleslab_slate;
+    public static ModDoubleSlab doubleslab_slate_green;
+    public static ModDoubleSlab doubleslab_slate_purple;
+    public static ModDoubleSlab doubleslab_slate_slab;
+    public static ModDoubleSlab doubleslab_slate_slab_green;
+    public static ModDoubleSlab doubleslab_slate_slab_purple;
+    public static ModDoubleSlab doubleslab_slate_shingle;
+    public static ModDoubleSlab doubleslab_slate_shingle_verte;
+    public static ModDoubleSlab doubleslab_slate_shingle_purple;
+    public static ModDoubleSlab doubleslab_slate_tile;
+    public static ModDoubleSlab doubleslab_slate_tile_verte;
+    public static ModDoubleSlab doubleslab_slate_tile_purple;
+    public static ModDoubleSlab doubleslab_thatch;
+    public static ModDoubleSlab doubleslab_timber_oak;
+    public static ModDoubleSlab doubleslab_timber_birch;
+    public static ModDoubleSlab doubleslab_timber_spruce;
+    public static ModDoubleSlab doubleslab_timber_jungle;
+    public static ModDoubleSlab doubleslab_timber_acacia;
+    public static ModDoubleSlab doubleslab_timber_dark_oak;
+    public static ModDoubleSlab doubleslab_wattle;
+    public static ModDoubleSlab doubleslab_wicker;
+    public static ModDoubleSlab doubleslab_wood_shingle_oak;
+    public static ModDoubleSlab doubleslab_wood_shingle_spruce;
+    public static ModDoubleSlab doubleslab_wood_shingle_birch;
+    public static ModDoubleSlab doubleslab_wood_shingle_jungle;
+    public static ModDoubleSlab doubleslab_wood_shingle_acacia;
+    public static ModDoubleSlab doubleslab_wood_shingle_dark_oak;
 
     @SubscribeEvent
     public static void initBlocks(RegistryEvent.Register<Block> event) {
@@ -209,11 +334,11 @@ public class BlockRegistry {
         block_cinder = new ModBlock(r, "block_cinder", Material.ROCK, SoundType.STONE, 1.5F, 5.83F);
         block_cob = new ModBlock(r, "block_cob", Material.GROUND, SoundType.GROUND, 1.0F, 3.0F);
         block_concrete = new ModBlock(r, "block_concrete", Material.ROCK, SoundType.STONE, 2.0F, 10.0F);
-        block_cordwood = new ModBlockFacing(r, "block_cordwood", Material.ROCK, SoundType.STONE,1.5F, 2.83F);
+        block_cordwood = new ModBlockFacing(r, "block_cordwood", Material.ROCK, SoundType.STONE, 1.5F, 2.83F);
         block_dry_stone = new ModBlock(r, "block_dry_stone", Material.ROCK, SoundType.STONE, 2.0F, 1333.3F);
-        block_gabion0 = new Block_Gabion(r, "block_gabion_gravel",0, Material.ROCK,SoundType.SAND,2.0F,12.0F, Blocks.GRAVEL);
-        block_gabion1 = new Block_Gabion(r, "block_gabion_sand",1, Material.ROCK,SoundType.SAND,2.0F,12.0F, Blocks.SAND);
-        block_gabion2 = new Block_Gabion(r, "block_gabion_dirt",2, Material.ROCK,SoundType.SAND,2.0F,12.0F, Blocks.DIRT);
+        block_gabion0 = new Block_Gabion(r, "block_gabion_gravel", 0, Material.ROCK, SoundType.SAND, 2.0F, 12.0F, Blocks.GRAVEL);
+        block_gabion1 = new Block_Gabion(r, "block_gabion_sand", 1, Material.ROCK, SoundType.SAND, 2.0F, 12.0F, Blocks.SAND);
+        block_gabion2 = new Block_Gabion(r, "block_gabion_dirt", 2, Material.ROCK, SoundType.SAND, 2.0F, 12.0F, Blocks.DIRT);
         block_gabion_falling0 = new Block_Gabion_Falling(r, "gravel", block_gabion0);
         block_gabion_falling1 = new Block_Gabion_Falling(r, "sand", block_gabion1);
         block_gabion_falling2 = new Block_Gabion_Falling(r, "dirt", block_gabion2);
@@ -224,15 +349,15 @@ public class BlockRegistry {
         block_slate = new ModBlock(r, "block_slate", Material.ROCK, SoundType.STONE, 1.5F, 10.0F);
         block_slate_green = new ModBlock(r, "block_slate_green", Material.ROCK, SoundType.STONE, 1.5F, 10.0F);
         block_slate_purple = new ModBlock(r, "block_slate_purple", Material.ROCK, SoundType.STONE, 1.5F, 10.0F);
-        block_slate_slab = new ModBlock(r, "block_slate_slab",Material.ROCK,SoundType.STONE,1.5F,10.0F);
-        block_slate_slab_green = new ModBlock(r, "block_slate_slab_green",Material.ROCK,SoundType.STONE,1.5F,10.0F);
-        block_slate_slab_purple = new ModBlock(r, "block_slate_slab_purple",Material.ROCK,SoundType.STONE,1.5F,10.0F);
-        block_slate_shingle = new ModBlockFacing(r, "block_slate_shingle",Material.ROCK,SoundType.STONE,1.2F,10.0F);
-        block_slate_shingle_verte = new ModBlockFacing(r, "block_slate_shingle_verte",Material.ROCK,SoundType.STONE,1.2F,10.0F);
-        block_slate_shingle_purple = new ModBlockFacing(r, "block_slate_shingle_purple",Material.ROCK,SoundType.STONE,1.2F,10.0F);
-        block_slate_tile = new ModBlock(r, "block_slate_tile",Material.ROCK,SoundType.STONE,1.2F,10.0F);
-        block_slate_tile_verte  = new ModBlock(r, "block_slate_tile_verte",Material.ROCK,SoundType.STONE,1.2F,10.0F);
-        block_slate_tile_purple = new ModBlock(r, "block_slate_tile_purple",Material.ROCK,SoundType.STONE,1.2F,10.0F);
+        block_slate_slab = new ModBlock(r, "block_slate_slab", Material.ROCK, SoundType.STONE, 1.5F, 10.0F);
+        block_slate_slab_green = new ModBlock(r, "block_slate_slab_green", Material.ROCK, SoundType.STONE, 1.5F, 10.0F);
+        block_slate_slab_purple = new ModBlock(r, "block_slate_slab_purple", Material.ROCK, SoundType.STONE, 1.5F, 10.0F);
+        block_slate_shingle = new ModBlockFacing(r, "block_slate_shingle", Material.ROCK, SoundType.STONE, 1.2F, 10.0F);
+        block_slate_shingle_verte = new ModBlockFacing(r, "block_slate_shingle_verte", Material.ROCK, SoundType.STONE, 1.2F, 10.0F);
+        block_slate_shingle_purple = new ModBlockFacing(r, "block_slate_shingle_purple", Material.ROCK, SoundType.STONE, 1.2F, 10.0F);
+        block_slate_tile = new ModBlock(r, "block_slate_tile", Material.ROCK, SoundType.STONE, 1.2F, 10.0F);
+        block_slate_tile_verte = new ModBlock(r, "block_slate_tile_verte", Material.ROCK, SoundType.STONE, 1.2F, 10.0F);
+        block_slate_tile_purple = new ModBlock(r, "block_slate_tile_purple", Material.ROCK, SoundType.STONE, 1.2F, 10.0F);
         block_timber_oak = new ModRotatedPillar(r, "block_timber", Material.WOOD, SoundType.WOOD, 2.0F, 3.33F);
         block_timber_birch = new ModRotatedPillar(r, "block_timber_birch", Material.WOOD, SoundType.WOOD, 2.0F, 3.33F);
         block_timber_spruce = new ModRotatedPillar(r, "block_timber_spruce", Material.WOOD, SoundType.WOOD, 2.0F, 3.33F);
@@ -241,12 +366,12 @@ public class BlockRegistry {
         block_timber_dark_oak = new ModRotatedPillar(r, "block_timber_dark_oak", Material.WOOD, SoundType.WOOD, 2.0F, 3.33F);
         block_wattle = new ModBlock(r, "block_wattle", Material.ROCK, SoundType.STONE, 1.5F, 8.33F);
         block_wicker = new ModBlock(r, "block_wicker", Material.WOOD, SoundType.CLOTH, 0.8F, 1.0F);
-        oak_wood_shingle = new Block_Wood_Shingle(r, "oak_wood_shingle",Material.WOOD,SoundType.WOOD,2.0F,3.33F);
-        birch_wood_shingle = new Block_Wood_Shingle(r, "birch_wood_shingle",Material.WOOD,SoundType.WOOD,2.0F,3.33F);
-        jungle_wood_shingle = new Block_Wood_Shingle(r, "jungle_wood_shingle",Material.WOOD,SoundType.WOOD,2.0F,3.33F);
-        spruce_wood_shingle = new Block_Wood_Shingle(r, "spruce_wood_shingle",Material.WOOD,SoundType.WOOD,2.0F,3.33F);
-        acacia_wood_shingle = new Block_Wood_Shingle(r, "acacia_wood_shingle",Material.WOOD,SoundType.WOOD,2.0F,3.33F);
-        dark_oak_wood_shingle = new Block_Wood_Shingle(r, "dark_oak_wood_shingle",Material.WOOD,SoundType.WOOD,2.0F,3.33F);
+        oak_wood_shingle = new Block_Wood_Shingle(r, "oak_wood_shingle", Material.WOOD, SoundType.WOOD, 2.0F, 3.33F);
+        birch_wood_shingle = new Block_Wood_Shingle(r, "birch_wood_shingle", Material.WOOD, SoundType.WOOD, 2.0F, 3.33F);
+        jungle_wood_shingle = new Block_Wood_Shingle(r, "jungle_wood_shingle", Material.WOOD, SoundType.WOOD, 2.0F, 3.33F);
+        spruce_wood_shingle = new Block_Wood_Shingle(r, "spruce_wood_shingle", Material.WOOD, SoundType.WOOD, 2.0F, 3.33F);
+        acacia_wood_shingle = new Block_Wood_Shingle(r, "acacia_wood_shingle", Material.WOOD, SoundType.WOOD, 2.0F, 3.33F);
+        dark_oak_wood_shingle = new Block_Wood_Shingle(r, "dark_oak_wood_shingle", Material.WOOD, SoundType.WOOD, 2.0F, 3.33F);
 
 
         oak_planks_vert = new Block_Planks_Vert(r, "oak_planks_vert", Material.WOOD, SoundType.WOOD, 2.0F, 3.33F);
@@ -256,7 +381,7 @@ public class BlockRegistry {
         acacia_planks_vert = new Block_Planks_Vert(r, "acacia_planks_vert", Material.WOOD, SoundType.WOOD, 2.0F, 3.33F);
         dark_oak_planks_vert = new Block_Planks_Vert(r, "dark_oak_planks_vert", Material.WOOD, SoundType.WOOD, 2.0F, 3.33F);
 
-       // OreDictionary.registerOre("plankWood", oak_planks_vert);
+        // OreDictionary.registerOre("plankWood", oak_planks_vert);
 
 //      block_chalk_dust = new Block_ChalkDust();
 
@@ -343,22 +468,22 @@ public class BlockRegistry {
         slab_slate_slab_purple = new ModSlab(r, "slab_slate_slab_purple", block_slate_slab_purple);
         doubleslab_slate_slab_purple = new ModDoubleSlab(r, slab_slate_slab_purple);
 
-        slab_slate_shingle = new ModSlab(r, "slab_slate_shingle",block_slate_shingle);
+        slab_slate_shingle = new ModSlab(r, "slab_slate_shingle", block_slate_shingle);
         doubleslab_slate_shingle = new ModDoubleSlab(r, slab_slate_shingle);
 
-        slab_slate_shingle_verte = new ModSlab(r, "slab_slate_shingle_verte",block_slate_shingle_verte);
+        slab_slate_shingle_verte = new ModSlab(r, "slab_slate_shingle_verte", block_slate_shingle_verte);
         doubleslab_slate_shingle_verte = new ModDoubleSlab(r, slab_slate_shingle_verte);
 
-        slab_slate_shingle_purple = new ModSlab(r, "slab_slate_shingle_purple",block_slate_shingle_purple);
+        slab_slate_shingle_purple = new ModSlab(r, "slab_slate_shingle_purple", block_slate_shingle_purple);
         doubleslab_slate_shingle_purple = new ModDoubleSlab(r, slab_slate_shingle_purple);
 
-        slab_slate_tile = new ModSlab(r, "slab_slate_tile",block_slate_tile);
+        slab_slate_tile = new ModSlab(r, "slab_slate_tile", block_slate_tile);
         doubleslab_slate_tile = new ModDoubleSlab(r, slab_slate_tile);
 
-        slab_slate_tile_verte = new ModSlab(r, "slab_slate_tile_verte",block_slate_tile_verte);
+        slab_slate_tile_verte = new ModSlab(r, "slab_slate_tile_verte", block_slate_tile_verte);
         doubleslab_slate_tile_verte = new ModDoubleSlab(r, slab_slate_tile_verte);
 
-        slab_slate_tile_purple = new ModSlab(r, "slab_slate_tile_purple",block_slate_tile_purple);
+        slab_slate_tile_purple = new ModSlab(r, "slab_slate_tile_purple", block_slate_tile_purple);
         doubleslab_slate_tile_purple = new ModDoubleSlab(r, slab_slate_tile_purple);
 
         slab_timber_oak = new ModSlab(r, "slab_timber", block_timber_oak);
@@ -426,15 +551,15 @@ public class BlockRegistry {
         stair_slate = new ModStair(r, "stair_slate", block_slate);
         stair_slate_green = new ModStair(r, "stair_slate_green", block_slate_green);
         stair_slate_purple = new ModStair(r, "stair_slate_purple", block_slate_purple);
-        stair_slate_slab = new ModStair(r, "stair_slate_slab",block_slate_slab);
-        stair_slate_slab_green = new ModStair(r, "stair_slate_slab_green",block_slate_slab_green);
-        stair_slate_slab_purple = new ModStair(r, "stair_slate_slab_purple",block_slate_slab_purple);
-        stair_slate_shingle = new ModStair(r, "stair_slate_shingle",block_slate_shingle);
-        stair_slate_shingle_verte = new ModStair(r, "stair_slate_shingle_verte",block_slate_shingle_verte);
-        stair_slate_shingle_purple = new ModStair(r, "stair_slate_shingle_purple",block_slate_shingle_purple);
-        stair_slate_tile = new ModStair(r, "stair_slate_tile",block_slate_tile);
-        stair_slate_tile_verte = new ModStair(r, "stair_slate_tile_verte",block_slate_tile_verte);
-        stair_slate_tile_purple = new ModStair(r, "stair_slate_tile_purple",block_slate_tile_purple);
+        stair_slate_slab = new ModStair(r, "stair_slate_slab", block_slate_slab);
+        stair_slate_slab_green = new ModStair(r, "stair_slate_slab_green", block_slate_slab_green);
+        stair_slate_slab_purple = new ModStair(r, "stair_slate_slab_purple", block_slate_slab_purple);
+        stair_slate_shingle = new ModStair(r, "stair_slate_shingle", block_slate_shingle);
+        stair_slate_shingle_verte = new ModStair(r, "stair_slate_shingle_verte", block_slate_shingle_verte);
+        stair_slate_shingle_purple = new ModStair(r, "stair_slate_shingle_purple", block_slate_shingle_purple);
+        stair_slate_tile = new ModStair(r, "stair_slate_tile", block_slate_tile);
+        stair_slate_tile_verte = new ModStair(r, "stair_slate_tile_verte", block_slate_tile_verte);
+        stair_slate_tile_purple = new ModStair(r, "stair_slate_tile_purple", block_slate_tile_purple);
         stair_timber_oak = new ModStair(r, "stair_timber", block_timber_oak);
         stair_timber_spruce = new ModStair(r, "stair_timber_spruce", block_timber_spruce);
         stair_timber_birch = new ModStair(r, "stair_timber_birch", block_timber_birch);
@@ -452,7 +577,7 @@ public class BlockRegistry {
 
         wall_adobe = new ModWallBlock(r, "wall_adobe", block_adobe);
         wall_chalk = new ModWallBlock(r, "wall_chalk", block_chalk);
-        wall_cinder =new ModWallBlock(r, "wall_cinder", block_cinder);
+        wall_cinder = new ModWallBlock(r, "wall_cinder", block_cinder);
         wall_cob = new ModWallBlock(r, "wall_cob", block_cob);
         wall_concrete = new ModWallBlock(r, "wall_concrete", block_concrete);
         wall_cordwood = new ModWallBlock(r, "wall_cordwood", block_cordwood);
@@ -489,9 +614,9 @@ public class BlockRegistry {
         wall_wood_shingle_jungle = new ModWallBlock(r, "wall_wood_shingle_jungle", oak_wood_shingle);
         wall_wood_shingle_acacia = new ModWallBlock(r, "wall_wood_shingle_acacia", oak_wood_shingle);
         wall_wood_shingle_dark_oak = new ModWallBlock(r, "wall_wood_shingle_dark_oak", oak_wood_shingle);
-        
+
         //  QUARK COMPAT    //
-        
+
         if (Config.quark) {
             block_reed = new ModRotatedPillar(r, "block_reed", Material.GRASS, SoundType.CLOTH, 0.8F, 1.0F);
             block_thatch = new ModRotatedPillar(r, "block_thatch", Material.GRASS, SoundType.CLOTH, 0.8F, 1.0F);
@@ -526,7 +651,7 @@ public class BlockRegistry {
         r.register(itemblock(block_gabion2));
         r.register(itemblock(block_mud));
 
-        if (!Loader.isModLoaded("quark") || Config.persistantplanks){
+        if (!Loader.isModLoaded("quark") || Config.persistantplanks) {
             r.register(new BlockItemPlanksVert(oak_planks_vert).setRegistryName(oak_planks_vert.getRegistryName()));
         }
 
@@ -692,7 +817,7 @@ public class BlockRegistry {
         r.register(itemblock(wall_wood_shingle_jungle));
         r.register(itemblock(wall_wood_shingle_acacia));
         r.register(itemblock(wall_wood_shingle_dark_oak));
-        
+
         //  QUARK COMPAT    //
 
         if (Config.quark) {
@@ -705,6 +830,25 @@ public class BlockRegistry {
             r.register(itemblock(wall_reed));
             r.register(itemblock(wall_thatch));
         }
+    }
+
+    private static final List<Block> cache = new ArrayList<>();
+
+    public static List<Block> getAllBlocks() {
+        if (cache.isEmpty()) {
+            Field[] fields = BlockRegistry.class.getFields();
+
+            for (Field field : fields) {
+                try {
+                    if (field.get(null) instanceof Block) {
+                        cache.add((Block) field.get(null));
+                    }
+                } catch (IllegalAccessException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        return cache;
     }
 
     private static Item itemblock(Block block) {
