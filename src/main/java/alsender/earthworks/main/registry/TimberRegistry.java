@@ -2,14 +2,14 @@ package alsender.earthworks.main.registry;
 
 
 import alsender.earthworks.block.timber.*;
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
+import net.minecraft.block.SoundType;
+import net.minecraft.block.material.Material;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.registries.IForgeRegistry;
 
 /**
@@ -19,75 +19,128 @@ import net.minecraftforge.registries.IForgeRegistry;
 public class TimberRegistry {
 
     public static Block
-            daub_cob_arrow0, daub_cob_arrow1, daub_cob_arrow2, daub_cob_arrow3,
-            daub_cob_barndoor0, daub_cob_barndoor1, daub_cob_barndoor2, daub_cob_barndoor3,
-            daub_cob_barndoor4, daub_cob_barndoor5, daub_cob_barndoor6, daub_cob_barndoor7,
-            daub_cob_bottom_l, daub_cob_bottom, daub_cob_bottom_r,
-            daub_cob_left, daub_cob_right,
-            daub_cob_parallel_hor, daub_cob_parallel_vert,
-            daub_cob_slash_back, daub_cob_slash,
-            daub_cob_square, daub_cob_square_x, daub_cob_x,
-            daub_cob_top_l, daub_cob_top, daub_cob_top_r,
-            daub_cob_triangle0, daub_cob_triangle1, daub_cob_triangle2, daub_cob_triangle3,
-            daub_cob_xbottom, daub_cob_xleft, daub_cob_xright, daub_cob_xtop,
-            daub_cob_xdoor0, daub_cob_xdoor1, daub_cob_xdoor2, daub_cob_xdoor3;
+            daub_cob_arrow0;
+    public static Block daub_cob_arrow1;
+    public static Block daub_cob_arrow2;
+    public static Block daub_cob_arrow3;
+    public static Block daub_cob_barndoor0;
+    public static Block daub_cob_barndoor1;
+    public static Block daub_cob_barndoor2;
+    public static Block daub_cob_barndoor3;
+    public static Block daub_cob_barndoor4;
+    public static Block daub_cob_barndoor5;
+    public static Block daub_cob_barndoor6;
+    public static Block daub_cob_barndoor7;
+    public static Block daub_cob_bottom_l;
+    public static Block daub_cob_bottom;
+    public static Block daub_cob_bottom_r;
+    public static Block daub_cob_left;
+    public static Block daub_cob_right;
+    public static Block daub_cob_parallel_hor;
+    public static Block daub_cob_parallel_vert;
+    public static Block daub_cob_slash_back;
+    public static Block daub_cob_slash;
+    public static Block daub_cob_square;
+    public static Block daub_cob_square_x;
+    public static Block daub_cob_x;
+    public static Block daub_cob_top_l;
+    public static Block daub_cob_top;
+    public static Block daub_cob_top_r;
+    public static Block daub_cob_triangle0;
+    public static Block daub_cob_triangle1;
+    public static Block daub_cob_triangle2;
+    public static Block daub_cob_triangle3;
+    public static Block daub_cob_xbottom;
+    public static Block daub_cob_xleft;
+    public static Block daub_cob_xright;
+    public static Block daub_cob_xtop;
+    public static Block daub_cob_xdoor0;
+    public static Block daub_cob_xdoor1;
+    public static Block daub_cob_xdoor2;
+    public static Block daub_cob_xdoor3;
 
     public static Block
-            plaster_arrow0, plaster_arrow1, plaster_arrow2, plaster_arrow3,
-            plaster_barndoor0, plaster_barndoor1, plaster_barndoor2, plaster_barndoor3,
-            plaster_barndoor4, plaster_barndoor5, plaster_barndoor6, plaster_barndoor7,
-            plaster_bottom_l, plaster_bottom, plaster_bottom_r,
-            plaster_left, plaster_right,
-            plaster_parallel_hor, plaster_parallel_vert,
-            plaster_slash_back, plaster_slash,
-            plaster_square, plaster_square_x, plaster_x,
-            plaster_top_l, plaster_top, plaster_top_r,
-            plaster_triangle0, plaster_triangle1, plaster_triangle2, plaster_triangle3,
-            plaster_xbottom, plaster_xleft, plaster_xright, plaster_xtop,
-            plaster_xdoor0, plaster_xdoor1, plaster_xdoor2, plaster_xdoor3;
+            plaster_arrow0;
+    public static Block plaster_arrow1;
+    public static Block plaster_arrow2;
+    public static Block plaster_arrow3;
+    public static Block plaster_barndoor0;
+    public static Block plaster_barndoor1;
+    public static Block plaster_barndoor2;
+    public static Block plaster_barndoor3;
+    public static Block plaster_barndoor4;
+    public static Block plaster_barndoor5;
+    public static Block plaster_barndoor6;
+    public static Block plaster_barndoor7;
+    public static Block plaster_bottom_l;
+    public static Block plaster_bottom;
+    public static Block plaster_bottom_r;
+    public static Block plaster_left;
+    public static Block plaster_right;
+    public static Block plaster_parallel_hor;
+    public static Block plaster_parallel_vert;
+    public static Block plaster_slash_back;
+    public static Block plaster_slash;
+    public static Block plaster_square;
+    public static Block plaster_square_x;
+    public static Block plaster_x;
+    public static Block plaster_top_l;
+    public static Block plaster_top;
+    public static Block plaster_top_r;
+    public static Block plaster_triangle0;
+    public static Block plaster_triangle1;
+    public static Block plaster_triangle2;
+    public static Block plaster_triangle3;
+    public static Block plaster_xbottom;
+    public static Block plaster_xleft;
+    public static Block plaster_xright;
+    public static Block plaster_xtop;
+    public static Block plaster_xdoor0;
+    public static Block plaster_xdoor1;
+    public static Block plaster_xdoor2;
+    public static Block plaster_xdoor3;
 
-    @SubscribeEvent
     public static void initBlocks(RegistryEvent.Register<Block> event) {
         IForgeRegistry<Block> r = event.getRegistry();
-        daub_cob_arrow0 = new Daub_Cob(r, "arrow0","Bottom Left Framed Arrow",0);
-        daub_cob_arrow1 = new Daub_Cob(r, "arrow1","Top Left Framed Arrow",1);
-        daub_cob_arrow2 = new Daub_Cob(r, "arrow2","Bottom Right Framed Arrow",2);
-        daub_cob_arrow3 = new Daub_Cob(r, "arrow3","Top Right Framed Arrow",3);
-        daub_cob_barndoor0 = new Daub_Cob(r, "barndoor0","Lower Left Barndoor",4);
-        daub_cob_barndoor1 = new Daub_Cob(r, "barndoor1","Left Sideways Barndoor",5);
-        daub_cob_barndoor2 = new Daub_Cob(r, "barndoor2","Right Sideways Barndoor",6);
-        daub_cob_barndoor3 = new Daub_Cob(r, "barndoor3","Upper Left Barndoor",7);
-        daub_cob_barndoor4 = new Daub_Cob(r, "barndoor4","Lower Right Barndoor",8);
-        daub_cob_barndoor5 = new Daub_Cob(r, "barndoor5","Left Sideways Barndoor",9);
-        daub_cob_barndoor6 = new Daub_Cob(r, "barndoor6","Right Sideways Barndoor",10);
-        daub_cob_barndoor7 = new Daub_Cob(r, "barndoor7","Upper Right Barndoor",11);
-        daub_cob_bottom_l = new Daub_Cob(r, "bottom_l","Bottom Left Framed",12);
-        daub_cob_bottom = new Daub_Cob(r, "bottom","Bottom Framed",13);
-        daub_cob_bottom_r = new Daub_Cob(r, "bottom_r","Bottom Right Framed",14);
-        daub_cob_left = new Daub_Cob(r, "left","Left Framed",15);
-        daub_cob_parallel_hor = new Daub_Cob(r, "parallel_hor","Parallel Horizontals",16);
-        daub_cob_parallel_vert = new Daub_Cob(r, "parallel_vert","Parallel Verticals",17);
-        daub_cob_right = new Daub_Cob(r, "right","Right Framed",18);
-        daub_cob_slash_back = new Daub_Cob(r, "slash_back","\\ Diagonal",19);
-        daub_cob_slash = new Daub_Cob(r, "slash","/ Diagonal",20);
-        daub_cob_square = new Daub_Cob(r, "square","Square Framed",21);
-        daub_cob_square_x = new Daub_Cob(r, "square_x","Square Framed X",22);
-        daub_cob_top_l = new Daub_Cob(r, "top_l","Top Left Framed",23);
-        daub_cob_top = new Daub_Cob(r, "top","Top Framed",24);
-        daub_cob_top_r = new Daub_Cob(r, "top_r","Top Right Framed",25);
-        daub_cob_triangle0 = new Daub_Cob(r, "triangle0","Bottom Left Triangle",26);
-        daub_cob_triangle1 = new Daub_Cob(r, "triangle1","Top Left Triangle",27);
-        daub_cob_triangle2 = new Daub_Cob(r, "triangle2","Bottom Right Triangle",28);
-        daub_cob_triangle3 = new Daub_Cob(r, "triangle3","Top Right Triangle",29);
-        daub_cob_xbottom = new Daub_Cob(r, "xbottom","Bottomless Framed",30);
-        daub_cob_xdoor0 = new Daub_Cob(r, "xdoor0","Lower X Framed Barndoor",31);
-        daub_cob_xdoor1 = new Daub_Cob(r, "xdoor1","Right Sideways X Framed Barndoor",32);
-        daub_cob_xdoor2 = new Daub_Cob(r, "xdoor2","Left Sideways X Framed Barndoor",33);
-        daub_cob_xdoor3 = new Daub_Cob(r, "xdoor3","Upper X Framed Barndoor",34);
-        daub_cob_xleft = new Daub_Cob(r, "xleft","Left-less Framed",35);
-        daub_cob_x = new Daub_Cob(r, "x","Frame-less X",36);
-        daub_cob_xright = new Daub_Cob(r, "xright","Right-less Framed",37);
-        daub_cob_xtop = new Daub_Cob(r, "xtop","Topless Framed",38);
+        daub_cob_arrow0 = new Daub_Cob(AbstractBlock.Properties.create(Material.ROCK).sound(SoundType.WOOD).hardnessAndResistance(1.5F, 10.0F),"Bottom Left Framed Arrow",0);
+        daub_cob_arrow1 = new Daub_Cob("arrow1","Top Left Framed Arrow",1);
+        daub_cob_arrow2 = new Daub_Cob("arrow2","Bottom Right Framed Arrow",2);
+        daub_cob_arrow3 = new Daub_Cob("arrow3","Top Right Framed Arrow",3);
+        daub_cob_barndoor0 = new Daub_Cob("barndoor0","Lower Left Barndoor",4);
+        daub_cob_barndoor1 = new Daub_Cob("barndoor1","Left Sideways Barndoor",5);
+        daub_cob_barndoor2 = new Daub_Cob("barndoor2","Right Sideways Barndoor",6);
+        daub_cob_barndoor3 = new Daub_Cob("barndoor3","Upper Left Barndoor",7);
+        daub_cob_barndoor4 = new Daub_Cob("barndoor4","Lower Right Barndoor",8);
+        daub_cob_barndoor5 = new Daub_Cob("barndoor5","Left Sideways Barndoor",9);
+        daub_cob_barndoor6 = new Daub_Cob("barndoor6","Right Sideways Barndoor",10);
+        daub_cob_barndoor7 = new Daub_Cob("barndoor7","Upper Right Barndoor",11);
+        daub_cob_bottom_l = new Daub_Cob("bottom_l","Bottom Left Framed",12);
+        daub_cob_bottom = new Daub_Cob("bottom","Bottom Framed",13);
+        daub_cob_bottom_r = new Daub_Cob("bottom_r","Bottom Right Framed",14);
+        daub_cob_left = new Daub_Cob("left","Left Framed",15);
+        daub_cob_parallel_hor = new Daub_Cob("parallel_hor","Parallel Horizontals",16);
+        daub_cob_parallel_vert = new Daub_Cob("parallel_vert","Parallel Verticals",17);
+        daub_cob_right = new Daub_Cob("right","Right Framed",18);
+        daub_cob_slash_back = new Daub_Cob("slash_back","\\ Diagonal",19);
+        daub_cob_slash = new Daub_Cob("slash","/ Diagonal",20);
+        daub_cob_square = new Daub_Cob("square","Square Framed",21);
+        daub_cob_square_x = new Daub_Cob("square_x","Square Framed X",22);
+        daub_cob_top_l = new Daub_Cob("top_l","Top Left Framed",23);
+        daub_cob_top = new Daub_Cob("top","Top Framed",24);
+        daub_cob_top_r = new Daub_Cob("top_r","Top Right Framed",25);
+        daub_cob_triangle0 = new Daub_Cob("triangle0","Bottom Left Triangle",26);
+        daub_cob_triangle1 = new Daub_Cob("triangle1","Top Left Triangle",27);
+        daub_cob_triangle2 = new Daub_Cob("triangle2","Bottom Right Triangle",28);
+        daub_cob_triangle3 = new Daub_Cob("triangle3","Top Right Triangle",29);
+        daub_cob_xbottom = new Daub_Cob("xbottom","Bottomless Framed",30);
+        daub_cob_xdoor0 = new Daub_Cob("xdoor0","Lower X Framed Barndoor",31);
+        daub_cob_xdoor1 = new Daub_Cob("xdoor1","Right Sideways X Framed Barndoor",32);
+        daub_cob_xdoor2 = new Daub_Cob("xdoor2","Left Sideways X Framed Barndoor",33);
+        daub_cob_xdoor3 = new Daub_Cob("xdoor3","Upper X Framed Barndoor",34);
+        daub_cob_xleft = new Daub_Cob("xleft","Left-less Framed",35);
+        daub_cob_x = new Daub_Cob("x","Frame-less X",36);
+        daub_cob_xright = new Daub_Cob("xright","Right-less Framed",37);
+        daub_cob_xtop = new Daub_Cob("xtop","Topless Framed",38);
 
         plaster_arrow0 = new Plaster(r, "arrow0","Bottom Left Framed Arrow",0);
         plaster_arrow1 = new Plaster(r, "arrow1","Top Left Framed Arrow",1);
@@ -130,7 +183,6 @@ public class TimberRegistry {
         plaster_xtop = new Plaster(r, "xtop","Topless Framed",38);
     }
 
-    @SubscribeEvent
     public static void initItemBlocks(RegistryEvent.Register<Item> event) {
         IForgeRegistry<Item> r = event.getRegistry();
         r.register(itemblock(daub_cob_arrow0));

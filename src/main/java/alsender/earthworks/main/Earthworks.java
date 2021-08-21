@@ -1,36 +1,37 @@
 package alsender.earthworks.main;
 
+import alsender.earthworks.datagen.ModDatagen;
 import alsender.earthworks.main.registry.BlockRegistry;
 import alsender.earthworks.main.registry.ItemRegistry;
-import alsender.earthworks.main.registry.OreDictRegistry;
-import alsender.earthworks.main.world.ModWorldGen;
-import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.block.Block;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.event.FMLInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.Logger;
 
 /**
  * Created by alsender on 12/12/16.
  */
-@Mod(modid = Earthworks.mod_id, name = Earthworks.name, version = Earthworks.version)
+@Mod(Earthworks.mod_id)
 
 public class Earthworks {
 
     public static final String mod_id = "earthworks";
-    public static final String name = "Earthworks";
-    public static final String version = "1.3.4.3";
 
-    public static final CreativeTabs creativeTab = (new CreativeTabs("earthworks") {
+    public Earthworks() {
+        IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
+        bus.addListener(ModDatagen::start);
+    }
 
-        public String getTabLabel() {
-            return "earthworks";
-        }
+    public static final ItemGroup creativeTab = (new ItemGroup("earthworks") {
+
         @Override
-        public ItemStack getTabIconItem() {
+        public ItemStack createIcon() {
             return new ItemStack(BlockRegistry.block_wattle);
         }
 
@@ -40,24 +41,19 @@ public class Earthworks {
         }
     }).setBackgroundImageName("item_search.png");
 
-    public static Earthworks instance;
     public static Logger logger;
 
-    @Mod.EventHandler
-    public void preInit(FMLPreInitializationEvent event) {
-        logger = event.getModLog();
-        Config.init(event.getSuggestedConfigurationFile());
-        GameRegistry.registerWorldGenerator(new ModWorldGen(), 3);
+    private void blocks(RegistryEvent.Register<Block> event) {
+        BlockRegistry.initBlocks(event);
+    }
+
+    private void items(RegistryEvent.Register<Item> event) {
+        ItemRegistry.initItems(event);
     }
 
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
         GameRegistry.addSmelting(ItemRegistry.item_chalk, new ItemStack(ItemRegistry.item_quicklime), 0.1F);
         GameRegistry.addSmelting(BlockRegistry.chalk, new ItemStack(ItemRegistry.item_quicklime, 4), 0.1F);
-    }
-
-    @Mod.EventHandler
-    public void postInit(FMLPostInitializationEvent event) {
-        OreDictRegistry.init();
     }
 }

@@ -13,9 +13,14 @@ public class Config {
 
     public static Configuration config;
 
-    public static int Cspawn_rate, Cmin_spawn, Cmax_spawn, Cvein_size,
-                        Sspawn_rate, Smin_spawn, Smax_spawn, Svein_size;
-    public static boolean quark, persistantplanks, betterwithmods;
+    public static int Cspawn_rate;
+    public static int Cmin_spawn;
+    public static int Cmax_spawn;
+    public static int Cvein_size;
+    public static int Sspawn_rate;
+    public static int Smin_spawn;
+    public static int Smax_spawn;
+    public static int Svein_size;
 
     public static void init(File configFile) {
             config = new Configuration(configFile);
@@ -36,13 +41,6 @@ public class Config {
         Smax_spawn = config.getInt("slate_max_spawn","world",256,0,256,"Maximum Y level at which SLATE can spawn.");
         Svein_size = config.getInt("slate_vein_size","world",33,0,33,"Vein size that SLATE can spawn in.");
 
-        quark = config.getBoolean("quark","compat",true,"Set this to FALSE to DISABLE Earthworks blocks that Quark also adds.  Currently includes: Thatch, and Reed Blocks.");
-        persistantplanks = config.getBoolean("persistant_planks","compat",false,"Set this to true to force Earthworks VERTICAL PLANKS to register when Quark is also installed. This is for cases where you've already started a world with Earthworks, and are adding Quark after the fact.  Of if you just like redundant blocks.");
-        betterwithmods = config.getBoolean("betterwithmods","compat",true,"Set this to FALSE to DISABLE Earthworks blocks and items that Better with Mods also adds.  Currently this includes: Dirt and Sand Items.");
-
-        if (config.hasChanged()) {
-            config.save();
-        }
     }
 
     @SubscribeEvent

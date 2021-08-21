@@ -1,10 +1,10 @@
 package alsender.earthworks.main.registry;
 
 
-import alsender.earthworks.item.Item_Chalk;
-import alsender.earthworks.item.ModItem;
 import alsender.earthworks.item.ModItemTool;
 import alsender.earthworks.main.Config;
+import alsender.earthworks.main.Earthworks;
+import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -47,6 +47,54 @@ public class ItemRegistry {
             tool_iron_hammer,
             tool_gold_hammer,
             tool_diamond_hammer;
+    public static BlockItem
+            itemslab_adobe;
+    public static BlockItem itemslab_chalk;
+    public static BlockItem itemslab_cinder;
+    public static BlockItem itemslab_cob;
+    public static BlockItem itemslab_concrete;
+    public static BlockItem itemslab_cordwood;
+    public static BlockItem itemslab_dry_stone;
+    public static BlockItem itemslab_gabion0;
+    public static BlockItem itemslab_gabion1;
+    public static BlockItem itemslab_gabion2;
+    public static BlockItem itemslab_mud;
+    public static BlockItem itemslab_planks_vert0;
+    public static BlockItem itemslab_planks_vert1;
+    public static BlockItem itemslab_planks_vert2;
+    public static BlockItem itemslab_planks_vert3;
+    public static BlockItem itemslab_planks_vert4;
+    public static BlockItem itemslab_planks_vert5;
+    public static BlockItem itemslab_plaster;
+    public static BlockItem itemslab_rammed_earth;
+    public static BlockItem itemslab_reed;
+    public static BlockItem itemslab_slate;
+    public static BlockItem itemslab_slate_green;
+    public static BlockItem itemslab_slate_purple;
+    public static BlockItem itemslab_slate_slab;
+    public static BlockItem itemslab_slate_slab_green;
+    public static BlockItem itemslab_slate_slab_purple;
+    public static BlockItem itemslab_slate_shingle;
+    public static BlockItem itemslab_slate_shingle_verte;
+    public static BlockItem itemslab_slate_shingle_purple;
+    public static BlockItem itemslab_slate_tile;
+    public static BlockItem itemslab_slate_tile_verte;
+    public static BlockItem itemslab_slate_tile_purple;
+    public static BlockItem itemslab_thatch;
+    public static BlockItem itemslab_timber_oak;
+    public static BlockItem itemslab_timber_birch;
+    public static BlockItem itemslab_timber_spruce;
+    public static BlockItem itemslab_timber_jungle;
+    public static BlockItem itemslab_timber_acacia;
+    public static BlockItem itemslab_timber_dark_oak;
+    public static BlockItem itemslab_wattle;
+    public static BlockItem itemslab_wicker;
+    public static BlockItem itemslab_wood_shingle_oak;
+    public static BlockItem itemslab_wood_shingle_spruce;
+    public static BlockItem itemslab_wood_shingle_birch;
+    public static BlockItem itemslab_wood_shingle_jungle;
+    public static BlockItem itemslab_wood_shingle_acacia;
+    public static BlockItem itemslab_wood_shingle_dark_oak;
 
     @SubscribeEvent
     public static void initItems(RegistryEvent.Register<Item> event) {
@@ -60,7 +108,7 @@ public class ItemRegistry {
         item_slaked_lime = new ModItem(r, "slaked_lime");
         item_timber = new ModItem(r, "timber");
 
-        tool_square = new ModItemTool(r, "square", 60);
+        tool_square = new ModItemTool(new Item.Properties().group(Earthworks.creativeTab).maxDamage(60));
         tool_Acheulean = new ModItemTool(r, "hand_axe", 132);
         tool_adz = new ModItemTool(r, "adz",251);
         tool_compass = new ModItemTool(r, "compass",251);
@@ -81,35 +129,5 @@ public class ItemRegistry {
             item_dirt = new ModItem(r, "dirt");
             item_sand = new ModItem(r, "sand");
         }
-    }
-
-    @SideOnly(Side.CLIENT)
-    public static void initModels() {
-        ((ModItem)item_adobe).initModel();
-        ((ModItem)item_cob).initModel();
-        ((ModItem)item_lime_plaster).initModel();
-        ((ModItem)item_mud).initModel();
-        ((ModItem)item_chalk).initModel();
-        ((ModItem)item_quicklime).initModel();
-        ((ModItem)item_slaked_lime).initModel();
-        ((ModItem)item_timber).initModel();
-
-        ((ModItemTool)tool_planer).initModel();
-        ((ModItemTool)tool_Acheulean).initModel();
-        ((ModItemTool)tool_adz).initModel();
-        ((ModItemTool)tool_compass).initModel();
-        ((ModItemTool)tool_froe).initModel();
-        ((ModItemTool)tool_square).initModel();
-        ((ModItemTool)tool_level).initModel();
-        ((ModItemTool)tool_saw).initModel();
-
-        ((ModItemTool)tool_wood_hammer).initModel();
-        ((ModItemTool)tool_stone_hammer).initModel();
-        ((ModItemTool)tool_iron_hammer).initModel();
-        ((ModItemTool)tool_gold_hammer).initModel();
-        ((ModItemTool)tool_diamond_hammer).initModel();
-
-        ((ModItem)item_dirt).initModel();
-        ((ModItem)item_sand).initModel();
     }
 }

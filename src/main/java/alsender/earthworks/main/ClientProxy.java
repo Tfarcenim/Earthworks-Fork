@@ -1,39 +1,12 @@
 package alsender.earthworks.main;
 
-import alsender.earthworks.block.*;
-import alsender.earthworks.main.registry.BlockRegistry;
-import alsender.earthworks.main.registry.ItemRegistry;
-import alsender.earthworks.main.registry.TimberRegistry;
-import net.minecraft.block.Block;
-import net.minecraft.client.renderer.block.model.ModelResourceLocation;
-import net.minecraft.item.Item;
-import net.minecraftforge.client.event.ModelRegistryEvent;
-import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import net.minecraftforge.fml.relauncher.Side;
-
-import java.lang.reflect.Field;
 
 /**
  * Created by alsender on 12/12/16.
  */
-@Mod.EventBusSubscriber(Side.CLIENT)
+@Mod.EventBusSubscriber(Dist.CLIENT)
 public class ClientProxy {
-
-     public static void initBlockModels() {
-         BlockRegistry.getAllBlocks().forEach(ClientProxy::makeModel);
-     }
-
-    @SubscribeEvent
-    public static void registerModels(ModelRegistryEvent event) {
-        initBlockModels();
-        TimberRegistry.initModels();
-        ItemRegistry.initModels();
-    }
-
-    private static void makeModel(Block block) {
-        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0, new ModelResourceLocation(block.getRegistryName(), "inventory"));
-    }
 
 }

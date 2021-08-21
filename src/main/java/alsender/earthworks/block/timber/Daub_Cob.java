@@ -3,17 +3,11 @@ package alsender.earthworks.block.timber;
 import alsender.earthworks.block.ModBlockFacing;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.SoundType;
-import net.minecraft.block.material.Material;
-import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.util.ITooltipFlag;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.world.World;
-import net.minecraftforge.client.model.ModelLoader;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
-import net.minecraftforge.registries.IForgeRegistry;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.world.IBlockReader;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -28,20 +22,16 @@ public class Daub_Cob extends ModBlockFacing {
     private final String toolTip;
     public final int ID;
 
-    public Daub_Cob(IForgeRegistry<Block> registry, String name, String string, int ID) {
-        super(registry, "daub_cob_" + name, Material.ROCK, SoundType.WOOD, 1.5F, 10.0F);
+    public Daub_Cob(Properties properties, String string, int ID) {
+        super(properties);
         this.toolTip = string;
         this.ID = ID;
     }
 
-    @SideOnly(Side.CLIENT)
-    public void initModel() {
-        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), 0, new ModelResourceLocation(getRegistryName(), "inventory"));
-    }
-
     @Override
-    public void addInformation(ItemStack stack, @Nullable World player, List list, ITooltipFlag bool) {
-        list.add(toolTip);
+    public void addInformation(ItemStack stack, @Nullable IBlockReader worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
+        super.addInformation(stack, worldIn, tooltip, flagIn);
+        tooltip.add(new StringTextComponent(toolTip));
     }
 
     public int getID() {

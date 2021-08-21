@@ -29,7 +29,7 @@ public class Plaster extends ModBlockFacing {
     public int ID;
 
     public Plaster(IForgeRegistry<Block> registry, String name, String toolTip, int ID) {
-        super(registry, "plaster_" + name, Material.ROCK, SoundType.WOOD, 3.0F, 7.5F);
+        super("plaster_" + name, Material.ROCK, SoundType.WOOD, 3.0F, 7.5F);
         this.toolTip = toolTip;
         this.ID = ID;
     }
