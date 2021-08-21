@@ -2,6 +2,7 @@ package alsender.earthworks.block;
 
 import alsender.earthworks.main.Earthworks;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockHorizontal;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
@@ -22,9 +23,7 @@ import net.minecraftforge.registries.IForgeRegistry;
 /**
  * Created by alsender on 1/5/17.
  */
-public class ModBlockFacing extends Block {
-
-    public static final PropertyDirection FACING = PropertyDirection.create("facing", EnumFacing.Plane.HORIZONTAL);
+public class ModBlockFacing extends BlockHorizontal {
 
     public ModBlockFacing(IForgeRegistry<Block> registry, String name, Material material, SoundType sound, Float hardness, Float resistance) {
         super(material);
@@ -53,12 +52,12 @@ public class ModBlockFacing extends Block {
 
     @Override
     public int getMetaFromState(IBlockState state) {
-        return ((EnumFacing) state.getValue(FACING)).getIndex();
+        return state.getValue(FACING).getIndex();
     }
 
     @Override
     protected BlockStateContainer createBlockState() {
-        return new BlockStateContainer(this, new IProperty[]{FACING});
+        return new BlockStateContainer(this, FACING);
     }
 
     @Override
