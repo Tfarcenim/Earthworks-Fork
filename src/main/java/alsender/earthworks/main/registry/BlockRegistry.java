@@ -6,6 +6,7 @@ import alsender.earthworks.block.timber.Daub_Cob;
 import alsender.earthworks.block.timber.Plaster;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
+import net.minecraft.item.Item;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.IForgeRegistry;
@@ -13,6 +14,7 @@ import net.minecraftforge.registries.IForgeRegistry;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 /**
  * Created by alsender on 12/12/16.
@@ -594,6 +596,21 @@ public class BlockRegistry {
         plaster_x = new Plaster(AbstractBlock.Properties.create(Material.ROCK).sound(SoundType.WOOD).hardnessAndResistance(1.5F, 10.0F),"Frame-less X",36);
         plaster_xright = new Plaster(AbstractBlock.Properties.create(Material.ROCK).sound(SoundType.WOOD).hardnessAndResistance(1.5F, 10.0F),"Right-less Framed",37);
         plaster_xtop = new Plaster(AbstractBlock.Properties.create(Material.ROCK).sound(SoundType.WOOD).hardnessAndResistance(1.5F, 10.0F),"Topless Framed",38);
+
+        Field[] fields = BlockRegistry.class.getFields();
+
+        for (Field field : fields) {
+            try {
+                if (field.get(null) instanceof Block) {
+                    Block block = (Block) field.get(null);
+                    block.setRegistryName(field.getName().toLowerCase(Locale.ROOT));
+                    r.register(block);
+                }
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            }
+        }
+
     }
 
     private static final List<Block> cache = new ArrayList<>();

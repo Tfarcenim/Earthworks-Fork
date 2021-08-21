@@ -15,7 +15,4 @@ public class ModBlockTags {
 
     public static final ITag.INamedTag<Block> timber_log = BlockTags.makeWrapperTag(new ResourceLocation(Earthworks.mod_id,"timber_log").toString());
 
-    public static void init() {
-
-    }
 }

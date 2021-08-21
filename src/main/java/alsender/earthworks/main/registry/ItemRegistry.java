@@ -10,6 +10,11 @@ import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.IForgeRegistry;
 
+import java.lang.reflect.Field;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
+
 /**
  * Created by alsender on 12/12/16.
  */
@@ -303,92 +308,123 @@ public class ItemRegistry {
         blockItem(BlockRegistry.stair_thatch);
         blockItem(BlockRegistry.wall_reed);
         blockItem(BlockRegistry.wall_thatch);
+
+        blockItem(BlockRegistry.daub_cob_arrow0);
+        blockItem(BlockRegistry.daub_cob_arrow1);
+        blockItem(BlockRegistry.daub_cob_arrow2);
+        blockItem(BlockRegistry.daub_cob_arrow3);
+        blockItem(BlockRegistry.daub_cob_barndoor0);
+        blockItem(BlockRegistry.daub_cob_barndoor1);
+        blockItem(BlockRegistry.daub_cob_barndoor2);
+        blockItem(BlockRegistry.daub_cob_barndoor3);
+        blockItem(BlockRegistry.daub_cob_barndoor4);
+        blockItem(BlockRegistry.daub_cob_barndoor5);
+        blockItem(BlockRegistry.daub_cob_barndoor6);
+        blockItem(BlockRegistry.daub_cob_barndoor7);
+        blockItem(BlockRegistry.daub_cob_bottom_l);
+        blockItem(BlockRegistry.daub_cob_bottom);
+        blockItem(BlockRegistry.daub_cob_bottom_r);
+        blockItem(BlockRegistry.daub_cob_left);
+        blockItem(BlockRegistry.daub_cob_parallel_hor);
+        blockItem(BlockRegistry.daub_cob_parallel_vert);
+        blockItem(BlockRegistry.daub_cob_right);
+        blockItem(BlockRegistry.daub_cob_slash_back);
+        blockItem(BlockRegistry.daub_cob_slash);
+        blockItem(BlockRegistry.daub_cob_square);
+        blockItem(BlockRegistry.daub_cob_square_x);
+        blockItem(BlockRegistry.daub_cob_top_l);
+        blockItem(BlockRegistry.daub_cob_top);
+        blockItem(BlockRegistry.daub_cob_top_r);
+        blockItem(BlockRegistry.daub_cob_triangle0);
+        blockItem(BlockRegistry.daub_cob_triangle1);
+        blockItem(BlockRegistry.daub_cob_triangle2);
+        blockItem(BlockRegistry.daub_cob_triangle3);
+        blockItem(BlockRegistry.daub_cob_xbottom);
+        blockItem(BlockRegistry.daub_cob_xdoor0);
+        blockItem(BlockRegistry.daub_cob_xdoor1);
+        blockItem(BlockRegistry.daub_cob_xdoor2);
+        blockItem(BlockRegistry.daub_cob_xdoor3);
+        blockItem(BlockRegistry.daub_cob_xleft);
+        blockItem(BlockRegistry.daub_cob_x);
+        blockItem(BlockRegistry.daub_cob_xright);
+        blockItem(BlockRegistry.daub_cob_xtop);
+
+        blockItem(BlockRegistry.plaster_arrow0);
+        blockItem(BlockRegistry.plaster_arrow1);
+        blockItem(BlockRegistry.plaster_arrow2);
+        blockItem(BlockRegistry.plaster_arrow3);
+        blockItem(BlockRegistry.plaster_barndoor0);
+        blockItem(BlockRegistry.plaster_barndoor1);
+        blockItem(BlockRegistry.plaster_barndoor2);
+        blockItem(BlockRegistry.plaster_barndoor3);
+        blockItem(BlockRegistry.plaster_barndoor4);
+        blockItem(BlockRegistry.plaster_barndoor5);
+        blockItem(BlockRegistry.plaster_barndoor6);
+        blockItem(BlockRegistry.plaster_barndoor7);
+        blockItem(BlockRegistry.plaster_bottom_l);
+        blockItem(BlockRegistry.plaster_bottom);
+        blockItem(BlockRegistry.plaster_bottom_r);
+        blockItem(BlockRegistry.plaster_left);
+        blockItem(BlockRegistry.plaster_parallel_hor);
+        blockItem(BlockRegistry.plaster_parallel_vert);
+        blockItem(BlockRegistry.plaster_right);
+        blockItem(BlockRegistry.plaster_slash_back);
+        blockItem(BlockRegistry.plaster_slash);
+        blockItem(BlockRegistry.plaster_square);
+        blockItem(BlockRegistry.plaster_square_x);
+        blockItem(BlockRegistry.plaster_top_l);
+        blockItem(BlockRegistry.plaster_top);
+        blockItem(BlockRegistry.plaster_top_r);
+        blockItem(BlockRegistry.plaster_triangle0);
+        blockItem(BlockRegistry.plaster_triangle1);
+        blockItem(BlockRegistry.plaster_triangle2);
+        blockItem(BlockRegistry.plaster_triangle3);
+        blockItem(BlockRegistry.plaster_xbottom);
+        blockItem(BlockRegistry.plaster_xdoor0);
+        blockItem(BlockRegistry.plaster_xdoor1);
+        blockItem(BlockRegistry.plaster_xdoor2);
+        blockItem(BlockRegistry.plaster_xdoor3);
+        blockItem(BlockRegistry.plaster_xleft);
+        blockItem(BlockRegistry.plaster_x);
+        blockItem(BlockRegistry.plaster_xright);
+        blockItem(BlockRegistry.plaster_xtop);
+
+        Field[] fields = ItemRegistry.class.getFields();
+
+        for (Field field : fields) {
+            try {
+                if (field.get(null) instanceof Item) {
+                    Item item = (Item) field.get(null);
+                    item.setRegistryName(field.getName().toLowerCase(Locale.ROOT));
+                    r.register(item);
+                }
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     public static BlockItem blockItem(Block block) {
         return new BlockItem(block, new Item.Properties().group(Earthworks.creativeTab));
     }
 
-    public static void initItemBlocks(RegistryEvent.Register<Item> event) {
-        IForgeRegistry<Item> r = event.getRegistry();
-        r.register(blockItem(BlockRegistry.daub_cob_arrow0));
-        r.register(blockItem(BlockRegistry.daub_cob_arrow1));
-        r.register(blockItem(BlockRegistry.daub_cob_arrow2));
-        r.register(blockItem(BlockRegistry.daub_cob_arrow3));
-        r.register(blockItem(BlockRegistry.daub_cob_barndoor0));
-        r.register(blockItem(BlockRegistry.daub_cob_barndoor1));
-        r.register(blockItem(BlockRegistry.daub_cob_barndoor2));
-        r.register(blockItem(BlockRegistry.daub_cob_barndoor3));
-        r.register(blockItem(BlockRegistry.daub_cob_barndoor4));
-        r.register(blockItem(BlockRegistry.daub_cob_barndoor5));
-        r.register(blockItem(BlockRegistry.daub_cob_barndoor6));
-        r.register(blockItem(BlockRegistry.daub_cob_barndoor7));
-        r.register(blockItem(BlockRegistry.daub_cob_bottom_l));
-        r.register(blockItem(BlockRegistry.daub_cob_bottom));
-        r.register(blockItem(BlockRegistry.daub_cob_bottom_r));
-        r.register(blockItem(BlockRegistry.daub_cob_left));
-        r.register(blockItem(BlockRegistry.daub_cob_parallel_hor));
-        r.register(blockItem(BlockRegistry.daub_cob_parallel_vert));
-        r.register(blockItem(BlockRegistry.daub_cob_right));
-        r.register(blockItem(BlockRegistry.daub_cob_slash_back));
-        r.register(blockItem(BlockRegistry.daub_cob_slash));
-        r.register(blockItem(BlockRegistry.daub_cob_square));
-        r.register(blockItem(BlockRegistry.daub_cob_square_x));
-        r.register(blockItem(BlockRegistry.daub_cob_top_l));
-        r.register(blockItem(BlockRegistry.daub_cob_top));
-        r.register(blockItem(BlockRegistry.daub_cob_top_r));
-        r.register(blockItem(BlockRegistry.daub_cob_triangle0));
-        r.register(blockItem(BlockRegistry.daub_cob_triangle1));
-        r.register(blockItem(BlockRegistry.daub_cob_triangle2));
-        r.register(blockItem(BlockRegistry.daub_cob_triangle3));
-        r.register(blockItem(BlockRegistry.daub_cob_xbottom));
-        r.register(blockItem(BlockRegistry.daub_cob_xdoor0));
-        r.register(blockItem(BlockRegistry.daub_cob_xdoor1));
-        r.register(blockItem(BlockRegistry.daub_cob_xdoor2));
-        r.register(blockItem(BlockRegistry.daub_cob_xdoor3));
-        r.register(blockItem(BlockRegistry.daub_cob_xleft));
-        r.register(blockItem(BlockRegistry.daub_cob_x));
-        r.register(blockItem(BlockRegistry.daub_cob_xright));
-        r.register(blockItem(BlockRegistry.daub_cob_xtop));
+    private static final List<Item> cache = new ArrayList<>();
 
-        r.register(blockItem(BlockRegistry.plaster_arrow0));
-        r.register(blockItem(BlockRegistry.plaster_arrow1));
-        r.register(blockItem(BlockRegistry.plaster_arrow2));
-        r.register(blockItem(BlockRegistry.plaster_arrow3));
-        r.register(blockItem(BlockRegistry.plaster_barndoor0));
-        r.register(blockItem(BlockRegistry.plaster_barndoor1));
-        r.register(blockItem(BlockRegistry.plaster_barndoor2));
-        r.register(blockItem(BlockRegistry.plaster_barndoor3));
-        r.register(blockItem(BlockRegistry.plaster_barndoor4));
-        r.register(blockItem(BlockRegistry.plaster_barndoor5));
-        r.register(blockItem(BlockRegistry.plaster_barndoor6));
-        r.register(blockItem(BlockRegistry.plaster_barndoor7));
-        r.register(blockItem(BlockRegistry.plaster_bottom_l));
-        r.register(blockItem(BlockRegistry.plaster_bottom));
-        r.register(blockItem(BlockRegistry.plaster_bottom_r));
-        r.register(blockItem(BlockRegistry.plaster_left));
-        r.register(blockItem(BlockRegistry.plaster_parallel_hor));
-        r.register(blockItem(BlockRegistry.plaster_parallel_vert));
-        r.register(blockItem(BlockRegistry.plaster_right));
-        r.register(blockItem(BlockRegistry.plaster_slash_back));
-        r.register(blockItem(BlockRegistry.plaster_slash));
-        r.register(blockItem(BlockRegistry.plaster_square));
-        r.register(blockItem(BlockRegistry.plaster_square_x));
-        r.register(blockItem(BlockRegistry.plaster_top_l));
-        r.register(blockItem(BlockRegistry.plaster_top));
-        r.register(blockItem(BlockRegistry.plaster_top_r));
-        r.register(blockItem(BlockRegistry.plaster_triangle0));
-        r.register(blockItem(BlockRegistry.plaster_triangle1));
-        r.register(blockItem(BlockRegistry.plaster_triangle2));
-        r.register(blockItem(BlockRegistry.plaster_triangle3));
-        r.register(blockItem(BlockRegistry.plaster_xbottom));
-        r.register(blockItem(BlockRegistry.plaster_xdoor0));
-        r.register(blockItem(BlockRegistry.plaster_xdoor1));
-        r.register(blockItem(BlockRegistry.plaster_xdoor2));
-        r.register(blockItem(BlockRegistry.plaster_xdoor3));
-        r.register(blockItem(BlockRegistry.plaster_xleft));
-        r.register(blockItem(BlockRegistry.plaster_x));
-        r.register(blockItem(BlockRegistry.plaster_xright));
-        r.register(blockItem(BlockRegistry.plaster_xtop));
+    public static List<Item> getAllItems() {
+        if (cache.isEmpty()) {
+            Field[] fields = ItemRegistry.class.getFields();
+
+            for (Field field : fields) {
+                try {
+                    if (field.get(null) instanceof Item) {
+                        cache.add((Item) field.get(null));
+                    }
+                } catch (IllegalAccessException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        return cache;
     }
+
 }

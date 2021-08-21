@@ -25,6 +25,8 @@ public class Earthworks {
     public Earthworks() {
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
         bus.addListener(ModDatagen::start);
+        bus.addGenericListener(Block.class,this::blocks);
+        bus.addGenericListener(Item.class,this::items);
     }
 
     public static final ItemGroup creativeTab = (new ItemGroup("earthworks") {
