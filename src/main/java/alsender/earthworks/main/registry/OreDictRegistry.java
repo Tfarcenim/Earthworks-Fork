@@ -1,7 +1,7 @@
 package alsender.earthworks.main.registry;
 
-import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
+import net.minecraft.block.Blocks;
+import net.minecraft.item.Items;
 import net.minecraftforge.oredict.OreDictionary;
 
 import static alsender.earthworks.main.registry.BlockRegistry.*;

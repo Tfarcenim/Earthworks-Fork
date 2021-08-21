@@ -2,13 +2,13 @@ package alsender.earthworks.item;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockPlanks;
-import net.minecraft.item.ItemBlock;
+import net.minecraft.item.BlockItem;
 import net.minecraft.item.ItemStack;
 
 /**
  * Created by alsender on 3/6/17.
  */
-public class BlockItemPlanksVert extends ItemBlock {
+public class BlockItemPlanksVert extends BlockItem {
 
     public BlockItemPlanksVert(Block block) {
         super(block);

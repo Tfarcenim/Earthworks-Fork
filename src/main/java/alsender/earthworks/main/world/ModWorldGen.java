@@ -4,8 +4,8 @@ import alsender.earthworks.main.Config;
 import alsender.earthworks.main.registry.BlockRegistry;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.minecraft.world.gen.IChunkGenerator;
-import net.minecraft.world.chunk.IChunkProvider;
+import net.minecraft.world.gen.ChunkGenerator;
+import net.minecraft.world.chunk.AbstractChunkProvider;
 import net.minecraft.world.gen.feature.WorldGenMinable;
 import net.minecraftforge.fml.common.IWorldGenerator;
 
@@ -17,7 +17,7 @@ import java.util.Random;
 public class ModWorldGen implements IWorldGenerator {
 
     @Override
-    public void generate(Random random, int chunkX, int chuckZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider) {
+    public void generate(Random random, int chunkX, int chuckZ, World world, ChunkGenerator chunkGenerator, AbstractChunkProvider chunkProvider) {
         WorldGenMinable block_chalk = new WorldGenMinable(BlockRegistry.chalk.getDefaultState(), Config.Cvein_size);
         for (int i = 0; i < Config.Cspawn_rate; i++) {
             int x = chunkX*16+random.nextInt(16);

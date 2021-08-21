@@ -2,12 +2,11 @@ package alsender.earthworks.block.timber;
 
 import alsender.earthworks.block.ModBlockFacing;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
-import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.util.ITooltipFlag;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
@@ -49,8 +48,8 @@ public class Daub_Cob extends ModBlockFacing {
         return this.ID;
     }
 
-    public IBlockState getRotation(Block block) {
-        IBlockState blockRotate = null;
+    public BlockState getRotation(Block block) {
+        BlockState blockRotate = null;
         if (block instanceof Daub_Cob) {
             switch (getID()) {
                 case 0 : blockRotate = daub_cob_arrow2.getDefaultState();

@@ -3,9 +3,9 @@ package alsender.earthworks.block;
 import alsender.earthworks.main.registry.BlockRegistry;
 import alsender.earthworks.main.Earthworks;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
-import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
@@ -24,28 +24,28 @@ public class Block_Mud extends ModBlock {
         setCreativeTab(Earthworks.creativeTab);
     }
 
-    public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess world, BlockPos pos) {
+    public AxisAlignedBB getBoundingBox(BlockState state, IBlockAccess world, BlockPos pos) {
         return AABB;
     }
 
     @Override
-    public boolean isOpaqueCube(IBlockState state) {
+    public boolean isOpaqueCube(BlockState state) {
         return false;
     }
 
     @Override
-    public boolean isFullCube(IBlockState state) {
+    public boolean isFullCube(BlockState state) {
         return false;
     }
 
-    public void neighborChanged(IBlockState state, World world, BlockPos pos, Block block, BlockPos fromPos) {
+    public void neighborChanged(BlockState state, World world, BlockPos pos, Block block, BlockPos fromPos) {
         super.neighborChanged(state, world, pos, block, fromPos);
         if (world.getBlockState(pos.up()).getMaterial().isSolid()) {
             world.setBlockState(pos, BlockRegistry.mud_bottom.getDefaultState());
         }
     }
 
-    public void onBlockAdded(World world, BlockPos pos, IBlockState state) {
+    public void onBlockAdded(World world, BlockPos pos, BlockState state) {
         super.onBlockAdded(world, pos, state);
         if (world.getBlockState(pos.up()).getMaterial().isSolid()) {
             world.setBlockState(pos, BlockRegistry.mud_bottom.getDefaultState());

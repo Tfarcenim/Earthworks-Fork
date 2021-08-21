@@ -5,12 +5,12 @@ import alsender.earthworks.block.timber.Plaster;
 import alsender.earthworks.main.Earthworks;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
-import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.EnumActionResult;
-import net.minecraft.util.EnumFacing;
-import net.minecraft.util.EnumHand;
+import net.minecraft.util.ActionResultType;
+import net.minecraft.util.Direction;
+import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.client.model.ModelLoader;
@@ -25,7 +25,7 @@ public class ModItemTool extends Item {
 
     private Block block;
     private BlockPos pos;
-    private EntityPlayer player;
+    private PlayerEntity player;
 
     public ModItemTool(IForgeRegistry<Item> registry, String name, int durability) {
         setCreativeTab(Earthworks.creativeTab);
@@ -41,7 +41,7 @@ public class ModItemTool extends Item {
         ModelLoader.setCustomModelResourceLocation(this, 0, new ModelResourceLocation(getRegistryName(), "inventory"));
     }
 
-    public EnumActionResult onItemUse(EntityPlayer player, World world, BlockPos pos, EnumHand hand, EnumFacing face, float hitX, float hitY, float hitZ) {
+    public ActionResultType onItemUse(PlayerEntity player, World world, BlockPos pos, Hand hand, Direction face, float hitX, float hitY, float hitZ) {
         ItemStack itemstack = player.getHeldItem(hand);
         this.block = world.getBlockState(pos).getBlock();
         this.pos = pos;
@@ -51,13 +51,13 @@ public class ModItemTool extends Item {
             if (block instanceof Daub_Cob) {
                 world.setBlockState(pos, ((Daub_Cob)block).getRotation(block));
                 itemstack.damageItem(1, player);
-                return EnumActionResult.SUCCESS;
+                return ActionResultType.SUCCESS;
             } else if (block instanceof Plaster) {
                 world.setBlockState(pos, ((Plaster)block).getRotation(block));
                 itemstack.damageItem(1, player);
-                return EnumActionResult.SUCCESS;
+                return ActionResultType.SUCCESS;
             }
-        } else return EnumActionResult.FAIL;
-        return EnumActionResult.FAIL;
+        } else return ActionResultType.FAIL;
+        return ActionResultType.FAIL;
     }
 }

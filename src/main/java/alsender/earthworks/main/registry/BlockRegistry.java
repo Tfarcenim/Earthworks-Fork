@@ -10,7 +10,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemBlock;
+import net.minecraft.item.BlockItem;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
@@ -850,6 +850,6 @@ public class BlockRegistry {
     }
 
     private static Item itemblock(Block block) {
-        return new ItemBlock(block).setRegistryName(block.getRegistryName());
+        return new BlockItem(block).setRegistryName(block.getRegistryName());
     }
 }

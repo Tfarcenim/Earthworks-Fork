@@ -3,8 +3,8 @@ package alsender.earthworks.main.registry;
 
 import alsender.earthworks.block.timber.*;
 import net.minecraft.block.Block;
+import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemBlock;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -298,6 +298,6 @@ public class TimberRegistry {
     }
 
     private static Item itemblock(Block block) {
-        return new ItemBlock(block).setRegistryName(block.getRegistryName());
+        return new BlockItem(block).setRegistryName(block.getRegistryName());
     }
 }
