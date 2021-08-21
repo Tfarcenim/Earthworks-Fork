@@ -1,45 +1,32 @@
 package alsender.earthworks.main;
 
-import net.minecraftforge.common.config.Configuration;
-import net.minecraftforge.fml.client.event.ConfigChangedEvent;
-import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-
-import java.io.File;
+import net.minecraftforge.common.ForgeConfigSpec;
 
 /**
  * Created by alsender on 1/29/17.
  */
 public class Config {
+    
+    public static ForgeConfigSpec.IntValue Chalk_spawn_rate;
+    public static ForgeConfigSpec.IntValue Cmin_spawn;
+    public static ForgeConfigSpec.IntValue Cmax_spawn;
+    public static ForgeConfigSpec.IntValue Cvein_size;
+    public static ForgeConfigSpec.IntValue Slate_spawn_rate;
+    public static ForgeConfigSpec.IntValue Smin_spawn;
+    public static ForgeConfigSpec.IntValue Smax_spawn;
+    public static ForgeConfigSpec.IntValue Svein_size;
 
-    public static Configuration config;
+    public Config(ForgeConfigSpec.Builder builder) {
+        builder.push("General");
+        Chalk_spawn_rate = builder.comment("Attempts the world generator will make to spawn a CHALK vein per chunk.  Set to 0 to turn off CHALK.").defineInRange("chalk_spawn_rate", 3,0,42);
+        Cmin_spawn = builder.comment("Minimum Y level at which CHALK can spawn.").defineInRange("chalk_min_spawn",48,0,256);
+        Cmax_spawn = builder.comment("Maximum Y level at which CHALK can spawn.").defineInRange("chalk_max_spawn",256,0,256);
+        Cvein_size = builder.comment("Vein size that CHALK can spawn in.").defineInRange("chalk_vein_size",33,0,33);
 
-    public static int Cspawn_rate;
-    public static int Cmin_spawn;
-    public static int Cmax_spawn;
-    public static int Cvein_size;
-    public static int Sspawn_rate;
-    public static int Smin_spawn;
-    public static int Smax_spawn;
-    public static int Svein_size;
-
-    public static void init(File configFile) {
-            config = new Configuration(configFile);
-            load();
-    }
-
-    public static void load() {
-        config.addCustomCategoryComment("world","World Gen Configs");
-        config.addCustomCategoryComment("compat", "Mod Compatibility Configs");
-
-        Cspawn_rate = config.getInt("chalk_spawn_rate", "world",3,0,42,"Attempts the world generator will make to spawn a CHALK vein per chunk.  Set to 0 to turn off CHALK.");
-        Cmin_spawn = config.getInt("chalk_min_spawn","world",48,0,256,"Minimum Y level at which CHALK can spawn.");
-        Cmax_spawn = config.getInt("chalk_max_spawn","world",256,0,256,"Maximum Y level at which CHALK can spawn.");
-        Cvein_size = config.getInt("chalk_vein_size","world",33,0,33,"Vein size that CHALK can spawn in.");
-
-        Sspawn_rate = config.getInt("slate_spawn_rate", "world",10,0,42,"Attempts the world generator will make to spawn a SLATE vein per chunk.  Set to 0 to turn off SLATE.");
-        Smin_spawn = config.getInt("slate_min_spawn","world",0,0,256,"Minimum Y level at which SLATE can spawn.");
-        Smax_spawn = config.getInt("slate_max_spawn","world",256,0,256,"Maximum Y level at which SLATE can spawn.");
-        Svein_size = config.getInt("slate_vein_size","world",33,0,33,"Vein size that SLATE can spawn in.");
-
+        Slate_spawn_rate = builder.comment("Attempts the world generator will make to spawn a SLATE vein per chunk.  Set to 0 to turn off SLATE.").defineInRange("slate_spawn_rate", 10,0,42);
+        Smin_spawn = builder.comment("Minimum Y level at which SLATE can spawn.").defineInRange("slate_min_spawn",0,0,256);
+        Smax_spawn = builder.comment("Maximum Y level at which SLATE can spawn.").defineInRange("slate_max_spawn",256,0,256);
+        Svein_size = builder.comment("Vein size that SLATE can spawn in.").defineInRange("slate_vein_size",33,0,33);
+        builder.pop();
     }
 }

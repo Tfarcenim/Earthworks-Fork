@@ -22,8 +22,8 @@ public class Plaster extends ModBlockFacing {
     private final String toolTip;
     public int ID;
 
-    public Plaster(String toolTip, int ID) {
-        super();
+    public Plaster(Properties properties,String toolTip, int ID) {
+        super(properties);
         this.toolTip = toolTip;
         this.ID = ID;
     }
@@ -34,14 +34,10 @@ public class Plaster extends ModBlockFacing {
         tooltip.add(new StringTextComponent(toolTip));
     }
 
-    public int getID() {
-        return this.ID;
-    }
-
     public BlockState getRotation(Block block) {
         BlockState blockRotate = null;
         if (block instanceof Plaster) {
-            switch (getID()) {
+            switch (ID) {
                 case 0 : blockRotate = plaster_arrow2.getDefaultState();
                     break; //arrow0     bottom left
                 case 1: blockRotate = plaster_arrow0.getDefaultState();
