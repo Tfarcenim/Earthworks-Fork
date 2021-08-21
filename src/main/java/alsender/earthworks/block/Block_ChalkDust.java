@@ -231,7 +231,7 @@ public class Block_ChalkDust extends Block {
 
     protected static boolean canConnectTo(IBlockState blockState, @Nullable EnumFacing side, IBlockAccess world, BlockPos pos) {
         Block block = blockState.getBlock();
-        if (block == BlockRegistry.block_chalk_dust) {
+        if (block == BlockRegistry.chalk_dust) {
             return true;
         } else {
             return false;

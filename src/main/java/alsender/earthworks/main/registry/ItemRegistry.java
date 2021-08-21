@@ -77,7 +77,7 @@ public class ItemRegistry {
 
         //  BETTER WITH MODS COMPAT //
 
-        if (Config.betterwithmods == true) {
+        if (Config.betterwithmods) {
             item_dirt = new ModItem(r, "dirt");
             item_sand = new ModItem(r, "sand");
         }
@@ -109,11 +109,7 @@ public class ItemRegistry {
         ((ModItemTool)tool_gold_hammer).initModel();
         ((ModItemTool)tool_diamond_hammer).initModel();
 
-        //  BETTER WITH MODS COMPAT //
-
-        if (Config.betterwithmods == true) {
-            ((ModItem)item_dirt).initModel();
-            ((ModItem)item_sand).initModel();
-        }
+        ((ModItem)item_dirt).initModel();
+        ((ModItem)item_sand).initModel();
     }
 }

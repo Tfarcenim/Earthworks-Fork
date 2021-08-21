@@ -53,7 +53,7 @@ public class Earthworks {
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
         GameRegistry.addSmelting(ItemRegistry.item_chalk, new ItemStack(ItemRegistry.item_quicklime), 0.1F);
-        GameRegistry.addSmelting(BlockRegistry.block_chalk, new ItemStack(ItemRegistry.item_quicklime, 4), 0.1F);
+        GameRegistry.addSmelting(BlockRegistry.chalk, new ItemStack(ItemRegistry.item_quicklime, 4), 0.1F);
     }
 
     @Mod.EventHandler

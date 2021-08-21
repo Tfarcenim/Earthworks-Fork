@@ -16,14 +16,12 @@ import java.util.Random;
 /**
  * Created by alsender on 2/22/17.
  */
-public class Block_Gabion extends ModBlock {
+public class BlockGabion extends ModBlock {
 
-    private Block block;
-    private int IDNum;
+    private final int IDNum;
 
-    public Block_Gabion(IForgeRegistry<Block> registry, String name, int ID, Material material, SoundType soundType, Float hardness, Float resistance, Block block) {
+    public BlockGabion(IForgeRegistry<Block> registry, String name, int ID, Material material, SoundType soundType, float hardness, float resistance) {
         super(registry, name, material, soundType, hardness, resistance);
-        this.block = block;
         this.IDNum = ID;
     }
 
@@ -52,49 +50,14 @@ public class Block_Gabion extends ModBlock {
 
     public void onBlockAdded(World world, BlockPos pos, IBlockState state) {
         Block block = world.getBlockState(pos).getBlock();
-        if (world.getBlockState(pos.down()).getBlock() == BlockRegistry.block_gabion0 || world.getBlockState(pos.down()).getBlock() == BlockRegistry.block_gabion1 || world.getBlockState(pos.down()).getBlock() == BlockRegistry.block_gabion2) {
+        if (world.getBlockState(pos.down()).getBlock() == BlockRegistry.GRAVEL_GABION || world.getBlockState(pos.down()).getBlock() == BlockRegistry.SAND_GABION || world.getBlockState(pos.down()).getBlock() == BlockRegistry.DIRT_GABION) {
             world.setBlockState(pos, switchGabion(block).getDefaultState());
         }
-        if (world.getBlockState(pos.down()).getBlock() == BlockRegistry.block_gabion_falling0 || world.getBlockState(pos.down()).getBlock() == BlockRegistry.block_gabion_falling1 || world.getBlockState(pos.down()).getBlock() == BlockRegistry.block_gabion_falling2) {
+        if (world.getBlockState(pos.down()).getBlock() == BlockRegistry.gabion_falling0 || world.getBlockState(pos.down()).getBlock() == BlockRegistry.gabion_falling1 || world.getBlockState(pos.down()).getBlock() == BlockRegistry.gabion_falling2) {
             world.setBlockState(pos, switchGabion(block).getDefaultState());
         }
     }
 
-/** public void onEntityWalk(World world, BlockPos pos, Entity entity) {
- *      this.activate(world, pos);
- *      super.onEntityWalk(world, pos, entity);
- *  }
- *
- *  @SideOnly(Side.CLIENT)
- *  public void randomDisplayTick(IBlockState state, World world, BlockPos pos, Random random) {
- *      if(!world.isRemote) {
- *          if (flag == true) {
- *              if (world.getBlockState(pos.down()).getMaterial().isReplaceable()) {
- *                  world.spawnParticle(EnumParticleTypes.FALLING_DUST,
- *                          pos.getX() + Math.random(),
- *                          pos.getY() + Math.random(),
- *                          pos.getZ() + Math.random(),
- *                          0.0D, 0.0D, 0.0D,
- *                          Block.getIdFromBlock(block));
- *              }
- *          }
- *      }
- *  }
- *
- *  @SideOnly(Side.CLIENT)
- *  private void activate(World world, BlockPos pos) {
- *      if (!world.isRemote) {
- *          if (flag == true) {
- *              world.spawnParticle(EnumParticleTypes.BLOCK_CRACK,
- *                      pos.getX() + Math.random(),
- *                      pos.getY() + Math.random(),
- *                      pos.getZ() + Math.random(),
- *                      0.0D, 0.0D, 0.0D,
- *                      Block.getIdFromBlock(block));
- *          }
- *      }
- *  }
- */
     public int getIDNum() {
         return this.IDNum;
     }
@@ -102,11 +65,11 @@ public class Block_Gabion extends ModBlock {
     private Block switchGabion(Block block) {
         Block blockReturn = null;
         switch (getIDNum()) {
-            case 0 : blockReturn = BlockRegistry.block_gabion_falling0;
+            case 0 : blockReturn = BlockRegistry.gabion_falling0;
                     break;
-            case 1 : blockReturn = BlockRegistry.block_gabion_falling1;
+            case 1 : blockReturn = BlockRegistry.gabion_falling1;
                     break;
-            case 2 : blockReturn = BlockRegistry.block_gabion_falling2;
+            case 2 : blockReturn = BlockRegistry.gabion_falling2;
                     break;
         }
         return blockReturn;

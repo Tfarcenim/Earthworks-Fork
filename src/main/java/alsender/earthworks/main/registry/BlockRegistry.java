@@ -9,7 +9,6 @@ import alsender.earthworks.main.Config;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
-import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraftforge.event.RegistryEvent;
@@ -28,23 +27,22 @@ import java.util.List;
 @Mod.EventBusSubscriber
 public class BlockRegistry {
 
-    public static Block
-            block_adobe;
-    public static Block block_chalk;
-    public static Block block_chalk_dust;
-    public static Block block_cinder;
-    public static Block block_cob;
-    public static Block block_concrete;
-    public static Block block_cordwood;
-    public static Block block_dry_stone;
-    public static Block block_gabion0;
-    public static Block block_gabion1;
-    public static Block block_gabion2;
-    public static Block block_gabion_falling0;
-    public static Block block_gabion_falling1;
-    public static Block block_gabion_falling2;
-    public static Block block_mud;
-    public static Block block_mud_bottom;
+    public static Block adobe;
+    public static Block chalk;
+    public static Block chalk_dust;
+    public static Block cinder;
+    public static Block cob;
+    public static Block concrete;
+    public static Block cordwood;
+    public static Block dry_stone;
+    public static Block GRAVEL_GABION;
+    public static Block SAND_GABION;
+    public static Block DIRT_GABION;
+    public static Block gabion_falling0;
+    public static Block gabion_falling1;
+    public static Block gabion_falling2;
+    public static Block mud;
+    public static Block mud_bottom;
     public static Block oak_planks_vert;
     public static Block birch_planks_vert;
     public static Block jungle_planks_vert;
@@ -329,21 +327,21 @@ public class BlockRegistry {
     @SubscribeEvent
     public static void initBlocks(RegistryEvent.Register<Block> event) {
         IForgeRegistry<Block> r = event.getRegistry();
-        block_adobe = new ModBlock(r, "block_adobe", Material.ROCK, SoundType.STONE, 2.0F, 3.3F);
-        block_chalk = new Block_Chalk(r, "block_chalk");
-        block_cinder = new ModBlock(r, "block_cinder", Material.ROCK, SoundType.STONE, 1.5F, 5.83F);
-        block_cob = new ModBlock(r, "block_cob", Material.GROUND, SoundType.GROUND, 1.0F, 3.0F);
-        block_concrete = new ModBlock(r, "block_concrete", Material.ROCK, SoundType.STONE, 2.0F, 10.0F);
-        block_cordwood = new ModBlockFacing(r, "block_cordwood", Material.ROCK, SoundType.STONE, 1.5F, 2.83F);
-        block_dry_stone = new ModBlock(r, "block_dry_stone", Material.ROCK, SoundType.STONE, 2.0F, 1333.3F);
-        block_gabion0 = new Block_Gabion(r, "block_gabion_gravel", 0, Material.ROCK, SoundType.SAND, 2.0F, 12.0F, Blocks.GRAVEL);
-        block_gabion1 = new Block_Gabion(r, "block_gabion_sand", 1, Material.ROCK, SoundType.SAND, 2.0F, 12.0F, Blocks.SAND);
-        block_gabion2 = new Block_Gabion(r, "block_gabion_dirt", 2, Material.ROCK, SoundType.SAND, 2.0F, 12.0F, Blocks.DIRT);
-        block_gabion_falling0 = new Block_Gabion_Falling(r, "gravel", block_gabion0);
-        block_gabion_falling1 = new Block_Gabion_Falling(r, "sand", block_gabion1);
-        block_gabion_falling2 = new Block_Gabion_Falling(r, "dirt", block_gabion2);
-        block_mud = new Block_Mud(r, "block_mud");
-        block_mud_bottom = new Block_Mud_Bottom(r, "block_mud_bottom");
+        adobe = new ModBlock(r, "adobe", Material.ROCK, SoundType.STONE, 2.0F, 3.3F);
+        chalk = new ChalkBlock(r, "chalk");
+        cinder = new ModBlock(r, "cinder", Material.ROCK, SoundType.STONE, 1.5F, 5.83F);
+        cob = new ModBlock(r, "cob", Material.GROUND, SoundType.GROUND, 1.0F, 3.0F);
+        concrete = new ModBlock(r, "block_concrete", Material.ROCK, SoundType.STONE, 2.0F, 10.0F);
+        cordwood = new ModBlockFacing(r, "block_cordwood", Material.ROCK, SoundType.STONE, 1.5F, 2.83F);
+        dry_stone = new ModBlock(r, "block_dry_stone", Material.ROCK, SoundType.STONE, 2.0F, 1333.3F);
+        GRAVEL_GABION = new BlockGabion(r, "block_gabion_gravel", 0, Material.ROCK, SoundType.SAND, 2.0F, 12.0F);
+        SAND_GABION = new BlockGabion(r, "block_gabion_sand", 1, Material.ROCK, SoundType.SAND, 2.0F, 12.0F);
+        DIRT_GABION = new BlockGabion(r, "block_gabion_dirt", 2, Material.ROCK, SoundType.SAND, 2.0F, 12.0F);
+        gabion_falling0 = new Block_Gabion_Falling(r, "gravel", GRAVEL_GABION);
+        gabion_falling1 = new Block_Gabion_Falling(r, "sand", SAND_GABION);
+        gabion_falling2 = new Block_Gabion_Falling(r, "dirt", DIRT_GABION);
+        mud = new Block_Mud(r, "block_mud");
+        mud_bottom = new Block_Mud_Bottom(r, "block_mud_bottom");
         block_plaster = new ModBlock(r, "block_plaster", Material.ROCK, SoundType.STONE, 2.0F, 7.5F);
         block_rammed_earth = new ModBlock(r, "block_rammed_earth", Material.GROUND, SoundType.STONE, 2.0F, 10.0F);
         block_slate = new ModBlock(r, "block_slate", Material.ROCK, SoundType.STONE, 1.5F, 10.0F);
@@ -393,37 +391,37 @@ public class BlockRegistry {
         fence_planks_vert5 = new ModFence(r, "fence_planks_vert_dark_oak");
 
 
-        slab_adobe = new ModSlab(r, "slab_adobe", block_adobe);
+        slab_adobe = new ModSlab(r, "slab_adobe", adobe);
         doubleslab_adobe = new ModDoubleSlab(r, slab_adobe);
 
-        slab_chalk = new ModSlab(r, "slab_chalk", block_chalk);
+        slab_chalk = new ModSlab(r, "slab_chalk", chalk);
         doubleslab_chalk = new ModDoubleSlab(r, slab_chalk);
 
-        slab_cinder = new ModSlab(r, "slab_cinder", block_cinder);
+        slab_cinder = new ModSlab(r, "slab_cinder", cinder);
         doubleslab_cinder = new ModDoubleSlab(r, slab_cinder);
 
-        slab_cob = new ModSlab(r, "slab_cob", block_cob);
+        slab_cob = new ModSlab(r, "slab_cob", cob);
         doubleslab_cob = new ModDoubleSlab(r, slab_cob);
 
-        slab_concrete = new ModSlab(r, "slab_concrete", block_concrete);
+        slab_concrete = new ModSlab(r, "slab_concrete", concrete);
         doubleslab_concrete = new ModDoubleSlab(r, slab_concrete);
 
-        slab_cordwood = new ModSlab(r, "slab_cordwood", block_cordwood);
+        slab_cordwood = new ModSlab(r, "slab_cordwood", cordwood);
         doubleslab_cordwood = new ModDoubleSlab(r, slab_cordwood);
 
-        slab_dry_stone = new ModSlab(r, "slab_dry_stone", block_dry_stone);
+        slab_dry_stone = new ModSlab(r, "slab_dry_stone", dry_stone);
         doubleslab_dry_stone = new ModDoubleSlab(r, slab_dry_stone);
 
-        slab_gabion0 = new ModSlab(r, "slab_gabion_gravel", block_gabion0);
+        slab_gabion0 = new ModSlab(r, "slab_gabion_gravel", GRAVEL_GABION);
         doubleslab_gabion0 = new ModDoubleSlab(r, slab_gabion0);
 
-        slab_gabion1 = new ModSlab(r, "slab_gabion_sand", block_gabion1);
+        slab_gabion1 = new ModSlab(r, "slab_gabion_sand", SAND_GABION);
         doubleslab_gabion1 = new ModDoubleSlab(r, slab_gabion1);
 
-        slab_gabion2 = new ModSlab(r, "slab_gabion_dirt", block_gabion2);
+        slab_gabion2 = new ModSlab(r, "slab_gabion_dirt", DIRT_GABION);
         doubleslab_gabion2 = new ModDoubleSlab(r, slab_gabion2);
 
-        slab_mud = new ModSlab(r, "slab_mud", block_mud);
+        slab_mud = new ModSlab(r, "slab_mud", mud);
         doubleslab_mud = new ModDoubleSlab(r, slab_mud);
 
         slab_planks_vert0 = new ModSlab(r, "slab_planks_vert_oak");
@@ -529,23 +527,23 @@ public class BlockRegistry {
         doubleslab_wood_shingle_dark_oak = new ModDoubleSlab(r, slab_wood_shingle_dark_oak);
 
 
-        stair_adobe = new ModStair(r, "stair_adobe", block_adobe);
-        stair_chalk = new ModStair(r, "stair_chalk", block_chalk);
-        stair_cinder = new ModStair(r, "stair_cinder", block_cinder);
-        stair_cob = new ModStair(r, "stair_cob", block_cob);
-        stair_concrete = new ModStair(r, "stair_concrete", block_concrete);
-        stair_cordwood = new ModStair(r, "stair_cordwood", block_cordwood);
-        stair_dry_stone = new ModStair(r, "stair_dry_stone", block_dry_stone);
-        stair_gabion0 = new ModStair(r, "stair_gabion_gravel", block_gabion0);
-        stair_gabion1 = new ModStair(r, "stair_gabion_sand", block_gabion1);
-        stair_gabion2 = new ModStair(r, "stair_gabion_dirt", block_gabion2);
-        stair_mud = new ModStair(r, "stair_mud", block_mud);
-        stair_planks_vert0 = new ModStair(r, "stair_planks_vert_oak", block_adobe);
-        stair_planks_vert1 = new ModStair(r, "stair_planks_vert_spruce", block_adobe);
-        stair_planks_vert2 = new ModStair(r, "stair_planks_vert_birch", block_adobe);
-        stair_planks_vert3 = new ModStair(r, "stair_planks_vert_jungle", block_adobe);
-        stair_planks_vert4 = new ModStair(r, "stair_planks_vert_acacia", block_adobe);
-        stair_planks_vert5 = new ModStair(r, "stair_planks_vert_dark_oak", block_adobe);
+        stair_adobe = new ModStair(r, "stair_adobe", adobe);
+        stair_chalk = new ModStair(r, "stair_chalk", chalk);
+        stair_cinder = new ModStair(r, "stair_cinder", cinder);
+        stair_cob = new ModStair(r, "stair_cob", cob);
+        stair_concrete = new ModStair(r, "stair_concrete", concrete);
+        stair_cordwood = new ModStair(r, "stair_cordwood", cordwood);
+        stair_dry_stone = new ModStair(r, "stair_dry_stone", dry_stone);
+        stair_gabion0 = new ModStair(r, "stair_gabion_gravel", GRAVEL_GABION);
+        stair_gabion1 = new ModStair(r, "stair_gabion_sand", SAND_GABION);
+        stair_gabion2 = new ModStair(r, "stair_gabion_dirt", DIRT_GABION);
+        stair_mud = new ModStair(r, "stair_mud", mud);
+        stair_planks_vert0 = new ModStair(r, "stair_planks_vert_oak", adobe);
+        stair_planks_vert1 = new ModStair(r, "stair_planks_vert_spruce", adobe);
+        stair_planks_vert2 = new ModStair(r, "stair_planks_vert_birch", adobe);
+        stair_planks_vert3 = new ModStair(r, "stair_planks_vert_jungle", adobe);
+        stair_planks_vert4 = new ModStair(r, "stair_planks_vert_acacia", adobe);
+        stair_planks_vert5 = new ModStair(r, "stair_planks_vert_dark_oak", adobe);
         stair_plaster = new ModStair(r, "stair_plaster", block_plaster);
         stair_rammed_earth = new ModStair(r, "stair_rammed_earth", block_rammed_earth);
         stair_slate = new ModStair(r, "stair_slate", block_slate);
@@ -575,17 +573,17 @@ public class BlockRegistry {
         stair_wood_shingle_acacia = new ModStair(r, "stair_wood_shingle_acacia", oak_wood_shingle);
         stair_wood_shingle_dark_oak = new ModStair(r, "stair_wood_shingle_dark_oak", oak_wood_shingle);
 
-        wall_adobe = new ModWallBlock(r, "wall_adobe", block_adobe);
-        wall_chalk = new ModWallBlock(r, "wall_chalk", block_chalk);
-        wall_cinder = new ModWallBlock(r, "wall_cinder", block_cinder);
-        wall_cob = new ModWallBlock(r, "wall_cob", block_cob);
-        wall_concrete = new ModWallBlock(r, "wall_concrete", block_concrete);
-        wall_cordwood = new ModWallBlock(r, "wall_cordwood", block_cordwood);
-        wall_dry_stone = new ModWallBlock(r, "wall_dry_stone", block_dry_stone);
-        wall_gabion0 = new ModWallBlock(r, "wall_gabion_gravel", block_gabion0);
-        wall_gabion1 = new ModWallBlock(r, "wall_gabion_sand", block_gabion1);
-        wall_gabion2 = new ModWallBlock(r, "wall_gabion_dirt", block_gabion2);
-        wall_mud = new ModWallBlock(r, "wall_mud", block_mud);
+        wall_adobe = new ModWallBlock(r, "wall_adobe", adobe);
+        wall_chalk = new ModWallBlock(r, "wall_chalk", chalk);
+        wall_cinder = new ModWallBlock(r, "wall_cinder", cinder);
+        wall_cob = new ModWallBlock(r, "wall_cob", cob);
+        wall_concrete = new ModWallBlock(r, "wall_concrete", concrete);
+        wall_cordwood = new ModWallBlock(r, "wall_cordwood", cordwood);
+        wall_dry_stone = new ModWallBlock(r, "wall_dry_stone", dry_stone);
+        wall_gabion0 = new ModWallBlock(r, "wall_gabion_gravel", GRAVEL_GABION);
+        wall_gabion1 = new ModWallBlock(r, "wall_gabion_sand", SAND_GABION);
+        wall_gabion2 = new ModWallBlock(r, "wall_gabion_dirt", DIRT_GABION);
+        wall_mud = new ModWallBlock(r, "wall_mud", mud);
         wall_plaster = new ModWallBlock(r, "wall_plaster", block_plaster);
         wall_rammed_earth = new ModWallBlock(r, "wall_rammed_earth", block_rammed_earth);
         wall_slate = new ModWallBlock(r, "wall_slate", block_slate);
@@ -639,17 +637,17 @@ public class BlockRegistry {
     @SubscribeEvent
     public static void initItemBlocks(RegistryEvent.Register<Item> event) {
         IForgeRegistry<Item> r = event.getRegistry();
-        r.register(itemblock(block_adobe));
-        r.register(itemblock(block_chalk));
-        r.register(itemblock(block_cinder));
-        r.register(itemblock(block_cob));
-        r.register(itemblock(block_concrete));
-        r.register(itemblock(block_cordwood));
-        r.register(itemblock(block_dry_stone));
-        r.register(itemblock(block_gabion0));
-        r.register(itemblock(block_gabion1));
-        r.register(itemblock(block_gabion2));
-        r.register(itemblock(block_mud));
+        r.register(itemblock(adobe));
+        r.register(itemblock(chalk));
+        r.register(itemblock(cinder));
+        r.register(itemblock(cob));
+        r.register(itemblock(concrete));
+        r.register(itemblock(cordwood));
+        r.register(itemblock(dry_stone));
+        r.register(itemblock(GRAVEL_GABION));
+        r.register(itemblock(SAND_GABION));
+        r.register(itemblock(DIRT_GABION));
+        r.register(itemblock(mud));
 
         if (!Loader.isModLoaded("quark") || Config.persistantplanks) {
             r.register(new BlockItemPlanksVert(oak_planks_vert).setRegistryName(oak_planks_vert.getRegistryName()));

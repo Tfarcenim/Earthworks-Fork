@@ -14,8 +14,8 @@ import java.util.Random;
 /**
  * Created by alsender on 12/30/16.
  */
-public class Block_Chalk extends ModBlock {
-    public Block_Chalk(IForgeRegistry<Block> registry, String name) {
+public class ChalkBlock extends ModBlock {
+    public ChalkBlock(IForgeRegistry<Block> registry, String name) {
         super(registry, name, Material.ROCK, SoundType.STONE, 1.0F, 2.5F);
         setCreativeTab(Earthworks.creativeTab);
     }

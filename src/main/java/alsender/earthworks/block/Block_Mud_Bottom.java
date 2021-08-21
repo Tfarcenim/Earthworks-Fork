@@ -25,11 +25,11 @@ public class Block_Mud_Bottom extends ModBlock {
     public void neighborChanged(IBlockState state, World world, BlockPos pos, Block block, BlockPos fromPos) {
         super.neighborChanged(state, world, pos, block, fromPos);
         if (!world.getBlockState(pos.up()).getMaterial().isSolid()) {
-            world.setBlockState(pos, BlockRegistry.block_mud.getDefaultState());
+            world.setBlockState(pos, BlockRegistry.mud.getDefaultState());
         }
     }
 
     public Item getItemDropped(IBlockState state, Random random, int fortune) {
-        return  Item.getItemFromBlock(BlockRegistry.block_mud);
+        return  Item.getItemFromBlock(BlockRegistry.mud);
     }
 }
