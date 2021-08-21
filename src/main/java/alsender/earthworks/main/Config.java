@@ -42,11 +42,4 @@ public class Config {
         Svein_size = config.getInt("slate_vein_size","world",33,0,33,"Vein size that SLATE can spawn in.");
 
     }
-
-    @SubscribeEvent
-    public void onConfigChanged(ConfigChangedEvent.OnConfigChangedEvent event) {
-        if (event.getModID().equalsIgnoreCase(Earthworks.mod_id)) {
-            load();
-        }
-    }
 }

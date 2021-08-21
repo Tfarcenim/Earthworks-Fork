@@ -10,7 +10,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.Logger;
 
@@ -32,7 +31,7 @@ public class Earthworks {
 
         @Override
         public ItemStack createIcon() {
-            return new ItemStack(BlockRegistry.block_wattle);
+            return new ItemStack(BlockRegistry.wattle);
         }
 
         @Override
@@ -51,9 +50,4 @@ public class Earthworks {
         ItemRegistry.initItems(event);
     }
 
-    @Mod.EventHandler
-    public void init(FMLInitializationEvent event) {
-        GameRegistry.addSmelting(ItemRegistry.item_chalk, new ItemStack(ItemRegistry.item_quicklime), 0.1F);
-        GameRegistry.addSmelting(BlockRegistry.chalk, new ItemStack(ItemRegistry.item_quicklime, 4), 0.1F);
-    }
 }

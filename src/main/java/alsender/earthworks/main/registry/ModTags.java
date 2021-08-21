@@ -10,21 +10,18 @@ import static alsender.earthworks.main.registry.ItemRegistry.*;
 /**
  * Created by alsender on 6/20/17.
  */
-public class OreDictRegistry {
+public class ModTags {
 
     public static void init() {
-        OreDictionary.registerOre("pileDirt", item_dirt);
-        OreDictionary.registerOre("pileSand", item_sand);
-
         OreDictionary.registerOre("logTimber", block_timber_oak);
         OreDictionary.registerOre("logTimber", block_timber_spruce);
         OreDictionary.registerOre("logTimber", block_timber_birch);
         OreDictionary.registerOre("logTimber", block_timber_jungle);
-        OreDictionary.registerOre("logTimber", block_timber_acacia);
+        OreDictionary.registerOre("logTimber", acacia_timber);
         OreDictionary.registerOre("logTimber", block_timber_dark_oak);
 
         OreDictionary.registerOre("materialBinding", Items.PAPER);
-        OreDictionary.registerOre("materialBinding", Items.REEDS);
+        OreDictionary.registerOre("materialBinding", Items.SUGAR_CANE);
         OreDictionary.registerOre("materialBinding", Items.STRING);
         OreDictionary.registerOre("materialBinding", Items.WHEAT);
         OreDictionary.registerOre("materialBinding", Blocks.CACTUS);
