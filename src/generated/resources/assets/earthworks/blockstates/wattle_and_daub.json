@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "earthworks:block/daub_cob0"
+      },
+      {
+        "model": "earthworks:block/daub_cob1"
+      }
+    ]
+  }
+}

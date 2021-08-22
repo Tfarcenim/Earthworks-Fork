@@ -136,27 +136,27 @@ public class ItemRegistry {
 
         blockItem(BlockRegistry.vertical_oak_planks);
 
-        blockItem(BlockRegistry.plaster);
+        blockItem(BlockRegistry.lath_and_plaster);
         blockItem(BlockRegistry.rammed_earth);
-        blockItem(BlockRegistry.slate);
+        blockItem(BlockRegistry.blue_slate);
         blockItem(BlockRegistry.green_slate);
         blockItem(BlockRegistry.purple_slate);
-        blockItem(BlockRegistry.slate_slabs);
+        blockItem(BlockRegistry.polished_blue_slate);
         blockItem(BlockRegistry.polished_green_slate);
         blockItem(BlockRegistry.polished_purple_slate);
         blockItem(BlockRegistry.slate_shingle);
         blockItem(BlockRegistry.green_slate_shingle);
         blockItem(BlockRegistry.purple_slate_shingle);
-        blockItem(BlockRegistry.slate_tile);
-        blockItem(BlockRegistry.green_slate_tile);
-        blockItem(BlockRegistry.purple_slate_tile);
+        blockItem(BlockRegistry.blue_slate_tiles);
+        blockItem(BlockRegistry.green_slate_tiles);
+        blockItem(BlockRegistry.purple_slate_tiles);
         blockItem(BlockRegistry.oak_timber);
         blockItem(BlockRegistry.birch_timber);
         blockItem(BlockRegistry.spruce_timber);
         blockItem(BlockRegistry.jungle_timber);
         blockItem(BlockRegistry.acacia_timber);
         blockItem(BlockRegistry.dark_oak_timber);
-        blockItem(BlockRegistry.wattle);
+        blockItem(BlockRegistry.wattle_and_daub);
         blockItem(BlockRegistry.wicker);
         blockItem(BlockRegistry.oak_shingle);
 

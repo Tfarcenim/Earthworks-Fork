@@ -39,14 +39,61 @@ public class ModBlockstateProvider extends BlockStateProvider {
 
         simpleBlock(BlockRegistry.mud);
 
-        wallBlock(BlockRegistry.adobe_wall,modBlockTexture("adobe0"));
-
         verticalPlanks(BlockRegistry.vertical_oak_planks, Blocks.OAK_PLANKS);
         verticalPlanks(BlockRegistry.vertical_spruce_planks, Blocks.SPRUCE_PLANKS);
         verticalPlanks(BlockRegistry.vertical_birch_planks, Blocks.BIRCH_PLANKS);
         verticalPlanks(BlockRegistry.vertical_jungle_planks, Blocks.JUNGLE_PLANKS);
         verticalPlanks(BlockRegistry.vertical_acacia_planks, Blocks.ACACIA_PLANKS);
         verticalPlanks(BlockRegistry.vertical_dark_oak_planks, Blocks.DARK_OAK_PLANKS);
+
+        simpleBlock(BlockRegistry.lath_and_plaster);
+        simpleBlock(BlockRegistry.rammed_earth);
+
+        axisBlock(BlockRegistry.reed,modBlockTexture("reed_side"),modBlockTexture("reed_top"));
+
+        simpleBlock(BlockRegistry.blue_slate);
+        simpleBlock(BlockRegistry.green_slate);
+        simpleBlock(BlockRegistry.purple_slate);
+        simpleBlock(BlockRegistry.polished_blue_slate);
+        simpleBlock(BlockRegistry.polished_green_slate);
+        simpleBlock(BlockRegistry.polished_purple_slate);
+        simpleBlock(BlockRegistry.slate_shingle);
+        simpleBlock(BlockRegistry.green_slate_shingle);
+        simpleBlock(BlockRegistry.purple_slate_shingle);
+        simpleBlock(BlockRegistry.blue_slate_tiles);
+        simpleBlock(BlockRegistry.green_slate_tiles);
+        simpleBlock(BlockRegistry.purple_slate_tiles);
+
+        axisBlock(BlockRegistry.thatch,modBlockTexture("thatch0_side"),modBlockTexture("thatch_top"));
+
+        simpleBlock(BlockRegistry.oak_timber);
+        simpleBlock(BlockRegistry.birch_timber);
+        simpleBlock(BlockRegistry.spruce_timber);
+        simpleBlock(BlockRegistry.jungle_timber);
+        simpleBlock(BlockRegistry.acacia_timber);
+        simpleBlock(BlockRegistry.dark_oak_timber);
+        
+        simpleBlock(BlockRegistry.wattle_and_daub,
+                new ConfiguredModel(models().cubeAll("daub_cob0",modBlockTexture("daub_cob/daub_cob0"))),
+                new ConfiguredModel(models().cubeAll("daub_cob1",modBlockTexture("daub_cob/daub_cob1"))));
+        
+        simpleBlock(BlockRegistry.wicker);
+        simpleBlock(BlockRegistry.oak_shingle);
+        simpleBlock(BlockRegistry.birch_shingle);
+        simpleBlock(BlockRegistry.jungle_shingle);
+        simpleBlock(BlockRegistry.spruce_shingle);
+        simpleBlock(BlockRegistry.acacia_shingle);
+        simpleBlock(BlockRegistry.dark_oak_shingle);
+
+       /* fenceBlock(BlockRegistry.vertical_oak_fence);
+        fenceBlock(BlockRegistry.vertical_spruce_fence);
+        fenceBlock(BlockRegistry.vertical_birch_fence);
+        fenceBlock(BlockRegistry.vertical_jungle_fence);
+        fenceBlock(BlockRegistry.vertical_acacia_fence);
+        fenceBlock(BlockRegistry.vertical_dark_oak_fence);*/
+
+        wallBlock(BlockRegistry.adobe_wall,modBlockTexture("adobe0"));
+
     }
 
     protected void cubeColumn(Block block) {
@@ -131,7 +178,9 @@ public class ModBlockstateProvider extends BlockStateProvider {
     }
 
     protected void verticalPlanks(Block block, Block from) {
-        simpleBlock(block, models().cubeAll(name(block), blockTexture(from)));
+        BlockModelBuilder blockModelBuilder = models().withExistingParent(block.getRegistryName().getPath(),
+                new ResourceLocation(Earthworks.mod_id,"block/vertical_planks")).texture("all",blockTexture(from));
+        getVariantBuilder(block).forAllStates(state -> ConfiguredModel.builder().modelFile(blockModelBuilder).build());
     }
 
     private String name(Block block) {

@@ -33,7 +33,7 @@ public class Earthworks {
 
         @Override
         public ItemStack createIcon() {
-            return new ItemStack(BlockRegistry.wattle);
+            return new ItemStack(BlockRegistry.wattle_and_daub);
         }
 
         @Override

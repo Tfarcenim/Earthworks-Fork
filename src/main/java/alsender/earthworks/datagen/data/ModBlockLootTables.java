@@ -29,21 +29,21 @@ public class ModBlockLootTables extends BlockLootTables {
         registerDropSelfLootTable(BlockRegistry.vertical_acacia_planks);
         registerDropSelfLootTable(BlockRegistry.vertical_dark_oak_planks);
 
-        registerDropSelfLootTable(BlockRegistry.plaster);
+        registerDropSelfLootTable(BlockRegistry.lath_and_plaster);
         registerDropSelfLootTable(BlockRegistry.rammed_earth);
         registerDropSelfLootTable(BlockRegistry.reed);
-        registerDropSelfLootTable(BlockRegistry.slate);
+        registerDropSelfLootTable(BlockRegistry.blue_slate);
         registerDropSelfLootTable(BlockRegistry.green_slate);
         registerDropSelfLootTable(BlockRegistry.purple_slate);
-        registerDropSelfLootTable(BlockRegistry.slate_slabs);
+        registerDropSelfLootTable(BlockRegistry.polished_blue_slate);
         registerDropSelfLootTable(BlockRegistry.polished_green_slate);
         registerDropSelfLootTable(BlockRegistry.polished_purple_slate);
         registerDropSelfLootTable(BlockRegistry.slate_shingle);
         registerDropSelfLootTable(BlockRegistry.green_slate_shingle);
         registerDropSelfLootTable(BlockRegistry.purple_slate_shingle);
-        registerDropSelfLootTable(BlockRegistry.slate_tile);
-        registerDropSelfLootTable(BlockRegistry.green_slate_tile);
-        registerDropSelfLootTable(BlockRegistry.purple_slate_tile);
+        registerDropSelfLootTable(BlockRegistry.blue_slate_tiles);
+        registerDropSelfLootTable(BlockRegistry.green_slate_tiles);
+        registerDropSelfLootTable(BlockRegistry.purple_slate_tiles);
         registerDropSelfLootTable(BlockRegistry.thatch);
         registerDropSelfLootTable(BlockRegistry.oak_timber);
         registerDropSelfLootTable(BlockRegistry.birch_timber);
@@ -51,7 +51,7 @@ public class ModBlockLootTables extends BlockLootTables {
         registerDropSelfLootTable(BlockRegistry.jungle_timber);
         registerDropSelfLootTable(BlockRegistry.acacia_timber);
         registerDropSelfLootTable(BlockRegistry.dark_oak_timber);
-        registerDropSelfLootTable(BlockRegistry.wattle);
+        registerDropSelfLootTable(BlockRegistry.wattle_and_daub);
         registerDropSelfLootTable(BlockRegistry.wicker);
         registerDropSelfLootTable(BlockRegistry.oak_shingle);
         registerDropSelfLootTable(BlockRegistry.birch_shingle);
