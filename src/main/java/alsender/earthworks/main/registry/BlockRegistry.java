@@ -51,7 +51,7 @@ public class BlockRegistry {
     public static Block green_slate_slabs;
     public static Block purple_slate_slabs;
     public static Block slate_shingle;
-    public static Block slate_shingle_verte;
+    public static Block green_slate_shingle;
     public static Block purple_slate_shingle;
     public static Block slate_tile;
     public static Block green_slate_tile;
@@ -65,12 +65,12 @@ public class BlockRegistry {
     public static Block dark_oak_timber;
     public static Block wattle;
     public static Block wicker;
-    public static Block oak_wood_shingle;
-    public static Block birch_wood_shingle;
-    public static Block jungle_wood_shingle;
-    public static Block spruce_wood_shingle;
-    public static Block acacia_wood_shingle;
-    public static Block dark_oak_wood_shingle;
+    public static Block oak_shingle;
+    public static Block birch_shingle;
+    public static Block jungle_shingle;
+    public static Block spruce_shingle;
+    public static Block acacia_shingle;
+    public static Block dark_oak_shingle;
 
     public static Block vertical_oak_fence;
     public static Block vertical_spruce_fence;
@@ -154,26 +154,26 @@ public class BlockRegistry {
     public static Block green_slate_slab_stairs;
     public static Block purple_slate_slab_stairs;
     public static Block slate_shingle_stairs;
-    public static Block stair_slate_shingle_verte;
-    public static Block stair_slate_shingle_purple;
-    public static Block stair_slate_tile;
-    public static Block stair_slate_tile_verte;
-    public static Block stair_slate_tile_purple;
+    public static Block green_slate_shingle_stairs;
+    public static Block purple_slate_shingle_stairs;
+    public static Block slate_tile_stairs;
+    public static Block green_slate_tile_stairs;
+    public static Block purple_slate_tile_stairs;
     public static Block stair_thatch;
-    public static Block stair_timber_oak;
-    public static Block stair_timber_birch;
-    public static Block stair_timber_spruce;
-    public static Block stair_timber_jungle;
-    public static Block stair_timber_acacia;
-    public static Block stair_timber_dark_oak;
-    public static Block stair_wattle;
-    public static Block stair_wicker;
-    public static Block stair_wood_shingle_oak;
-    public static Block stair_wood_shingle_spruce;
-    public static Block stair_wood_shingle_birch;
-    public static Block stair_wood_shingle_jungle;
-    public static Block stair_wood_shingle_acacia;
-    public static Block stair_wood_shingle_dark_oak;
+    public static Block oak_timber_stairs;
+    public static Block birch_timber_stairs;
+    public static Block spruce_timber_stairs;
+    public static Block jungle_timber_stairs;
+    public static Block acacia_timber_stairs;
+    public static Block dark_oak_timber_stairs;
+    public static Block wattle_stairs;
+    public static Block wicker_stairs;
+    public static Block oak_shingle_stairs;
+    public static Block spruce_shingle_stairs;
+    public static Block birch_shingle_stairs;
+    public static Block jungle_shingle_stairs;
+    public static Block acacia_shingle_stairs;
+    public static Block dark_oak_shingle_stairs;
 
     public static Block adobe_wall;
     public static Block wall_chalk;
@@ -322,7 +322,7 @@ public class BlockRegistry {
         green_slate_slabs = new Block(Block.Properties.create(Material.ROCK).sound(SoundType.STONE).hardnessAndResistance( 1.5F, 10.0F));
         purple_slate_slabs = new Block(Block.Properties.create(Material.ROCK).sound(SoundType.STONE).hardnessAndResistance( 1.5F, 10.0F));
         slate_shingle = new ModBlockFacing(AbstractBlock.Properties.create(Material.ROCK).sound(SoundType.STONE).hardnessAndResistance(1.2F, 10.0F));
-        slate_shingle_verte = new ModBlockFacing(AbstractBlock.Properties.create(Material.ROCK).sound(SoundType.STONE).hardnessAndResistance(1.2F, 10.0F));
+        green_slate_shingle = new ModBlockFacing(AbstractBlock.Properties.create(Material.ROCK).sound(SoundType.STONE).hardnessAndResistance(1.2F, 10.0F));
         purple_slate_shingle = new ModBlockFacing(AbstractBlock.Properties.create(Material.ROCK).sound(SoundType.STONE).hardnessAndResistance(1.2F, 10.0F));
         slate_tile = new Block(AbstractBlock.Properties.create(Material.ROCK).sound(SoundType.STONE).hardnessAndResistance( 1.2F, 10.0F));
         green_slate_tile = new Block(AbstractBlock.Properties.create(Material.ROCK).sound(SoundType.STONE).hardnessAndResistance( 1.2F, 10.0F));
@@ -336,12 +336,12 @@ public class BlockRegistry {
         wattle = new Block(AbstractBlock.Properties.create(Material.ROCK).sound( SoundType.STONE).hardnessAndResistance( 1.5F, 8.33F));
         wicker = new Block(AbstractBlock.Properties.create(Material.WOOD).sound(SoundType.CLOTH).hardnessAndResistance( 0.8F, 1.0F));
 
-        oak_wood_shingle = new Block(AbstractBlock.Properties.create(Material.WOOD).sound(SoundType.WOOD).hardnessAndResistance( 2.0F, 3.33F));
-        birch_wood_shingle = new Block(AbstractBlock.Properties.create(Material.WOOD).sound( SoundType.WOOD).hardnessAndResistance( 2.0F, 3.33F));
-        jungle_wood_shingle = new Block(AbstractBlock.Properties.create(Material.WOOD).sound( SoundType.WOOD).hardnessAndResistance( 2.0F, 3.33F));
-        spruce_wood_shingle = new Block(AbstractBlock.Properties.create(Material.WOOD).sound( SoundType.WOOD).hardnessAndResistance( 2.0F, 3.33F));
-        acacia_wood_shingle = new Block(AbstractBlock.Properties.create(Material.WOOD).sound(SoundType.WOOD).hardnessAndResistance( 2.0F, 3.33F));
-        dark_oak_wood_shingle = new Block(AbstractBlock.Properties.create(Material.WOOD).sound( SoundType.WOOD).hardnessAndResistance( 2.0F, 3.33F));
+        oak_shingle = new Block(AbstractBlock.Properties.create(Material.WOOD).sound(SoundType.WOOD).hardnessAndResistance( 2.0F, 3.33F));
+        birch_shingle = new Block(AbstractBlock.Properties.create(Material.WOOD).sound( SoundType.WOOD).hardnessAndResistance( 2.0F, 3.33F));
+        jungle_shingle = new Block(AbstractBlock.Properties.create(Material.WOOD).sound( SoundType.WOOD).hardnessAndResistance( 2.0F, 3.33F));
+        spruce_shingle = new Block(AbstractBlock.Properties.create(Material.WOOD).sound( SoundType.WOOD).hardnessAndResistance( 2.0F, 3.33F));
+        acacia_shingle = new Block(AbstractBlock.Properties.create(Material.WOOD).sound(SoundType.WOOD).hardnessAndResistance( 2.0F, 3.33F));
+        dark_oak_shingle = new Block(AbstractBlock.Properties.create(Material.WOOD).sound( SoundType.WOOD).hardnessAndResistance( 2.0F, 3.33F));
 
 
         vertical_oak_planks = new Block(AbstractBlock.Properties.from(Blocks.OAK_PLANKS));
@@ -389,7 +389,7 @@ public class BlockRegistry {
         slab_slate_slab_green = new SlabBlock(Block.Properties.from(green_slate_slabs));
         slab_slate_slab_purple = new SlabBlock(Block.Properties.from(purple_slate_slabs));
         slab_slate_shingle = new SlabBlock(Block.Properties.from(slate_shingle));
-        slab_slate_shingle_verte = new SlabBlock(Block.Properties.from(slate_shingle_verte));
+        slab_slate_shingle_verte = new SlabBlock(Block.Properties.from(green_slate_shingle));
         slab_slate_shingle_purple = new SlabBlock(Block.Properties.from(purple_slate_shingle));
         slate_tile_slab = new SlabBlock(Block.Properties.from(slate_tile));
         green_slate_tile_slab = new SlabBlock(Block.Properties.from(green_slate_tile));
@@ -402,12 +402,12 @@ public class BlockRegistry {
         slab_timber_dark_oak = new SlabBlock(Block.Properties.from(dark_oak_timber));
         wattle_slab = new SlabBlock(Block.Properties.from(wattle));
         wicker_slab = new SlabBlock(Block.Properties.from(wicker));
-        oak_shingle_slab = new SlabBlock(Block.Properties.from(oak_wood_shingle));
-        spruce_shingle_slab = new SlabBlock(Block.Properties.from(oak_wood_shingle));
-        birch_shingle_slab = new SlabBlock(Block.Properties.from(oak_wood_shingle));
-        jungle_shingle_slab = new SlabBlock(Block.Properties.from(oak_wood_shingle));
-        acacia_shingle_slab = new SlabBlock(Block.Properties.from(oak_wood_shingle));
-        dark_oak_shingle_slab = new SlabBlock(Block.Properties.from(oak_wood_shingle));
+        oak_shingle_slab = new SlabBlock(Block.Properties.from(oak_shingle));
+        spruce_shingle_slab = new SlabBlock(Block.Properties.from(oak_shingle));
+        birch_shingle_slab = new SlabBlock(Block.Properties.from(oak_shingle));
+        jungle_shingle_slab = new SlabBlock(Block.Properties.from(oak_shingle));
+        acacia_shingle_slab = new SlabBlock(Block.Properties.from(oak_shingle));
+        dark_oak_shingle_slab = new SlabBlock(Block.Properties.from(oak_shingle));
 
         adobe_stairs = new StairsBlock(adobe.getDefaultState(), Block.Properties.from(adobe));
         chalk_stairs = new StairsBlock(chalk.getDefaultState(),Block.Properties.from(chalk));
@@ -435,25 +435,25 @@ public class BlockRegistry {
         green_slate_slab_stairs = new StairsBlock(green_slate_slabs.getDefaultState(),Block.Properties.from(green_slate_slabs));
         purple_slate_slab_stairs = new StairsBlock(purple_slate_slabs.getDefaultState(),Block.Properties.from(purple_slate_slabs));
         slate_shingle_stairs = new StairsBlock(slate_shingle.getDefaultState(),Block.Properties.from(slate_shingle));
-        stair_slate_shingle_verte = new StairsBlock(slate_shingle_verte.getDefaultState(),Block.Properties.from(slate_shingle_verte));
-        stair_slate_shingle_purple = new StairsBlock(purple_slate_shingle.getDefaultState(),Block.Properties.from(purple_slate_shingle));
-        stair_slate_tile = new StairsBlock(slate_tile.getDefaultState(),Block.Properties.from(slate_tile));
-        stair_slate_tile_verte = new StairsBlock(green_slate_tile.getDefaultState(),Block.Properties.from(green_slate_tile));
-        stair_slate_tile_purple = new StairsBlock(purple_slate_tile.getDefaultState(),Block.Properties.from(purple_slate_tile));
-        stair_timber_oak = new StairsBlock(oak_timber.getDefaultState(),Block.Properties.from(oak_timber));
-        stair_timber_spruce = new StairsBlock(spruce_timber.getDefaultState(),Block.Properties.from(spruce_timber));
-        stair_timber_birch = new StairsBlock(birch_timber.getDefaultState(),Block.Properties.from(birch_timber));
-        stair_timber_jungle = new StairsBlock(jungle_timber.getDefaultState(),Block.Properties.from(jungle_timber));
-        stair_timber_acacia = new StairsBlock(acacia_timber.getDefaultState(),Block.Properties.from(acacia_timber));
-        stair_timber_dark_oak = new StairsBlock(dark_oak_timber.getDefaultState(),Block.Properties.from(dark_oak_timber));
-        stair_wattle = new StairsBlock(wattle.getDefaultState(),Block.Properties.from(wattle));
-        stair_wicker = new StairsBlock(wicker.getDefaultState(),Block.Properties.from(wicker));
-        stair_wood_shingle_oak = new StairsBlock(oak_wood_shingle.getDefaultState(),Block.Properties.from(oak_wood_shingle));
-        stair_wood_shingle_spruce = new StairsBlock(oak_wood_shingle.getDefaultState(),Block.Properties.from(oak_wood_shingle));
-        stair_wood_shingle_birch = new StairsBlock(oak_wood_shingle.getDefaultState(),Block.Properties.from(oak_wood_shingle));
-        stair_wood_shingle_jungle = new StairsBlock(oak_wood_shingle.getDefaultState(),Block.Properties.from(oak_wood_shingle));
-        stair_wood_shingle_acacia = new StairsBlock(oak_wood_shingle.getDefaultState(),Block.Properties.from(oak_wood_shingle));
-        stair_wood_shingle_dark_oak = new StairsBlock(oak_wood_shingle.getDefaultState(),Block.Properties.from(oak_wood_shingle));
+        green_slate_shingle_stairs = new StairsBlock(green_slate_shingle.getDefaultState(),Block.Properties.from(green_slate_shingle));
+        purple_slate_shingle_stairs = new StairsBlock(purple_slate_shingle.getDefaultState(),Block.Properties.from(purple_slate_shingle));
+        slate_tile_stairs = new StairsBlock(slate_tile.getDefaultState(),Block.Properties.from(slate_tile));
+        green_slate_tile_stairs = new StairsBlock(green_slate_tile.getDefaultState(),Block.Properties.from(green_slate_tile));
+        purple_slate_tile_stairs = new StairsBlock(purple_slate_tile.getDefaultState(),Block.Properties.from(purple_slate_tile));
+        oak_timber_stairs = new StairsBlock(oak_timber.getDefaultState(),Block.Properties.from(oak_timber));
+        spruce_timber_stairs = new StairsBlock(spruce_timber.getDefaultState(),Block.Properties.from(spruce_timber));
+        birch_timber_stairs = new StairsBlock(birch_timber.getDefaultState(),Block.Properties.from(birch_timber));
+        jungle_timber_stairs = new StairsBlock(jungle_timber.getDefaultState(),Block.Properties.from(jungle_timber));
+        acacia_timber_stairs = new StairsBlock(acacia_timber.getDefaultState(),Block.Properties.from(acacia_timber));
+        dark_oak_timber_stairs = new StairsBlock(dark_oak_timber.getDefaultState(),Block.Properties.from(dark_oak_timber));
+        wattle_stairs = new StairsBlock(wattle.getDefaultState(),Block.Properties.from(wattle));
+        wicker_stairs = new StairsBlock(wicker.getDefaultState(),Block.Properties.from(wicker));
+        oak_shingle_stairs = new StairsBlock(oak_shingle.getDefaultState(),Block.Properties.from(oak_shingle));
+        spruce_shingle_stairs = new StairsBlock(spruce_shingle.getDefaultState(),Block.Properties.from(oak_shingle));
+        birch_shingle_stairs = new StairsBlock(birch_shingle.getDefaultState(),Block.Properties.from(oak_shingle));
+        jungle_shingle_stairs = new StairsBlock(oak_shingle.getDefaultState(),Block.Properties.from(oak_shingle));
+        acacia_shingle_stairs = new StairsBlock(oak_shingle.getDefaultState(),Block.Properties.from(oak_shingle));
+        dark_oak_shingle_stairs = new StairsBlock(oak_shingle.getDefaultState(),Block.Properties.from(oak_shingle));
 
         adobe_wall = new WallBlock(Block.Properties.from(adobe));
         wall_chalk = new WallBlock(Block.Properties.from(chalk));
@@ -475,7 +475,7 @@ public class BlockRegistry {
         wall_slate_slab_green = new WallBlock(Block.Properties.from(green_slate_slabs));
         wall_slate_slab_purple = new WallBlock(Block.Properties.from(purple_slate_slabs));
         wall_slate_shingle = new WallBlock(Block.Properties.from(slate_shingle));
-        wall_slate_shingle_verte = new WallBlock(Block.Properties.from(slate_shingle_verte));
+        wall_slate_shingle_verte = new WallBlock(Block.Properties.from(green_slate_shingle));
         wall_slate_shingle_purple = new WallBlock(Block.Properties.from(purple_slate_shingle));
         wall_slate_tile = new WallBlock(Block.Properties.from(slate_tile));
         wall_slate_tile_verte = new WallBlock(Block.Properties.from(green_slate_tile));
@@ -488,12 +488,12 @@ public class BlockRegistry {
         wall_timber_dark_oak = new WallBlock(Block.Properties.from(dark_oak_timber));
         wall_wattle = new WallBlock(Block.Properties.from(wattle));
         wall_wicker = new WallBlock(Block.Properties.from(wicker));
-        wall_wood_shingle_oak = new WallBlock(Block.Properties.from(oak_wood_shingle));
-        wall_wood_shingle_spruce = new WallBlock(Block.Properties.from(oak_wood_shingle));
-        wall_wood_shingle_birch = new WallBlock(Block.Properties.from(oak_wood_shingle));
-        wall_wood_shingle_jungle = new WallBlock(Block.Properties.from(oak_wood_shingle));
-        wall_wood_shingle_acacia = new WallBlock(Block.Properties.from(oak_wood_shingle));
-        wall_wood_shingle_dark_oak = new WallBlock(Block.Properties.from(oak_wood_shingle));
+        wall_wood_shingle_oak = new WallBlock(Block.Properties.from(oak_shingle));
+        wall_wood_shingle_spruce = new WallBlock(Block.Properties.from(oak_shingle));
+        wall_wood_shingle_birch = new WallBlock(Block.Properties.from(oak_shingle));
+        wall_wood_shingle_jungle = new WallBlock(Block.Properties.from(oak_shingle));
+        wall_wood_shingle_acacia = new WallBlock(Block.Properties.from(oak_shingle));
+        wall_wood_shingle_dark_oak = new WallBlock(Block.Properties.from(oak_shingle));
 
         //  QUARK COMPAT    //
 

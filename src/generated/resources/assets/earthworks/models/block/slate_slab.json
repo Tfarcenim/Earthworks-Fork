@@ -1,6 +1,3 @@
 {
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "earthworks:block/slate_slab"
-  }
+  "parent": "minecraft:block/slab"
 }

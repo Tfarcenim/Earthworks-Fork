@@ -34,6 +34,14 @@ public class ModBlockstateProvider extends BlockStateProvider {
                 e.printStackTrace();
             }
         }
+
+        verticalPlanks(BlockRegistry.vertical_oak_planks,Blocks.OAK_PLANKS);
+        verticalPlanks(BlockRegistry.vertical_spruce_planks,Blocks.SPRUCE_PLANKS);
+        verticalPlanks(BlockRegistry.vertical_birch_planks,Blocks.BIRCH_PLANKS);
+        verticalPlanks(BlockRegistry.vertical_jungle_planks,Blocks.JUNGLE_PLANKS);
+        verticalPlanks(BlockRegistry.vertical_acacia_planks,Blocks.ACACIA_PLANKS);
+        verticalPlanks(BlockRegistry.vertical_dark_oak_planks,Blocks.DARK_OAK_PLANKS);
+
     }
 
 
@@ -54,7 +62,15 @@ public class ModBlockstateProvider extends BlockStateProvider {
     }
 
     public static boolean simple6sidedBlock(Block block) {
-        return !(block instanceof ModBlockFacing) && !(block instanceof StairsBlock) && !(block instanceof SlabBlock) && !(block instanceof WallBlock);
+        return !(block instanceof ModBlockFacing) && !(block instanceof StairsBlock) && !(block instanceof SlabBlock) && !(block instanceof WallBlock) && !block.getRegistryName().getPath().contains("vertical");
+    }
+
+    protected void verticalPlanks(Block block,Block from) {
+        simpleBlock(block, models().cubeAll(name(block), blockTexture(from)));
+    }
+
+    private String name(Block block) {
+        return block.getRegistryName().getPath();
     }
 
     protected void simpleSlab(SlabBlock block) {

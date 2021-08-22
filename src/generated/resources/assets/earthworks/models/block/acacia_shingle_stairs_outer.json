@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "side": "earthworks:block/acacia_shingle",
+    "bottom": "earthworks:block/acacia_shingle",
+    "top": "earthworks:block/acacia_shingle"
+  }
+}
