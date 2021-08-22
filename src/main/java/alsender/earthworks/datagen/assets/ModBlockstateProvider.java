@@ -2,9 +2,7 @@ package alsender.earthworks.datagen.assets;
 
 import alsender.earthworks.block.ModBlockFacing;
 import alsender.earthworks.main.registry.BlockRegistry;
-import net.minecraft.block.Block;
-import net.minecraft.block.SlabBlock;
-import net.minecraft.block.StairsBlock;
+import net.minecraft.block.*;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourcePackType;
 import net.minecraft.util.ResourceLocation;
@@ -56,7 +54,7 @@ public class ModBlockstateProvider extends BlockStateProvider {
     }
 
     public static boolean simple6sidedBlock(Block block) {
-        return !(block instanceof ModBlockFacing) && !(block instanceof StairsBlock) && !(block instanceof SlabBlock);
+        return !(block instanceof ModBlockFacing) && !(block instanceof StairsBlock) && !(block instanceof SlabBlock) && !(block instanceof WallBlock);
     }
 
     protected void simpleSlab(SlabBlock block) {
@@ -65,6 +63,10 @@ public class ModBlockstateProvider extends BlockStateProvider {
         String slabPath = id.getPath().substring(0, id.getPath().length() - 5);
 
         Block original = ForgeRegistries.BLOCKS.getValue(new ResourceLocation(id.getNamespace(), slabPath));
+
+        if (original == Blocks.AIR) {
+            System.out.println("No original block found for "+id+" tried "+slabPath);
+        }
 
         slabBlock(block, block.getRegistryName(), new ResourceLocation(id.getNamespace(), "block/" + original.getRegistryName().getPath()));
     }
@@ -75,6 +77,10 @@ public class ModBlockstateProvider extends BlockStateProvider {
         String stairsPath = id.getPath().substring(0, id.getPath().length() - 7);
 
         Block original = ForgeRegistries.BLOCKS.getValue(new ResourceLocation(id.getNamespace(), stairsPath));
+
+        if (original == Blocks.AIR) {
+            System.out.println("No original block found for "+id+" tried "+stairsPath);
+        }
 
         stairsBlock(block, new ResourceLocation(id.getNamespace(), "block/" + original.getRegistryName().getPath()));
     }

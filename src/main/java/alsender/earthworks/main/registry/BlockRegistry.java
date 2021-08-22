@@ -47,9 +47,9 @@ public class BlockRegistry {
     public static Block slate;
     public static Block slate_green;
     public static Block slate_purple;
-    public static Block slate_slab;
-    public static Block green_slate_slab;
-    public static Block purple_slate_slab;
+    public static Block slate_slabs;
+    public static Block green_slate_slabs;
+    public static Block purple_slate_slabs;
     public static Block slate_shingle;
     public static Block slate_shingle_verte;
     public static Block purple_slate_shingle;
@@ -79,17 +79,17 @@ public class BlockRegistry {
     public static Block vertical_acacia_fence;
     public static Block vertical_dark_oak_fence;
 
-    public static Block slab_adobe;
+    public static Block adobe_slab;
     public static Block chalk_slab;
-    public static Block slab_cinder;
-    public static Block slab_cob;
-    public static Block slab_concrete;
-    public static Block slab_cordwood;
-    public static Block slab_dry_stone;
-    public static Block slab_gabion0;
-    public static Block slab_gabion1;
-    public static Block slab_gabion2;
-    public static Block slab_mud;
+    public static Block cinder_slab;
+    public static Block cob_slab;
+    public static Block concrete_slab;
+    public static Block cordwood_slab;
+    public static Block dry_stone_slab;
+    public static Block gabion0_slab;
+    public static Block gabion1_slab;
+    public static Block gabion2_slab;
+    public static Block mud_slab;
     public static Block vertical_oak_slab;
     public static Block vertical_spruce_slab;
     public static Block vertical_birch_slab;
@@ -97,9 +97,9 @@ public class BlockRegistry {
     public static Block vertical_acacia_slab;
     public static Block vertical_dark_oak_slab;
     public static Block plaster_slab;
-    public static Block slab_rammed_earth;
-    public static Block slab_reed;
-    public static Block slab_slate;
+    public static Block rammed_earth_slab;
+    public static Block reed_slab;
+    public static Block slate_slab;
     public static Block slab_slate_green;
     public static Block slab_slate_purple;
     public static Block slab_slate_slab;
@@ -318,9 +318,9 @@ public class BlockRegistry {
         slate = new Block(Block.Properties.create(Material.ROCK).sound(SoundType.STONE).hardnessAndResistance( 1.5F, 10.0F));
         slate_green = new Block(Block.Properties.create(Material.ROCK).sound(SoundType.STONE).hardnessAndResistance( 1.5F, 10.0F));
         slate_purple = new Block(Block.Properties.create(Material.ROCK).sound(SoundType.STONE).hardnessAndResistance( 1.5F, 10.0F));
-        slate_slab = new Block(Block.Properties.create(Material.ROCK).sound(SoundType.STONE).hardnessAndResistance( 1.5F, 10.0F));
-        green_slate_slab = new Block(Block.Properties.create(Material.ROCK).sound(SoundType.STONE).hardnessAndResistance( 1.5F, 10.0F));
-        purple_slate_slab = new Block(Block.Properties.create(Material.ROCK).sound(SoundType.STONE).hardnessAndResistance( 1.5F, 10.0F));
+        slate_slabs = new Block(Block.Properties.create(Material.ROCK).sound(SoundType.STONE).hardnessAndResistance( 1.5F, 10.0F));
+        green_slate_slabs = new Block(Block.Properties.create(Material.ROCK).sound(SoundType.STONE).hardnessAndResistance( 1.5F, 10.0F));
+        purple_slate_slabs = new Block(Block.Properties.create(Material.ROCK).sound(SoundType.STONE).hardnessAndResistance( 1.5F, 10.0F));
         slate_shingle = new ModBlockFacing(AbstractBlock.Properties.create(Material.ROCK).sound(SoundType.STONE).hardnessAndResistance(1.2F, 10.0F));
         slate_shingle_verte = new ModBlockFacing(AbstractBlock.Properties.create(Material.ROCK).sound(SoundType.STONE).hardnessAndResistance(1.2F, 10.0F));
         purple_slate_shingle = new ModBlockFacing(AbstractBlock.Properties.create(Material.ROCK).sound(SoundType.STONE).hardnessAndResistance(1.2F, 10.0F));
@@ -363,17 +363,17 @@ public class BlockRegistry {
         vertical_dark_oak_fence = new FenceBlock(AbstractBlock.Properties.from(Blocks.DARK_OAK_FENCE));
 
 
-        slab_adobe = new SlabBlock(Block.Properties.from(adobe));
+        adobe_slab = new SlabBlock(Block.Properties.from(adobe));
         chalk_slab = new SlabBlock(Block.Properties.from(chalk));
-        slab_cinder = new SlabBlock(Block.Properties.from(cinder));
-        slab_cob = new SlabBlock(Block.Properties.from(cob));
-        slab_concrete = new SlabBlock(Block.Properties.from(concrete));
-        slab_cordwood = new SlabBlock(Block.Properties.from(cordwood));
-        slab_dry_stone = new SlabBlock(Block.Properties.from(dry_stone));
-        slab_gabion0 = new SlabBlock(Block.Properties.from(GRAVEL_GABION));
-        slab_gabion1 = new SlabBlock(Block.Properties.from(SAND_GABION));
-        slab_gabion2 = new SlabBlock(Block.Properties.from(DIRT_GABION));
-        slab_mud = new SlabBlock(Block.Properties.from(mud));
+        cinder_slab = new SlabBlock(Block.Properties.from(cinder));
+        cob_slab = new SlabBlock(Block.Properties.from(cob));
+        concrete_slab = new SlabBlock(Block.Properties.from(concrete));
+        cordwood_slab = new SlabBlock(Block.Properties.from(cordwood));
+        dry_stone_slab = new SlabBlock(Block.Properties.from(dry_stone));
+        gabion0_slab = new SlabBlock(Block.Properties.from(GRAVEL_GABION));
+        gabion1_slab = new SlabBlock(Block.Properties.from(SAND_GABION));
+        gabion2_slab = new SlabBlock(Block.Properties.from(DIRT_GABION));
+        mud_slab = new SlabBlock(Block.Properties.from(mud));
         vertical_oak_slab = new SlabBlock(Block.Properties.from(oak_planks_vert));
         vertical_spruce_slab = new SlabBlock(Block.Properties.from(spruce_planks_vert));
         vertical_birch_slab = new SlabBlock(Block.Properties.from(birch_planks_vert));
@@ -381,13 +381,13 @@ public class BlockRegistry {
         vertical_acacia_slab = new SlabBlock(Block.Properties.from(acacia_planks_vert));
         vertical_dark_oak_slab = new SlabBlock(Block.Properties.from(dark_oak_planks_vert));
         plaster_slab = new SlabBlock(Block.Properties.from(plaster));
-        slab_rammed_earth = new SlabBlock(Block.Properties.from(rammed_earth));
-        slab_slate = new SlabBlock(Block.Properties.from(slate));
+        rammed_earth_slab = new SlabBlock(Block.Properties.from(rammed_earth));
+        slate_slab = new SlabBlock(Block.Properties.from(slate));
         slab_slate_green = new SlabBlock(Block.Properties.from(slate_green));
         slab_slate_purple = new SlabBlock(Block.Properties.from(slate_purple));
-        slab_slate_slab = new SlabBlock(Block.Properties.from(slate_slab));
-        slab_slate_slab_green = new SlabBlock(Block.Properties.from(green_slate_slab));
-        slab_slate_slab_purple = new SlabBlock(Block.Properties.from(purple_slate_slab));
+        slab_slate_slab = new SlabBlock(Block.Properties.from(slate_slabs));
+        slab_slate_slab_green = new SlabBlock(Block.Properties.from(green_slate_slabs));
+        slab_slate_slab_purple = new SlabBlock(Block.Properties.from(purple_slate_slabs));
         slab_slate_shingle = new SlabBlock(Block.Properties.from(slate_shingle));
         slab_slate_shingle_verte = new SlabBlock(Block.Properties.from(slate_shingle_verte));
         slab_slate_shingle_purple = new SlabBlock(Block.Properties.from(purple_slate_shingle));
@@ -431,9 +431,9 @@ public class BlockRegistry {
         stair_slate = new StairsBlock(slate.getDefaultState(),Block.Properties.from(slate));
         stair_slate_green = new StairsBlock(slate_green.getDefaultState(),Block.Properties.from(slate_green));
         stair_slate_purple = new StairsBlock(slate_purple.getDefaultState(),Block.Properties.from(slate_purple));
-        stair_slate_slab = new StairsBlock(slate_slab.getDefaultState(),Block.Properties.from(slate_slab));
-        stair_slate_slab_green = new StairsBlock(green_slate_slab.getDefaultState(),Block.Properties.from(green_slate_slab));
-        purple_slate_slab_stairs = new StairsBlock(purple_slate_slab.getDefaultState(),Block.Properties.from(purple_slate_slab));
+        stair_slate_slab = new StairsBlock(slate_slabs.getDefaultState(),Block.Properties.from(slate_slabs));
+        stair_slate_slab_green = new StairsBlock(green_slate_slabs.getDefaultState(),Block.Properties.from(green_slate_slabs));
+        purple_slate_slab_stairs = new StairsBlock(purple_slate_slabs.getDefaultState(),Block.Properties.from(purple_slate_slabs));
         stair_slate_shingle = new StairsBlock(slate_shingle.getDefaultState(),Block.Properties.from(slate_shingle));
         stair_slate_shingle_verte = new StairsBlock(slate_shingle_verte.getDefaultState(),Block.Properties.from(slate_shingle_verte));
         stair_slate_shingle_purple = new StairsBlock(purple_slate_shingle.getDefaultState(),Block.Properties.from(purple_slate_shingle));
@@ -471,9 +471,9 @@ public class BlockRegistry {
         wall_slate = new WallBlock(Block.Properties.from(slate));
         wall_slate_green = new WallBlock(Block.Properties.from(slate_green));
         wall_slate_purple = new WallBlock(Block.Properties.from(slate_purple));
-        wall_slate_slab = new WallBlock(Block.Properties.from(slate_slab));
-        wall_slate_slab_green = new WallBlock(Block.Properties.from(green_slate_slab));
-        wall_slate_slab_purple = new WallBlock(Block.Properties.from(purple_slate_slab));
+        wall_slate_slab = new WallBlock(Block.Properties.from(slate_slabs));
+        wall_slate_slab_green = new WallBlock(Block.Properties.from(green_slate_slabs));
+        wall_slate_slab_purple = new WallBlock(Block.Properties.from(purple_slate_slabs));
         wall_slate_shingle = new WallBlock(Block.Properties.from(slate_shingle));
         wall_slate_shingle_verte = new WallBlock(Block.Properties.from(slate_shingle_verte));
         wall_slate_shingle_purple = new WallBlock(Block.Properties.from(purple_slate_shingle));
@@ -500,7 +500,7 @@ public class BlockRegistry {
         reed = new RotatedPillarBlock(Block.Properties.create(Material.LEAVES).sound(SoundType.CLOTH).hardnessAndResistance( 0.8F, 1.0F));
         thatch = new RotatedPillarBlock(Block.Properties.create(Material.LEAVES).sound(SoundType.CLOTH).hardnessAndResistance(  0.8F, 1.0F));
 
-        slab_reed = new SlabBlock(Block.Properties.from(reed));
+        reed_slab = new SlabBlock(Block.Properties.from(reed));
 
         slab_thatch = new SlabBlock(Block.Properties.from(thatch));
 
