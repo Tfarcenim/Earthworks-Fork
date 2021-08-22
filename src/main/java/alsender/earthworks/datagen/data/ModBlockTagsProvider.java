@@ -16,8 +16,8 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
     @Override
     protected void registerTags() {
         getOrCreateBuilder(ModBlockTags.timber_log).add(
-                BlockRegistry.timber_spruce,BlockRegistry.timber_birch,
-                BlockRegistry.timber_jungle,BlockRegistry.acacia_timber
-        ,BlockRegistry.timber_dark_oak);
+                BlockRegistry.spruce_timber,BlockRegistry.birch_timber,
+                BlockRegistry.jungle_timber,BlockRegistry.acacia_timber
+        ,BlockRegistry.dark_oak_timber);
     }
 }

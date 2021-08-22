@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "earthworks:slate_green_slab"
+          "name": "earthworks:cinder_slab"
         }
       ],
       "conditions": [

@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "earthworks:itemslab_planks_vert2"
+          "name": "earthworks:vertical_birch_slab"
         }
       ],
       "conditions": [

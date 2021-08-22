@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "earthworks:itemslab_plaster"
+          "name": "earthworks:plaster_slab"
         }
       ],
       "conditions": [

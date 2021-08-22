@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "earthworks:itemslab_planks_vert5"
+          "name": "earthworks:vertical_dark_oak_slab"
         }
       ],
       "conditions": [
