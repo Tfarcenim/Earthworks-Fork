@@ -57,9 +57,9 @@ public class ModBlockstateProvider extends BlockStateProvider {
         simpleBlock(BlockRegistry.polished_blue_slate);
         simpleBlock(BlockRegistry.polished_green_slate);
         simpleBlock(BlockRegistry.polished_purple_slate);
-        simpleBlock(BlockRegistry.slate_shingle);
-        simpleBlock(BlockRegistry.green_slate_shingle);
-        simpleBlock(BlockRegistry.purple_slate_shingle);
+        simpleBlock(BlockRegistry.blue_slate_shingles);
+        simpleBlock(BlockRegistry.green_slate_shingles);
+        simpleBlock(BlockRegistry.purple_slate_shingles);
         simpleBlock(BlockRegistry.blue_slate_tiles);
         simpleBlock(BlockRegistry.green_slate_tiles);
         simpleBlock(BlockRegistry.purple_slate_tiles);
@@ -78,12 +78,12 @@ public class ModBlockstateProvider extends BlockStateProvider {
                 new ConfiguredModel(models().cubeAll("daub_cob1",modBlockTexture("daub_cob/daub_cob1"))));
         
         simpleBlock(BlockRegistry.wicker);
-        simpleBlock(BlockRegistry.oak_shingle);
-        simpleBlock(BlockRegistry.birch_shingle);
-        simpleBlock(BlockRegistry.jungle_shingle);
-        simpleBlock(BlockRegistry.spruce_shingle);
-        simpleBlock(BlockRegistry.acacia_shingle);
-        simpleBlock(BlockRegistry.dark_oak_shingle);
+        simpleBlock(BlockRegistry.oak_wood_shakes);
+        simpleBlock(BlockRegistry.birch_wood_shakes);
+        simpleBlock(BlockRegistry.jungle_wood_shakes);
+        simpleBlock(BlockRegistry.spruce_wood_shakes);
+        simpleBlock(BlockRegistry.acacia_wood_shakes);
+        simpleBlock(BlockRegistry.dark_oak_wood_shakes);
 
        /* fenceBlock(BlockRegistry.vertical_oak_fence);
         fenceBlock(BlockRegistry.vertical_spruce_fence);
