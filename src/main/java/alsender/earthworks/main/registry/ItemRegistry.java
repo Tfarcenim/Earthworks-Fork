@@ -21,15 +21,14 @@ import java.util.Locale;
 @Mod.EventBusSubscriber
 public class ItemRegistry {
 
-    public static Item
-            item_adobe;
-    public static Item item_cob;
-    public static Item item_lime_plaster;
-    public static Item item_mud;
-    public static Item item_chalk;
-    public static Item item_quicklime;
-    public static Item item_slaked_lime;
-    public static Item item_timber;
+    public static Item adobe_brick;
+    public static Item cob_ball;
+    public static Item lime_plaster;
+    public static Item mud_ball;
+    public static Item chalk_dust;
+    public static Item quicklime;
+    public static Item slaked_lime;
+    public static Item timber_framing;
 
     public static Item
 
@@ -99,14 +98,14 @@ public class ItemRegistry {
 
     public static void initItems(RegistryEvent.Register<Item> event) {
         IForgeRegistry<Item> r = event.getRegistry();
-        item_adobe = new Item(new Item.Properties().group(Earthworks.creativeTab));
-        item_chalk = new Item(new Item.Properties().group(Earthworks.creativeTab));
-        item_cob = new Item(new Item.Properties().group(Earthworks.creativeTab));
-        item_lime_plaster = new Item(new Item.Properties().group(Earthworks.creativeTab));
-        item_mud = new Item(new Item.Properties().group(Earthworks.creativeTab));
-        item_quicklime = new Item(new Item.Properties().group(Earthworks.creativeTab));
-        item_slaked_lime = new Item(new Item.Properties().group(Earthworks.creativeTab));
-        item_timber = new Item(new Item.Properties().group(Earthworks.creativeTab));
+        adobe_brick = new Item(new Item.Properties().group(Earthworks.creativeTab));
+        chalk_dust = new Item(new Item.Properties().group(Earthworks.creativeTab));
+        cob_ball = new Item(new Item.Properties().group(Earthworks.creativeTab));
+        lime_plaster = new Item(new Item.Properties().group(Earthworks.creativeTab));
+        mud_ball = new Item(new Item.Properties().group(Earthworks.creativeTab));
+        quicklime = new Item(new Item.Properties().group(Earthworks.creativeTab));
+        slaked_lime = new Item(new Item.Properties().group(Earthworks.creativeTab));
+        timber_framing = new Item(new Item.Properties().group(Earthworks.creativeTab));
 
         tool_square = new ModItemTool(new Item.Properties().group(Earthworks.creativeTab).maxDamage(60));
         tool_Acheulean = new ModItemTool(new Item.Properties().group(Earthworks.creativeTab).maxDamage(132));
@@ -261,7 +260,7 @@ public class ItemRegistry {
         blockItem(BlockRegistry.dark_oak_shingle_stairs);
 
         blockItem(BlockRegistry.adobe_wall);
-        blockItem(BlockRegistry.wall_chalk);
+        blockItem(BlockRegistry.chalk_wall);
         blockItem(BlockRegistry.wall_cinder);
         blockItem(BlockRegistry.wall_cob);
         blockItem(BlockRegistry.wall_concrete);

@@ -16,13 +16,23 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
-        makeSimpleBlockItem(ItemRegistry.adobe);
-
+        //blockitems
+        getBuilder("adobe").parent(getExistingFile(modLoc("block/adobe0")));
+        
+        //misc items
+        makeOneLayerItem(ItemRegistry.adobe_brick);
+        makeOneLayerItem(ItemRegistry.chalk_dust);
+        makeOneLayerItem(ItemRegistry.cob_ball);
+        makeOneLayerItem(ItemRegistry.lime_plaster);
+        makeOneLayerItem(ItemRegistry.mud_ball);
+        makeOneLayerItem(ItemRegistry.quicklime);
+        makeOneLayerItem(ItemRegistry.slaked_lime);
+        makeOneLayerItem(ItemRegistry.timber_framing);
     }
 
     protected void makeSimpleBlockItem(Item item) {
         getBuilder(item.getRegistryName().toString())
-                .parent(new ModelFile.UncheckedModelFile(modLoc("block/" + item.getRegistryName().getPath())));
+                .parent(getExistingFile(modLoc("block/" + item.getRegistryName().getPath())));
     }
 
     protected void makeOneLayerItem(Item item, ResourceLocation texture) {

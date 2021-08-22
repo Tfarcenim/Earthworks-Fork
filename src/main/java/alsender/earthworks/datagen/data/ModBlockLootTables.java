@@ -165,7 +165,7 @@ public class ModBlockLootTables extends BlockLootTables {
         registerDropSelfLootTable(BlockRegistry.dark_oak_shingle_stairs);
 
         registerDropSelfLootTable(BlockRegistry.adobe_wall);
-        registerDropSelfLootTable(BlockRegistry.wall_chalk);
+        registerDropSelfLootTable(BlockRegistry.chalk_wall);
         registerDropSelfLootTable(BlockRegistry.wall_cinder);
         registerDropSelfLootTable(BlockRegistry.wall_cob);
         registerDropSelfLootTable(BlockRegistry.wall_concrete);

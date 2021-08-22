@@ -36,7 +36,17 @@ public class ModBlockstateProvider extends BlockStateProvider {
                         .nextModel().modelFile(modelFile2).nextModel().modelFile(modelFile3).build()
         );
 
+        simpleBlock(BlockRegistry.chalk);
+        simpleBlock(BlockRegistry.cinder);
+        simpleBlock(BlockRegistry.cob);
+        simpleBlock(BlockRegistry.concrete);
+        simpleBlock(BlockRegistry.cordwood);
+        simpleBlock(BlockRegistry.dry_stone);
+        simpleBlock(BlockRegistry.GRAVEL_GABION);
+        simpleBlock(BlockRegistry.SAND_GABION);
+        simpleBlock(BlockRegistry.DIRT_GABION);
 
+        wallBlock(BlockRegistry.adobe_wall,modBlockTexture("adobe0"));
 
         verticalPlanks(BlockRegistry.vertical_oak_planks, Blocks.OAK_PLANKS);
         verticalPlanks(BlockRegistry.vertical_spruce_planks, Blocks.SPRUCE_PLANKS);
@@ -82,7 +92,7 @@ public class ModBlockstateProvider extends BlockStateProvider {
     protected void simpleSlab(SlabBlock block) {
         ResourceLocation id = block.getRegistryName();
 
-        String slabPath = id.getPath().substring(0, id.getPath().length() - 5);
+        String slabPath = id.getPath().substring(0, id.getPath().length() - "_slab".length());
 
         Block original = ForgeRegistries.BLOCKS.getValue(new ResourceLocation(id.getNamespace(), slabPath));
 
@@ -96,7 +106,7 @@ public class ModBlockstateProvider extends BlockStateProvider {
     protected void simpleStairs(StairsBlock block) {
         ResourceLocation id = block.getRegistryName();
 
-        String stairsPath = id.getPath().substring(0, id.getPath().length() - 7);
+        String stairsPath = id.getPath().substring(0, id.getPath().length() - "_stairs".length());
 
         Block original = ForgeRegistries.BLOCKS.getValue(new ResourceLocation(id.getNamespace(), stairsPath));
 
@@ -105,6 +115,20 @@ public class ModBlockstateProvider extends BlockStateProvider {
         }
 
         stairsBlock(block, new ResourceLocation(id.getNamespace(), "block/" + original.getRegistryName().getPath()));
+    }
+
+    protected void simpleWall(WallBlock block) {
+        ResourceLocation id = block.getRegistryName();
+
+        String stairsPath = id.getPath().substring(0, id.getPath().length() - "_wall".length());
+
+        Block original = ForgeRegistries.BLOCKS.getValue(new ResourceLocation(id.getNamespace(), stairsPath));
+
+        if (original == Blocks.AIR) {
+            System.out.println("No original block found for " + id + " tried " + stairsPath);
+        }
+
+        wallBlock(block, new ResourceLocation(id.getNamespace(), "block/" + original.getRegistryName().getPath()));
     }
 
 }

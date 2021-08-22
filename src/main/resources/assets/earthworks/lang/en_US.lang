@@ -204,11 +204,9 @@ tile.earthworks.wall_wood_shingle_dark_oak.name=Dark Oak Wood Shakes Wall
 item.earthworks.item_adobe.name=Adobe Brick
 item.earthworks.item_chalk.name=Chalk Dust
 item.earthworks.item_cob.name=Cob Ball
-item.earthworks.item_dirt.name=Dirt Ball
 item.earthworks.item_lime_plaster.name=Lime Plaster
 item.earthworks.item_mud.name=Mud Ball
 item.earthworks.item_quicklime.name=Quicklime
-item.earthworks.item_sand.name=Sand
 item.earthworks.item_slaked_lime.name=Slaked Lime
 item.earthworks.item_timber.name=Timber Framing
 

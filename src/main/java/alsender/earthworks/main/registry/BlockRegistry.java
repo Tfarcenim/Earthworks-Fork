@@ -175,8 +175,8 @@ public class BlockRegistry {
     public static Block acacia_shingle_stairs;
     public static Block dark_oak_shingle_stairs;
 
-    public static Block adobe_wall;
-    public static Block wall_chalk;
+    public static WallBlock adobe_wall;
+    public static Block chalk_wall;
     public static Block wall_cinder;
     public static Block wall_cob;
     public static Block wall_concrete;
@@ -456,7 +456,7 @@ public class BlockRegistry {
         dark_oak_shingle_stairs = new StairsBlock(oak_shingle.getDefaultState(),Block.Properties.from(oak_shingle));
 
         adobe_wall = new WallBlock(Block.Properties.from(adobe));
-        wall_chalk = new WallBlock(Block.Properties.from(chalk));
+        chalk_wall = new WallBlock(Block.Properties.from(chalk));
         wall_cinder = new WallBlock(Block.Properties.from(cinder));
         wall_cob = new WallBlock(Block.Properties.from(cob));
         wall_concrete = new WallBlock(Block.Properties.from(concrete));
