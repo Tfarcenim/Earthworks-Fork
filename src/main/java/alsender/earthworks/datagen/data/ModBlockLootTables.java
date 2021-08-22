@@ -16,13 +16,12 @@ public class ModBlockLootTables extends BlockLootTables {
         registerDropSelfLootTable(BlockRegistry.cob);
         registerDropSelfLootTable(BlockRegistry.concrete);
         registerDropSelfLootTable(BlockRegistry.cordwood);
-        registerDropSelfLootTable(BlockRegistry.dry_stone);
+        registerDropSelfLootTable(BlockRegistry.dry_fitted_stone);
         registerDropSelfLootTable(BlockRegistry.GRAVEL_GABION);
         registerDropSelfLootTable(BlockRegistry.SAND_GABION);
         registerDropSelfLootTable(BlockRegistry.DIRT_GABION);
 
         registerDropSelfLootTable(BlockRegistry.mud);
-        registerDropSelfLootTable(BlockRegistry.mud_bottom);
         registerDropSelfLootTable(BlockRegistry.vertical_oak_planks);
         registerDropSelfLootTable(BlockRegistry.vertical_birch_planks);
         registerDropSelfLootTable(BlockRegistry.vertical_jungle_planks);
@@ -74,7 +73,7 @@ public class ModBlockLootTables extends BlockLootTables {
         registerDropSelfLootTable(BlockRegistry.cob_slab);
         registerDropSelfLootTable(BlockRegistry.concrete_slab);
         registerDropSelfLootTable(BlockRegistry.cordwood_slab);
-        registerDropSelfLootTable(BlockRegistry.dry_stone_slab);
+        registerDropSelfLootTable(BlockRegistry.dry_fitted_stone_slab);
         registerDropSelfLootTable(BlockRegistry.GRAVEL_GABION_SLAB);
         registerDropSelfLootTable(BlockRegistry.SAND_GABION_SLAB);
         registerDropSelfLootTable(BlockRegistry.DIRT_GABION_SLAB);
@@ -122,7 +121,7 @@ public class ModBlockLootTables extends BlockLootTables {
         registerDropSelfLootTable(BlockRegistry.cob_stairs);
         registerDropSelfLootTable(BlockRegistry.concrete_stairs);
         registerDropSelfLootTable(BlockRegistry.cordwood_stairs);
-        registerDropSelfLootTable(BlockRegistry.dry_stone_stairs);
+        registerDropSelfLootTable(BlockRegistry.dry_fitted_stone_stairs);
         registerDropSelfLootTable(BlockRegistry.GRAVEL_GABION_STAIRS);
         registerDropSelfLootTable(BlockRegistry.SAND_GABION_STAIRS);
         registerDropSelfLootTable(BlockRegistry.DIRT_GABION_STAIRS);
@@ -170,7 +169,7 @@ public class ModBlockLootTables extends BlockLootTables {
         registerDropSelfLootTable(BlockRegistry.wall_cob);
         registerDropSelfLootTable(BlockRegistry.wall_concrete);
         registerDropSelfLootTable(BlockRegistry.wall_cordwood);
-        registerDropSelfLootTable(BlockRegistry.wall_dry_stone);
+        registerDropSelfLootTable(BlockRegistry.dry_fitted_stone_wall);
         registerDropSelfLootTable(BlockRegistry.wall_gabion0);
         registerDropSelfLootTable(BlockRegistry.wall_gabion1);
         registerDropSelfLootTable(BlockRegistry.wall_gabion2);

@@ -27,13 +27,12 @@ public class BlockRegistry {
     public static Block cob;
     public static Block concrete;
     public static Block cordwood;
-    public static Block dry_stone;
+    public static Block dry_fitted_stone;
     public static Block GRAVEL_GABION;
     public static Block SAND_GABION;
     public static Block DIRT_GABION;
 
     public static Block mud;
-    public static Block mud_bottom;
     public static Block vertical_oak_planks;
     public static Block vertical_birch_planks;
     public static Block vertical_jungle_planks;
@@ -85,7 +84,7 @@ public class BlockRegistry {
     public static Block cob_slab;
     public static Block concrete_slab;
     public static Block cordwood_slab;
-    public static Block dry_stone_slab;
+    public static Block dry_fitted_stone_slab;
     public static Block GRAVEL_GABION_SLAB;
     public static Block SAND_GABION_SLAB;
     public static Block DIRT_GABION_SLAB;
@@ -133,7 +132,7 @@ public class BlockRegistry {
     public static Block cob_stairs;
     public static Block concrete_stairs;
     public static Block cordwood_stairs;
-    public static Block dry_stone_stairs;
+    public static Block dry_fitted_stone_stairs;
     public static Block GRAVEL_GABION_STAIRS;
     public static Block SAND_GABION_STAIRS;
     public static Block DIRT_GABION_STAIRS;
@@ -181,7 +180,7 @@ public class BlockRegistry {
     public static Block wall_cob;
     public static Block wall_concrete;
     public static Block wall_cordwood;
-    public static Block wall_dry_stone;
+    public static Block dry_fitted_stone_wall;
     public static Block wall_gabion0;
     public static Block wall_gabion1;
     public static Block wall_gabion2;
@@ -307,12 +306,11 @@ public class BlockRegistry {
         cob = new Block(Block.Properties.create(Material.EARTH).sound(SoundType.GROUND).hardnessAndResistance(1.0F, 3.0F));
         concrete = new Block(Block.Properties.create(Material.ROCK).sound(SoundType.STONE).hardnessAndResistance(2.0F, 10.0F));
         cordwood = new ModBlockFacing(Block.Properties.create(Material.ROCK).sound(SoundType.STONE).hardnessAndResistance(1.5F, 2.83F));
-        dry_stone = new Block(Block.Properties.create(Material.ROCK).sound(SoundType.STONE).hardnessAndResistance(2.0F, 1333.3F));
+        dry_fitted_stone = new Block(Block.Properties.create(Material.ROCK).sound(SoundType.STONE).hardnessAndResistance(2.0F, 1333.3F));
         GRAVEL_GABION = new FallingBlock(AbstractBlock.Properties.create(Material.ROCK).sound(SoundType.GROUND).hardnessAndResistance(1, 1));
         SAND_GABION = new FallingBlock(AbstractBlock.Properties.create(Material.ROCK).sound(SoundType.GROUND).hardnessAndResistance(1, 1));
         DIRT_GABION = new FallingBlock(AbstractBlock.Properties.create(Material.ROCK).sound(SoundType.GROUND).hardnessAndResistance(1, 1));
-        mud = new Block_Mud(AbstractBlock.Properties.create(Material.CLAY).sound(SoundType.SLIME).hardnessAndResistance(0.6F, 1.0F));
-        mud_bottom = new Block_Mud_Bottom(Block.Properties.create(Material.CLAY).sound(SoundType.SLIME).hardnessAndResistance( 0.6F, 1.0F));
+        mud = new MudBlock(AbstractBlock.Properties.create(Material.CLAY).sound(SoundType.SLIME).hardnessAndResistance(0.6F, 1.0F));
         plaster = new Block(Block.Properties.create(Material.ROCK).sound(SoundType.STONE).hardnessAndResistance(2.0F, 7.5F));
         rammed_earth = new Block(Block.Properties.create(Material.EARTH).sound(SoundType.STONE).hardnessAndResistance( 2.0F, 10.0F));
         slate = new Block(Block.Properties.create(Material.ROCK).sound(SoundType.STONE).hardnessAndResistance( 1.5F, 10.0F));
@@ -369,7 +367,7 @@ public class BlockRegistry {
         cob_slab = new SlabBlock(Block.Properties.from(cob));
         concrete_slab = new SlabBlock(Block.Properties.from(concrete));
         cordwood_slab = new SlabBlock(Block.Properties.from(cordwood));
-        dry_stone_slab = new SlabBlock(Block.Properties.from(dry_stone));
+        dry_fitted_stone_slab = new SlabBlock(Block.Properties.from(dry_fitted_stone));
         GRAVEL_GABION_SLAB = new SlabBlock(Block.Properties.from(GRAVEL_GABION));
         SAND_GABION_SLAB = new SlabBlock(Block.Properties.from(SAND_GABION));
         DIRT_GABION_SLAB = new SlabBlock(Block.Properties.from(DIRT_GABION));
@@ -415,7 +413,7 @@ public class BlockRegistry {
         cob_stairs = new StairsBlock(cob.getDefaultState(),Block.Properties.from(cob));
         concrete_stairs = new StairsBlock(concrete.getDefaultState(),Block.Properties.from(concrete));
         cordwood_stairs = new StairsBlock(cordwood.getDefaultState(),Block.Properties.from(cordwood));
-        dry_stone_stairs = new StairsBlock(dry_stone.getDefaultState(),Block.Properties.from(dry_stone));
+        dry_fitted_stone_stairs = new StairsBlock(dry_fitted_stone.getDefaultState(),Block.Properties.from(dry_fitted_stone));
         GRAVEL_GABION_STAIRS = new StairsBlock(GRAVEL_GABION.getDefaultState(),Block.Properties.from(GRAVEL_GABION));
         SAND_GABION_STAIRS = new StairsBlock(SAND_GABION.getDefaultState(),Block.Properties.from(SAND_GABION));
         DIRT_GABION_STAIRS = new StairsBlock(DIRT_GABION.getDefaultState(),Block.Properties.from(DIRT_GABION));
@@ -461,7 +459,7 @@ public class BlockRegistry {
         wall_cob = new WallBlock(Block.Properties.from(cob));
         wall_concrete = new WallBlock(Block.Properties.from(concrete));
         wall_cordwood = new WallBlock(Block.Properties.from(cordwood));
-        wall_dry_stone = new WallBlock(Block.Properties.from(dry_stone));
+        dry_fitted_stone_wall = new WallBlock(Block.Properties.from(dry_fitted_stone));
         wall_gabion0 = new WallBlock(Block.Properties.from(GRAVEL_GABION));
         wall_gabion1 = new WallBlock(Block.Properties.from(SAND_GABION));
         wall_gabion2 = new WallBlock(Block.Properties.from(DIRT_GABION));

@@ -128,7 +128,7 @@ public class ItemRegistry {
         blockItem(BlockRegistry.cob);
         blockItem(BlockRegistry.concrete);
         blockItem(BlockRegistry.cordwood);
-        blockItem(BlockRegistry.dry_stone);
+        blockItem(BlockRegistry.dry_fitted_stone);
         blockItem(BlockRegistry.GRAVEL_GABION);
         blockItem(BlockRegistry.SAND_GABION);
         blockItem(BlockRegistry.DIRT_GABION);
@@ -173,7 +173,7 @@ public class ItemRegistry {
         cob_slab = blockItem(BlockRegistry.cob_slab);
         concrete_slab = blockItem(BlockRegistry.concrete_slab);
         cordwood_slab = blockItem(BlockRegistry.cordwood_slab);
-        dry_stone_slab = blockItem(BlockRegistry.dry_stone_slab);
+        dry_stone_slab = blockItem(BlockRegistry.dry_fitted_stone_slab);
         GRAVEL_GABION_SLAB = blockItem(BlockRegistry.GRAVEL_GABION_SLAB);
         SAND_GABION_SLAB = blockItem(BlockRegistry.SAND_GABION_SLAB);
         DIRT_GABION_SLAB = blockItem(BlockRegistry.DIRT_GABION_SLAB);
@@ -219,7 +219,7 @@ public class ItemRegistry {
         blockItem(BlockRegistry.cob_stairs);
         blockItem(BlockRegistry.concrete_stairs);
         blockItem(BlockRegistry.cordwood_stairs);
-        blockItem(BlockRegistry.dry_stone_stairs);
+        blockItem(BlockRegistry.dry_fitted_stone_stairs);
         blockItem(BlockRegistry.GRAVEL_GABION_STAIRS);
         blockItem(BlockRegistry.SAND_GABION_STAIRS);
         blockItem(BlockRegistry.DIRT_GABION_STAIRS);
@@ -265,7 +265,7 @@ public class ItemRegistry {
         blockItem(BlockRegistry.wall_cob);
         blockItem(BlockRegistry.wall_concrete);
         blockItem(BlockRegistry.wall_cordwood);
-        blockItem(BlockRegistry.wall_dry_stone);
+        blockItem(BlockRegistry.dry_fitted_stone_wall);
         blockItem(BlockRegistry.wall_gabion0);
         blockItem(BlockRegistry.wall_gabion1);
         blockItem(BlockRegistry.wall_gabion2);

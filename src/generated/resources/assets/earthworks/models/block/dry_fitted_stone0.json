@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "earthworks:block/dry_fitted_stone0"
+  }
+}

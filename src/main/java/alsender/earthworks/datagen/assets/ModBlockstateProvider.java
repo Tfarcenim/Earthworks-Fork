@@ -6,13 +6,14 @@ import alsender.earthworks.main.registry.BlockRegistry;
 import net.minecraft.block.*;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourcePackType;
+import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.client.model.generators.BlockStateProvider;
-import net.minecraftforge.client.model.generators.ConfiguredModel;
-import net.minecraftforge.client.model.generators.ModelFile;
-import net.minecraftforge.client.model.generators.ModelProvider;
+import net.minecraftforge.client.model.generators.*;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ModBlockstateProvider extends BlockStateProvider {
 
@@ -26,25 +27,17 @@ public class ModBlockstateProvider extends BlockStateProvider {
     @Override
     protected void registerStatesAndModels() {
 
-        ModelFile modelFile0 = models().cubeAll("adobe0", modBlockTexture("adobe0"));
-        ModelFile modelFile1 = models().cubeAll("adobe1", modBlockTexture("adobe1"));
-        ModelFile modelFile2 = models().cubeAll("adobe2", modBlockTexture("adobe2"));
-        ModelFile modelFile3 = models().cubeAll("adobe3", modBlockTexture("adobe3"));
-
-        getVariantBuilder(BlockRegistry.adobe).partialState().addModels(
-                ConfiguredModel.builder().modelFile(modelFile0).nextModel().modelFile(modelFile1)
-                        .nextModel().modelFile(modelFile2).nextModel().modelFile(modelFile3).build()
-        );
+        makeVariantBlockState(BlockRegistry.adobe,4);
 
         simpleBlock(BlockRegistry.chalk);
         simpleBlock(BlockRegistry.cinder);
         simpleBlock(BlockRegistry.cob);
         simpleBlock(BlockRegistry.concrete);
-        simpleBlock(BlockRegistry.cordwood);
-        simpleBlock(BlockRegistry.dry_stone);
-        simpleBlock(BlockRegistry.GRAVEL_GABION);
-        simpleBlock(BlockRegistry.SAND_GABION);
-        simpleBlock(BlockRegistry.DIRT_GABION);
+        cordwood();
+        makeVariantBlockState(BlockRegistry.dry_fitted_stone,4);
+        gabions();
+
+        simpleBlock(BlockRegistry.mud);
 
         wallBlock(BlockRegistry.adobe_wall,modBlockTexture("adobe0"));
 
@@ -54,6 +47,62 @@ public class ModBlockstateProvider extends BlockStateProvider {
         verticalPlanks(BlockRegistry.vertical_jungle_planks, Blocks.JUNGLE_PLANKS);
         verticalPlanks(BlockRegistry.vertical_acacia_planks, Blocks.ACACIA_PLANKS);
         verticalPlanks(BlockRegistry.vertical_dark_oak_planks, Blocks.DARK_OAK_PLANKS);
+    }
+
+    protected void cubeColumn(Block block) {
+        String path = block.getRegistryName().getPath();
+        BlockModelBuilder blockModelBuilder = models().cubeColumn(path, modBlockTexture(path), modBlockTexture(path + "_top"));
+        getVariantBuilder(block).partialState().addModels(ConfiguredModel.builder().modelFile(blockModelBuilder).build());
+    }
+
+    protected void gabions() {
+        Block[] blocks = new Block[]{BlockRegistry.GRAVEL_GABION,BlockRegistry.SAND_GABION,BlockRegistry.DIRT_GABION};
+        for (Block block : blocks) {
+            String path = block.getRegistryName().getPath();
+            BlockModelBuilder blockModelBuilder = models().cubeBottomTop(path, modBlockTexture("gabion_side"), modBlockTexture("gabion_bottom"),modBlockTexture(path + "_top"));
+            getVariantBuilder(block).partialState().addModels(ConfiguredModel.builder().modelFile(blockModelBuilder).build());
+        }
+    }
+
+    protected void makeVariantBlockState(Block block,int variants) {
+
+        List<ModelFile> files = new ArrayList<>();
+        String path = block.getRegistryName().getPath();
+
+        for (int i = 0; i < variants;i++) {
+            ModelFile modelFile = models().cubeAll(path + i, modBlockTexture(path + i));
+            files.add(modelFile);
+        }
+
+        getVariantBuilder(block).partialState().addModels(collectAndBuild(files));
+    }
+
+    //avoids creating a long builder chain
+    protected ConfiguredModel[] collectAndBuild(List<ModelFile> modelFiles) {
+        ConfiguredModel.Builder<?> builder = ConfiguredModel.builder();
+        for (int i = 0; i < modelFiles.size() - 2;i++) {
+            ModelFile modelFile = modelFiles.get(i);
+            builder.modelFile(modelFile).nextModel();
+        }
+        return builder.modelFile(modelFiles.get(modelFiles.size() - 1)).build();
+    }
+
+    protected void cordwood() {
+        ModelFile modelFile0 = models().cubeColumnHorizontal("cordwood0", modBlockTexture("cordwood0"),modBlockTexture("cordwood0_top"));
+        ModelFile modelFile1 = models().cubeColumnHorizontal("cordwood1", modBlockTexture("cordwood1"),modBlockTexture("cordwood1_top"));
+        ModelFile modelFile2 = models().cubeColumnHorizontal("cordwood2", modBlockTexture("cordwood2"),modBlockTexture("cordwood2_top"));
+
+        Direction[] horizontals = new Direction[]{Direction.NORTH,Direction.EAST,Direction.SOUTH,Direction.WEST};
+
+        VariantBlockStateBuilder builder = getVariantBuilder(BlockRegistry.cordwood);
+        for (int i =0; i < 4;i++) {
+            Direction horizontal = horizontals[i];
+            builder.partialState().with(HorizontalBlock.HORIZONTAL_FACING, horizontal).addModels(
+                    ConfiguredModel.builder().modelFile(modelFile0).rotationY(i * 90).nextModel()
+                            .modelFile(modelFile1).rotationY(i * 90).nextModel()
+                            .modelFile(modelFile2).rotationY(i * 90).build()
+            );
+        }
     }
 
     public ResourceLocation modBlockTexture(String name) {

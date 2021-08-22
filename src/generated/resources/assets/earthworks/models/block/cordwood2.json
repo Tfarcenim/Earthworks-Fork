@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_horizontal",
+  "textures": {
+    "side": "earthworks:block/cordwood2",
+    "end": "earthworks:block/cordwood2_top"
+  }
+}
