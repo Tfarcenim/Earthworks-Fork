@@ -1,0 +1,18 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:paper",
+    "minecraft:sugar_cane",
+    "minecraft:string",
+    "minecraft:wheat",
+    "minecraft:cactus",
+    "minecraft:dead_bush",
+    "minecraft:tall_grass",
+    "minecraft:vine",
+    "minecraft:cobweb",
+    "#minecraft:tall_flowers",
+    "#minecraft:leaves",
+    "#minecraft:saplings",
+    "#minecraft:flowers"
+  ]
+}

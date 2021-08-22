@@ -24,12 +24,10 @@ public class ItemRegistry {
     public static Item
             item_adobe;
     public static Item item_cob;
-    public static Item item_dirt;
     public static Item item_lime_plaster;
     public static Item item_mud;
     public static Item item_chalk;
     public static Item item_quicklime;
-    public static Item item_sand;
     public static Item item_slaked_lime;
     public static Item item_timber;
 
@@ -98,6 +96,8 @@ public class ItemRegistry {
     public static BlockItem itemslab_wood_shingle_acacia;
     public static BlockItem itemslab_wood_shingle_dark_oak;
 
+    public static BlockItem adobe;
+
     public static void initItems(RegistryEvent.Register<Item> event) {
         IForgeRegistry<Item> r = event.getRegistry();
         item_adobe = new Item(new Item.Properties().group(Earthworks.creativeTab));
@@ -124,7 +124,7 @@ public class ItemRegistry {
         gold_hammer = new ModItemTool(new Item.Properties().group(Earthworks.creativeTab).maxDamage(33));
         diamond_hammer = new ModItemTool(new Item.Properties().group(Earthworks.creativeTab).maxDamage(1562));
 
-        blockItem(BlockRegistry.adobe);
+        adobe = blockItem(BlockRegistry.adobe);
         blockItem(BlockRegistry.chalk);
         blockItem(BlockRegistry.cinder);
         blockItem(BlockRegistry.cob);
@@ -261,7 +261,7 @@ public class ItemRegistry {
         blockItem(BlockRegistry.stair_wood_shingle_acacia);
         blockItem(BlockRegistry.stair_wood_shingle_dark_oak);
 
-        blockItem(BlockRegistry.wall_adobe);
+        blockItem(BlockRegistry.adobe_wall);
         blockItem(BlockRegistry.wall_chalk);
         blockItem(BlockRegistry.wall_cinder);
         blockItem(BlockRegistry.wall_cob);

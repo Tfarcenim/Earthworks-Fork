@@ -6,7 +6,6 @@ import alsender.earthworks.block.timber.Daub_Cob;
 import alsender.earthworks.block.timber.Plaster;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
-import net.minecraft.item.Item;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.IForgeRegistry;
@@ -128,8 +127,7 @@ public class BlockRegistry {
     public static Block slab_wood_shingle_acacia;
     public static Block slab_wood_shingle_dark_oak;
 
-    public static Block
-            stair_adobe;
+    public static Block stair_adobe;
     public static Block stair_chalk;
     public static Block stair_cinder;
     public static Block stair_cob;
@@ -177,7 +175,7 @@ public class BlockRegistry {
     public static Block stair_wood_shingle_acacia;
     public static Block stair_wood_shingle_dark_oak;
 
-    public static Block wall_adobe;
+    public static Block adobe_wall;
     public static Block wall_chalk;
     public static Block wall_cinder;
     public static Block wall_cob;
@@ -220,8 +218,7 @@ public class BlockRegistry {
     public static Block wall_wood_shingle_dark_oak;
 
 
-    public static Block
-            daub_cob_arrow0;
+    public static Block daub_cob_arrow0;
     public static Block daub_cob_arrow1;
     public static Block daub_cob_arrow2;
     public static Block daub_cob_arrow3;
@@ -261,8 +258,7 @@ public class BlockRegistry {
     public static Block daub_cob_xdoor2;
     public static Block daub_cob_xdoor3;
 
-    public static Block
-            plaster_arrow0;
+    public static Block plaster_arrow0;
     public static Block plaster_arrow1;
     public static Block plaster_arrow2;
     public static Block plaster_arrow3;
@@ -459,7 +455,7 @@ public class BlockRegistry {
         stair_wood_shingle_acacia = new StairsBlock(oak_wood_shingle.getDefaultState(),Block.Properties.from(oak_wood_shingle));
         stair_wood_shingle_dark_oak = new StairsBlock(oak_wood_shingle.getDefaultState(),Block.Properties.from(oak_wood_shingle));
 
-        wall_adobe = new WallBlock(Block.Properties.from(adobe));
+        adobe_wall = new WallBlock(Block.Properties.from(adobe));
         wall_chalk = new WallBlock(Block.Properties.from(chalk));
         wall_cinder = new WallBlock(Block.Properties.from(cinder));
         wall_cob = new WallBlock(Block.Properties.from(cob));
