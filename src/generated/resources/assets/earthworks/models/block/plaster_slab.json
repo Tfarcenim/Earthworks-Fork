@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab",
-  "textures": {
-    "side": "earthworks:block/plaster",
-    "bottom": "earthworks:block/plaster",
-    "top": "earthworks:block/plaster"
-  }
-}

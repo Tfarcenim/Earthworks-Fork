@@ -1,6 +1,7 @@
 package alsender.earthworks.datagen;
 
 import alsender.earthworks.datagen.assets.ModBlockstateProvider;
+import alsender.earthworks.datagen.assets.ModItemModelProvider;
 import alsender.earthworks.datagen.data.ModBlockTagsProvider;
 import alsender.earthworks.datagen.data.ModItemTagsProvider;
 import alsender.earthworks.datagen.data.ModLootTableProvider;
@@ -25,6 +26,7 @@ public class ModDatagen {
 
         if (e.includeClient()) {
             generator.addProvider(new ModBlockstateProvider(generator,Earthworks.mod_id,helper));
+            generator.addProvider(new ModItemModelProvider(generator,Earthworks.mod_id,helper));
         }
     }
 }

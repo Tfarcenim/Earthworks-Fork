@@ -143,8 +143,8 @@ public class ItemRegistry {
         blockItem(BlockRegistry.green_slate);
         blockItem(BlockRegistry.purple_slate);
         blockItem(BlockRegistry.slate_slabs);
-        blockItem(BlockRegistry.green_slate_slabs);
-        blockItem(BlockRegistry.purple_slate_slabs);
+        blockItem(BlockRegistry.polished_green_slate);
+        blockItem(BlockRegistry.polished_purple_slate);
         blockItem(BlockRegistry.slate_shingle);
         blockItem(BlockRegistry.green_slate_shingle);
         blockItem(BlockRegistry.purple_slate_shingle);
@@ -194,8 +194,8 @@ public class ItemRegistry {
         green_slate_slab = blockItem(BlockRegistry.slab_slate_slab_green);
         purple_slate_slab = blockItem(BlockRegistry.slab_slate_slab_purple);
         itemslab_slate_shingle = blockItem(BlockRegistry.slab_slate_shingle);
-        itemslab_slate_shingle_verte = blockItem(BlockRegistry.slab_slate_shingle_verte);
-        itemslab_slate_shingle_purple = blockItem(BlockRegistry.slab_slate_shingle_purple);
+        itemslab_slate_shingle_verte = blockItem(BlockRegistry.green_slate_shingle_slab);
+        itemslab_slate_shingle_purple = blockItem(BlockRegistry.purple_slate_shingle_slab);
         slate_tile_slab = blockItem(BlockRegistry.slate_tile_slab);
         itemslab_slate_tile_verte = blockItem(BlockRegistry.green_slate_tile_slab);
         itemslab_slate_tile_purple = blockItem(BlockRegistry.purple_slate_tile_slab);
@@ -302,7 +302,7 @@ public class ItemRegistry {
         blockItem(BlockRegistry.reed);
         blockItem(BlockRegistry.thatch);
         itemslab_reed = blockItem(BlockRegistry.reed_slab);
-        itemslab_thatch = blockItem(BlockRegistry.slab_thatch);
+        itemslab_thatch = blockItem(BlockRegistry.thatch_slab);
         blockItem(BlockRegistry.stair_reed);
         blockItem(BlockRegistry.stair_thatch);
         blockItem(BlockRegistry.wall_reed);

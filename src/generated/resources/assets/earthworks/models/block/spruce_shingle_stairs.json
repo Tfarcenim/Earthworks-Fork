@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/stairs",
-  "textures": {
-    "side": "earthworks:block/spruce_shingle",
-    "bottom": "earthworks:block/spruce_shingle",
-    "top": "earthworks:block/spruce_shingle"
-  }
-}

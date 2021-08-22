@@ -48,8 +48,8 @@ public class BlockRegistry {
     public static Block green_slate;
     public static Block purple_slate;
     public static Block slate_slabs;
-    public static Block green_slate_slabs;
-    public static Block purple_slate_slabs;
+    public static Block polished_green_slate;
+    public static Block polished_purple_slate;
     public static Block slate_shingle;
     public static Block green_slate_shingle;
     public static Block purple_slate_shingle;
@@ -106,12 +106,12 @@ public class BlockRegistry {
     public static Block slab_slate_slab_green;
     public static Block slab_slate_slab_purple;
     public static Block slab_slate_shingle;
-    public static Block slab_slate_shingle_verte;
-    public static Block slab_slate_shingle_purple;
+    public static Block green_slate_shingle_slab;
+    public static Block purple_slate_shingle_slab;
     public static Block slate_tile_slab;
     public static Block green_slate_tile_slab;
     public static Block purple_slate_tile_slab;
-    public static Block slab_thatch;
+    public static Block thatch_slab;
     public static Block oak_timber_slab;
     public static Block birch_timber_slab;
     public static Block slab_timber_spruce;
@@ -319,8 +319,8 @@ public class BlockRegistry {
         green_slate = new Block(Block.Properties.create(Material.ROCK).sound(SoundType.STONE).hardnessAndResistance( 1.5F, 10.0F));
         purple_slate = new Block(Block.Properties.create(Material.ROCK).sound(SoundType.STONE).hardnessAndResistance( 1.5F, 10.0F));
         slate_slabs = new Block(Block.Properties.create(Material.ROCK).sound(SoundType.STONE).hardnessAndResistance( 1.5F, 10.0F));
-        green_slate_slabs = new Block(Block.Properties.create(Material.ROCK).sound(SoundType.STONE).hardnessAndResistance( 1.5F, 10.0F));
-        purple_slate_slabs = new Block(Block.Properties.create(Material.ROCK).sound(SoundType.STONE).hardnessAndResistance( 1.5F, 10.0F));
+        polished_green_slate = new Block(Block.Properties.create(Material.ROCK).sound(SoundType.STONE).hardnessAndResistance( 1.5F, 10.0F));
+        polished_purple_slate = new Block(Block.Properties.create(Material.ROCK).sound(SoundType.STONE).hardnessAndResistance( 1.5F, 10.0F));
         slate_shingle = new ModBlockFacing(AbstractBlock.Properties.create(Material.ROCK).sound(SoundType.STONE).hardnessAndResistance(1.2F, 10.0F));
         green_slate_shingle = new ModBlockFacing(AbstractBlock.Properties.create(Material.ROCK).sound(SoundType.STONE).hardnessAndResistance(1.2F, 10.0F));
         purple_slate_shingle = new ModBlockFacing(AbstractBlock.Properties.create(Material.ROCK).sound(SoundType.STONE).hardnessAndResistance(1.2F, 10.0F));
@@ -386,11 +386,11 @@ public class BlockRegistry {
         green_slate_slab = new SlabBlock(Block.Properties.from(green_slate));
         slab_slate_purple = new SlabBlock(Block.Properties.from(purple_slate));
         slab_slate_slab = new SlabBlock(Block.Properties.from(slate_slabs));
-        slab_slate_slab_green = new SlabBlock(Block.Properties.from(green_slate_slabs));
-        slab_slate_slab_purple = new SlabBlock(Block.Properties.from(purple_slate_slabs));
+        slab_slate_slab_green = new SlabBlock(Block.Properties.from(polished_green_slate));
+        slab_slate_slab_purple = new SlabBlock(Block.Properties.from(polished_purple_slate));
         slab_slate_shingle = new SlabBlock(Block.Properties.from(slate_shingle));
-        slab_slate_shingle_verte = new SlabBlock(Block.Properties.from(green_slate_shingle));
-        slab_slate_shingle_purple = new SlabBlock(Block.Properties.from(purple_slate_shingle));
+        green_slate_shingle_slab = new SlabBlock(Block.Properties.from(green_slate_shingle));
+        purple_slate_shingle_slab = new SlabBlock(Block.Properties.from(purple_slate_shingle));
         slate_tile_slab = new SlabBlock(Block.Properties.from(slate_tile));
         green_slate_tile_slab = new SlabBlock(Block.Properties.from(green_slate_tile));
         purple_slate_tile_slab = new SlabBlock(Block.Properties.from(purple_slate_tile));
@@ -432,8 +432,8 @@ public class BlockRegistry {
         green_slate_stairs = new StairsBlock(green_slate.getDefaultState(),Block.Properties.from(green_slate));
         stair_slate_purple = new StairsBlock(purple_slate.getDefaultState(),Block.Properties.from(purple_slate));
         slate_slab_stairs = new StairsBlock(slate_slabs.getDefaultState(),Block.Properties.from(slate_slabs));
-        green_slate_slab_stairs = new StairsBlock(green_slate_slabs.getDefaultState(),Block.Properties.from(green_slate_slabs));
-        purple_slate_slab_stairs = new StairsBlock(purple_slate_slabs.getDefaultState(),Block.Properties.from(purple_slate_slabs));
+        green_slate_slab_stairs = new StairsBlock(polished_green_slate.getDefaultState(),Block.Properties.from(polished_green_slate));
+        purple_slate_slab_stairs = new StairsBlock(polished_purple_slate.getDefaultState(),Block.Properties.from(polished_purple_slate));
         slate_shingle_stairs = new StairsBlock(slate_shingle.getDefaultState(),Block.Properties.from(slate_shingle));
         green_slate_shingle_stairs = new StairsBlock(green_slate_shingle.getDefaultState(),Block.Properties.from(green_slate_shingle));
         purple_slate_shingle_stairs = new StairsBlock(purple_slate_shingle.getDefaultState(),Block.Properties.from(purple_slate_shingle));
@@ -472,8 +472,8 @@ public class BlockRegistry {
         wall_slate_green = new WallBlock(Block.Properties.from(green_slate));
         wall_slate_purple = new WallBlock(Block.Properties.from(purple_slate));
         wall_slate_slab = new WallBlock(Block.Properties.from(slate_slabs));
-        wall_slate_slab_green = new WallBlock(Block.Properties.from(green_slate_slabs));
-        wall_slate_slab_purple = new WallBlock(Block.Properties.from(purple_slate_slabs));
+        wall_slate_slab_green = new WallBlock(Block.Properties.from(polished_green_slate));
+        wall_slate_slab_purple = new WallBlock(Block.Properties.from(polished_purple_slate));
         wall_slate_shingle = new WallBlock(Block.Properties.from(slate_shingle));
         wall_slate_shingle_verte = new WallBlock(Block.Properties.from(green_slate_shingle));
         wall_slate_shingle_purple = new WallBlock(Block.Properties.from(purple_slate_shingle));
@@ -502,7 +502,7 @@ public class BlockRegistry {
 
         reed_slab = new SlabBlock(Block.Properties.from(reed));
 
-        slab_thatch = new SlabBlock(Block.Properties.from(thatch));
+        thatch_slab = new SlabBlock(Block.Properties.from(thatch));
 
 
         stair_reed = new StairsBlock(reed.getDefaultState(),Block.Properties.from(reed));

@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/inner_stairs",
-  "textures": {
-    "side": "earthworks:block/jungle_shingle",
-    "bottom": "earthworks:block/jungle_shingle",
-    "top": "earthworks:block/jungle_shingle"
-  }
-}

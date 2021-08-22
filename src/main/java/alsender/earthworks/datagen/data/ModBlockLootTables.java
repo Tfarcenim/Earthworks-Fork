@@ -37,8 +37,8 @@ public class ModBlockLootTables extends BlockLootTables {
         registerDropSelfLootTable(BlockRegistry.green_slate);
         registerDropSelfLootTable(BlockRegistry.purple_slate);
         registerDropSelfLootTable(BlockRegistry.slate_slabs);
-        registerDropSelfLootTable(BlockRegistry.green_slate_slabs);
-        registerDropSelfLootTable(BlockRegistry.purple_slate_slabs);
+        registerDropSelfLootTable(BlockRegistry.polished_green_slate);
+        registerDropSelfLootTable(BlockRegistry.polished_purple_slate);
         registerDropSelfLootTable(BlockRegistry.slate_shingle);
         registerDropSelfLootTable(BlockRegistry.green_slate_shingle);
         registerDropSelfLootTable(BlockRegistry.purple_slate_shingle);
@@ -95,12 +95,12 @@ public class ModBlockLootTables extends BlockLootTables {
         registerDropSelfLootTable(BlockRegistry.slab_slate_slab_green);
         registerDropSelfLootTable(BlockRegistry.slab_slate_slab_purple);
         registerDropSelfLootTable(BlockRegistry.slab_slate_shingle);
-        registerDropSelfLootTable(BlockRegistry.slab_slate_shingle_verte);
-        registerDropSelfLootTable(BlockRegistry.slab_slate_shingle_purple);
+        registerDropSelfLootTable(BlockRegistry.green_slate_shingle_slab);
+        registerDropSelfLootTable(BlockRegistry.purple_slate_shingle_slab);
         registerDropSelfLootTable(BlockRegistry.slate_tile_slab);
         registerDropSelfLootTable(BlockRegistry.green_slate_tile_slab);
         registerDropSelfLootTable(BlockRegistry.purple_slate_tile_slab);
-        registerDropSelfLootTable(BlockRegistry.slab_thatch);
+        registerDropSelfLootTable(BlockRegistry.thatch_slab);
         registerDropSelfLootTable(BlockRegistry.oak_timber_slab);
         registerDropSelfLootTable(BlockRegistry.birch_timber_slab);
         registerDropSelfLootTable(BlockRegistry.slab_timber_spruce);
