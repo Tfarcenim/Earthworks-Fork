@@ -19,6 +19,7 @@ public class ModDatagen {
         ExistingFileHelper helper = e.getExistingFileHelper();
         if (e.includeServer()) {
             BlockTagsProvider blockTagsProvider = new ModBlockTagsProvider(generator, Earthworks.mod_id,helper);
+            generator.addProvider(blockTagsProvider);
             generator.addProvider(new ModLootTableProvider(generator));
             generator.addProvider(new ModRecipeProvider(generator));
             generator.addProvider(new ModItemTagsProvider(generator,blockTagsProvider,Earthworks.mod_id,helper));

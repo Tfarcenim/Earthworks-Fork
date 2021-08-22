@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "earthworks:itemslab_timber_oak"
+          "name": "earthworks:oak_timber_slab"
         }
       ],
       "conditions": [

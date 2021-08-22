@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "earthworks:itemslab_thatch"
+          "name": "earthworks:thatch_slab"
         }
       ],
       "conditions": [

@@ -1,5 +1,6 @@
 package alsender.earthworks.datagen.data;
 
+import alsender.earthworks.main.registry.ItemRegistry;
 import alsender.earthworks.main.registry.ModBlockTags;
 import alsender.earthworks.main.registry.ModTags;
 import net.minecraft.data.BlockTagsProvider;
@@ -23,5 +24,9 @@ public class ModItemTagsProvider extends ItemTagsProvider {
 
         getOrCreateBuilder(ModTags.material_binding).add(Items.PAPER,Items.SUGAR_CANE,Items.STRING,Items.WHEAT,Items.CACTUS,Items.DEAD_BUSH,Items.TALL_GRASS,Items.VINE,Items.COBWEB)
                 .addTags(ItemTags.TALL_FLOWERS,ItemTags.LEAVES,ItemTags.SAPLINGS,ItemTags.FLOWERS);
+
+        getOrCreateBuilder(ItemTags.WOODEN_FENCES)
+                .add(ItemRegistry.vertical_oak_fence,ItemRegistry.vertical_spruce_fence, ItemRegistry.vertical_birch_fence,
+                        ItemRegistry.vertical_jungle_fence,ItemRegistry.vertical_acacia_fence,ItemRegistry.vertical_dark_oak_fence);
     }
 }

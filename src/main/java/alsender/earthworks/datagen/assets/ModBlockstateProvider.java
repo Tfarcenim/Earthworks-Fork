@@ -15,6 +15,8 @@ import net.minecraftforge.registries.ForgeRegistries;
 import java.util.ArrayList;
 import java.util.List;
 
+import static net.minecraftforge.client.model.generators.ModelProvider.BLOCK_FOLDER;
+
 public class ModBlockstateProvider extends BlockStateProvider {
 
     private final ExistingFileHelper existingFileHelper;
@@ -27,14 +29,14 @@ public class ModBlockstateProvider extends BlockStateProvider {
     @Override
     protected void registerStatesAndModels() {
 
-        makeVariantBlockState(BlockRegistry.adobe,4);
+        makeVariantBlockState(BlockRegistry.adobe, 4);
 
         simpleBlock(BlockRegistry.chalk);
         simpleBlock(BlockRegistry.cinder);
         simpleBlock(BlockRegistry.cob);
         simpleBlock(BlockRegistry.concrete);
         cordwood();
-        makeVariantBlockState(BlockRegistry.dry_fitted_stone,4);
+        makeVariantBlockState(BlockRegistry.dry_fitted_stone, 4);
         gabions();
 
         simpleBlock(BlockRegistry.mud);
@@ -49,7 +51,7 @@ public class ModBlockstateProvider extends BlockStateProvider {
         simpleBlock(BlockRegistry.lath_and_plaster);
         simpleBlock(BlockRegistry.rammed_earth);
 
-        axisBlock(BlockRegistry.reed,modBlockTexture("reed_side"),modBlockTexture("reed_top"));
+        axisBlock(BlockRegistry.reed, modBlockTexture("reed_side"), modBlockTexture("reed_top"));
 
         simpleBlock(BlockRegistry.blue_slate);
         simpleBlock(BlockRegistry.green_slate);
@@ -64,7 +66,7 @@ public class ModBlockstateProvider extends BlockStateProvider {
         simpleBlock(BlockRegistry.green_slate_tiles);
         simpleBlock(BlockRegistry.purple_slate_tiles);
 
-        axisBlock(BlockRegistry.thatch,modBlockTexture("thatch0_side"),modBlockTexture("thatch_top"));
+        axisBlock(BlockRegistry.thatch, modBlockTexture("thatch0_side"), modBlockTexture("thatch_top"));
 
         simpleBlock(BlockRegistry.oak_timber);
         simpleBlock(BlockRegistry.birch_timber);
@@ -72,11 +74,11 @@ public class ModBlockstateProvider extends BlockStateProvider {
         simpleBlock(BlockRegistry.jungle_timber);
         simpleBlock(BlockRegistry.acacia_timber);
         simpleBlock(BlockRegistry.dark_oak_timber);
-        
+
         simpleBlock(BlockRegistry.wattle_and_daub,
-                new ConfiguredModel(models().cubeAll("daub_cob0",modBlockTexture("daub_cob/daub_cob0"))),
-                new ConfiguredModel(models().cubeAll("daub_cob1",modBlockTexture("daub_cob/daub_cob1"))));
-        
+                new ConfiguredModel(models().cubeAll("daub_cob0", modBlockTexture("daub_cob/daub_cob0"))),
+                new ConfiguredModel(models().cubeAll("daub_cob1", modBlockTexture("daub_cob/daub_cob1"))));
+
         simpleBlock(BlockRegistry.wicker);
         simpleBlock(BlockRegistry.oak_wood_shakes);
         simpleBlock(BlockRegistry.birch_wood_shakes);
@@ -85,14 +87,14 @@ public class ModBlockstateProvider extends BlockStateProvider {
         simpleBlock(BlockRegistry.acacia_wood_shakes);
         simpleBlock(BlockRegistry.dark_oak_wood_shakes);
 
-       /* fenceBlock(BlockRegistry.vertical_oak_fence);
-        fenceBlock(BlockRegistry.vertical_spruce_fence);
-        fenceBlock(BlockRegistry.vertical_birch_fence);
-        fenceBlock(BlockRegistry.vertical_jungle_fence);
-        fenceBlock(BlockRegistry.vertical_acacia_fence);
-        fenceBlock(BlockRegistry.vertical_dark_oak_fence);*/
+        verticalFence(BlockRegistry.vertical_oak_fence, Blocks.OAK_FENCE);
+        verticalFence(BlockRegistry.vertical_spruce_fence, Blocks.SPRUCE_FENCE);
+        verticalFence(BlockRegistry.vertical_birch_fence, Blocks.BIRCH_FENCE);
+        verticalFence(BlockRegistry.vertical_jungle_fence, Blocks.JUNGLE_FENCE);
+        verticalFence(BlockRegistry.vertical_acacia_fence, Blocks.ACACIA_FENCE);
+        verticalFence(BlockRegistry.vertical_dark_oak_fence, Blocks.DARK_OAK_FENCE);
 
-        wallBlock(BlockRegistry.adobe_wall,modBlockTexture("adobe0"));
+        wallBlock(BlockRegistry.adobe_wall, modBlockTexture("adobe0"));
 
     }
 
@@ -103,20 +105,20 @@ public class ModBlockstateProvider extends BlockStateProvider {
     }
 
     protected void gabions() {
-        Block[] blocks = new Block[]{BlockRegistry.GRAVEL_GABION,BlockRegistry.SAND_GABION,BlockRegistry.DIRT_GABION};
+        Block[] blocks = new Block[]{BlockRegistry.GRAVEL_GABION, BlockRegistry.SAND_GABION, BlockRegistry.DIRT_GABION};
         for (Block block : blocks) {
             String path = block.getRegistryName().getPath();
-            BlockModelBuilder blockModelBuilder = models().cubeBottomTop(path, modBlockTexture("gabion_side"), modBlockTexture("gabion_bottom"),modBlockTexture(path + "_top"));
+            BlockModelBuilder blockModelBuilder = models().cubeBottomTop(path, modBlockTexture("gabion_side"), modBlockTexture("gabion_bottom"), modBlockTexture(path + "_top"));
             getVariantBuilder(block).partialState().addModels(ConfiguredModel.builder().modelFile(blockModelBuilder).build());
         }
     }
 
-    protected void makeVariantBlockState(Block block,int variants) {
+    protected void makeVariantBlockState(Block block, int variants) {
 
         List<ModelFile> files = new ArrayList<>();
         String path = block.getRegistryName().getPath();
 
-        for (int i = 0; i < variants;i++) {
+        for (int i = 0; i < variants; i++) {
             ModelFile modelFile = models().cubeAll(path + i, modBlockTexture(path + i));
             files.add(modelFile);
         }
@@ -127,7 +129,7 @@ public class ModBlockstateProvider extends BlockStateProvider {
     //avoids creating a long builder chain
     protected ConfiguredModel[] collectAndBuild(List<ModelFile> modelFiles) {
         ConfiguredModel.Builder<?> builder = ConfiguredModel.builder();
-        for (int i = 0; i < modelFiles.size() - 2;i++) {
+        for (int i = 0; i < modelFiles.size() - 2; i++) {
             ModelFile modelFile = modelFiles.get(i);
             builder.modelFile(modelFile).nextModel();
         }
@@ -135,14 +137,14 @@ public class ModBlockstateProvider extends BlockStateProvider {
     }
 
     protected void cordwood() {
-        ModelFile modelFile0 = models().cubeColumnHorizontal("cordwood0", modBlockTexture("cordwood0"),modBlockTexture("cordwood0_top"));
-        ModelFile modelFile1 = models().cubeColumnHorizontal("cordwood1", modBlockTexture("cordwood1"),modBlockTexture("cordwood1_top"));
-        ModelFile modelFile2 = models().cubeColumnHorizontal("cordwood2", modBlockTexture("cordwood2"),modBlockTexture("cordwood2_top"));
+        ModelFile modelFile0 = models().cubeColumnHorizontal("cordwood0", modBlockTexture("cordwood0"), modBlockTexture("cordwood0_top"));
+        ModelFile modelFile1 = models().cubeColumnHorizontal("cordwood1", modBlockTexture("cordwood1"), modBlockTexture("cordwood1_top"));
+        ModelFile modelFile2 = models().cubeColumnHorizontal("cordwood2", modBlockTexture("cordwood2"), modBlockTexture("cordwood2_top"));
 
-        Direction[] horizontals = new Direction[]{Direction.NORTH,Direction.EAST,Direction.SOUTH,Direction.WEST};
+        Direction[] horizontals = new Direction[]{Direction.NORTH, Direction.EAST, Direction.SOUTH, Direction.WEST};
 
         VariantBlockStateBuilder builder = getVariantBuilder(BlockRegistry.cordwood);
-        for (int i =0; i < 4;i++) {
+        for (int i = 0; i < 4; i++) {
             Direction horizontal = horizontals[i];
             builder.partialState().with(HorizontalBlock.HORIZONTAL_FACING, horizontal).addModels(
                     ConfiguredModel.builder().modelFile(modelFile0).rotationY(i * 90).nextModel()
@@ -153,7 +155,11 @@ public class ModBlockstateProvider extends BlockStateProvider {
     }
 
     public ResourceLocation modBlockTexture(String name) {
-        return new ResourceLocation(Earthworks.mod_id, ModelProvider.BLOCK_FOLDER + "/" + name);
+        return new ResourceLocation(Earthworks.mod_id, BLOCK_FOLDER + "/" + name);
+    }
+
+    public ResourceLocation mcBlockTexture(String name) {
+        return new ResourceLocation(BLOCK_FOLDER + "/" + name);
     }
 
 
@@ -179,8 +185,29 @@ public class ModBlockstateProvider extends BlockStateProvider {
 
     protected void verticalPlanks(Block block, Block from) {
         BlockModelBuilder blockModelBuilder = models().withExistingParent(block.getRegistryName().getPath(),
-                new ResourceLocation(Earthworks.mod_id,"block/vertical_planks")).texture("all",blockTexture(from));
+                new ResourceLocation(Earthworks.mod_id, "block/vertical_planks")).texture("all", blockTexture(from));
         getVariantBuilder(block).forAllStates(state -> ConfiguredModel.builder().modelFile(blockModelBuilder).build());
+    }
+
+
+    protected void verticalFence(Block block, Block from) {
+        String tex = from.getRegistryName().getPath().substring(0, from.getRegistryName().getPath().length() - "_fence".length()) + "_planks";
+        BlockModelBuilder builderPost = models().withExistingParent(block.getRegistryName().getPath() + "_post",
+                new ResourceLocation(Earthworks.mod_id, "block/vertical_fence_post")).texture("texture", mcBlockTexture(tex));
+
+        BlockModelBuilder builderSide = models().withExistingParent(block.getRegistryName().getPath() + "_side",
+                new ResourceLocation(Earthworks.mod_id, "block/vertical_fence_side")).texture("texture", mcBlockTexture(tex));
+
+        getMultipartBuilder(block)
+                .part().modelFile(builderPost).addModel().end()
+                .part().modelFile(builderSide).uvLock(true).addModel().condition(FenceBlock.NORTH, true).end()
+                .part().modelFile(builderSide).uvLock(true).rotationY(90).addModel().condition(FenceBlock.EAST, true).end()
+                .part().modelFile(builderSide).uvLock(true).rotationY(180).addModel().condition(FenceBlock.SOUTH, true).end()
+                .part().modelFile(builderSide).uvLock(true).rotationY(270).addModel().condition(FenceBlock.WEST, true).end();
+    }
+
+    protected BlockModelBuilder verticalFencePost(String name, ResourceLocation texture) {
+        return models().singleTexture(name, new ResourceLocation(Earthworks.mod_id, BLOCK_FOLDER + "/vertical_fence_post"), texture);
     }
 
     private String name(Block block) {

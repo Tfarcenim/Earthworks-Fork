@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:air"
+          "name": "earthworks:daub_cob_barndoor3"
         }
       ],
       "conditions": [

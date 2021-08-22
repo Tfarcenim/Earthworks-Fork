@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:air"
+          "name": "earthworks:vertical_jungle_planks"
         }
       ],
       "conditions": [

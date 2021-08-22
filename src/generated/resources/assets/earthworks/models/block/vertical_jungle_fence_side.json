@@ -1,0 +1,6 @@
+{
+  "parent": "earthworks:block/vertical_fence_side",
+  "textures": {
+    "texture": "minecraft:block/jungle_planks"
+  }
+}

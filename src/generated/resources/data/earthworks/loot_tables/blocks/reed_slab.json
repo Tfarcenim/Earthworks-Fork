@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "earthworks:itemslab_reed"
+          "name": "earthworks:reed_slab"
         }
       ],
       "conditions": [
