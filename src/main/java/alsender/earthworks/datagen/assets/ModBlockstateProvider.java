@@ -94,6 +94,71 @@ public class ModBlockstateProvider extends BlockStateProvider {
         verticalFence(BlockRegistry.vertical_acacia_fence, Blocks.ACACIA_FENCE);
         verticalFence(BlockRegistry.vertical_dark_oak_fence, Blocks.DARK_OAK_FENCE);
 
+        //side textures should be adobe2
+        ModelFile modelFile2 = models().slab("adobe_slab",modBlockTexture("adobe0"),modBlockTexture("adobe0"),modBlockTexture("adobe2"));
+
+        slabBlock(BlockRegistry.adobe_slab,modelFile2,modelFile2,modelFile2);
+
+        simpleSlab(BlockRegistry.chalk_slab);
+        simpleSlab(BlockRegistry.cinder_slab);
+        simpleSlab(BlockRegistry.cob_slab);
+        simpleSlab(BlockRegistry.concrete_slab);
+
+        ModelFile modelFile3 = models().slab("cordwood_slab",modBlockTexture("cordwood_side"),modBlockTexture("cordwood1"),modBlockTexture("cordwood1_back"));
+
+        slabBlock(BlockRegistry.cordwood_slab,modelFile3,modelFile3,modelFile3);
+
+        ModelFile modelFile4 = models().slab("dry_fitted_stone0",modBlockTexture("dry_fitted_stone0"),
+                modBlockTexture("dry_fitted_stone0"),modBlockTexture("dry_fitted_stone0"));
+
+        slabBlock(BlockRegistry.dry_fitted_stone_slab,modelFile4,modelFile4,modelFile4);
+
+        ModelFile modelFile5 = models().slab("gabion_side",modBlockTexture("gabion_bottom"),
+                modBlockTexture("gabion_side"),modBlockTexture("gravel_gabion_top"));
+
+        slabBlock(BlockRegistry.GRAVEL_GABION_SLAB,modelFile5,modelFile5,modelFile5);
+        slabBlock(BlockRegistry.SAND_GABION_SLAB,modelFile5,modelFile5,modelFile5);
+        slabBlock(BlockRegistry.DIRT_GABION_SLAB,modelFile5,modelFile5,modelFile5);
+        simpleSlab(BlockRegistry.mud_slab);
+
+        simpleSlab(BlockRegistry.vertical_oak_slab);
+        simpleSlab(BlockRegistry.vertical_spruce_slab);
+        simpleSlab(BlockRegistry.vertical_birch_slab);
+        simpleSlab(BlockRegistry.vertical_jungle_slab);
+        simpleSlab(BlockRegistry.vertical_acacia_slab);
+        simpleSlab(BlockRegistry.vertical_dark_oak_slab);
+
+        simpleSlab(BlockRegistry.lath_and_plaster_slab);
+        simpleSlab(BlockRegistry.rammed_earth_slab);
+        simpleSlab(BlockRegistry.reed_slab);
+        simpleSlab(BlockRegistry.blue_slate_slab);
+        simpleSlab(BlockRegistry.green_slate_slab);
+        simpleSlab(BlockRegistry.purple_slate_slab);
+        simpleSlab(BlockRegistry.polished_blue_slate_slab);
+        simpleSlab(BlockRegistry.polished_green_slate_slab);
+        simpleSlab(BlockRegistry.polished_purple_slate_slab);
+        simpleSlab(BlockRegistry.blue_slate_shingles_slab);
+        simpleSlab(BlockRegistry.green_slate_shingles_slab);
+        simpleSlab(BlockRegistry.purple_slate_shingles_slab);
+        simpleSlab(BlockRegistry.blue_slate_tiles_slab);
+        simpleSlab(BlockRegistry.green_slate_tiles_slab);
+        simpleSlab(BlockRegistry.purple_slate_tiles_slab);
+        simpleSlab(BlockRegistry.thatch_slab);
+        simpleSlab(BlockRegistry.oak_timber_slab);
+        simpleSlab(BlockRegistry.birch_timber_slab);
+        simpleSlab(BlockRegistry.spruce_timber_slab);
+        simpleSlab(BlockRegistry.jungle_timber_slab);
+        simpleSlab(BlockRegistry.acacia_timber_slab);
+        simpleSlab(BlockRegistry.dark_oak_timber_slab);
+        simpleSlab(BlockRegistry.wattle_and_daub_slab);
+        simpleSlab(BlockRegistry.wicker_slab);
+        simpleSlab(BlockRegistry.oak_wood_shakes_slab);
+        simpleSlab(BlockRegistry.spruce_wood_shakes_slab);
+        simpleSlab(BlockRegistry.birch_wood_shakes_slab);
+        simpleSlab(BlockRegistry.jungle_wood_shakes_slab);
+        simpleSlab(BlockRegistry.acacia_wood_shakes_slab);
+        simpleSlab(BlockRegistry.dark_oak_wood_shakes_slab);
+
         wallBlock(BlockRegistry.adobe_wall, modBlockTexture("adobe0"));
 
     }
@@ -206,8 +271,8 @@ public class ModBlockstateProvider extends BlockStateProvider {
                 .part().modelFile(builderSide).uvLock(true).rotationY(270).addModel().condition(FenceBlock.WEST, true).end();
     }
 
-    protected BlockModelBuilder verticalFencePost(String name, ResourceLocation texture) {
-        return models().singleTexture(name, new ResourceLocation(Earthworks.mod_id, BLOCK_FOLDER + "/vertical_fence_post"), texture);
+    protected void verticalSlab(SlabBlock block,Block from) {
+        
     }
 
     private String name(Block block) {
