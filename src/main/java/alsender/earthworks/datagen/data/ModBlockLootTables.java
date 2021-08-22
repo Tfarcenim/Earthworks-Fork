@@ -144,9 +144,9 @@ public class ModBlockLootTables extends BlockLootTables {
         registerDropSelfLootTable(BlockRegistry.blue_slate_shingles_stairs);
         registerDropSelfLootTable(BlockRegistry.green_slate_shingles_stairs);
         registerDropSelfLootTable(BlockRegistry.purple_slate_shingles_stairs);
-        registerDropSelfLootTable(BlockRegistry.blue_slate_tile_stairs);
-        registerDropSelfLootTable(BlockRegistry.green_slate_tile_stairs);
-        registerDropSelfLootTable(BlockRegistry.purple_slate_tile_stairs);
+        registerDropSelfLootTable(BlockRegistry.blue_slate_tiles_stairs);
+        registerDropSelfLootTable(BlockRegistry.green_slate_tiles_stairs);
+        registerDropSelfLootTable(BlockRegistry.purple_slate_tiles_stairs);
         registerDropSelfLootTable(BlockRegistry.thatch_stairs);
         registerDropSelfLootTable(BlockRegistry.oak_timber_stairs);
         registerDropSelfLootTable(BlockRegistry.birch_timber_stairs);
@@ -156,12 +156,12 @@ public class ModBlockLootTables extends BlockLootTables {
         registerDropSelfLootTable(BlockRegistry.dark_oak_timber_stairs);
         registerDropSelfLootTable(BlockRegistry.wattle_and_daub_stairs);
         registerDropSelfLootTable(BlockRegistry.wicker_stairs);
-        registerDropSelfLootTable(BlockRegistry.oak_shingle_stairs);
-        registerDropSelfLootTable(BlockRegistry.spruce_shingle_stairs);
-        registerDropSelfLootTable(BlockRegistry.birch_shingle_stairs);
-        registerDropSelfLootTable(BlockRegistry.jungle_shingle_stairs);
-        registerDropSelfLootTable(BlockRegistry.acacia_shingle_stairs);
-        registerDropSelfLootTable(BlockRegistry.dark_oak_shingle_stairs);
+        registerDropSelfLootTable(BlockRegistry.oak_wood_shakes_stairs);
+        registerDropSelfLootTable(BlockRegistry.spruce_wood_shakes_stairs);
+        registerDropSelfLootTable(BlockRegistry.birch_wood_shakes_stairs);
+        registerDropSelfLootTable(BlockRegistry.jungle_wood_shakes_stairs);
+        registerDropSelfLootTable(BlockRegistry.acacia_wood_shakes_stairs);
+        registerDropSelfLootTable(BlockRegistry.dark_oak_wood_shakes_stairs);
 
         registerDropSelfLootTable(BlockRegistry.adobe_wall);
         registerDropSelfLootTable(BlockRegistry.chalk_wall);
@@ -184,8 +184,8 @@ public class ModBlockLootTables extends BlockLootTables {
         registerDropSelfLootTable(BlockRegistry.polished_green_slate_wall);
         registerDropSelfLootTable(BlockRegistry.polished_purple_slate_wall);
         registerDropSelfLootTable(BlockRegistry.blue_slate_shingles_wall);
-        registerDropSelfLootTable(BlockRegistry.wall_slate_shingle_verte);
-        registerDropSelfLootTable(BlockRegistry.wall_slate_shingle_purple);
+        registerDropSelfLootTable(BlockRegistry.green_slate_shingles_wall);
+        registerDropSelfLootTable(BlockRegistry.purple_slate_shingles_wall);
         registerDropSelfLootTable(BlockRegistry.blue_slate_tiles_wall);
         registerDropSelfLootTable(BlockRegistry.green_slate_tiles_wall);
         registerDropSelfLootTable(BlockRegistry.purple_slate_tiles_wall);
