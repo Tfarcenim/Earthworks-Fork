@@ -109,17 +109,14 @@ public class ModBlockstateProvider extends BlockStateProvider {
 
         slabBlock(BlockRegistry.cordwood_slab,modelFile3,modelFile3,modelFile3);
 
-        ModelFile modelFile4 = models().slab("dry_fitted_stone0",modBlockTexture("dry_fitted_stone0"),
-                modBlockTexture("dry_fitted_stone0"),modBlockTexture("dry_fitted_stone0"));
+        ModelFile modelFile4 = models().slab("dry_fitted_stone_slab",
+                modBlockTexture("dry_fitted_stone0"),
+                modBlockTexture("dry_fitted_stone0"),
+                modBlockTexture("dry_fitted_stone0"));
 
         slabBlock(BlockRegistry.dry_fitted_stone_slab,modelFile4,modelFile4,modelFile4);
 
-        ModelFile modelFile5 = models().slab("gabion_side",modBlockTexture("gabion_bottom"),
-                modBlockTexture("gabion_side"),modBlockTexture("gravel_gabion_top"));
-
-        slabBlock(BlockRegistry.GRAVEL_GABION_SLAB,modelFile5,modelFile5,modelFile5);
-        slabBlock(BlockRegistry.SAND_GABION_SLAB,modelFile5,modelFile5,modelFile5);
-        slabBlock(BlockRegistry.DIRT_GABION_SLAB,modelFile5,modelFile5,modelFile5);
+        slabGabions();
 
         simpleSlab(BlockRegistry.mud_slab);
 
@@ -133,7 +130,8 @@ public class ModBlockstateProvider extends BlockStateProvider {
         simpleSlab(BlockRegistry.lath_and_plaster_slab);
         simpleSlab(BlockRegistry.rammed_earth_slab);
 
-        ModelFile modelFile6 = models().slab("reed_top",modBlockTexture("reed_top"),
+        //half variants need 180 y rotation and the side texture on top
+        ModelFile modelFile6 = models().slab("reed_slab",modBlockTexture("reed_top"),
                 modBlockTexture("reed_side"),modBlockTexture("reed_top"));
 
         slabBlock(BlockRegistry.reed_slab,modelFile6,modelFile6,modelFile6);
@@ -151,7 +149,7 @@ public class ModBlockstateProvider extends BlockStateProvider {
         simpleSlab(BlockRegistry.green_slate_tiles_slab);
         simpleSlab(BlockRegistry.purple_slate_tiles_slab);
 
-        ModelFile modelFile7 = models().slab("thatch_top",modBlockTexture("thatch_top"),
+        ModelFile modelFile7 = models().slab("thatch_slab",modBlockTexture("thatch_top"),
                 modBlockTexture("thatch1"),modBlockTexture("thatch_top"));
 
         slabBlock(BlockRegistry.thatch_slab,modelFile7,modelFile7,modelFile7);
@@ -175,6 +173,24 @@ public class ModBlockstateProvider extends BlockStateProvider {
 
         wallBlock(BlockRegistry.adobe_wall, modBlockTexture("adobe0"));
 
+    }
+
+    protected void slabGabions() {
+        SlabBlock[] blocks = new SlabBlock[]{BlockRegistry.GRAVEL_GABION_SLAB, BlockRegistry.SAND_GABION_SLAB, BlockRegistry.DIRT_GABION_SLAB};
+
+        for (SlabBlock block : blocks) {
+            String path = block.getRegistryName().getPath();
+            String name = path.substring(0,path.length() - "_gabion_slab".length());
+            ModelFile bottom = models().slab(path,modBlockTexture("gabion_bottom"),
+                    modBlockTexture("gabion_side"),modBlockTexture(name + "_gabion_top"));
+
+            ModelFile top = models().slab(path+"_top",modBlockTexture("gabion_bottom"),
+                    modBlockTexture("gabion_side"),modBlockTexture(name + "_gabion_top"));
+
+            ModelFile doubleSlab = models().getExistingFile(modBlockTexture(name+"_gabion"));
+
+            slabBlock(block,bottom,top,doubleSlab);
+        }
     }
 
     protected void cubeColumn(Block block) {

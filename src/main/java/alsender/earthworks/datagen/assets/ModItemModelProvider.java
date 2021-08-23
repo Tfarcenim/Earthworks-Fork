@@ -6,7 +6,6 @@ import net.minecraft.item.Item;
 import net.minecraft.resources.ResourcePackType;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
-import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
 public class ModItemModelProvider extends ItemModelProvider {
@@ -28,6 +27,69 @@ public class ModItemModelProvider extends ItemModelProvider {
         makeOneLayerItem(ItemRegistry.quicklime);
         makeOneLayerItem(ItemRegistry.slaked_lime);
         makeOneLayerItem(ItemRegistry.timber_framing);
+
+        makeOneLayerItem(ItemRegistry.square);
+        makeOneLayerItem(ItemRegistry.acheulean);
+        makeOneLayerItem(ItemRegistry.adz);
+        makeOneLayerItem(ItemRegistry.compass);
+        makeOneLayerItem(ItemRegistry.froe);
+        makeOneLayerItem(ItemRegistry.planer);
+        makeOneLayerItem(ItemRegistry.level);
+        makeOneLayerItem(ItemRegistry.saw);
+
+        makeOneLayerItem(ItemRegistry.wood_hammer);
+        makeOneLayerItem(ItemRegistry.stone_hammer);
+        makeOneLayerItem(ItemRegistry.iron_hammer);
+        makeOneLayerItem(ItemRegistry.gold_hammer);
+        makeOneLayerItem(ItemRegistry.diamond_hammer);
+
+        makeSimpleBlockItem(ItemRegistry.adobe_slab);
+        makeSimpleBlockItem(ItemRegistry.chalk_slab);
+        makeSimpleBlockItem(ItemRegistry.cinder_slab);
+        makeSimpleBlockItem(ItemRegistry.cob_slab);
+        makeSimpleBlockItem(ItemRegistry.concrete_slab);
+        makeSimpleBlockItem(ItemRegistry.cordwood_slab);
+        makeSimpleBlockItem(ItemRegistry.dry_fitted_stone_slab);
+        makeSimpleBlockItem(ItemRegistry.GRAVEL_GABION_SLAB);
+        makeSimpleBlockItem(ItemRegistry.SAND_GABION_SLAB);
+        makeSimpleBlockItem(ItemRegistry.DIRT_GABION_SLAB);
+        makeSimpleBlockItem(ItemRegistry.mud_slab);
+        makeSimpleBlockItem(ItemRegistry.vertical_oak_slab);
+        makeSimpleBlockItem(ItemRegistry.vertical_spruce_slab);
+        makeSimpleBlockItem(ItemRegistry.vertical_birch_slab);
+        makeSimpleBlockItem(ItemRegistry.vertical_jungle_slab);
+        makeSimpleBlockItem(ItemRegistry.vertical_acacia_slab);
+        makeSimpleBlockItem(ItemRegistry.vertical_dark_oak_slab);
+        makeSimpleBlockItem(ItemRegistry.lath_and_plaster_slab);
+        makeSimpleBlockItem(ItemRegistry.rammed_earth_slab);
+        makeSimpleBlockItem(ItemRegistry.reed_slab);
+        makeSimpleBlockItem(ItemRegistry.blue_slate_slab);
+        makeSimpleBlockItem(ItemRegistry.green_slate_slab);
+        makeSimpleBlockItem(ItemRegistry.purple_slate_slab);
+        makeSimpleBlockItem(ItemRegistry.polished_blue_slate_slab);
+        makeSimpleBlockItem(ItemRegistry.polished_green_slate_slab);
+        makeSimpleBlockItem(ItemRegistry.polished_purple_slate_slab);
+        makeSimpleBlockItem(ItemRegistry.blue_slate_shingles_slab);
+        makeSimpleBlockItem(ItemRegistry.green_slate_shingles_slab);
+        makeSimpleBlockItem(ItemRegistry.purple_slate_shingles_slab);
+        makeSimpleBlockItem(ItemRegistry.blue_slate_tiles_slab);
+        makeSimpleBlockItem(ItemRegistry.green_slate_tiles_slab);
+        makeSimpleBlockItem(ItemRegistry.purple_slate_tiles_slab);
+        makeSimpleBlockItem(ItemRegistry.thatch_slab);
+        makeSimpleBlockItem(ItemRegistry.oak_timber_slab);
+        makeSimpleBlockItem(ItemRegistry.birch_timber_slab);
+        makeSimpleBlockItem(ItemRegistry.spruce_timber_slab);
+        makeSimpleBlockItem(ItemRegistry.jungle_timber_slab);
+        makeSimpleBlockItem(ItemRegistry.acacia_timber_slab);
+        makeSimpleBlockItem(ItemRegistry.dark_oak_timber_slab);
+        makeSimpleBlockItem(ItemRegistry.wattle_and_daub_slab);
+        makeSimpleBlockItem(ItemRegistry.wicker_slab);
+        makeSimpleBlockItem(ItemRegistry.oak_wood_shakes_slab);
+        makeSimpleBlockItem(ItemRegistry.spruce_wood_shakes_slab);
+        makeSimpleBlockItem(ItemRegistry.birch_wood_shakes_slab);
+        makeSimpleBlockItem(ItemRegistry.jungle_wood_shakes_slab);
+        makeSimpleBlockItem(ItemRegistry.acacia_wood_shakes_slab);
+        makeSimpleBlockItem(ItemRegistry.dark_oak_wood_shakes_slab);
     }
 
     protected void makeSimpleBlockItem(Item item) {
@@ -39,7 +101,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         String path = item.getRegistryName().getPath();
         if (existingFileHelper.exists(new ResourceLocation(texture.getNamespace(), "item/" + texture.getPath())
                 , ResourcePackType.CLIENT_RESOURCES, ".png", "textures")) {
-            getBuilder(path).parent(new ModelFile.UncheckedModelFile(mcLoc("item/generated")))
+            getBuilder(path).parent(getExistingFile(mcLoc("item/generated")))
                     .texture("layer0", new ResourceLocation(texture.getNamespace(), "item/" + texture.getPath()));
         } else {
             System.out.println("no texture for " + item + " found, skipping");

@@ -1,13 +1,13 @@
 {
   "variants": {
     "type=top": {
-      "model": "earthworks:block/gabion_side"
+      "model": "earthworks:block/gravel_gabion_slab_top"
     },
     "type=bottom": {
-      "model": "earthworks:block/gabion_side"
+      "model": "earthworks:block/gravel_gabion_slab"
     },
     "type=double": {
-      "model": "earthworks:block/gabion_side"
+      "model": "earthworks:block/gravel_gabion"
     }
   }
 }

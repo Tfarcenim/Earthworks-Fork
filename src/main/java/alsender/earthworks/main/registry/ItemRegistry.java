@@ -30,14 +30,14 @@ public class ItemRegistry {
     public static Item slaked_lime;
     public static Item timber_framing;
 
-    public static Item tool_square;
-    public static Item tool_Acheulean;
-    public static Item tool_adz;
-    public static Item tool_compass;
-    public static Item tool_froe;
-    public static Item tool_planer;
-    public static Item tool_level;
-    public static Item tool_saw;
+    public static Item square;
+    public static Item acheulean;
+    public static Item adz;
+    public static Item compass;
+    public static Item froe;
+    public static Item planer;
+    public static Item level;
+    public static Item saw;
 
     public static Item wood_hammer;
     public static Item stone_hammer;
@@ -50,7 +50,7 @@ public class ItemRegistry {
     public static BlockItem cob_slab;
     public static BlockItem concrete_slab;
     public static BlockItem cordwood_slab;
-    public static BlockItem dry_stone_slab;
+    public static BlockItem dry_fitted_stone_slab;
     public static BlockItem GRAVEL_GABION_SLAB;
     public static BlockItem SAND_GABION_SLAB;
     public static BlockItem DIRT_GABION_SLAB;
@@ -61,13 +61,13 @@ public class ItemRegistry {
     public static BlockItem vertical_jungle_slab;
     public static BlockItem vertical_acacia_slab;
     public static BlockItem vertical_dark_oak_slab;
-    public static BlockItem plaster_slab;
+    public static BlockItem lath_and_plaster_slab;
     public static BlockItem rammed_earth_slab;
     public static BlockItem reed_slab;
-    public static BlockItem slate_slab;
-    public static BlockItem slate_green_slab;
-    public static BlockItem itemslab_slate_purple;
-    public static BlockItem itemslab_slate_slab;
+    public static BlockItem blue_slate_slab;
+    public static BlockItem green_slate_slab;
+    public static BlockItem purple_slate_slab;
+    public static BlockItem polished_blue_slate_slab;
     public static BlockItem polished_green_slate_slab;
     public static BlockItem polished_purple_slate_slab;
     public static BlockItem blue_slate_shingles_slab;
@@ -327,14 +327,14 @@ public class ItemRegistry {
         slaked_lime = new Item(new Item.Properties().group(Earthworks.creativeTab));
         timber_framing = new Item(new Item.Properties().group(Earthworks.creativeTab));
 
-        tool_square = new ModItemTool(new Item.Properties().group(Earthworks.creativeTab).maxDamage(60));
-        tool_Acheulean = new ModItemTool(new Item.Properties().group(Earthworks.creativeTab).maxDamage(132));
-        tool_adz = new ModItemTool(new Item.Properties().group(Earthworks.creativeTab).maxDamage(251));
-        tool_compass = new ModItemTool(new Item.Properties().group(Earthworks.creativeTab).maxDamage(251));
-        tool_froe = new ModItemTool(new Item.Properties().group(Earthworks.creativeTab).maxDamage(251));
-        tool_planer = new ModItemTool(new Item.Properties().group(Earthworks.creativeTab).maxDamage(251));
-        tool_level = new ModItemTool(new Item.Properties().group(Earthworks.creativeTab).maxDamage(33));
-        tool_saw = new ModItemTool(new Item.Properties().group(Earthworks.creativeTab).maxDamage(1562));
+        square = new ModItemTool(new Item.Properties().group(Earthworks.creativeTab).maxDamage(60));
+        acheulean = new ModItemTool(new Item.Properties().group(Earthworks.creativeTab).maxDamage(132));
+        adz = new ModItemTool(new Item.Properties().group(Earthworks.creativeTab).maxDamage(251));
+        compass = new ModItemTool(new Item.Properties().group(Earthworks.creativeTab).maxDamage(251));
+        froe = new ModItemTool(new Item.Properties().group(Earthworks.creativeTab).maxDamage(251));
+        planer = new ModItemTool(new Item.Properties().group(Earthworks.creativeTab).maxDamage(251));
+        level = new ModItemTool(new Item.Properties().group(Earthworks.creativeTab).maxDamage(33));
+        saw = new ModItemTool(new Item.Properties().group(Earthworks.creativeTab).maxDamage(1562));
 
         wood_hammer = new ModItemTool(new Item.Properties().group(Earthworks.creativeTab).maxDamage(60));
         stone_hammer = new ModItemTool(new Item.Properties().group(Earthworks.creativeTab).maxDamage(132));
@@ -398,7 +398,7 @@ public class ItemRegistry {
         cob_slab = blockItem(BlockRegistry.cob_slab);
         concrete_slab = blockItem(BlockRegistry.concrete_slab);
         cordwood_slab = blockItem(BlockRegistry.cordwood_slab);
-        dry_stone_slab = blockItem(BlockRegistry.dry_fitted_stone_slab);
+        dry_fitted_stone_slab = blockItem(BlockRegistry.dry_fitted_stone_slab);
         GRAVEL_GABION_SLAB = blockItem(BlockRegistry.GRAVEL_GABION_SLAB);
         SAND_GABION_SLAB = blockItem(BlockRegistry.SAND_GABION_SLAB);
         DIRT_GABION_SLAB = blockItem(BlockRegistry.DIRT_GABION_SLAB);
@@ -409,12 +409,12 @@ public class ItemRegistry {
         vertical_jungle_slab = blockItem(BlockRegistry.vertical_jungle_slab);
         vertical_acacia_slab = blockItem(BlockRegistry.vertical_acacia_slab);
         vertical_dark_oak_slab = blockItem(BlockRegistry.vertical_dark_oak_slab);
-        plaster_slab = blockItem(BlockRegistry.lath_and_plaster_slab);
+        lath_and_plaster_slab = blockItem(BlockRegistry.lath_and_plaster_slab);
         rammed_earth_slab = blockItem(BlockRegistry.rammed_earth_slab);
-        slate_slab = blockItem(BlockRegistry.blue_slate_slab);
-        slate_green_slab = blockItem(BlockRegistry.green_slate_slab);
-        itemslab_slate_purple = blockItem(BlockRegistry.purple_slate_slab);
-        itemslab_slate_slab = blockItem(BlockRegistry.polished_blue_slate_slab);
+        blue_slate_slab = blockItem(BlockRegistry.blue_slate_slab);
+        green_slate_slab = blockItem(BlockRegistry.green_slate_slab);
+        purple_slate_slab = blockItem(BlockRegistry.purple_slate_slab);
+        polished_blue_slate_slab = blockItem(BlockRegistry.polished_blue_slate_slab);
         polished_green_slate_slab = blockItem(BlockRegistry.polished_green_slate_slab);
         polished_purple_slate_slab = blockItem(BlockRegistry.polished_purple_slate_slab);
         blue_slate_shingles_slab = blockItem(BlockRegistry.blue_slate_shingles_slab);

@@ -1,13 +1,13 @@
 {
   "variants": {
     "type=top": {
-      "model": "earthworks:block/dry_fitted_stone0"
+      "model": "earthworks:block/dry_fitted_stone_slab"
     },
     "type=bottom": {
-      "model": "earthworks:block/dry_fitted_stone0"
+      "model": "earthworks:block/dry_fitted_stone_slab"
     },
     "type=double": {
-      "model": "earthworks:block/dry_fitted_stone0"
+      "model": "earthworks:block/dry_fitted_stone_slab"
     }
   }
 }
