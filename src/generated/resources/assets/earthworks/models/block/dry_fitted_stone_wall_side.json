@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/template_wall_side",
+  "textures": {
+    "wall": "earthworks:block/dry_fitted_stone0"
+  }
+}

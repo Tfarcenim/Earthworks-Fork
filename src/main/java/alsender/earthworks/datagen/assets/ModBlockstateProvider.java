@@ -172,6 +172,54 @@ public class ModBlockstateProvider extends BlockStateProvider {
         simpleSlab(BlockRegistry.dark_oak_wood_shakes_slab);
 
         wallBlock(BlockRegistry.adobe_wall, modBlockTexture("adobe0"));
+        simpleWall(BlockRegistry.chalk_wall);
+        simpleWall(BlockRegistry.cinder_wall);
+        simpleWall(BlockRegistry.cob_wall);
+        simpleWall(BlockRegistry.concrete_wall);
+
+        wallBlock(BlockRegistry.cordwood_wall,modBlockTexture("cordwood1"));
+
+        wallBlock(BlockRegistry.dry_fitted_stone_wall,modBlockTexture("dry_fitted_stone0"));
+
+        wallGabions();
+
+        simpleWall(BlockRegistry.mud_wall);
+        simpleWall(BlockRegistry.lath_and_plaster_wall);
+        simpleWall(BlockRegistry.rammed_earth_wall);
+
+        wallBlock(BlockRegistry.reed_wall,"reed_wall",modBlockTexture("reed_side"));
+
+
+        simpleWall(BlockRegistry.blue_slate_wall);
+        simpleWall(BlockRegistry.green_slate_wall);
+        simpleWall(BlockRegistry.purple_slate_wall);
+        simpleWall(BlockRegistry.polished_blue_slate_wall);
+        simpleWall(BlockRegistry.polished_green_slate_wall);
+        simpleWall(BlockRegistry.polished_purple_slate_wall);
+        simpleWall(BlockRegistry.blue_slate_shingles_wall);
+        simpleWall(BlockRegistry.green_slate_shingles_wall);
+        simpleWall(BlockRegistry.purple_slate_shingles_wall);
+        simpleWall(BlockRegistry.blue_slate_tiles_wall);
+        simpleWall(BlockRegistry.green_slate_tiles_wall);
+        simpleWall(BlockRegistry.purple_slate_tiles_wall);
+
+        wallBlock(BlockRegistry.thatch_wall,"thatch_wall",modBlockTexture("thatch0_side"));
+
+
+        simpleWall(BlockRegistry.oak_timber_wall);
+        simpleWall(BlockRegistry.birch_timber_wall);
+        simpleWall(BlockRegistry.spruce_timber_wall);
+        simpleWall(BlockRegistry.jungle_timber_wall);
+        simpleWall(BlockRegistry.acacia_timber_wall);
+        simpleWall(BlockRegistry.dark_oak_timber_wall);
+        wallBlock(BlockRegistry.wattle_and_daub_wall,modBlockTexture("daub_cob/daub_cob0"));
+        simpleWall(BlockRegistry.wicker_wall);
+        simpleWall(BlockRegistry.oak_wood_shakes_wall);
+        simpleWall(BlockRegistry.spruce_wood_shakes_wall);
+        simpleWall(BlockRegistry.birch_wood_shakes_wall);
+        simpleWall(BlockRegistry.jungle_wood_shakes_wall);
+        simpleWall(BlockRegistry.acacia_wood_shakes_wall);
+        simpleWall(BlockRegistry.dark_oak_wood_shakes_wall);
 
     }
 
@@ -205,6 +253,17 @@ public class ModBlockstateProvider extends BlockStateProvider {
             String path = block.getRegistryName().getPath();
             BlockModelBuilder blockModelBuilder = models().cubeBottomTop(path, modBlockTexture("gabion_side"), modBlockTexture("gabion_bottom"), modBlockTexture(path + "_top"));
             getVariantBuilder(block).partialState().addModels(ConfiguredModel.builder().modelFile(blockModelBuilder).build());
+        }
+    }
+
+    protected void wallGabions() {
+        WallBlock[] blocks = new WallBlock[]{BlockRegistry.GRAVEL_GABION_WALL,BlockRegistry.SAND_GABION_WALL,BlockRegistry.DIRT_GABION_WALL};
+        for (WallBlock block : blocks) {
+            String path = block.getRegistryName().getPath();
+            ModelFile post = models().withExistingParent(path+"_post",modBlockTexture("wall_post"));
+            ModelFile side = models().withExistingParent(path+"_side",modBlockTexture("wall_side"));
+            ModelFile sideTall = models().withExistingParent(path+"_side_tall",mcBlockTexture("template_wall_side_tall"));
+            wallBlock(block,post,side,sideTall);
         }
     }
 
@@ -370,6 +429,7 @@ public class ModBlockstateProvider extends BlockStateProvider {
 
         if (original == Blocks.AIR) {
             System.out.println("No original block found for " + id + " tried " + stairsPath);
+            return;
         }
 
         wallBlock(block, new ResourceLocation(id.getNamespace(), "block/" + original.getRegistryName().getPath()));
