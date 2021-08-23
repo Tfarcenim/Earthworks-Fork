@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:air"
+          "name": "earthworks:dark_oak_wood_shakes"
         }
       ],
       "conditions": [

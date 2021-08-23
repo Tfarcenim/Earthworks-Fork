@@ -44,6 +44,47 @@ public class ItemRegistry {
     public static Item iron_hammer;
     public static Item gold_hammer;
     public static Item diamond_hammer;
+
+    public static BlockItem adobe;
+    public static BlockItem chalk;
+    public static BlockItem cinder;
+    public static BlockItem cob;
+    public static BlockItem concrete;
+    public static BlockItem cordwood;
+    public static BlockItem dry_fitted_stone;
+    public static BlockItem GRAVEL_GABION;
+    public static BlockItem SAND_GABION;
+    public static BlockItem DIRT_GABION;
+    public static BlockItem mud;
+    public static BlockItem lath_and_plaster;
+    public static BlockItem rammed_earth;
+    public static BlockItem blue_slate;
+    public static BlockItem green_slate;
+    public static BlockItem purple_slate;
+    public static BlockItem polished_blue_slate;
+    public static BlockItem polished_green_slate;
+    public static BlockItem polished_purple_slate;
+    public static BlockItem blue_slate_shingles;
+    public static BlockItem green_slate_shingles;
+    public static BlockItem purple_slate_shingles;
+    public static BlockItem blue_slate_tiles;
+    public static BlockItem green_slate_tiles;
+    public static BlockItem purple_slate_tiles;
+    public static BlockItem oak_timber;
+    public static BlockItem birch_timber;
+    public static BlockItem spruce_timber;
+    public static BlockItem jungle_timber;
+    public static BlockItem acacia_timber;
+    public static BlockItem dark_oak_timber;
+    public static BlockItem wattle_and_daub;
+    public static BlockItem wicker;
+    public static BlockItem oak_wood_shakes;
+    public static BlockItem spruce_wood_shakes;
+    public static BlockItem birch_wood_shakes;
+    public static BlockItem jungle_wood_shakes;
+    public static BlockItem acacia_wood_shakes;
+    public static BlockItem dark_oak_wood_shakes;
+
     public static BlockItem adobe_slab;
     public static BlockItem chalk_slab;
     public static BlockItem cinder_slab;
@@ -99,30 +140,6 @@ public class ItemRegistry {
     public static BlockItem vertical_acacia_planks;
     public static BlockItem vertical_dark_oak_planks;
 
-    public static BlockItem lath_and_plaster;
-    public static BlockItem rammed_earth;
-    public static BlockItem blue_slate;
-    public static BlockItem green_slate;
-    public static BlockItem purple_slate;
-    public static BlockItem polished_blue_slate;
-    public static BlockItem polished_green_slate;
-    public static BlockItem polished_purple_slate;
-    public static BlockItem blue_slate_shingle;
-    public static BlockItem green_slate_shingle;
-    public static BlockItem purple_slate_shingle;
-    public static BlockItem blue_slate_tiles;
-    public static BlockItem green_slate_tiles;
-    public static BlockItem purple_slate_tiles;
-    public static BlockItem oak_timber;
-    public static BlockItem birch_timber;
-    public static BlockItem spruce_timber;
-    public static BlockItem jungle_timber;
-    public static BlockItem acacia_timber;
-    public static BlockItem dark_oak_timber;
-    public static BlockItem wattle_and_daub;
-    public static BlockItem wicker;
-    public static BlockItem oak_shingle;
-
     public static BlockItem vertical_oak_fence;
     public static BlockItem vertical_spruce_fence;
     public static BlockItem vertical_birch_fence;
@@ -148,7 +165,7 @@ public class ItemRegistry {
     public static BlockItem vertical_jungle_stairs;
     public static BlockItem vertical_acacia_stairs;
     public static BlockItem vertical_dark_oak_stairs;
-    public static BlockItem plaster_stairs;
+    public static BlockItem lath_and_plaster_stairs;
     public static BlockItem rammed_earth_stairs;
     public static BlockItem blue_slate_stairs;
     public static BlockItem green_slate_stairs;
@@ -304,18 +321,6 @@ public class ItemRegistry {
     public static BlockItem plaster_xright;
     public static BlockItem plaster_xtop;
 
-    public static BlockItem adobe;
-    public static BlockItem chalk;
-    public static BlockItem cinder;
-    public static BlockItem cob;
-    public static BlockItem concrete;
-    public static BlockItem cordwood;
-    public static BlockItem dry_fitted_stone;
-    public static BlockItem GRAVEL_GABION;
-    public static BlockItem SAND_GABION;
-    public static BlockItem DIRT_GABION;
-    public static BlockItem mud;
-
     public static void initItems(RegistryEvent.Register<Item> event) {
         IForgeRegistry<Item> r = event.getRegistry();
         adobe_brick = new Item(new Item.Properties().group(Earthworks.creativeTab));
@@ -369,9 +374,9 @@ public class ItemRegistry {
         polished_blue_slate = blockItem(BlockRegistry.polished_blue_slate);
         polished_green_slate = blockItem(BlockRegistry.polished_green_slate);
         polished_purple_slate = blockItem(BlockRegistry.polished_purple_slate);
-        blue_slate_shingle = blockItem(BlockRegistry.blue_slate_shingles);
-        green_slate_shingle = blockItem(BlockRegistry.green_slate_shingles);
-        purple_slate_shingle = blockItem(BlockRegistry.purple_slate_shingles);
+        blue_slate_shingles = blockItem(BlockRegistry.blue_slate_shingles);
+        green_slate_shingles = blockItem(BlockRegistry.green_slate_shingles);
+        purple_slate_shingles = blockItem(BlockRegistry.purple_slate_shingles);
         blue_slate_tiles = blockItem(BlockRegistry.blue_slate_tiles);
         green_slate_tiles = blockItem(BlockRegistry.green_slate_tiles);
         purple_slate_tiles = blockItem(BlockRegistry.purple_slate_tiles);
@@ -383,7 +388,12 @@ public class ItemRegistry {
         dark_oak_timber = blockItem(BlockRegistry.dark_oak_timber);
         wattle_and_daub = blockItem(BlockRegistry.wattle_and_daub);
         wicker = blockItem(BlockRegistry.wicker);
-        oak_shingle = blockItem(BlockRegistry.oak_wood_shakes);
+        oak_wood_shakes = blockItem(BlockRegistry.oak_wood_shakes);
+        spruce_wood_shakes = blockItem(BlockRegistry.spruce_wood_shakes);
+        birch_wood_shakes = blockItem(BlockRegistry.birch_wood_shakes);
+        jungle_wood_shakes = blockItem(BlockRegistry.jungle_wood_shakes);
+        acacia_wood_shakes = blockItem(BlockRegistry.acacia_wood_shakes);
+        dark_oak_wood_shakes = blockItem(BlockRegistry.dark_oak_wood_shakes);
 
         vertical_oak_fence = blockItem(BlockRegistry.vertical_oak_fence);
         vertical_spruce_fence = blockItem(BlockRegistry.vertical_spruce_fence);
@@ -455,7 +465,7 @@ public class ItemRegistry {
         vertical_jungle_stairs = blockItem(BlockRegistry.vertical_jungle_stairs);
         vertical_acacia_stairs = blockItem(BlockRegistry.vertical_acacia_stairs);
         vertical_dark_oak_stairs = blockItem(BlockRegistry.vertical_dark_oak_stairs);
-        plaster_stairs = blockItem(BlockRegistry.plaster_stairs);
+        lath_and_plaster_stairs = blockItem(BlockRegistry.lath_and_plaster_stairs);
         rammed_earth_stairs = blockItem(BlockRegistry.rammed_earth_stairs);
         blue_slate_stairs = blockItem(BlockRegistry.blue_slate_stairs);
         green_slate_stairs = blockItem(BlockRegistry.green_slate_stairs);

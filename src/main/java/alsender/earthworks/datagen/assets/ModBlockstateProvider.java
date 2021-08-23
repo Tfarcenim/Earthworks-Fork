@@ -197,7 +197,7 @@ public class ModBlockstateProvider extends BlockStateProvider {
         simpleStairs(BlockRegistry.vertical_jungle_stairs);
         simpleStairs(BlockRegistry.vertical_acacia_stairs);
         simpleStairs(BlockRegistry.vertical_dark_oak_stairs);
-        simpleStairs(BlockRegistry.plaster_stairs);
+        simpleStairs(BlockRegistry.lath_and_plaster_stairs);
         simpleStairs(BlockRegistry.rammed_earth_stairs);
         stairsBlock(BlockRegistry.reed_stairs,modBlockTexture("reed_side"));
         simpleStairs(BlockRegistry.blue_slate_stairs);

@@ -143,7 +143,7 @@ public class BlockRegistry {
     public static StairsBlock vertical_jungle_stairs;
     public static StairsBlock vertical_acacia_stairs;
     public static StairsBlock vertical_dark_oak_stairs;
-    public static StairsBlock plaster_stairs;
+    public static StairsBlock lath_and_plaster_stairs;
     public static StairsBlock rammed_earth_stairs;
     public static StairsBlock reed_stairs;
     public static StairsBlock blue_slate_stairs;
@@ -424,7 +424,7 @@ public class BlockRegistry {
         vertical_jungle_stairs = new StairsBlock(vertical_oak_planks.getDefaultState(),Block.Properties.from(vertical_jungle_planks));
         vertical_acacia_stairs = new StairsBlock(vertical_acacia_planks.getDefaultState(),Block.Properties.from(vertical_acacia_planks));
         vertical_dark_oak_stairs = new StairsBlock(vertical_dark_oak_planks.getDefaultState(),Block.Properties.from(vertical_dark_oak_planks));
-        plaster_stairs = new StairsBlock(lath_and_plaster.getDefaultState(),Block.Properties.from(lath_and_plaster));
+        lath_and_plaster_stairs = new StairsBlock(lath_and_plaster.getDefaultState(),Block.Properties.from(lath_and_plaster));
         rammed_earth_stairs = new StairsBlock(rammed_earth.getDefaultState(),Block.Properties.from(rammed_earth));
         blue_slate_stairs = new StairsBlock(blue_slate.getDefaultState(),Block.Properties.from(blue_slate));
         green_slate_stairs = new StairsBlock(green_slate.getDefaultState(),Block.Properties.from(green_slate));

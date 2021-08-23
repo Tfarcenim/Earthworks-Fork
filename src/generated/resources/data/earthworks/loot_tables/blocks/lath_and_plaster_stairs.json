@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "earthworks:plaster_stairs"
+          "name": "earthworks:lath_and_plaster_stairs"
         }
       ],
       "conditions": [

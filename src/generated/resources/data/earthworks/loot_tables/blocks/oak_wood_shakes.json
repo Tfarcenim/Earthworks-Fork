@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "earthworks:oak_shingle"
+          "name": "earthworks:oak_wood_shakes"
         }
       ],
       "conditions": [

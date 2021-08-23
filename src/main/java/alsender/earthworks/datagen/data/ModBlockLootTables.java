@@ -132,7 +132,7 @@ public class ModBlockLootTables extends BlockLootTables {
         registerDropSelfLootTable(BlockRegistry.vertical_jungle_stairs);
         registerDropSelfLootTable(BlockRegistry.vertical_acacia_stairs);
         registerDropSelfLootTable(BlockRegistry.vertical_dark_oak_stairs);
-        registerDropSelfLootTable(BlockRegistry.plaster_stairs);
+        registerDropSelfLootTable(BlockRegistry.lath_and_plaster_stairs);
         registerDropSelfLootTable(BlockRegistry.rammed_earth_stairs);
         registerDropSelfLootTable(BlockRegistry.reed_stairs);
         registerDropSelfLootTable(BlockRegistry.blue_slate_stairs);

@@ -43,6 +43,46 @@ public class ModItemModelProvider extends ItemModelProvider {
         makeOneLayerItem(ItemRegistry.gold_hammer);
         makeOneLayerItem(ItemRegistry.diamond_hammer);
 
+        makeSimpleBlockItem(ItemRegistry.adobe,modLoc("adobe0"));
+        makeSimpleBlockItem(ItemRegistry.chalk);
+        makeSimpleBlockItem(ItemRegistry.cinder);
+        makeSimpleBlockItem(ItemRegistry.cob);
+        makeSimpleBlockItem(ItemRegistry.concrete);
+        makeSimpleBlockItem(ItemRegistry.cordwood,modLoc("cordwood0"));
+        makeSimpleBlockItem(ItemRegistry.dry_fitted_stone,modLoc("dry_fitted_stone0"));
+        makeSimpleBlockItem(ItemRegistry.GRAVEL_GABION);
+        makeSimpleBlockItem(ItemRegistry.SAND_GABION);
+        makeSimpleBlockItem(ItemRegistry.DIRT_GABION);
+        makeSimpleBlockItem(ItemRegistry.mud);
+        makeSimpleBlockItem(ItemRegistry.lath_and_plaster);
+        makeSimpleBlockItem(ItemRegistry.rammed_earth);
+        makeSimpleBlockItem(ItemRegistry.blue_slate);
+        makeSimpleBlockItem(ItemRegistry.green_slate);
+        makeSimpleBlockItem(ItemRegistry.purple_slate);
+        makeSimpleBlockItem(ItemRegistry.polished_blue_slate);
+        makeSimpleBlockItem(ItemRegistry.polished_green_slate);
+        makeSimpleBlockItem(ItemRegistry.polished_purple_slate);
+        makeSimpleBlockItem(ItemRegistry.blue_slate_shingles);
+        makeSimpleBlockItem(ItemRegistry.green_slate_shingles);
+        makeSimpleBlockItem(ItemRegistry.purple_slate_shingles);
+        makeSimpleBlockItem(ItemRegistry.blue_slate_tiles);
+        makeSimpleBlockItem(ItemRegistry.green_slate_tiles);
+        makeSimpleBlockItem(ItemRegistry.purple_slate_tiles);
+        makeSimpleBlockItem(ItemRegistry.oak_timber);
+        makeSimpleBlockItem(ItemRegistry.birch_timber);
+        makeSimpleBlockItem(ItemRegistry.spruce_timber);
+        makeSimpleBlockItem(ItemRegistry.jungle_timber);
+        makeSimpleBlockItem(ItemRegistry.acacia_timber);
+        makeSimpleBlockItem(ItemRegistry.dark_oak_timber);
+        makeSimpleBlockItem(ItemRegistry.wattle_and_daub,modLoc("daub_cob0"));
+        makeSimpleBlockItem(ItemRegistry.wicker);
+        makeSimpleBlockItem(ItemRegistry.oak_wood_shakes);
+        makeSimpleBlockItem(ItemRegistry.spruce_wood_shakes);
+        makeSimpleBlockItem(ItemRegistry.birch_wood_shakes);
+        makeSimpleBlockItem(ItemRegistry.jungle_wood_shakes);
+        makeSimpleBlockItem(ItemRegistry.acacia_wood_shakes);
+        makeSimpleBlockItem(ItemRegistry.dark_oak_wood_shakes);
+
         makeSimpleBlockItem(ItemRegistry.adobe_slab);
         makeSimpleBlockItem(ItemRegistry.chalk_slab);
         makeSimpleBlockItem(ItemRegistry.cinder_slab);
@@ -93,8 +133,12 @@ public class ModItemModelProvider extends ItemModelProvider {
     }
 
     protected void makeSimpleBlockItem(Item item) {
+        makeSimpleBlockItem(item,item.getRegistryName());
+    }
+
+    protected void makeSimpleBlockItem(Item item,ResourceLocation model) {
         getBuilder(item.getRegistryName().toString())
-                .parent(getExistingFile(modLoc("block/" + item.getRegistryName().getPath())));
+                .parent(getExistingFile(new ResourceLocation(model.getNamespace() , "block/" + model.getPath())));
     }
 
     protected void makeOneLayerItem(Item item, ResourceLocation texture) {

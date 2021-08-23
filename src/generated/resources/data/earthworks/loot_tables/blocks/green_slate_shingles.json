@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "earthworks:green_slate_shingle"
+          "name": "earthworks:green_slate_shingles"
         }
       ],
       "conditions": [
