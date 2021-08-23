@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "side": "earthworks:block/dry_fitted_stone0",
+    "bottom": "earthworks:block/dry_fitted_stone0",
+    "top": "earthworks:block/dry_fitted_stone0"
+  }
+}

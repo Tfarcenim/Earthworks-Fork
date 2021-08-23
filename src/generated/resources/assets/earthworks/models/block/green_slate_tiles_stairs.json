@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "side": "earthworks:block/green_slate_tiles",
+    "bottom": "earthworks:block/green_slate_tiles",
+    "top": "earthworks:block/green_slate_tiles"
+  }
+}

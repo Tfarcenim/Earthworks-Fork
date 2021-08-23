@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "side": "earthworks:block/purple_slate",
+    "bottom": "earthworks:block/purple_slate",
+    "top": "earthworks:block/purple_slate"
+  }
+}

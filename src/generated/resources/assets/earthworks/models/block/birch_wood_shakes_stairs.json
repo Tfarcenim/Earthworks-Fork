@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "side": "earthworks:block/birch_wood_shakes",
+    "bottom": "earthworks:block/birch_wood_shakes",
+    "top": "earthworks:block/birch_wood_shakes"
+  }
+}

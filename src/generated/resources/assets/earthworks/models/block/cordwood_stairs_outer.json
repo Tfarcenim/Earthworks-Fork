@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "side": "earthworks:block/cordwood0",
+    "bottom": "earthworks:block/cordwood0",
+    "top": "earthworks:block/cordwood0"
+  }
+}

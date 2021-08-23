@@ -95,6 +95,13 @@ public class ModBlockstateProvider extends BlockStateProvider {
         verticalFence(BlockRegistry.vertical_acacia_fence, Blocks.ACACIA_FENCE);
         verticalFence(BlockRegistry.vertical_dark_oak_fence, Blocks.DARK_OAK_FENCE);
 
+        slabs();
+        stairs();
+        walls();
+
+    }
+
+    protected void slabs() {
         //side textures should be adobe2
         ModelFile modelFile2 = models().slab("adobe_slab",modBlockTexture("adobe0"),modBlockTexture("adobe0"),modBlockTexture("adobe2"));
 
@@ -170,7 +177,59 @@ public class ModBlockstateProvider extends BlockStateProvider {
         simpleSlab(BlockRegistry.jungle_wood_shakes_slab);
         simpleSlab(BlockRegistry.acacia_wood_shakes_slab);
         simpleSlab(BlockRegistry.dark_oak_wood_shakes_slab);
+    }
 
+    protected void stairs() {
+        stairsBlock(BlockRegistry.adobe_stairs,modBlockTexture("adobe0"));
+        simpleStairs(BlockRegistry.chalk_stairs);
+        simpleStairs(BlockRegistry.cinder_stairs);
+        simpleStairs(BlockRegistry.cob_stairs);
+        simpleStairs(BlockRegistry.concrete_stairs);
+        stairsBlock(BlockRegistry.cordwood_stairs,modBlockTexture("cordwood0"));
+        stairsBlock(BlockRegistry.dry_fitted_stone_stairs,modBlockTexture("dry_fitted_stone0"));
+
+        stairGabions();
+
+        simpleStairs(BlockRegistry.mud_stairs);
+        simpleStairs(BlockRegistry.vertical_oak_stairs);
+        simpleStairs(BlockRegistry.vertical_spruce_stairs);
+        simpleStairs(BlockRegistry.vertical_birch_stairs);
+        simpleStairs(BlockRegistry.vertical_jungle_stairs);
+        simpleStairs(BlockRegistry.vertical_acacia_stairs);
+        simpleStairs(BlockRegistry.vertical_dark_oak_stairs);
+        simpleStairs(BlockRegistry.plaster_stairs);
+        simpleStairs(BlockRegistry.rammed_earth_stairs);
+        stairsBlock(BlockRegistry.reed_stairs,modBlockTexture("reed_side"));
+        simpleStairs(BlockRegistry.blue_slate_stairs);
+        simpleStairs(BlockRegistry.green_slate_stairs);
+        simpleStairs(BlockRegistry.purple_slate_stairs);
+        simpleStairs(BlockRegistry.polished_blue_slate_stairs);
+        simpleStairs(BlockRegistry.polished_green_slate_stairs);
+        simpleStairs(BlockRegistry.polished_purple_slate_stairs);
+        simpleStairs(BlockRegistry.blue_slate_shingles_stairs);
+        simpleStairs(BlockRegistry.green_slate_shingles_stairs);
+        simpleStairs(BlockRegistry.purple_slate_shingles_stairs);
+        simpleStairs(BlockRegistry.blue_slate_tiles_stairs);
+        simpleStairs(BlockRegistry.green_slate_tiles_stairs);
+        simpleStairs(BlockRegistry.purple_slate_tiles_stairs);
+        stairsBlock(BlockRegistry.thatch_stairs,modBlockTexture("thatch0_side"));
+        simpleStairs(BlockRegistry.oak_timber_stairs);
+        simpleStairs(BlockRegistry.birch_timber_stairs);
+        simpleStairs(BlockRegistry.spruce_timber_stairs);
+        simpleStairs(BlockRegistry.jungle_timber_stairs);
+        simpleStairs(BlockRegistry.acacia_timber_stairs);
+        simpleStairs(BlockRegistry.dark_oak_timber_stairs);
+        stairsBlock(BlockRegistry.wattle_and_daub_stairs, modBlockTexture("daub_cob/daub_cob0"));
+        simpleStairs(BlockRegistry.wicker_stairs);
+        simpleStairs(BlockRegistry.oak_wood_shakes_stairs);
+        simpleStairs(BlockRegistry.spruce_wood_shakes_stairs);
+        simpleStairs(BlockRegistry.birch_wood_shakes_stairs);
+        simpleStairs(BlockRegistry.jungle_wood_shakes_stairs);
+        simpleStairs(BlockRegistry.acacia_wood_shakes_stairs);
+        simpleStairs(BlockRegistry.dark_oak_wood_shakes_stairs);
+    }
+
+    protected void walls() {
         wallBlock(BlockRegistry.adobe_wall, modBlockTexture("adobe0"));
         simpleWall(BlockRegistry.chalk_wall);
         simpleWall(BlockRegistry.cinder_wall);
@@ -220,7 +279,6 @@ public class ModBlockstateProvider extends BlockStateProvider {
         simpleWall(BlockRegistry.jungle_wood_shakes_wall);
         simpleWall(BlockRegistry.acacia_wood_shakes_wall);
         simpleWall(BlockRegistry.dark_oak_wood_shakes_wall);
-
     }
 
     protected void slabGabions() {
@@ -238,6 +296,23 @@ public class ModBlockstateProvider extends BlockStateProvider {
             ModelFile doubleSlab = models().getExistingFile(modBlockTexture(name+"_gabion"));
 
             slabBlock(block,bottom,top,doubleSlab);
+        }
+    }
+
+    protected void stairGabions() {
+        StairsBlock[] blocks = new StairsBlock[]{BlockRegistry.GRAVEL_GABION_STAIRS, BlockRegistry.SAND_GABION_STAIRS, BlockRegistry.DIRT_GABION_STAIRS};
+
+        for (StairsBlock block : blocks) {
+            String path = block.getRegistryName().getPath();
+            String name = path.substring(0,path.length() - "_gabion_stairs".length());
+
+            ModelFile stairs = models().withExistingParent(path,modBlockTexture("stairs"));
+
+            ModelFile inner = models().withExistingParent(path,modBlockTexture("inner_stairs"));
+
+            ModelFile outer = models().withExistingParent(path,modBlockTexture("outer_stairs"));
+
+            stairsBlock(block,stairs,inner,outer);
         }
     }
 
@@ -415,6 +490,7 @@ public class ModBlockstateProvider extends BlockStateProvider {
 
         if (original == Blocks.AIR) {
             System.out.println("No original block found for " + id + " tried " + stairsPath);
+            return;
         }
 
         stairsBlock(block, new ResourceLocation(id.getNamespace(), "block/" + original.getRegistryName().getPath()));

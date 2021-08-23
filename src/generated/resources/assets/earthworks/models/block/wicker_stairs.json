@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "side": "earthworks:block/wicker",
+    "bottom": "earthworks:block/wicker",
+    "top": "earthworks:block/wicker"
+  }
+}
