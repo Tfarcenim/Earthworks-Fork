@@ -6,6 +6,7 @@ import alsender.earthworks.main.registry.BlockRegistry;
 import net.minecraft.block.*;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourcePackType;
+import net.minecraft.state.properties.SlabType;
 import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.model.generators.*;
@@ -119,18 +120,24 @@ public class ModBlockstateProvider extends BlockStateProvider {
         slabBlock(BlockRegistry.GRAVEL_GABION_SLAB,modelFile5,modelFile5,modelFile5);
         slabBlock(BlockRegistry.SAND_GABION_SLAB,modelFile5,modelFile5,modelFile5);
         slabBlock(BlockRegistry.DIRT_GABION_SLAB,modelFile5,modelFile5,modelFile5);
+
         simpleSlab(BlockRegistry.mud_slab);
 
-        simpleSlab(BlockRegistry.vertical_oak_slab);
-        simpleSlab(BlockRegistry.vertical_spruce_slab);
-        simpleSlab(BlockRegistry.vertical_birch_slab);
-        simpleSlab(BlockRegistry.vertical_jungle_slab);
-        simpleSlab(BlockRegistry.vertical_acacia_slab);
-        simpleSlab(BlockRegistry.vertical_dark_oak_slab);
+        verticalSlab(BlockRegistry.vertical_oak_slab,Blocks.OAK_PLANKS);
+        verticalSlab(BlockRegistry.vertical_spruce_slab,Blocks.SPRUCE_PLANKS);
+        verticalSlab(BlockRegistry.vertical_birch_slab,Blocks.BIRCH_PLANKS);
+        verticalSlab(BlockRegistry.vertical_jungle_slab,Blocks.JUNGLE_PLANKS);
+        verticalSlab(BlockRegistry.vertical_acacia_slab,Blocks.ACACIA_PLANKS);
+        verticalSlab(BlockRegistry.vertical_dark_oak_slab,Blocks.DARK_OAK_PLANKS);
 
         simpleSlab(BlockRegistry.lath_and_plaster_slab);
         simpleSlab(BlockRegistry.rammed_earth_slab);
-        simpleSlab(BlockRegistry.reed_slab);
+
+        ModelFile modelFile6 = models().slab("reed_top",modBlockTexture("reed_top"),
+                modBlockTexture("reed_side"),modBlockTexture("reed_top"));
+
+        slabBlock(BlockRegistry.reed_slab,modelFile6,modelFile6,modelFile6);
+
         simpleSlab(BlockRegistry.blue_slate_slab);
         simpleSlab(BlockRegistry.green_slate_slab);
         simpleSlab(BlockRegistry.purple_slate_slab);
@@ -143,14 +150,21 @@ public class ModBlockstateProvider extends BlockStateProvider {
         simpleSlab(BlockRegistry.blue_slate_tiles_slab);
         simpleSlab(BlockRegistry.green_slate_tiles_slab);
         simpleSlab(BlockRegistry.purple_slate_tiles_slab);
-        simpleSlab(BlockRegistry.thatch_slab);
+
+        ModelFile modelFile7 = models().slab("thatch_top",modBlockTexture("thatch_top"),
+                modBlockTexture("thatch1"),modBlockTexture("thatch_top"));
+
+        slabBlock(BlockRegistry.thatch_slab,modelFile7,modelFile7,modelFile7);
+
         simpleSlab(BlockRegistry.oak_timber_slab);
         simpleSlab(BlockRegistry.birch_timber_slab);
         simpleSlab(BlockRegistry.spruce_timber_slab);
         simpleSlab(BlockRegistry.jungle_timber_slab);
         simpleSlab(BlockRegistry.acacia_timber_slab);
         simpleSlab(BlockRegistry.dark_oak_timber_slab);
-        simpleSlab(BlockRegistry.wattle_and_daub_slab);
+
+        simpleSlab(BlockRegistry.wattle_and_daub_slab,modBlockTexture("daub_cob/daub_cob0"));
+
         simpleSlab(BlockRegistry.wicker_slab);
         simpleSlab(BlockRegistry.oak_wood_shakes_slab);
         simpleSlab(BlockRegistry.spruce_wood_shakes_slab);
@@ -272,7 +286,26 @@ public class ModBlockstateProvider extends BlockStateProvider {
     }
 
     protected void verticalSlab(SlabBlock block,Block from) {
-        
+        String tex = from.getRegistryName().getPath();
+
+        BlockModelBuilder bottom = models().withExistingParent(block.getRegistryName().getPath(),
+                new ResourceLocation(Earthworks.mod_id, "block/vertical_slab")).texture("texture", mcBlockTexture(tex));
+
+        BlockModelBuilder top = models().withExistingParent(block.getRegistryName().getPath() + "_top",
+                new ResourceLocation(Earthworks.mod_id, "block/vertical_slab_top")).texture("texture", mcBlockTexture(tex));
+
+        BlockModelBuilder doubleT = models().withExistingParent(block.getRegistryName().getPath().substring(0,block.getRegistryName().getPath().length() - "_slab".length()),
+                new ResourceLocation(Earthworks.mod_id, "block/vertical_"+tex)).texture("texture", mcBlockTexture(tex));
+
+        getVariantBuilder(block).forAllStates(state -> {
+            SlabType type = state.get(SlabBlock.TYPE);
+            switch (type) {
+                case TOP:return ConfiguredModel.builder().modelFile(top).build();
+                case BOTTOM:return ConfiguredModel.builder().modelFile(bottom).build();
+                default:case DOUBLE:return ConfiguredModel.builder().modelFile(doubleT).build();
+            }
+        });
+
     }
 
     private String name(Block block) {
@@ -280,6 +313,7 @@ public class ModBlockstateProvider extends BlockStateProvider {
     }
 
     protected void simpleSlab(SlabBlock block) {
+
         ResourceLocation id = block.getRegistryName();
 
         String slabPath = id.getPath().substring(0, id.getPath().length() - "_slab".length());
@@ -287,10 +321,14 @@ public class ModBlockstateProvider extends BlockStateProvider {
         Block original = ForgeRegistries.BLOCKS.getValue(new ResourceLocation(id.getNamespace(), slabPath));
 
         if (original == Blocks.AIR) {
-            System.out.println("No original block found for " + id + " tried " + slabPath);
+            System.out.println("No original block found for " + id + " guessed " + slabPath);
+            return;
         }
+        simpleSlab(block,blockTexture(original));
+    }
 
-        slabBlock(block, block.getRegistryName(), new ResourceLocation(id.getNamespace(), "block/" + original.getRegistryName().getPath()));
+    protected void simpleSlab(SlabBlock block,ResourceLocation texture) {
+        slabBlock(block, block.getRegistryName(), texture);
     }
 
     protected void simpleStairs(StairsBlock block) {

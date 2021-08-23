@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=top": {
+      "model": "earthworks:block/reed_top"
+    },
+    "type=bottom": {
+      "model": "earthworks:block/reed_top"
+    },
+    "type=double": {
+      "model": "earthworks:block/reed_top"
+    }
+  }
+}

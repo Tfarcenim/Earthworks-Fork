@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=top": {
+      "model": "earthworks:block/birch_wood_shakes_slab_top"
+    },
+    "type=bottom": {
+      "model": "earthworks:block/birch_wood_shakes_slab"
+    },
+    "type=double": {
+      "model": "earthworks:block/birch_wood_shakes_slab"
+    }
+  }
+}

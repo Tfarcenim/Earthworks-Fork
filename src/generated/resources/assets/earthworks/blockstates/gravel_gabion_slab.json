@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=top": {
+      "model": "earthworks:block/gabion_side"
+    },
+    "type=bottom": {
+      "model": "earthworks:block/gabion_side"
+    },
+    "type=double": {
+      "model": "earthworks:block/gabion_side"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "variants": {
+    "type=top,waterlogged=false": {
+      "model": "earthworks:block/vertical_birch_slab_top"
+    },
+    "type=bottom,waterlogged=false": {
+      "model": "earthworks:block/vertical_birch_slab"
+    },
+    "type=double,waterlogged=false": {
+      "model": "earthworks:block/vertical_birch"
+    },
+    "type=top,waterlogged=true": {
+      "model": "earthworks:block/vertical_birch_slab_top"
+    },
+    "type=bottom,waterlogged=true": {
+      "model": "earthworks:block/vertical_birch_slab"
+    },
+    "type=double,waterlogged=true": {
+      "model": "earthworks:block/vertical_birch"
+    }
+  }
+}

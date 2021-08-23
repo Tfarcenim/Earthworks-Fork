@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=top": {
+      "model": "earthworks:block/polished_purple_slate_slab_top"
+    },
+    "type=bottom": {
+      "model": "earthworks:block/polished_purple_slate_slab"
+    },
+    "type=double": {
+      "model": "earthworks:block/polished_purple_slate_slab"
+    }
+  }
+}

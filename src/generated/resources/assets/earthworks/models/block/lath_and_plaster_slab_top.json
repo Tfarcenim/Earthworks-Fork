@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "side": "earthworks:block/lath_and_plaster",
+    "bottom": "earthworks:block/lath_and_plaster",
+    "top": "earthworks:block/lath_and_plaster"
+  }
+}

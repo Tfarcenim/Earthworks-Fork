@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=top": {
+      "model": "earthworks:block/cordwood_slab"
+    },
+    "type=bottom": {
+      "model": "earthworks:block/cordwood_slab"
+    },
+    "type=double": {
+      "model": "earthworks:block/cordwood_slab"
+    }
+  }
+}

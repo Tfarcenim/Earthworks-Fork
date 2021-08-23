@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "side": "earthworks:block/thatch_top",
+    "bottom": "earthworks:block/thatch1",
+    "top": "earthworks:block/thatch_top"
+  }
+}

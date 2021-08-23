@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "side": "earthworks:block/spruce_wood_shakes",
+    "bottom": "earthworks:block/spruce_wood_shakes",
+    "top": "earthworks:block/spruce_wood_shakes"
+  }
+}

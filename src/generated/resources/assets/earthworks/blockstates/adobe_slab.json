@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=top": {
+      "model": "earthworks:block/adobe_slab"
+    },
+    "type=bottom": {
+      "model": "earthworks:block/adobe_slab"
+    },
+    "type=double": {
+      "model": "earthworks:block/adobe_slab"
+    }
+  }
+}

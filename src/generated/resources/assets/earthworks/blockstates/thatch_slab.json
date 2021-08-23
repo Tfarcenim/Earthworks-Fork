@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=top": {
+      "model": "earthworks:block/thatch_top"
+    },
+    "type=bottom": {
+      "model": "earthworks:block/thatch_top"
+    },
+    "type=double": {
+      "model": "earthworks:block/thatch_top"
+    }
+  }
+}

@@ -1,6 +1,9 @@
 {
-  "parent": "minecraft:block/cube_all",
+  "parent": "minecraft:block/slab",
   "textures": {
-    "all": "earthworks:block/dry_fitted_stone0"
+    "all": "earthworks:block/dry_fitted_stone0",
+    "side": "earthworks:block/dry_fitted_stone0",
+    "bottom": "earthworks:block/dry_fitted_stone0",
+    "top": "earthworks:block/dry_fitted_stone0"
   }
 }

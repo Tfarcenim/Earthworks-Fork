@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=top": {
+      "model": "earthworks:block/green_slate_tiles_slab_top"
+    },
+    "type=bottom": {
+      "model": "earthworks:block/green_slate_tiles_slab"
+    },
+    "type=double": {
+      "model": "earthworks:block/green_slate_tiles_slab"
+    }
+  }
+}
