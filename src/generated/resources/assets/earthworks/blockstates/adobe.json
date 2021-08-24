@@ -1,7 +1,18 @@
 {
   "variants": {
-    "": {
-      "model": "earthworks:block/adobe3"
-    }
+    "": [
+      {
+        "model": "earthworks:block/adobe0"
+      },
+      {
+        "model": "earthworks:block/adobe1"
+      },
+      {
+        "model": "earthworks:block/adobe2"
+      },
+      {
+        "model": "earthworks:block/adobe3"
+      }
+    ]
   }
 }

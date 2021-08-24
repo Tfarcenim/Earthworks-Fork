@@ -438,17 +438,11 @@ public class ModBlockstateProvider extends BlockStateProvider {
             files.add(modelFile);
         }
 
-        getVariantBuilder(block).partialState().addModels(collectAndBuild(files));
-    }
+        VariantBlockStateBuilder.PartialBlockstate partialBlockstate = getVariantBuilder(block).partialState();
 
-    //avoids creating a long builder chain
-    protected ConfiguredModel[] collectAndBuild(List<ModelFile> modelFiles) {
-        ConfiguredModel.Builder<?> builder = ConfiguredModel.builder();
-        for (int i = 0; i < modelFiles.size() - 2; i++) {
-            ModelFile modelFile = modelFiles.get(i);
-            builder.modelFile(modelFile).nextModel();
+        for (ModelFile file : files) {
+            partialBlockstate.addModels(new ConfiguredModel(file));
         }
-        return builder.modelFile(modelFiles.get(modelFiles.size() - 1)).build();
     }
 
     protected void cordwood() {
