@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "earthworks:block/plaster_top"
+    },
+    "facing=south": {
+      "model": "earthworks:block/plaster_top",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "earthworks:block/plaster_top",
+      "y": 270
+    },
+    "facing=east": {
+      "model": "earthworks:block/plaster_top",
+      "y": 90
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "side": "earthworks:block/daub_cob_bottom_r",
+    "front": "earthworks:block/daub_cob_bottom_r",
+    "top": "earthworks:block/daub_cob_bottom_r"
+  }
+}

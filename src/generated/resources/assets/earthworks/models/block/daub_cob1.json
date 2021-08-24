@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "earthworks:block/daub_cob/daub_cob1"
+    "all": "earthworks:block/daub_cob1"
   }
 }

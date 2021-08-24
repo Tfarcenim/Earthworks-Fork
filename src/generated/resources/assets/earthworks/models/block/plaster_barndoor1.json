@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "side": "earthworks:block/plaster_barndoor1",
+    "front": "earthworks:block/plaster_barndoor1",
+    "top": "earthworks:block/plaster_barndoor1"
+  }
+}

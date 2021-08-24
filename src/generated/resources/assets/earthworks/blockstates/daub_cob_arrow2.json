@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "earthworks:block/daub_cob_arrow2"
+    },
+    "facing=south": {
+      "model": "earthworks:block/daub_cob_arrow2",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "earthworks:block/daub_cob_arrow2",
+      "y": 270
+    },
+    "facing=east": {
+      "model": "earthworks:block/daub_cob_arrow2",
+      "y": 90
+    }
+  }
+}

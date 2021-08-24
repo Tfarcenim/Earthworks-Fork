@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "side": "earthworks:block/plaster_top_l",
+    "front": "earthworks:block/plaster_top_l",
+    "top": "earthworks:block/plaster_top_l"
+  }
+}

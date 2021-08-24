@@ -6,7 +6,9 @@ import alsender.earthworks.main.registry.BlockRegistry;
 import net.minecraft.block.*;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourcePackType;
+import net.minecraft.state.properties.Half;
 import net.minecraft.state.properties.SlabType;
+import net.minecraft.state.properties.StairsShape;
 import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.model.generators.*;
@@ -77,8 +79,8 @@ public class ModBlockstateProvider extends BlockStateProvider {
         simpleBlock(BlockRegistry.dark_oak_timber);
 
         simpleBlock(BlockRegistry.wattle_and_daub,
-                new ConfiguredModel(models().cubeAll("daub_cob0", modBlockTexture("daub_cob/daub_cob0"))),
-                new ConfiguredModel(models().cubeAll("daub_cob1", modBlockTexture("daub_cob/daub_cob1"))));
+                new ConfiguredModel(models().cubeAll("daub_cob0", modBlockTexture("daub_cob0"))),
+                new ConfiguredModel(models().cubeAll("daub_cob1", modBlockTexture("daub_cob1"))));
 
         simpleBlock(BlockRegistry.wicker);
         simpleBlock(BlockRegistry.oak_wood_shakes);
@@ -97,8 +99,90 @@ public class ModBlockstateProvider extends BlockStateProvider {
 
         slabs();
         stairs();
+        timbers();
         walls();
+    }
 
+    protected void timbers() {
+        horizontalBlock(BlockRegistry.daub_cob_arrow0);
+        horizontalBlock(BlockRegistry.daub_cob_arrow1);
+        horizontalBlock(BlockRegistry.daub_cob_arrow2);
+        horizontalBlock(BlockRegistry.daub_cob_arrow3);
+        horizontalBlock(BlockRegistry.daub_cob_barndoor0);
+        horizontalBlock(BlockRegistry.daub_cob_barndoor1);
+        horizontalBlock(BlockRegistry.daub_cob_barndoor2);
+        horizontalBlock(BlockRegistry.daub_cob_barndoor3);
+        horizontalBlock(BlockRegistry.daub_cob_barndoor4);
+        horizontalBlock(BlockRegistry.daub_cob_barndoor5);
+        horizontalBlock(BlockRegistry.daub_cob_barndoor6);
+        horizontalBlock(BlockRegistry.daub_cob_barndoor7);
+        horizontalBlock(BlockRegistry.daub_cob_bottom_l);
+        horizontalBlock(BlockRegistry.daub_cob_bottom);
+        horizontalBlock(BlockRegistry.daub_cob_bottom_r);
+        horizontalBlock(BlockRegistry.daub_cob_left);
+        horizontalBlock(BlockRegistry.daub_cob_right);
+        horizontalBlock(BlockRegistry.daub_cob_parallel_hor);
+        horizontalBlock(BlockRegistry.daub_cob_parallel_vert);
+        horizontalBlock(BlockRegistry.daub_cob_slash_back);
+        horizontalBlock(BlockRegistry.daub_cob_slash);
+        horizontalBlock(BlockRegistry.daub_cob_square);
+        horizontalBlock(BlockRegistry.daub_cob_square_x);
+        horizontalBlock(BlockRegistry.daub_cob_x);
+        horizontalBlock(BlockRegistry.daub_cob_top_l);
+        horizontalBlock(BlockRegistry.daub_cob_top);
+        horizontalBlock(BlockRegistry.daub_cob_top_r);
+        horizontalBlock(BlockRegistry.daub_cob_triangle0);
+        horizontalBlock(BlockRegistry.daub_cob_triangle1);
+        horizontalBlock(BlockRegistry.daub_cob_triangle2);
+        horizontalBlock(BlockRegistry.daub_cob_triangle3);
+        horizontalBlock(BlockRegistry.daub_cob_xbottom);
+        horizontalBlock(BlockRegistry.daub_cob_xleft);
+        horizontalBlock(BlockRegistry.daub_cob_xright);
+        horizontalBlock(BlockRegistry.daub_cob_xtop);
+        horizontalBlock(BlockRegistry.daub_cob_xdoor0);
+        horizontalBlock(BlockRegistry.daub_cob_xdoor1);
+        horizontalBlock(BlockRegistry.daub_cob_xdoor2);
+        horizontalBlock(BlockRegistry.daub_cob_xdoor3);
+
+        horizontalBlock(BlockRegistry.plaster_arrow0);
+        horizontalBlock(BlockRegistry.plaster_arrow1);
+        horizontalBlock(BlockRegistry.plaster_arrow2);
+        horizontalBlock(BlockRegistry.plaster_arrow3);
+        horizontalBlock(BlockRegistry.plaster_barndoor0);
+        horizontalBlock(BlockRegistry.plaster_barndoor1);
+        horizontalBlock(BlockRegistry.plaster_barndoor2);
+        horizontalBlock(BlockRegistry.plaster_barndoor3);
+        horizontalBlock(BlockRegistry.plaster_barndoor4);
+        horizontalBlock(BlockRegistry.plaster_barndoor5);
+        horizontalBlock(BlockRegistry.plaster_barndoor6);
+        horizontalBlock(BlockRegistry.plaster_barndoor7);
+        horizontalBlock(BlockRegistry.plaster_bottom_l);
+        horizontalBlock(BlockRegistry.plaster_bottom);
+        horizontalBlock(BlockRegistry.plaster_bottom_r);
+        horizontalBlock(BlockRegistry.plaster_left);
+        horizontalBlock(BlockRegistry.plaster_right);
+        horizontalBlock(BlockRegistry.plaster_parallel_hor);
+        horizontalBlock(BlockRegistry.plaster_parallel_vert);
+        horizontalBlock(BlockRegistry.plaster_slash_back);
+        horizontalBlock(BlockRegistry.plaster_slash);
+        horizontalBlock(BlockRegistry.plaster_square);
+        horizontalBlock(BlockRegistry.plaster_square_x);
+        horizontalBlock(BlockRegistry.plaster_x);
+        horizontalBlock(BlockRegistry.plaster_top_l);
+        horizontalBlock(BlockRegistry.plaster_top);
+        horizontalBlock(BlockRegistry.plaster_top_r);
+        horizontalBlock(BlockRegistry.plaster_triangle0);
+        horizontalBlock(BlockRegistry.plaster_triangle1);
+        horizontalBlock(BlockRegistry.plaster_triangle2);
+        horizontalBlock(BlockRegistry.plaster_triangle3);
+        horizontalBlock(BlockRegistry.plaster_xbottom);
+        horizontalBlock(BlockRegistry.plaster_xleft);
+        horizontalBlock(BlockRegistry.plaster_xright);
+        horizontalBlock(BlockRegistry.plaster_xtop);
+        horizontalBlock(BlockRegistry.plaster_xdoor0);
+        horizontalBlock(BlockRegistry.plaster_xdoor1);
+        horizontalBlock(BlockRegistry.plaster_xdoor2);
+        horizontalBlock(BlockRegistry.plaster_xdoor3);
     }
 
     protected void slabs() {
@@ -127,12 +211,12 @@ public class ModBlockstateProvider extends BlockStateProvider {
 
         simpleSlab(BlockRegistry.mud_slab);
 
-        verticalSlab(BlockRegistry.vertical_oak_slab,Blocks.OAK_PLANKS);
-        verticalSlab(BlockRegistry.vertical_spruce_slab,Blocks.SPRUCE_PLANKS);
-        verticalSlab(BlockRegistry.vertical_birch_slab,Blocks.BIRCH_PLANKS);
-        verticalSlab(BlockRegistry.vertical_jungle_slab,Blocks.JUNGLE_PLANKS);
-        verticalSlab(BlockRegistry.vertical_acacia_slab,Blocks.ACACIA_PLANKS);
-        verticalSlab(BlockRegistry.vertical_dark_oak_slab,Blocks.DARK_OAK_PLANKS);
+        verticalSlab(BlockRegistry.vertical_oak_slab,Blocks.OAK_PLANKS.getRegistryName());
+        verticalSlab(BlockRegistry.vertical_spruce_slab,Blocks.SPRUCE_PLANKS.getRegistryName());
+        verticalSlab(BlockRegistry.vertical_birch_slab,Blocks.BIRCH_PLANKS.getRegistryName());
+        verticalSlab(BlockRegistry.vertical_jungle_slab,Blocks.JUNGLE_PLANKS.getRegistryName());
+        verticalSlab(BlockRegistry.vertical_acacia_slab,Blocks.ACACIA_PLANKS.getRegistryName());
+        verticalSlab(BlockRegistry.vertical_dark_oak_slab,Blocks.DARK_OAK_PLANKS.getRegistryName());
 
         simpleSlab(BlockRegistry.lath_and_plaster_slab);
         simpleSlab(BlockRegistry.rammed_earth_slab);
@@ -168,7 +252,7 @@ public class ModBlockstateProvider extends BlockStateProvider {
         simpleSlab(BlockRegistry.acacia_timber_slab);
         simpleSlab(BlockRegistry.dark_oak_timber_slab);
 
-        simpleSlab(BlockRegistry.wattle_and_daub_slab,modBlockTexture("daub_cob/daub_cob0"));
+        simpleSlab(BlockRegistry.wattle_and_daub_slab,modBlockTexture("daub_cob0"));
 
         simpleSlab(BlockRegistry.wicker_slab);
         simpleSlab(BlockRegistry.oak_wood_shakes_slab);
@@ -191,12 +275,14 @@ public class ModBlockstateProvider extends BlockStateProvider {
         stairGabions();
 
         simpleStairs(BlockRegistry.mud_stairs);
-        simpleStairs(BlockRegistry.vertical_oak_stairs);
-        simpleStairs(BlockRegistry.vertical_spruce_stairs);
-        simpleStairs(BlockRegistry.vertical_birch_stairs);
-        simpleStairs(BlockRegistry.vertical_jungle_stairs);
-        simpleStairs(BlockRegistry.vertical_acacia_stairs);
-        simpleStairs(BlockRegistry.vertical_dark_oak_stairs);
+
+        verticalStairs(BlockRegistry.vertical_oak_stairs,mcLoc("block/oak_planks"));
+        verticalStairs(BlockRegistry.vertical_spruce_stairs,mcLoc("block/spruce_planks"));
+        verticalStairs(BlockRegistry.vertical_birch_stairs,mcLoc("block/birch_planks"));
+        verticalStairs(BlockRegistry.vertical_jungle_stairs,mcLoc("block/jungle_planks"));
+        verticalStairs(BlockRegistry.vertical_acacia_stairs,mcLoc("block/acacia_planks"));
+        verticalStairs(BlockRegistry.vertical_dark_oak_stairs,mcLoc("block/dark_oak_planks"));
+
         simpleStairs(BlockRegistry.lath_and_plaster_stairs);
         simpleStairs(BlockRegistry.rammed_earth_stairs);
         stairsBlock(BlockRegistry.reed_stairs,modBlockTexture("reed_side"));
@@ -219,7 +305,7 @@ public class ModBlockstateProvider extends BlockStateProvider {
         simpleStairs(BlockRegistry.jungle_timber_stairs);
         simpleStairs(BlockRegistry.acacia_timber_stairs);
         simpleStairs(BlockRegistry.dark_oak_timber_stairs);
-        stairsBlock(BlockRegistry.wattle_and_daub_stairs, modBlockTexture("daub_cob/daub_cob0"));
+        stairsBlock(BlockRegistry.wattle_and_daub_stairs, modBlockTexture("daub_cob0"));
         simpleStairs(BlockRegistry.wicker_stairs);
         simpleStairs(BlockRegistry.oak_wood_shakes_stairs);
         simpleStairs(BlockRegistry.spruce_wood_shakes_stairs);
@@ -271,7 +357,7 @@ public class ModBlockstateProvider extends BlockStateProvider {
         simpleWall(BlockRegistry.jungle_timber_wall);
         simpleWall(BlockRegistry.acacia_timber_wall);
         simpleWall(BlockRegistry.dark_oak_timber_wall);
-        wallBlock(BlockRegistry.wattle_and_daub_wall,modBlockTexture("daub_cob/daub_cob0"));
+        wallBlock(BlockRegistry.wattle_and_daub_wall,modBlockTexture("daub_cob0"));
         simpleWall(BlockRegistry.wicker_wall);
         simpleWall(BlockRegistry.oak_wood_shakes_wall);
         simpleWall(BlockRegistry.spruce_wood_shakes_wall);
@@ -435,8 +521,8 @@ public class ModBlockstateProvider extends BlockStateProvider {
                 .part().modelFile(builderSide).uvLock(true).rotationY(270).addModel().condition(FenceBlock.WEST, true).end();
     }
 
-    protected void verticalSlab(SlabBlock block,Block from) {
-        String tex = from.getRegistryName().getPath();
+    protected void verticalSlab(SlabBlock block,ResourceLocation from) {
+        String tex = from.getPath();
 
         BlockModelBuilder bottom = models().withExistingParent(block.getRegistryName().getPath(),
                 new ResourceLocation(Earthworks.mod_id, "block/vertical_slab")).texture("texture", mcBlockTexture(tex));
@@ -455,7 +541,42 @@ public class ModBlockstateProvider extends BlockStateProvider {
                 default:case DOUBLE:return ConfiguredModel.builder().modelFile(doubleT).build();
             }
         });
+    }
 
+    protected void horizontalBlock(HorizontalBlock block) {
+        String path  = block.getRegistryName().getPath();
+        horizontalBlock(block,modBlockTexture(path),modBlockTexture(path),modBlockTexture(path));
+    }
+
+    protected void verticalStairs(StairsBlock block,ResourceLocation from) {
+        String tex = from.getPath();
+
+        String path = block.getRegistryName().getPath();
+        ModelFile stairs = models().withExistingParent(path,modBlockTexture("vertical_stairs")).texture("side",mcLoc(tex)).texture("bottom",mcLoc(tex)).texture("top",mcLoc(tex));
+        ModelFile stairsInner = models().withExistingParent(path+ "_inner",modBlockTexture("vertical_outer_stairs")).texture("side",mcLoc(tex)).texture("bottom",mcLoc(tex)).texture("top",mcLoc(tex));
+        ModelFile stairsOuter = models().withExistingParent(path+ "_outer",modBlockTexture("vertical_inner_stairs")).texture("side",mcLoc(tex)).texture("bottom",mcLoc(tex)).texture("top",mcLoc(tex));
+
+        getVariantBuilder(block)
+                .forAllStatesExcept(state -> {
+                    Direction facing = state.get(StairsBlock.FACING);
+                    Half half = state.get(StairsBlock.HALF);
+                    StairsShape shape = state.get(StairsBlock.SHAPE);
+                    int yRot = (int) facing.rotateY().getHorizontalAngle(); // Stairs model is rotated 90 degrees clockwise for some reason
+                    if (shape == StairsShape.INNER_LEFT || shape == StairsShape.OUTER_LEFT) {
+                        yRot += 270; // Left facing stairs are rotated 90 degrees clockwise
+                    }
+                    if (shape != StairsShape.STRAIGHT && half == Half.TOP) {
+                        yRot += 90; // Top stairs are rotated 90 degrees clockwise
+                    }
+                    yRot %= 360;
+                    boolean uvlock = yRot != 0 || half == Half.TOP; // Don't set uvlock for states that have no rotation
+                    return ConfiguredModel.builder()
+                            .modelFile(shape == StairsShape.STRAIGHT ? stairs : shape == StairsShape.INNER_LEFT || shape == StairsShape.INNER_RIGHT ? stairsInner : stairsOuter)
+                            .rotationX(half == Half.BOTTOM ? 0 : 180)
+                            .rotationY(yRot)
+                            .uvLock(uvlock)
+                            .build();
+                }, StairsBlock.WATERLOGGED);
     }
 
     private String name(Block block) {

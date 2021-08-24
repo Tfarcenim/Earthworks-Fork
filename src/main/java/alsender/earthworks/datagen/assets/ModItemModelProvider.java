@@ -195,52 +195,53 @@ public class ModItemModelProvider extends ItemModelProvider {
         makeSimpleBlockItem(ItemRegistry.acacia_wood_shakes_stairs);
         makeSimpleBlockItem(ItemRegistry.dark_oak_wood_shakes_stairs);
 
-        makeSimpleBlockItem(ItemRegistry.adobe_wall);
-        makeSimpleBlockItem(ItemRegistry.chalk_wall);
-        makeSimpleBlockItem(ItemRegistry.cinder_wall);
-        makeSimpleBlockItem(ItemRegistry.cob_wall);
-        makeSimpleBlockItem(ItemRegistry.concrete_wall);
-        makeSimpleBlockItem(ItemRegistry.cordwood_wall);
-        makeSimpleBlockItem(ItemRegistry.dry_fitted_stone_wall);
-        makeSimpleBlockItem(ItemRegistry.GRAVEL_GABION_WALL);
-        makeSimpleBlockItem(ItemRegistry.SAND_GABION_WALL);
-        makeSimpleBlockItem(ItemRegistry.DIRT_GABION_WALL);
-        makeSimpleBlockItem(ItemRegistry.mud_wall);
-        makeSimpleBlockItem(ItemRegistry.lath_and_plaster_wall);
-        makeSimpleBlockItem(ItemRegistry.rammed_earth_wall);
-        makeSimpleBlockItem(ItemRegistry.blue_slate_wall);
-        makeSimpleBlockItem(ItemRegistry.green_slate_wall);
-        makeSimpleBlockItem(ItemRegistry.purple_slate_wall);
-        makeSimpleBlockItem(ItemRegistry.polished_blue_slate_wall);
-        makeSimpleBlockItem(ItemRegistry.polished_green_slate_wall);
-        makeSimpleBlockItem(ItemRegistry.polished_purple_slate_wall);
-        makeSimpleBlockItem(ItemRegistry.blue_slate_shingles_wall);
-        makeSimpleBlockItem(ItemRegistry.green_slate_shingles_wall);
-        makeSimpleBlockItem(ItemRegistry.purple_slate_shingles_wall);
-        makeSimpleBlockItem(ItemRegistry.blue_slate_tiles_wall);
-        makeSimpleBlockItem(ItemRegistry.green_slate_tiles_wall);
-        makeSimpleBlockItem(ItemRegistry.purple_slate_tiles_wall);
-        makeSimpleBlockItem(ItemRegistry.oak_timber_wall);
-        makeSimpleBlockItem(ItemRegistry.birch_timber_wall);
-        makeSimpleBlockItem(ItemRegistry.spruce_timber_wall);
-        makeSimpleBlockItem(ItemRegistry.jungle_timber_wall);
-        makeSimpleBlockItem(ItemRegistry.acacia_timber_wall);
-        makeSimpleBlockItem(ItemRegistry.dark_oak_timber_wall);
-        makeSimpleBlockItem(ItemRegistry.wattle_and_daub_wall);
-        makeSimpleBlockItem(ItemRegistry.wicker_wall);
-        makeSimpleBlockItem(ItemRegistry.oak_wood_shakes_wall);
-        makeSimpleBlockItem(ItemRegistry.spruce_wood_shakes_wall);
-        makeSimpleBlockItem(ItemRegistry.birch_wood_shakes_wall);
-        makeSimpleBlockItem(ItemRegistry.jungle_wood_shakes_wall);
-        makeSimpleBlockItem(ItemRegistry.acacia_wood_shakes_wall);
-        makeSimpleBlockItem(ItemRegistry.dark_oak_wood_shakes_wall);
+        makeWallInventoryItem(ItemRegistry.adobe_wall);
+        makeWallInventoryItem(ItemRegistry.chalk_wall);
+        makeWallInventoryItem(ItemRegistry.cinder_wall);
+        makeWallInventoryItem(ItemRegistry.cob_wall);
+        makeWallInventoryItem(ItemRegistry.concrete_wall);
+        makeWallInventoryItem(ItemRegistry.cordwood_wall);
+        makeWallInventoryItem(ItemRegistry.dry_fitted_stone_wall);
+        makeWallInventoryItem(ItemRegistry.GRAVEL_GABION_WALL);
+        makeWallInventoryItem(ItemRegistry.SAND_GABION_WALL);
+        makeWallInventoryItem(ItemRegistry.DIRT_GABION_WALL);
+        makeWallInventoryItem(ItemRegistry.mud_wall);
+        makeWallInventoryItem(ItemRegistry.lath_and_plaster_wall);
+        makeWallInventoryItem(ItemRegistry.rammed_earth_wall);
+        makeWallInventoryItem(ItemRegistry.blue_slate_wall);
+        makeWallInventoryItem(ItemRegistry.green_slate_wall);
+        makeWallInventoryItem(ItemRegistry.purple_slate_wall);
+        makeWallInventoryItem(ItemRegistry.polished_blue_slate_wall);
+        makeWallInventoryItem(ItemRegistry.polished_green_slate_wall);
+        makeWallInventoryItem(ItemRegistry.polished_purple_slate_wall);
+        makeWallInventoryItem(ItemRegistry.blue_slate_shingles_wall);
+        makeWallInventoryItem(ItemRegistry.green_slate_shingles_wall);
+        makeWallInventoryItem(ItemRegistry.purple_slate_shingles_wall);
+        makeWallInventoryItem(ItemRegistry.blue_slate_tiles_wall);
+        makeWallInventoryItem(ItemRegistry.green_slate_tiles_wall);
+        makeWallInventoryItem(ItemRegistry.purple_slate_tiles_wall);
+        makeWallInventoryItem(ItemRegistry.oak_timber_wall);
+        makeWallInventoryItem(ItemRegistry.birch_timber_wall);
+        makeWallInventoryItem(ItemRegistry.spruce_timber_wall);
+        makeWallInventoryItem(ItemRegistry.jungle_timber_wall);
+        makeWallInventoryItem(ItemRegistry.acacia_timber_wall);
+        makeWallInventoryItem(ItemRegistry.dark_oak_timber_wall);
+        makeWallInventoryItem(ItemRegistry.wattle_and_daub_wall);
+        makeWallInventoryItem(ItemRegistry.wicker_wall);
+        makeWallInventoryItem(ItemRegistry.oak_wood_shakes_wall);
+        makeWallInventoryItem(ItemRegistry.spruce_wood_shakes_wall);
+        makeWallInventoryItem(ItemRegistry.birch_wood_shakes_wall);
+        makeWallInventoryItem(ItemRegistry.jungle_wood_shakes_wall);
+        makeWallInventoryItem(ItemRegistry.acacia_wood_shakes_wall);
+        makeWallInventoryItem(ItemRegistry.dark_oak_wood_shakes_wall);
+
         makeSimpleBlockItem(ItemRegistry.reed);
         makeSimpleBlockItem(ItemRegistry.thatch);
 
         makeSimpleBlockItem(ItemRegistry.reed_stairs);
         makeSimpleBlockItem(ItemRegistry.thatch_stairs);
-        makeSimpleBlockItem(ItemRegistry.reed_wall);
-        makeSimpleBlockItem(ItemRegistry.thatch_wall);
+        makeWallInventoryItem(ItemRegistry.reed_wall);
+        makeWallInventoryItem(ItemRegistry.thatch_wall);
 
         makeSimpleBlockItem(ItemRegistry.daub_cob_arrow0);
         makeSimpleBlockItem(ItemRegistry.daub_cob_arrow1);
@@ -349,7 +350,13 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         ItemModelBuilder parent = getBuilder(path + "_inventory").parent(getExistingFile(mcLoc("block/fence_inventory")));
         getBuilder(path).parent(parent);
+    }
 
+    protected void makeWallInventoryItem(BlockItem item) {
+        String path = item.getRegistryName().getPath();
+
+        ItemModelBuilder parent = getBuilder(path + "_inventory").parent(getExistingFile(mcLoc("block/wall_inventory")));
+        getBuilder(path).parent(parent);
     }
 
     protected void makeOneLayerItem(Item item) {

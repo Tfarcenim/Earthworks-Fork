@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "side": "earthworks:block/plaster_parallel_hor",
+    "front": "earthworks:block/plaster_parallel_hor",
+    "top": "earthworks:block/plaster_parallel_hor"
+  }
+}
