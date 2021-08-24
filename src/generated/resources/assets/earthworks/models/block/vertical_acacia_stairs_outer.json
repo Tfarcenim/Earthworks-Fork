@@ -1,5 +1,5 @@
 {
-  "parent": "earthworks:block/vertical_inner_stairs",
+  "parent": "earthworks:block/vertical_outer_stairs",
   "textures": {
     "side": "minecraft:block/acacia_planks",
     "bottom": "minecraft:block/acacia_planks",

@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "earthworks:vertical_oak_slab",
+    "earthworks:vertical_spruce_slab",
+    "earthworks:vertical_birch_slab",
+    "earthworks:vertical_jungle_slab",
+    "earthworks:vertical_acacia_slab",
+    "earthworks:vertical_dark_oak_slab"
+  ]
+}

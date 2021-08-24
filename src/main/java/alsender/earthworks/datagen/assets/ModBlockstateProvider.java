@@ -604,8 +604,8 @@ public class ModBlockstateProvider extends BlockStateProvider {
 
         String path = block.getRegistryName().getPath();
         ModelFile stairs = models().withExistingParent(path,modBlockTexture("vertical_stairs")).texture("side",mcLoc(tex)).texture("bottom",mcLoc(tex)).texture("top",mcLoc(tex));
-        ModelFile stairsInner = models().withExistingParent(path+ "_inner",modBlockTexture("vertical_outer_stairs")).texture("side",mcLoc(tex)).texture("bottom",mcLoc(tex)).texture("top",mcLoc(tex));
-        ModelFile stairsOuter = models().withExistingParent(path+ "_outer",modBlockTexture("vertical_inner_stairs")).texture("side",mcLoc(tex)).texture("bottom",mcLoc(tex)).texture("top",mcLoc(tex));
+        ModelFile stairsInner = models().withExistingParent(path+ "_inner",modBlockTexture("vertical_inner_stairs")).texture("side",mcLoc(tex)).texture("bottom",mcLoc(tex)).texture("top",mcLoc(tex));
+        ModelFile stairsOuter = models().withExistingParent(path+ "_outer",modBlockTexture("vertical_outer_stairs")).texture("side",mcLoc(tex)).texture("bottom",mcLoc(tex)).texture("top",mcLoc(tex));
 
         getVariantBuilder(block)
                 .forAllStatesExcept(state -> {

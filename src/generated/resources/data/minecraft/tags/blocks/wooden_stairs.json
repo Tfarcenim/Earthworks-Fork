@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "earthworks:vertical_oak_stairs",
+    "earthworks:vertical_spruce_stairs",
+    "earthworks:vertical_birch_stairs",
+    "earthworks:vertical_jungle_stairs",
+    "earthworks:vertical_acacia_stairs",
+    "earthworks:vertical_dark_oak_stairs"
+  ]
+}

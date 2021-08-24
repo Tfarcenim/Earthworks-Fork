@@ -25,5 +25,12 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 .add(BlockRegistry.vertical_oak_fence,BlockRegistry.vertical_spruce_fence,BlockRegistry.vertical_birch_fence,
                         BlockRegistry.vertical_jungle_fence,BlockRegistry.vertical_acacia_fence,BlockRegistry.vertical_dark_oak_fence);
 
+        getOrCreateBuilder(BlockTags.WOODEN_STAIRS)
+                .add(BlockRegistry.vertical_oak_stairs,BlockRegistry.vertical_spruce_stairs,BlockRegistry.vertical_birch_stairs,
+                        BlockRegistry.vertical_jungle_stairs,BlockRegistry.vertical_acacia_stairs,BlockRegistry.vertical_dark_oak_stairs);
+
+        getOrCreateBuilder(BlockTags.WOODEN_SLABS)
+                .add(BlockRegistry.vertical_oak_slab,BlockRegistry.vertical_spruce_slab,BlockRegistry.vertical_birch_slab,
+                        BlockRegistry.vertical_jungle_slab,BlockRegistry.vertical_acacia_slab,BlockRegistry.vertical_dark_oak_slab);
     }
 }
