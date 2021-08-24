@@ -1,8 +1,0 @@
-{
-  "parent": "earthworks:block/wall_inventory",
-  "textures": {
-    "up": "earthworks:blocks/wall_oak",
-    "down": "earthworks:blocks/wall_oak",
-    "wall": "blocks/log_oak"
-  }
-}
