@@ -1,0 +1,7 @@
+{
+  "parent": "earthworks:block/wall_inventory",
+  "textures": {
+    "up": "earthworks:block/wicker",
+    "down": "earthworks:block/gravel_gabion_wall"
+  }
+}

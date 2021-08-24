@@ -317,6 +317,9 @@ public class ModBlockstateProvider extends BlockStateProvider {
 
     protected void walls() {
         wallBlock(BlockRegistry.adobe_wall, modBlockTexture("adobe0"));
+
+        models().wallInventory("adobe_wall_inventory",modBlockTexture("adobe0"));
+
         simpleWall(BlockRegistry.chalk_wall);
         simpleWall(BlockRegistry.cinder_wall);
         simpleWall(BlockRegistry.cob_wall);
@@ -324,7 +327,11 @@ public class ModBlockstateProvider extends BlockStateProvider {
 
         wallBlock(BlockRegistry.cordwood_wall,modBlockTexture("cordwood1"));
 
+        models().wallInventory("cordwood_wall_inventory",modBlockTexture("cordwood1"));
+
         wallBlock(BlockRegistry.dry_fitted_stone_wall,modBlockTexture("dry_fitted_stone0"));
+
+        models().wallInventory("dry_fitted_stone_wall_inventory",modBlockTexture("dry_fitted_stone0"));
 
         wallGabions();
 
@@ -334,6 +341,7 @@ public class ModBlockstateProvider extends BlockStateProvider {
 
         wallBlock(BlockRegistry.reed_wall,"reed_wall",modBlockTexture("reed_side"));
 
+        models().wallInventory("reed_wall_inventory",modBlockTexture("reed_side"));
 
         simpleWall(BlockRegistry.blue_slate_wall);
         simpleWall(BlockRegistry.green_slate_wall);
@@ -350,6 +358,8 @@ public class ModBlockstateProvider extends BlockStateProvider {
 
         wallBlock(BlockRegistry.thatch_wall,"thatch_wall",modBlockTexture("thatch0_side"));
 
+        models().wallInventory("thatch_wall_inventory",modBlockTexture("thatch0_side"));
+
 
         simpleWall(BlockRegistry.oak_timber_wall);
         simpleWall(BlockRegistry.birch_timber_wall);
@@ -358,6 +368,9 @@ public class ModBlockstateProvider extends BlockStateProvider {
         simpleWall(BlockRegistry.acacia_timber_wall);
         simpleWall(BlockRegistry.dark_oak_timber_wall);
         wallBlock(BlockRegistry.wattle_and_daub_wall,modBlockTexture("daub_cob0"));
+
+        models().wallInventory("wattle_and_daub_wall_inventory",modBlockTexture("daub_cob0"));
+
         simpleWall(BlockRegistry.wicker_wall);
         simpleWall(BlockRegistry.oak_wood_shakes_wall);
         simpleWall(BlockRegistry.spruce_wood_shakes_wall);
@@ -429,6 +442,11 @@ public class ModBlockstateProvider extends BlockStateProvider {
 
             ModelFile sideTall = models().withExistingParent(path+"_side_tall",mcBlockTexture("template_wall_side_tall"))
                     .texture("bottom", "block/gabion_bottom").texture("wall", "block/wicker");
+
+
+            models().withExistingParent(path+"_inventory",modBlockTexture("wall_inventory"))
+                    .texture("up","block/"+path).texture("down","block/"+path).texture("up","block/wicker");
+
             wallBlock(block,post,side,sideTall);
         }
     }
@@ -619,16 +637,17 @@ public class ModBlockstateProvider extends BlockStateProvider {
     protected void simpleWall(WallBlock block) {
         ResourceLocation id = block.getRegistryName();
 
-        String stairsPath = id.getPath().substring(0, id.getPath().length() - "_wall".length());
+        String wallPath = id.getPath().substring(0, id.getPath().length() - "_wall".length());
 
-        Block original = ForgeRegistries.BLOCKS.getValue(new ResourceLocation(id.getNamespace(), stairsPath));
+        Block original = ForgeRegistries.BLOCKS.getValue(new ResourceLocation(id.getNamespace(), wallPath));
 
         if (original == Blocks.AIR) {
-            System.out.println("No original block found for " + id + " tried " + stairsPath);
+            System.out.println("No original block found for " + id + " tried " + wallPath);
             return;
         }
 
+        models().wallInventory(id.getPath()+"_inventory",modBlockTexture(original.getRegistryName().getPath()));
+
         wallBlock(block, new ResourceLocation(id.getNamespace(), "block/" + original.getRegistryName().getPath()));
     }
-
 }

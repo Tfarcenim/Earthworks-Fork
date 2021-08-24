@@ -1,3 +1,3 @@
 {
-  "parent": "minecraft:block/wall_inventory"
+  "parent": "earthworks:block/cob_wall_inventory"
 }

@@ -355,7 +355,7 @@ public class ModItemModelProvider extends ItemModelProvider {
     protected void makeWallInventoryItem(BlockItem item) {
         String path = item.getRegistryName().getPath();
 
-        ItemModelBuilder parent = getBuilder(path + "_inventory").parent(getExistingFile(mcLoc("block/wall_inventory")));
+        ItemModelBuilder parent = getBuilder(path + "_inventory").parent(getExistingFile(modLoc("block/"+path+"_inventory")));
         getBuilder(path).parent(parent);
     }
 
