@@ -1,22 +1,13 @@
 {
   "variants": {
-    "type=top,waterlogged=false": {
+    "type=top": {
       "model": "earthworks:block/vertical_dark_oak_slab_top"
     },
-    "type=bottom,waterlogged=false": {
+    "type=bottom": {
       "model": "earthworks:block/vertical_dark_oak_slab"
     },
-    "type=double,waterlogged=false": {
-      "model": "earthworks:block/vertical_dark_oak"
-    },
-    "type=top,waterlogged=true": {
-      "model": "earthworks:block/vertical_dark_oak_slab_top"
-    },
-    "type=bottom,waterlogged=true": {
-      "model": "earthworks:block/vertical_dark_oak_slab"
-    },
-    "type=double,waterlogged=true": {
-      "model": "earthworks:block/vertical_dark_oak"
+    "type=double": {
+      "model": "earthworks:block/vertical_dark_oak_planks"
     }
   }
 }

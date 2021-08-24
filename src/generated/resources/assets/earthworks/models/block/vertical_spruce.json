@@ -1,6 +1,0 @@
-{
-  "parent": "earthworks:block/vertical_spruce_planks",
-  "textures": {
-    "texture": "minecraft:block/spruce_planks"
-  }
-}

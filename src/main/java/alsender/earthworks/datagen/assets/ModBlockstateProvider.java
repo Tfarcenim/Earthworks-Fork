@@ -6,6 +6,7 @@ import alsender.earthworks.main.registry.BlockRegistry;
 import net.minecraft.block.*;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourcePackType;
+import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.state.properties.Half;
 import net.minecraft.state.properties.SlabType;
 import net.minecraft.state.properties.StairsShape;
@@ -544,12 +545,15 @@ public class ModBlockstateProvider extends BlockStateProvider {
 
 
     protected void verticalFence(Block block, Block from) {
-        String tex = from.getRegistryName().getPath().substring(0, from.getRegistryName().getPath().length() - "_fence".length()) + "_planks";
-        BlockModelBuilder builderPost = models().withExistingParent(block.getRegistryName().getPath() + "_post",
-                new ResourceLocation(Earthworks.mod_id, "block/vertical_fence_post")).texture("texture", mcBlockTexture(tex));
+        String path = from.getRegistryName().getPath();
+        String tex = path.substring(0, path.length() - "_fence".length()) + "_planks";
+        BlockModelBuilder builderPost = models().withExistingParent(path + "_post",
+                new ResourceLocation(Earthworks.mod_id, "block/vertical_fence_post"))
+                .texture("texture", mcBlockTexture(tex));
 
-        BlockModelBuilder builderSide = models().withExistingParent(block.getRegistryName().getPath() + "_side",
-                new ResourceLocation(Earthworks.mod_id, "block/vertical_fence_side")).texture("texture", mcBlockTexture(tex));
+        BlockModelBuilder builderSide = models().withExistingParent(path + "_side",
+                new ResourceLocation(Earthworks.mod_id, "block/vertical_fence_side"))
+                .texture("texture", mcBlockTexture(tex));
 
         getMultipartBuilder(block)
                 .part().modelFile(builderPost).addModel().end()
@@ -562,23 +566,32 @@ public class ModBlockstateProvider extends BlockStateProvider {
     protected void verticalSlab(SlabBlock block,ResourceLocation from) {
         String tex = from.getPath();
 
-        BlockModelBuilder bottom = models().withExistingParent(block.getRegistryName().getPath(),
-                new ResourceLocation(Earthworks.mod_id, "block/vertical_slab")).texture("texture", mcBlockTexture(tex));
+        String path = block.getRegistryName().getPath();
 
-        BlockModelBuilder top = models().withExistingParent(block.getRegistryName().getPath() + "_top",
-                new ResourceLocation(Earthworks.mod_id, "block/vertical_slab_top")).texture("texture", mcBlockTexture(tex));
+        String fPath = path.substring("vertical_".length(),path.length() - "_slab".length()) +"_planks";
 
-        BlockModelBuilder doubleT = models().withExistingParent(block.getRegistryName().getPath().substring(0,block.getRegistryName().getPath().length() - "_slab".length()),
-                new ResourceLocation(Earthworks.mod_id, "block/vertical_"+tex)).texture("texture", mcBlockTexture(tex));
+        BlockModelBuilder bottom = models().withExistingParent(path,
+                new ResourceLocation(Earthworks.mod_id, "block/vertical_slab"))
+                .texture("side", mcBlockTexture(tex))
+                .texture("top", mcBlockTexture(tex))
+                .texture("bottom", mcBlockTexture(tex));
 
-        getVariantBuilder(block).forAllStates(state -> {
+        BlockModelBuilder top = models().withExistingParent(path + "_top",
+                new ResourceLocation(Earthworks.mod_id, "block/vertical_slab_top"))
+                .texture("side", mcBlockTexture(tex))
+                .texture("top", mcBlockTexture(tex))
+                .texture("bottom", mcBlockTexture(fPath));
+
+        ModelFile doubleT = models().getExistingFile(modBlockTexture("vertical_"+from.getPath()));
+
+        getVariantBuilder(block).forAllStatesExcept(state -> {
             SlabType type = state.get(SlabBlock.TYPE);
             switch (type) {
                 case TOP:return ConfiguredModel.builder().modelFile(top).build();
                 case BOTTOM:return ConfiguredModel.builder().modelFile(bottom).build();
                 default:case DOUBLE:return ConfiguredModel.builder().modelFile(doubleT).build();
             }
-        });
+        }, BlockStateProperties.WATERLOGGED);
     }
 
     protected void horizontalBlock(HorizontalBlock block) {

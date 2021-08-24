@@ -1,6 +1,0 @@
-{
-  "parent": "earthworks:block/vertical_jungle_planks",
-  "textures": {
-    "texture": "minecraft:block/jungle_planks"
-  }
-}

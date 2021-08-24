@@ -141,12 +141,12 @@ public class ModItemModelProvider extends ItemModelProvider {
         makeSimpleBlockItem(ItemRegistry.vertical_dark_oak_planks);
 
 
-        makeFenceInventoryItem(ItemRegistry.vertical_oak_fence);
-        makeFenceInventoryItem(ItemRegistry.vertical_spruce_fence);
-        makeFenceInventoryItem(ItemRegistry.vertical_birch_fence);
-        makeFenceInventoryItem(ItemRegistry.vertical_jungle_fence);
-        makeFenceInventoryItem(ItemRegistry.vertical_acacia_fence);
-        makeFenceInventoryItem(ItemRegistry.vertical_dark_oak_fence);
+        makeVerticalFenceInventoryItem(ItemRegistry.vertical_oak_fence);
+        makeVerticalFenceInventoryItem(ItemRegistry.vertical_spruce_fence);
+        makeVerticalFenceInventoryItem(ItemRegistry.vertical_birch_fence);
+        makeVerticalFenceInventoryItem(ItemRegistry.vertical_jungle_fence);
+        makeVerticalFenceInventoryItem(ItemRegistry.vertical_acacia_fence);
+        makeVerticalFenceInventoryItem(ItemRegistry.vertical_dark_oak_fence);
 
 
         makeSimpleBlockItem(ItemRegistry.adobe_stairs);
@@ -345,10 +345,14 @@ public class ModItemModelProvider extends ItemModelProvider {
         }
     }
 
-    protected void makeFenceInventoryItem(BlockItem item) {
+    protected void makeVerticalFenceInventoryItem(BlockItem item) {
         String path = item.getRegistryName().getPath();
 
-        ItemModelBuilder parent = getBuilder(path + "_inventory").parent(getExistingFile(mcLoc("block/fence_inventory")));
+        String tex = path.substring("vertical_".length(),path.length() - "_fence".length()) + "_planks";
+
+        ItemModelBuilder parent = getBuilder(path + "_inventory")
+                .parent(getExistingFile(mcLoc("block/fence_inventory")))
+                .texture("texture",mcLoc("block/"+tex));
         getBuilder(path).parent(parent);
     }
 

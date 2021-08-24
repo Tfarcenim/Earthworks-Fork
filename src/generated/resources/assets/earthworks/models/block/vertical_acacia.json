@@ -1,6 +1,0 @@
-{
-  "parent": "earthworks:block/vertical_acacia_planks",
-  "textures": {
-    "texture": "minecraft:block/acacia_planks"
-  }
-}
