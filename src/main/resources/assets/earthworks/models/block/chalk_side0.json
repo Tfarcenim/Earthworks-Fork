@@ -1,6 +1,0 @@
-{
-    "parent": "block/chalk_side",
-    "textures": {
-        "line": "blocks/chalk_dust_line0"
-    }
-}

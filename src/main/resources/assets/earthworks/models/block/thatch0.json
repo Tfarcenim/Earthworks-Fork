@@ -1,7 +1,0 @@
-{
-  "parent": "block/cube_column",
-  "textures": {
-    "end": "earthworks:blocks/thatch_top",
-    "side": "earthworks:blocks/thatch0"
-  }
-}
