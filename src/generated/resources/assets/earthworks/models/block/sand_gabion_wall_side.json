@@ -1,3 +1,8 @@
 {
-  "parent": "earthworks:block/wall_side"
+  "parent": "earthworks:block/wall_side",
+  "textures": {
+    "top": "earthworks:block/sand_gabion_wall",
+    "bottom": "earthworks:block/gabion_bottom",
+    "wall": "earthworks:block/wicker"
+  }
 }

@@ -1,3 +1,7 @@
 {
-  "parent": "minecraft:block/template_wall_side_tall"
+  "parent": "minecraft:block/template_wall_side_tall",
+  "textures": {
+    "bottom": "earthworks:block/gabion_bottom",
+    "wall": "earthworks:block/wicker"
+  }
 }

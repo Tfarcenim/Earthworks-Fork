@@ -421,9 +421,14 @@ public class ModBlockstateProvider extends BlockStateProvider {
         WallBlock[] blocks = new WallBlock[]{BlockRegistry.GRAVEL_GABION_WALL,BlockRegistry.SAND_GABION_WALL,BlockRegistry.DIRT_GABION_WALL};
         for (WallBlock block : blocks) {
             String path = block.getRegistryName().getPath();
-            ModelFile post = models().withExistingParent(path+"_post",modBlockTexture("wall_post"));
-            ModelFile side = models().withExistingParent(path+"_side",modBlockTexture("wall_side"));
-            ModelFile sideTall = models().withExistingParent(path+"_side_tall",mcBlockTexture("template_wall_side_tall"));
+            ModelFile post = models().withExistingParent(path+"_post",modBlockTexture("wall_post"))
+                    .texture("top","block/"+path).texture("bottom", "block/gabion_bottom").texture("wall", "block/post_gabion");
+
+            ModelFile side = models().withExistingParent(path+"_side",modBlockTexture("wall_side"))
+                    .texture("top","block/"+path).texture("bottom", "block/gabion_bottom").texture("wall", "block/wicker");
+
+            ModelFile sideTall = models().withExistingParent(path+"_side_tall",mcBlockTexture("template_wall_side_tall"))
+                    .texture("bottom", "block/gabion_bottom").texture("wall", "block/wicker");
             wallBlock(block,post,side,sideTall);
         }
     }
