@@ -398,6 +398,12 @@ public class ModBlockstateProvider extends BlockStateProvider {
         }
     }
 
+        /*  "bottom": "earthworks:blocks/gabion_bottom",
+                  "top": "earthworks:blocks/gabion_top_dirt",
+                  "side": "earthworks:blocks/gabion_side",
+                  "sideTop": "earthworks:blocks/gabion_top_dirt",
+                  "particle": "minecraft:blocks/dirt"*/
+
     protected void stairGabions() {
         StairsBlock[] blocks = new StairsBlock[]{BlockRegistry.GRAVEL_GABION_STAIRS, BlockRegistry.SAND_GABION_STAIRS, BlockRegistry.DIRT_GABION_STAIRS};
 
@@ -405,11 +411,26 @@ public class ModBlockstateProvider extends BlockStateProvider {
             String path = block.getRegistryName().getPath();
             String name = path.substring(0,path.length() - "_gabion_stairs".length());
 
-            ModelFile stairs = models().withExistingParent(path,modBlockTexture("stairs"));
+            ModelFile stairs = models().withExistingParent(path,modBlockTexture("stairs"))
+                    .texture("bottom",modBlockTexture("gabion_bottom"))
+                    .texture("top",modBlockTexture(name+"_gabion_top"))
+                    .texture("side",modBlockTexture("gabion_side"))
+                    .texture("sideTop",modBlockTexture(name+"_gabion_top"))
+                    .texture("particle",mcBlockTexture(name));
 
-            ModelFile inner = models().withExistingParent(path,modBlockTexture("inner_stairs"));
+            ModelFile inner = models().withExistingParent(path,modBlockTexture("inner_stairs"))
+                    .texture("bottom",modBlockTexture("gabion_bottom"))
+                    .texture("top",modBlockTexture(name+"_gabion_top"))
+                    .texture("side",modBlockTexture("gabion_side"))
+                    .texture("sideTop",modBlockTexture(name+"_gabion_top"))
+                    .texture("particle",mcBlockTexture(name));
 
-            ModelFile outer = models().withExistingParent(path,modBlockTexture("outer_stairs"));
+            ModelFile outer = models().withExistingParent(path,modBlockTexture("outer_stairs"))
+                    .texture("bottom",modBlockTexture("gabion_bottom"))
+                    .texture("top",modBlockTexture(name+"_gabion_top"))
+                    .texture("side",modBlockTexture("gabion_side"))
+                    .texture("sideTop",modBlockTexture(name+"_gabion_top"))
+                    .texture("particle",mcBlockTexture(name));
 
             stairsBlock(block,stairs,inner,outer);
         }
