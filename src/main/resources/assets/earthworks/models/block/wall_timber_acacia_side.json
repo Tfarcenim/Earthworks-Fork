@@ -1,8 +1,0 @@
-{
-  "parent": "earthworks:block/wall_side",
-  "textures": {
-    "top": "earthworks:blocks/wall_acacia",
-    "bottom": "earthworks:blocks/wall_acacia",
-    "wall": "blocks/log_acacia"
-  }
-}
