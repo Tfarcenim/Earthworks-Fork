@@ -1,5 +1,5 @@
 {
-  "parent": "earthworks:block/stairs",
+  "parent": "earthworks:block/outer_stairs",
   "textures": {
     "bottom": "earthworks:block/gabion_bottom",
     "top": "earthworks:block/sand_gabion_top",

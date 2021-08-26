@@ -419,14 +419,14 @@ public class ModBlockstateProvider extends BlockStateProvider {
                     .texture("sideTop",modBlockTexture(name+"_gabion_top"))
                     .texture("particle",mcBlockTexture(name));
 
-            ModelFile inner = models().withExistingParent(path,modBlockTexture("inner_stairs"))
+            ModelFile inner = models().withExistingParent(path+"_inner",modBlockTexture("inner_stairs"))
                     .texture("bottom",modBlockTexture("gabion_bottom"))
                     .texture("top",modBlockTexture(name+"_gabion_top"))
                     .texture("side",modBlockTexture("gabion_side"))
                     .texture("sideTop",modBlockTexture(name+"_gabion_top"))
                     .texture("particle",mcBlockTexture(name));
 
-            ModelFile outer = models().withExistingParent(path,modBlockTexture("outer_stairs"))
+            ModelFile outer = models().withExistingParent(path+"_outer",modBlockTexture("outer_stairs"))
                     .texture("bottom",modBlockTexture("gabion_bottom"))
                     .texture("top",modBlockTexture(name+"_gabion_top"))
                     .texture("side",modBlockTexture("gabion_side"))
@@ -467,7 +467,8 @@ public class ModBlockstateProvider extends BlockStateProvider {
 
 
             models().withExistingParent(path+"_inventory",modBlockTexture("wall_inventory"))
-                    .texture("up","block/"+path).texture("down","block/"+path).texture("up","block/wicker");
+                    .texture("up","block/"+path).texture("down","block/"+path).
+                    texture("wall","block/wicker");
 
             wallBlock(block,post,side,sideTall);
         }

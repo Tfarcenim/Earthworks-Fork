@@ -16,6 +16,7 @@ public class ModLangProvider extends LanguageProvider {
         for (Item item : ItemRegistry.getAllItems()) {
             add(item.getTranslationKey(), getNameFromItem(item));
         }
+        add("itemGroup.earthworks","Earthworks");
     }
 
     public static String getNameFromItem(Item item) {
