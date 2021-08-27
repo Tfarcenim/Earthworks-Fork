@@ -351,7 +351,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         String tex = path.substring("vertical_".length(),path.length() - "_fence".length()) + "_planks";
 
         ItemModelBuilder parent = getBuilder(path + "_inventory")
-                .parent(getExistingFile(mcLoc("block/fence_inventory")))
+                .parent(getExistingFile(modLoc("block/vertical_fence_inventory")))
                 .texture("texture",mcLoc("block/"+tex));
         getBuilder(path).parent(parent);
     }
