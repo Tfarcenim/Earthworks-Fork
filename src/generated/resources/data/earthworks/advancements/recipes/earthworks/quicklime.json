@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "earthworks:quicklime"
+    ]
+  },
+  "criteria": {
+    "has_chalk_dust": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "earthworks:chalk_dust"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "earthworks:quicklime"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_chalk_dust",
+      "has_the_recipe"
+    ]
+  ]
+}

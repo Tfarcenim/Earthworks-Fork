@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "earthworks:chalk"
+  },
+  "result": {
+    "item": "earthworks:quicklime",
+    "count": 4
+  },
+  "experience": 0.4,
+  "cookingtime": 200
+}
