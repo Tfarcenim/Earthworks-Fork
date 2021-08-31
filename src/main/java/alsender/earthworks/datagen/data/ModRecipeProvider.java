@@ -2,12 +2,12 @@ package alsender.earthworks.datagen.data;
 
 import alsender.earthworks.datagen.data.builders.CookingRecipeBuilderFullStack;
 import alsender.earthworks.main.registry.ItemRegistry;
-import net.minecraft.data.CookingRecipeBuilder;
-import net.minecraft.data.DataGenerator;
-import net.minecraft.data.IFinishedRecipe;
-import net.minecraft.data.RecipeProvider;
+import net.minecraft.data.*;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.Ingredient;
+import net.minecraft.tags.ITag;
+import net.minecraft.util.IItemProvider;
 
 import java.util.function.Consumer;
 
@@ -27,5 +27,29 @@ public class ModRecipeProvider extends RecipeProvider {
         CookingRecipeBuilderFullStack.smeltingRecipe(Ingredient.fromItems(ItemRegistry.chalk),new ItemStack(ItemRegistry.quicklime,4),.4f,200)
                 .addCriterion("has_chalk",hasItem(ItemRegistry.chalk))
                 .build(consumer,"quicklime_from_chalk_dust");
+
+        shapelessPlanksNew(consumer,ItemRegistry.vertical_oak_planks,ItemRegistry.oak_timber);
+        shapelessPlanksNew(consumer,ItemRegistry.vertical_spruce_planks,ItemRegistry.spruce_timber);
+        shapelessPlanksNew(consumer,ItemRegistry.vertical_birch_planks,ItemRegistry.birch_timber);
+        shapelessPlanksNew(consumer,ItemRegistry.vertical_jungle_planks,ItemRegistry.jungle_timber);
+        shapelessPlanksNew(consumer,ItemRegistry.vertical_acacia_planks,ItemRegistry.acacia_timber);
+        shapelessPlanksNew(consumer,ItemRegistry.vertical_dark_oak_planks,ItemRegistry.dark_oak_timber);
+
+        slabToBlock(consumer,ItemRegistry.vertical_oak_planks,ItemRegistry.vertical_oak_slab);
+        slabToBlock(consumer,ItemRegistry.vertical_spruce_planks,ItemRegistry.vertical_spruce_slab);
+        slabToBlock(consumer,ItemRegistry.vertical_birch_planks,ItemRegistry.vertical_birch_slab);
+        slabToBlock(consumer,ItemRegistry.vertical_jungle_planks,ItemRegistry.vertical_jungle_slab);
+        slabToBlock(consumer,ItemRegistry.vertical_acacia_planks,ItemRegistry.vertical_acacia_slab);
+        slabToBlock(consumer,ItemRegistry.vertical_dark_oak_planks,ItemRegistry.vertical_dark_oak_slab);
+
+    }
+
+    private static void shapelessPlanksNew(Consumer<IFinishedRecipe> recipeConsumer, IItemProvider planks, IItemProvider input) {
+        ShapelessRecipeBuilder.shapelessRecipe(planks, 4).addIngredient(input).setGroup("planks").addCriterion("has_log", hasItem(input)).build(recipeConsumer);
+    }
+
+    private static void slabToBlock(Consumer<IFinishedRecipe> recipeConsumer, IItemProvider block, IItemProvider slab) {
+        ShapedRecipeBuilder.shapedRecipe(block).key('s',slab).patternLine("s").patternLine("s")
+                .setGroup("slab").addCriterion("has_slab", hasItem(slab)).build(recipeConsumer,block.asItem().getRegistryName().getPath()+"_from_slabs");
     }
 }

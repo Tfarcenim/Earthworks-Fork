@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "planks",
+  "ingredients": [
+    {
+      "item": "earthworks:spruce_timber"
+    }
+  ],
+  "result": {
+    "item": "earthworks:vertical_spruce_planks",
+    "count": 4
+  }
+}

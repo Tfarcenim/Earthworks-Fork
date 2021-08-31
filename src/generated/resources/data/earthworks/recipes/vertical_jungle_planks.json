@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "planks",
+  "ingredients": [
+    {
+      "item": "earthworks:jungle_timber"
+    }
+  ],
+  "result": {
+    "item": "earthworks:vertical_jungle_planks",
+    "count": 4
+  }
+}

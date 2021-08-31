@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "planks",
+  "ingredients": [
+    {
+      "item": "earthworks:dark_oak_timber"
+    }
+  ],
+  "result": {
+    "item": "earthworks:vertical_dark_oak_planks",
+    "count": 4
+  }
+}

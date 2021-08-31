@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "planks",
+  "ingredients": [
+    {
+      "item": "earthworks:acacia_timber"
+    }
+  ],
+  "result": {
+    "item": "earthworks:vertical_acacia_planks",
+    "count": 4
+  }
+}
