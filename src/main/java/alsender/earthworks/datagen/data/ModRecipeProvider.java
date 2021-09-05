@@ -131,6 +131,44 @@ public class ModRecipeProvider extends RecipeProvider {
                 .build(consumer);
         slabToBlock(consumer,ItemRegistry.lath_and_plaster,BlockRegistry.lath_and_plaster_slab);
 
+        threeByTwo(consumer,ItemRegistry.rammed_earth,Items.DIRT,3);
+        slabToBlock(consumer,ItemRegistry.rammed_earth,BlockRegistry.rammed_earth_slab);
+
+        twoByTwo(consumer,ItemRegistry.reed,Items.SUGAR_CANE);
+        slabToBlock(consumer,ItemRegistry.reed,BlockRegistry.reed_slab);
+        //twoByTwo(consumer,Items.SAND,ItemRegistry.sand);
+
+        slabToBlock(consumer,ItemRegistry.blue_slate,BlockRegistry.blue_slate_slab);
+        slabToBlock(consumer,ItemRegistry.green_slate,BlockRegistry.green_slate_slab);
+        slabToBlock(consumer,ItemRegistry.purple_slate,BlockRegistry.purple_slate_slab);
+
+        twoByTwo(consumer,ItemRegistry.blue_slate_shingles,ItemRegistry.blue_slate,4);
+        slabToBlock(consumer,ItemRegistry.blue_slate_shingles,BlockRegistry.blue_slate_shingles_slab);
+
+        twoByTwo(consumer,ItemRegistry.green_slate_shingles,ItemRegistry.green_slate,4);
+        slabToBlock(consumer,ItemRegistry.green_slate_shingles,BlockRegistry.green_slate_shingles_slab);
+
+        twoByTwo(consumer,ItemRegistry.purple_slate_shingles,ItemRegistry.purple_slate,4);
+        slabToBlock(consumer,ItemRegistry.purple_slate_shingles,BlockRegistry.purple_slate_shingles_slab);
+
+        ring(consumer,ItemRegistry.polished_blue_slate,ItemRegistry.blue_slate,8);
+        slabToBlock(consumer,ItemRegistry.polished_blue_slate,BlockRegistry.polished_blue_slate_slab);
+
+        ring(consumer,ItemRegistry.polished_green_slate,ItemRegistry.green_slate,8);
+        slabToBlock(consumer,ItemRegistry.polished_green_slate,BlockRegistry.polished_green_slate_slab);
+
+        ring(consumer,ItemRegistry.polished_purple_slate,ItemRegistry.purple_slate,8);
+        slabToBlock(consumer,ItemRegistry.polished_purple_slate,BlockRegistry.polished_purple_slate_slab);
+
+        twoByTwo(consumer,ItemRegistry.blue_slate_tiles,ItemRegistry.polished_blue_slate,4);
+        slabToBlock(consumer,ItemRegistry.blue_slate_tiles,BlockRegistry.blue_slate_tiles_slab);
+
+        twoByTwo(consumer,ItemRegistry.green_slate_tiles,ItemRegistry.polished_green_slate,4);
+        slabToBlock(consumer,ItemRegistry.green_slate_tiles,BlockRegistry.green_slate_tiles_slab);
+
+        twoByTwo(consumer,ItemRegistry.purple_slate_tiles,ItemRegistry.polished_purple_slate,4);
+        slabToBlock(consumer,ItemRegistry.purple_slate_tiles,BlockRegistry.purple_slate_tiles_slab);
+
 
     }
 
@@ -144,7 +182,11 @@ public class ModRecipeProvider extends RecipeProvider {
     }
 
     private static void twoByTwo(Consumer<IFinishedRecipe> recipeConsumer, IItemProvider output, IItemProvider input) {
-        ShapedRecipeBuilder.shapedRecipe(output).key('#', input)
+        twoByTwo(recipeConsumer, output, input,1);
+    }
+
+    private static void twoByTwo(Consumer<IFinishedRecipe> recipeConsumer, IItemProvider output, IItemProvider input, int count) {
+        ShapedRecipeBuilder.shapedRecipe(output,count).key('#', input)
                 .patternLine("##").patternLine("##")
                 .addCriterion("has_item", hasItem(input)).build(recipeConsumer);
     }
@@ -162,6 +204,14 @@ public class ModRecipeProvider extends RecipeProvider {
         ShapedRecipeBuilder.shapedRecipe(output,count)
                 .key('a', input)
                 .patternLine("aaa").patternLine("a a").patternLine("aaa")
+                .addCriterion("has_"+input.asItem().getRegistryName().getPath(),hasItem(input))
+                .build(recipeConsumer);
+    }
+
+    private static void threeByTwo(Consumer<IFinishedRecipe> recipeConsumer, IItemProvider output, IItemProvider input, int count) {
+        ShapedRecipeBuilder.shapedRecipe(output,count)
+                .key('a', input)
+                .patternLine("aaa").patternLine("aaa")
                 .addCriterion("has_"+input.asItem().getRegistryName().getPath(),hasItem(input))
                 .build(recipeConsumer);
     }

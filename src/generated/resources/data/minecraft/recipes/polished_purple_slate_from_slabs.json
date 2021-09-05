@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "slab",
+  "pattern": [
+    "s",
+    "s"
+  ],
+  "key": {
+    "s": {
+      "item": "earthworks:polished_purple_slate_slab"
+    }
+  },
+  "result": {
+    "item": "earthworks:polished_purple_slate"
+  }
+}

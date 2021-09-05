@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "slab",
+  "pattern": [
+    "s",
+    "s"
+  ],
+  "key": {
+    "s": {
+      "item": "earthworks:green_slate_shingles_slab"
+    }
+  },
+  "result": {
+    "item": "earthworks:green_slate_shingles"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "aaa",
+    "a a",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "earthworks:blue_slate"
+    }
+  },
+  "result": {
+    "item": "earthworks:polished_blue_slate",
+    "count": 8
+  }
+}
