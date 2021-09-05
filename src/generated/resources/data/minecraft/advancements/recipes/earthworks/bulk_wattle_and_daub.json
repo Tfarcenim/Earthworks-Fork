@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:bulk_wattle_and_daub"
+    ]
+  },
+  "criteria": {
+    "has_cob": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "earthworks:cob"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minecraft:bulk_wattle_and_daub"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_cob",
+      "has_the_recipe"
+    ]
+  ]
+}

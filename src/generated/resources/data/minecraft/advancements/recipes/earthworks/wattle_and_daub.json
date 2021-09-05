@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:wattle_and_daub"
+    ]
+  },
+  "criteria": {
+    "has_cob_ball": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "earthworks:cob_ball"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minecraft:wattle_and_daub"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_cob_ball",
+      "has_the_recipe"
+    ]
+  ]
+}

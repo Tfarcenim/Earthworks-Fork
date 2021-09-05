@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "aaa",
+    "aba",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "earthworks:cob"
+    },
+    "b": {
+      "item": "earthworks:wicker"
+    }
+  },
+  "result": {
+    "item": "earthworks:wattle_and_daub",
+    "count": 8
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:wattle_and_daub_from_slabs"
+    ]
+  },
+  "criteria": {
+    "has_slab": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "earthworks:wattle_and_daub_slab"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minecraft:wattle_and_daub_from_slabs"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_slab",
+      "has_the_recipe"
+    ]
+  ]
+}

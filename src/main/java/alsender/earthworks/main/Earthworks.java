@@ -1,12 +1,15 @@
 package alsender.earthworks.main;
 
 import alsender.earthworks.datagen.ModDatagen;
+import alsender.earthworks.main.crafting.ShapelessReturnRecipe;
 import alsender.earthworks.main.registry.BlockRegistry;
 import alsender.earthworks.main.registry.ItemRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.IRecipeSerializer;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
@@ -22,11 +25,14 @@ public class Earthworks {
 
     public static final String mod_id = "earthworks";
 
+    public static final IRecipeSerializer<?> shapeless_return = new ShapelessReturnRecipe.ReturnSerializer();
+
     public Earthworks() {
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
         bus.addListener(ModDatagen::start);
         bus.addGenericListener(Block.class,this::blocks);
         bus.addGenericListener(Item.class,this::items);
+        bus.addGenericListener(IRecipeSerializer.class,this::recipeSerializers);
     }
 
     public static final ItemGroup creativeTab = (new ItemGroup("earthworks") {
@@ -52,4 +58,7 @@ public class Earthworks {
         ItemRegistry.initItems(event);
     }
 
+    private void recipeSerializers(RegistryEvent.Register<IRecipeSerializer<?>> event) {
+        event.getRegistry().register(shapeless_return.setRegistryName(new ResourceLocation(mod_id,"shapeless_return")));
+    }
 }

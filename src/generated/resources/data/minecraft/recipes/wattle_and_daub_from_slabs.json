@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "slab",
+  "pattern": [
+    "s",
+    "s"
+  ],
+  "key": {
+    "s": {
+      "item": "earthworks:wattle_and_daub_slab"
+    }
+  },
+  "result": {
+    "item": "earthworks:wattle_and_daub"
+  }
+}
