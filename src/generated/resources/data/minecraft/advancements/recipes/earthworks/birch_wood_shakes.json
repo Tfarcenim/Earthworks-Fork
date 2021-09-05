@@ -2,16 +2,16 @@
   "parent": "minecraft:recipes/root",
   "rewards": {
     "recipes": [
-      "earthworks:oak_wood_shakes"
+      "minecraft:birch_wood_shakes"
     ]
   },
   "criteria": {
-    "has_oak_logs": {
+    "has_birch_log": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
-            "item": "minecraft:oak_log"
+            "item": "minecraft:birch_log"
           }
         ]
       }
@@ -19,13 +19,13 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "earthworks:oak_wood_shakes"
+        "recipe": "minecraft:birch_wood_shakes"
       }
     }
   },
   "requirements": [
     [
-      "has_oak_logs",
+      "has_birch_log",
       "has_the_recipe"
     ]
   ]

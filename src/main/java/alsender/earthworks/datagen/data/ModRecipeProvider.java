@@ -196,12 +196,23 @@ public class ModRecipeProvider extends RecipeProvider {
         checkerboardNoCenter(consumer, BlockRegistry.wicker, Items.STICK, Items.WHEAT, 2);
         slabToBlock(consumer, BlockRegistry.wicker, BlockRegistry.wicker_slab);
 
-        ShapelessReturnRecipeBuilder.shapelessRecipe(BlockRegistry.oak_wood_shakes, 6)
-                .setReturnItem(Items.FLINT)
-                .addIngredient(Items.FLINT)
-                .addIngredient(Blocks.OAK_LOG)
-                .addCriterion("has_oak_logs", hasItem(Blocks.OAK_LOG))
-                .build(consumer);
+        woodShakesMain(consumer,BlockRegistry.oak_wood_shakes,Blocks.OAK_LOG,6);
+        woodShakesAlt(consumer,BlockRegistry.oak_wood_shakes,BlockRegistry.oak_timber,6);
+
+        woodShakesMain(consumer,BlockRegistry.spruce_wood_shakes,Blocks.SPRUCE_LOG,6);
+        woodShakesAlt(consumer,BlockRegistry.spruce_wood_shakes,BlockRegistry.spruce_timber,6);
+
+        woodShakesMain(consumer,BlockRegistry.birch_wood_shakes,Blocks.BIRCH_LOG,6);
+        woodShakesAlt(consumer,BlockRegistry.birch_wood_shakes,BlockRegistry.birch_timber,6);
+
+        woodShakesMain(consumer,BlockRegistry.jungle_wood_shakes,Blocks.JUNGLE_LOG,6);
+        woodShakesAlt(consumer,BlockRegistry.jungle_wood_shakes,BlockRegistry.jungle_timber,6);
+
+        woodShakesMain(consumer,BlockRegistry.acacia_wood_shakes,Blocks.ACACIA_LOG,6);
+        woodShakesAlt(consumer,BlockRegistry.acacia_wood_shakes,BlockRegistry.acacia_timber,6);
+
+        woodShakesMain(consumer,BlockRegistry.dark_oak_wood_shakes,Blocks.DARK_OAK_LOG,6);
+        woodShakesAlt(consumer,BlockRegistry.dark_oak_wood_shakes,BlockRegistry.dark_oak_timber,6);
     }
 
     private static void shapelessPlanksNew(Consumer<IFinishedRecipe> recipeConsumer, IItemProvider planks, IItemProvider input) {
@@ -277,4 +288,20 @@ public class ModRecipeProvider extends RecipeProvider {
                 .build(recipeConsumer, name);
     }
 
+    private static void woodShakesMain(Consumer<IFinishedRecipe> recipeConsumer, IItemProvider output,IItemProvider input, int count) {
+        woodShakes(recipeConsumer,output,input,count,output.asItem().getRegistryName().getPath());
+    }
+
+    private static void woodShakesAlt(Consumer<IFinishedRecipe> recipeConsumer, IItemProvider output,IItemProvider input, int count) {
+        woodShakes(recipeConsumer,output,input,count,output.asItem().getRegistryName().getPath()+"_alt");
+    }
+
+    private static void woodShakes(Consumer<IFinishedRecipe> recipeConsumer, IItemProvider output, IItemProvider input, int count,String name) {
+        ShapelessReturnRecipeBuilder.shapelessRecipe(output, count)
+                .setReturnItem(Items.FLINT)
+                .addIngredient(Items.FLINT)
+                .addIngredient(input)
+                .addCriterion("has_"+input.asItem().getRegistryName().getPath(), hasItem(input))
+                .build(recipeConsumer,name);
+    }
 }

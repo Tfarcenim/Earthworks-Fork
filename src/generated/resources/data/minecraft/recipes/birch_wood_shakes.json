@@ -1,0 +1,18 @@
+{
+  "type": "earthworks:shapeless_return",
+  "ingredients": [
+    {
+      "item": "minecraft:flint"
+    },
+    {
+      "item": "minecraft:birch_log"
+    }
+  ],
+  "result": {
+    "item": "earthworks:birch_wood_shakes",
+    "count": 6
+  },
+  "return": {
+    "item": "minecraft:flint"
+  }
+}

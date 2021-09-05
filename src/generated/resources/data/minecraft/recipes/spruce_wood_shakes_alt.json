@@ -1,0 +1,18 @@
+{
+  "type": "earthworks:shapeless_return",
+  "ingredients": [
+    {
+      "item": "minecraft:flint"
+    },
+    {
+      "item": "earthworks:spruce_timber"
+    }
+  ],
+  "result": {
+    "item": "earthworks:spruce_wood_shakes",
+    "count": 6
+  },
+  "return": {
+    "item": "minecraft:flint"
+  }
+}

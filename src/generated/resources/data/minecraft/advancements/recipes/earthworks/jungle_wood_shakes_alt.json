@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:jungle_wood_shakes_alt"
+    ]
+  },
+  "criteria": {
+    "has_jungle_timber": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "earthworks:jungle_timber"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minecraft:jungle_wood_shakes_alt"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_jungle_timber",
+      "has_the_recipe"
+    ]
+  ]
+}
