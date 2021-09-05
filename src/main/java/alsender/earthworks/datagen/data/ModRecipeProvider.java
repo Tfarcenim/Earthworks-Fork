@@ -186,6 +186,13 @@ public class ModRecipeProvider extends RecipeProvider {
 
         column(consumer,BlockRegistry.dark_oak_timber,Blocks.DARK_OAK_LOG,3);
         slabToBlock(consumer,BlockRegistry.dark_oak_timber,BlockRegistry.dark_oak_timber_slab);
+
+        ringCenter(consumer,BlockRegistry.wattle_and_daub,ItemRegistry.cob_ball,BlockRegistry.wicker,2);
+        ringCenter(consumer,BlockRegistry.wattle_and_daub,BlockRegistry.cob,BlockRegistry.wicker,8,"bulk_wattle_and_daub");
+        slabToBlock(consumer,BlockRegistry.wattle_and_daub,BlockRegistry.wattle_and_daub_slab);
+
+        checkerboardNoCenter(consumer,BlockRegistry.wicker,Items.STICK,Items.WHEAT,2);
+        slabToBlock(consumer,BlockRegistry.wicker,BlockRegistry.wicker_slab);
     }
 
     private static void shapelessPlanksNew(Consumer<IFinishedRecipe> recipeConsumer, IItemProvider planks, IItemProvider input) {
@@ -216,6 +223,15 @@ public class ModRecipeProvider extends RecipeProvider {
                 .build(recipeConsumer);
     }
 
+    private static void checkerboardNoCenter(Consumer<IFinishedRecipe> recipeConsumer, IItemProvider output, IItemProvider input1, IItemProvider input2, int count) {
+        ShapedRecipeBuilder.shapedRecipe(output,count)
+                .key('a', input1).key('b', input2)
+                .patternLine("aba").patternLine("b b").patternLine("aba")
+                .addCriterion("has_"+input1.asItem().getRegistryName().getPath(),hasItem(input1))
+                .addCriterion("has_"+input2.asItem().getRegistryName().getPath(),hasItem(input2))
+                .build(recipeConsumer);
+    }
+
     private static void ring(Consumer<IFinishedRecipe> recipeConsumer, IItemProvider output, IItemProvider input, int count) {
         ShapedRecipeBuilder.shapedRecipe(output,count)
                 .key('a', input)
@@ -239,4 +255,17 @@ public class ModRecipeProvider extends RecipeProvider {
                 .addCriterion("has_"+input.asItem().getRegistryName().getPath(),hasItem(input))
                 .build(recipeConsumer);
     }
+
+    private static void ringCenter(Consumer<IFinishedRecipe> recipeConsumer, IItemProvider output, IItemProvider ring,IItemProvider center, int count) {
+        ringCenter(recipeConsumer, output, ring, center, count,output.asItem().getRegistryName().getPath());
+    }
+
+    private static void ringCenter(Consumer<IFinishedRecipe> recipeConsumer, IItemProvider output, IItemProvider ring,IItemProvider center, int count,String name) {
+        ShapedRecipeBuilder.shapedRecipe(output,count)
+                .key('a', ring).key('b',center)
+                .patternLine("aaa").patternLine("aba").patternLine("aaa")
+                .addCriterion("has_"+ring.asItem().getRegistryName().getPath(),hasItem(ring))
+                .build(recipeConsumer,name);
+    }
+
 }
