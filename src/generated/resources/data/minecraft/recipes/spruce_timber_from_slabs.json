@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "slab",
+  "pattern": [
+    "s",
+    "s"
+  ],
+  "key": {
+    "s": {
+      "item": "earthworks:spruce_timber_slab"
+    }
+  },
+  "result": {
+    "item": "earthworks:spruce_timber"
+  }
+}

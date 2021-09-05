@@ -169,7 +169,23 @@ public class ModRecipeProvider extends RecipeProvider {
         twoByTwo(consumer,ItemRegistry.purple_slate_tiles,ItemRegistry.polished_purple_slate,4);
         slabToBlock(consumer,ItemRegistry.purple_slate_tiles,BlockRegistry.purple_slate_tiles_slab);
 
+        twoByTwo(consumer,BlockRegistry.thatch,Items.WHEAT);
+        slabToBlock(consumer,BlockRegistry.thatch,BlockRegistry.thatch_slab);
 
+        column(consumer,BlockRegistry.spruce_timber,Blocks.SPRUCE_LOG,3);
+        slabToBlock(consumer,BlockRegistry.spruce_timber,BlockRegistry.spruce_timber_slab);
+
+        column(consumer,BlockRegistry.birch_timber,Blocks.BIRCH_LOG,3);
+        slabToBlock(consumer,BlockRegistry.birch_timber,BlockRegistry.birch_timber_slab);
+
+        column(consumer,BlockRegistry.jungle_timber,Blocks.JUNGLE_LOG,3);
+        slabToBlock(consumer,BlockRegistry.jungle_timber,BlockRegistry.jungle_timber_slab);
+
+        column(consumer,BlockRegistry.acacia_timber,Blocks.ACACIA_LOG,3);
+        slabToBlock(consumer,BlockRegistry.acacia_timber,BlockRegistry.acacia_timber_slab);
+
+        column(consumer,BlockRegistry.dark_oak_timber,Blocks.DARK_OAK_LOG,3);
+        slabToBlock(consumer,BlockRegistry.dark_oak_timber,BlockRegistry.dark_oak_timber_slab);
     }
 
     private static void shapelessPlanksNew(Consumer<IFinishedRecipe> recipeConsumer, IItemProvider planks, IItemProvider input) {
@@ -212,6 +228,14 @@ public class ModRecipeProvider extends RecipeProvider {
         ShapedRecipeBuilder.shapedRecipe(output,count)
                 .key('a', input)
                 .patternLine("aaa").patternLine("aaa")
+                .addCriterion("has_"+input.asItem().getRegistryName().getPath(),hasItem(input))
+                .build(recipeConsumer);
+    }
+
+    private static void column(Consumer<IFinishedRecipe> recipeConsumer, IItemProvider output, IItemProvider input, int count) {
+        ShapedRecipeBuilder.shapedRecipe(output,count)
+                .key('a', input)
+                .patternLine("a").patternLine("a").patternLine("a")
                 .addCriterion("has_"+input.asItem().getRegistryName().getPath(),hasItem(input))
                 .build(recipeConsumer);
     }

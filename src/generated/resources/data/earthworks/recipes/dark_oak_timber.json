@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "a",
+    "a",
+    "a"
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:dark_oak_log"
+    }
+  },
+  "result": {
+    "item": "earthworks:dark_oak_timber",
+    "count": 3
+  }
+}
