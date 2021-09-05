@@ -47,7 +47,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         makeSimpleBlockItem(ItemRegistry.adobe,modLoc("adobe0"));
         makeSimpleBlockItem(ItemRegistry.chalk);
-        makeSimpleBlockItem(ItemRegistry.cinder);
+        makeSimpleBlockItem(ItemRegistry.cinder_blocks);
         makeSimpleBlockItem(ItemRegistry.cob);
         makeSimpleBlockItem(ItemRegistry.concrete);
         makeSimpleBlockItem(ItemRegistry.cordwood,modLoc("cordwood0"));
@@ -87,7 +87,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         makeSimpleBlockItem(ItemRegistry.adobe_slab);
         makeSimpleBlockItem(ItemRegistry.chalk_slab);
-        makeSimpleBlockItem(ItemRegistry.cinder_slab);
+        makeSimpleBlockItem(ItemRegistry.cinder_block_slab);
         makeSimpleBlockItem(ItemRegistry.cob_slab);
         makeSimpleBlockItem(ItemRegistry.concrete_slab);
         makeSimpleBlockItem(ItemRegistry.cordwood_slab);
@@ -151,7 +151,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         makeSimpleBlockItem(ItemRegistry.adobe_stairs);
         makeSimpleBlockItem(ItemRegistry.chalk_stairs);
-        makeSimpleBlockItem(ItemRegistry.cinder_stairs);
+        makeSimpleBlockItem(ItemRegistry.cinder_block_stairs);
         makeSimpleBlockItem(ItemRegistry.cob_stairs);
         makeSimpleBlockItem(ItemRegistry.concrete_stairs);
         makeSimpleBlockItem(ItemRegistry.cordwood_stairs);
@@ -197,7 +197,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         makeWallInventoryItem(ItemRegistry.adobe_wall);
         makeWallInventoryItem(ItemRegistry.chalk_wall);
-        makeWallInventoryItem(ItemRegistry.cinder_wall);
+        makeWallInventoryItem(ItemRegistry.cinder_block_wall);
         makeWallInventoryItem(ItemRegistry.cob_wall);
         makeWallInventoryItem(ItemRegistry.concrete_wall);
         makeWallInventoryItem(ItemRegistry.cordwood_wall);

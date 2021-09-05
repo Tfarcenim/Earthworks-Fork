@@ -12,7 +12,7 @@ public class ModBlockLootTables extends BlockLootTables {
 
 
         registerDropSelfLootTable(BlockRegistry.chalk);
-        registerDropSelfLootTable(BlockRegistry.cinder);
+        registerDropSelfLootTable(BlockRegistry.cinder_blocks);
         registerDropSelfLootTable(BlockRegistry.cob);
         registerDropSelfLootTable(BlockRegistry.concrete);
         registerDropSelfLootTable(BlockRegistry.cordwood);
@@ -69,7 +69,7 @@ public class ModBlockLootTables extends BlockLootTables {
 
         registerDropSelfLootTable(BlockRegistry.adobe_slab);
         registerDropSelfLootTable(BlockRegistry.chalk_slab);
-        registerDropSelfLootTable(BlockRegistry.cinder_slab);
+        registerDropSelfLootTable(BlockRegistry.cinder_block_slab);
         registerDropSelfLootTable(BlockRegistry.cob_slab);
         registerDropSelfLootTable(BlockRegistry.concrete_slab);
         registerDropSelfLootTable(BlockRegistry.cordwood_slab);
@@ -117,7 +117,7 @@ public class ModBlockLootTables extends BlockLootTables {
 
         registerDropSelfLootTable(BlockRegistry.adobe_stairs);
         registerDropSelfLootTable(BlockRegistry.chalk_stairs);
-        registerDropSelfLootTable(BlockRegistry.cinder_stairs);
+        registerDropSelfLootTable(BlockRegistry.cinder_block_stairs);
         registerDropSelfLootTable(BlockRegistry.cob_stairs);
         registerDropSelfLootTable(BlockRegistry.concrete_stairs);
         registerDropSelfLootTable(BlockRegistry.cordwood_stairs);
@@ -165,7 +165,7 @@ public class ModBlockLootTables extends BlockLootTables {
 
         registerDropSelfLootTable(BlockRegistry.adobe_wall);
         registerDropSelfLootTable(BlockRegistry.chalk_wall);
-        registerDropSelfLootTable(BlockRegistry.cinder_wall);
+        registerDropSelfLootTable(BlockRegistry.cinder_block_wall);
         registerDropSelfLootTable(BlockRegistry.cob_wall);
         registerDropSelfLootTable(BlockRegistry.concrete_wall);
         registerDropSelfLootTable(BlockRegistry.cordwood_wall);

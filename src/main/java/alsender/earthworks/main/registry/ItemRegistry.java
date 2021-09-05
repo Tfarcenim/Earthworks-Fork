@@ -47,7 +47,7 @@ public class ItemRegistry {
 
     public static BlockItem adobe;
     public static BlockItem chalk;
-    public static BlockItem cinder;
+    public static BlockItem cinder_blocks;
     public static BlockItem cob;
     public static BlockItem concrete;
     public static BlockItem cordwood;
@@ -87,7 +87,7 @@ public class ItemRegistry {
 
     public static BlockItem adobe_slab;
     public static BlockItem chalk_slab;
-    public static BlockItem cinder_slab;
+    public static BlockItem cinder_block_slab;
     public static BlockItem cob_slab;
     public static BlockItem concrete_slab;
     public static BlockItem cordwood_slab;
@@ -150,7 +150,7 @@ public class ItemRegistry {
 
     public static BlockItem adobe_stairs;
     public static BlockItem chalk_stairs;
-    public static BlockItem cinder_stairs;
+    public static BlockItem cinder_block_stairs;
     public static BlockItem cob_stairs;
     public static BlockItem concrete_stairs;
     public static BlockItem cordwood_stairs;
@@ -196,7 +196,7 @@ public class ItemRegistry {
 
     public static BlockItem adobe_wall;
     public static BlockItem chalk_wall;
-    public static BlockItem cinder_wall;
+    public static BlockItem cinder_block_wall;
     public static BlockItem cob_wall;
     public static BlockItem concrete_wall;
     public static BlockItem cordwood_wall;
@@ -349,7 +349,7 @@ public class ItemRegistry {
 
         adobe = blockItem(BlockRegistry.adobe);
         chalk = blockItem(BlockRegistry.chalk);
-        cinder = blockItem(BlockRegistry.cinder);
+        cinder_blocks = blockItem(BlockRegistry.cinder_blocks);
         cob = blockItem(BlockRegistry.cob);
         concrete = blockItem(BlockRegistry.concrete);
         cordwood = blockItem(BlockRegistry.cordwood);
@@ -404,7 +404,7 @@ public class ItemRegistry {
 
         adobe_slab = blockItem(BlockRegistry.adobe_slab);
         chalk_slab = blockItem(BlockRegistry.chalk_slab);
-        cinder_slab = blockItem(BlockRegistry.cinder_slab);
+        cinder_block_slab = blockItem(BlockRegistry.cinder_block_slab);
         cob_slab = blockItem(BlockRegistry.cob_slab);
         concrete_slab = blockItem(BlockRegistry.concrete_slab);
         cordwood_slab = blockItem(BlockRegistry.cordwood_slab);
@@ -450,7 +450,7 @@ public class ItemRegistry {
 
         adobe_stairs = blockItem(BlockRegistry.adobe_stairs);
         chalk_stairs = blockItem(BlockRegistry.chalk_stairs);
-        cinder_stairs = blockItem(BlockRegistry.cinder_stairs);
+        cinder_block_stairs = blockItem(BlockRegistry.cinder_block_stairs);
         cob_stairs = blockItem(BlockRegistry.cob_stairs);
         concrete_stairs = blockItem(BlockRegistry.concrete_stairs);
         cordwood_stairs = blockItem(BlockRegistry.cordwood_stairs);
@@ -496,7 +496,7 @@ public class ItemRegistry {
 
         adobe_wall = blockItem(BlockRegistry.adobe_wall);
         chalk_wall = blockItem(BlockRegistry.chalk_wall);
-        cinder_wall = blockItem(BlockRegistry.cinder_wall);
+        cinder_block_wall = blockItem(BlockRegistry.cinder_block_wall);
         cob_wall = blockItem(BlockRegistry.cob_wall);
         concrete_wall = blockItem(BlockRegistry.concrete_wall);
         cordwood_wall = blockItem(BlockRegistry.cordwood_wall);

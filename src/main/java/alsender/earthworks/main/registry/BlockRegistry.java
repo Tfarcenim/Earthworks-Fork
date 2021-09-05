@@ -23,7 +23,7 @@ public class BlockRegistry {
 
     public static Block adobe;
     public static Block chalk;
-    public static Block cinder;
+    public static Block cinder_blocks;
     public static Block cob;
     public static Block concrete;
     public static Block cordwood;
@@ -80,7 +80,7 @@ public class BlockRegistry {
 
     public static SlabBlock adobe_slab;
     public static SlabBlock chalk_slab;
-    public static SlabBlock cinder_slab;
+    public static SlabBlock cinder_block_slab;
     public static SlabBlock cob_slab;
     public static SlabBlock concrete_slab;
     public static SlabBlock cordwood_slab;
@@ -128,7 +128,7 @@ public class BlockRegistry {
 
     public static StairsBlock adobe_stairs;
     public static StairsBlock chalk_stairs;
-    public static StairsBlock cinder_stairs;
+    public static StairsBlock cinder_block_stairs;
     public static StairsBlock cob_stairs;
     public static StairsBlock concrete_stairs;
     public static StairsBlock cordwood_stairs;
@@ -176,7 +176,7 @@ public class BlockRegistry {
 
     public static WallBlock adobe_wall;
     public static WallBlock chalk_wall;
-    public static WallBlock cinder_wall;
+    public static WallBlock cinder_block_wall;
     public static WallBlock cob_wall;
     public static WallBlock concrete_wall;
     public static WallBlock cordwood_wall;
@@ -302,7 +302,7 @@ public class BlockRegistry {
         IForgeRegistry<Block> r = event.getRegistry();
         adobe = new Block(Block.Properties.create(Material.ROCK).sound(SoundType.STONE).hardnessAndResistance(2.0F, 3.3F));
         chalk = new Block(Block.Properties.create(Material.ROCK).sound(SoundType.STONE).hardnessAndResistance(1.0F, 2.5F));
-        cinder = new Block(Block.Properties.create(Material.ROCK).sound(SoundType.STONE).hardnessAndResistance(1.5F, 5.83F));
+        cinder_blocks = new Block(Block.Properties.create(Material.ROCK).sound(SoundType.STONE).hardnessAndResistance(1.5F, 5.83F));
         cob = new Block(Block.Properties.create(Material.EARTH).sound(SoundType.GROUND).hardnessAndResistance(1.0F, 3.0F));
         concrete = new Block(Block.Properties.create(Material.ROCK).sound(SoundType.STONE).hardnessAndResistance(2.0F, 10.0F));
         cordwood = new ModBlockFacing(Block.Properties.create(Material.ROCK).sound(SoundType.STONE).hardnessAndResistance(1.5F, 2.83F));
@@ -363,7 +363,7 @@ public class BlockRegistry {
 
         adobe_slab = new SlabBlock(Block.Properties.from(adobe));
         chalk_slab = new SlabBlock(Block.Properties.from(chalk));
-        cinder_slab = new SlabBlock(Block.Properties.from(cinder));
+        cinder_block_slab = new SlabBlock(Block.Properties.from(cinder_blocks));
         cob_slab = new SlabBlock(Block.Properties.from(cob));
         concrete_slab = new SlabBlock(Block.Properties.from(concrete));
         cordwood_slab = new SlabBlock(Block.Properties.from(cordwood));
@@ -409,7 +409,7 @@ public class BlockRegistry {
 
         adobe_stairs = new StairsBlock(adobe.getDefaultState(), Block.Properties.from(adobe));
         chalk_stairs = new StairsBlock(chalk.getDefaultState(),Block.Properties.from(chalk));
-        cinder_stairs = new StairsBlock(cinder.getDefaultState(),Block.Properties.from(cinder));
+        cinder_block_stairs = new StairsBlock(cinder_blocks.getDefaultState(),Block.Properties.from(cinder_blocks));
         cob_stairs = new StairsBlock(cob.getDefaultState(),Block.Properties.from(cob));
         concrete_stairs = new StairsBlock(concrete.getDefaultState(),Block.Properties.from(concrete));
         cordwood_stairs = new StairsBlock(cordwood.getDefaultState(),Block.Properties.from(cordwood));
@@ -455,7 +455,7 @@ public class BlockRegistry {
 
         adobe_wall = new WallBlock(Block.Properties.from(adobe));
         chalk_wall = new WallBlock(Block.Properties.from(chalk));
-        cinder_wall = new WallBlock(Block.Properties.from(cinder));
+        cinder_block_wall = new WallBlock(Block.Properties.from(cinder_blocks));
         cob_wall = new WallBlock(Block.Properties.from(cob));
         concrete_wall = new WallBlock(Block.Properties.from(concrete));
         cordwood_wall = new WallBlock(Block.Properties.from(cordwood));

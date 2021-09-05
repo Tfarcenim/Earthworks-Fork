@@ -36,7 +36,7 @@ public class ModBlockstateProvider extends BlockStateProvider {
         makeVariantBlockState(BlockRegistry.adobe, 4);
 
         simpleBlock(BlockRegistry.chalk);
-        simpleBlock(BlockRegistry.cinder);
+        simpleBlock(BlockRegistry.cinder_blocks);
         simpleBlock(BlockRegistry.cob);
         simpleBlock(BlockRegistry.concrete);
         cordwood();
@@ -193,7 +193,10 @@ public class ModBlockstateProvider extends BlockStateProvider {
         slabBlock(BlockRegistry.adobe_slab,modelFile2,modelFile2,modelFile2);
 
         simpleSlab(BlockRegistry.chalk_slab);
-        simpleSlab(BlockRegistry.cinder_slab);
+        //simpleSlab(BlockRegistry.cinder_block_slab);
+
+        slabBlock(BlockRegistry.cinder_block_slab,modBlockTexture("cinder_blocks"), modBlockTexture("cinder_blocks"));
+
         simpleSlab(BlockRegistry.cob_slab);
         simpleSlab(BlockRegistry.concrete_slab);
 
@@ -267,7 +270,10 @@ public class ModBlockstateProvider extends BlockStateProvider {
     protected void stairs() {
         stairsBlock(BlockRegistry.adobe_stairs,modBlockTexture("adobe0"));
         simpleStairs(BlockRegistry.chalk_stairs);
-        simpleStairs(BlockRegistry.cinder_stairs);
+        //simpleStairs(BlockRegistry.cinder_block_stairs);
+
+        stairsBlock(BlockRegistry.cinder_block_stairs, modBlockTexture("cinder_blocks"));
+
         simpleStairs(BlockRegistry.cob_stairs);
         simpleStairs(BlockRegistry.concrete_stairs);
         stairsBlock(BlockRegistry.cordwood_stairs,modBlockTexture("cordwood0"));
@@ -318,20 +324,20 @@ public class ModBlockstateProvider extends BlockStateProvider {
 
     protected void walls() {
         wallBlock(BlockRegistry.adobe_wall, modBlockTexture("adobe0"));
-
         models().wallInventory("adobe_wall_inventory",modBlockTexture("adobe0"));
 
         simpleWall(BlockRegistry.chalk_wall);
-        simpleWall(BlockRegistry.cinder_wall);
+
+        wallBlock(BlockRegistry.cinder_block_wall,modBlockTexture("cinder_blocks"));
+        models().wallInventory("cinder_block_wall_inventory",modBlockTexture("cinder_blocks"));
+
         simpleWall(BlockRegistry.cob_wall);
         simpleWall(BlockRegistry.concrete_wall);
 
         wallBlock(BlockRegistry.cordwood_wall,modBlockTexture("cordwood1"));
-
         models().wallInventory("cordwood_wall_inventory",modBlockTexture("cordwood1"));
 
         wallBlock(BlockRegistry.dry_fitted_stone_wall,modBlockTexture("dry_fitted_stone0"));
-
         models().wallInventory("dry_fitted_stone_wall_inventory",modBlockTexture("dry_fitted_stone0"));
 
         wallGabions();
