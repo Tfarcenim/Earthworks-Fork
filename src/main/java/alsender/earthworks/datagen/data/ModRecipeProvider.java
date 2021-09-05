@@ -213,6 +213,26 @@ public class ModRecipeProvider extends RecipeProvider {
 
         woodShakesMain(consumer,BlockRegistry.dark_oak_wood_shakes,Blocks.DARK_OAK_LOG,6);
         woodShakesAlt(consumer,BlockRegistry.dark_oak_wood_shakes,BlockRegistry.dark_oak_timber,6);
+
+        ShapedRecipeBuilder.shapedRecipe(BlockRegistry.daub_cob_arrow0,4)
+                .key('a',BlockRegistry.wattle_and_daub).key('b',ItemRegistry.timber_framing)
+                .patternLine("bab").patternLine("bba").patternLine("bbb")
+                .addCriterion("has_timber_framing",hasItem(ItemRegistry.timber_framing)).build(consumer);
+
+        ShapedRecipeBuilder.shapedRecipe(BlockRegistry.daub_cob_arrow1,4)
+                .key('a',BlockRegistry.wattle_and_daub).key('b',ItemRegistry.timber_framing)
+                .patternLine("bbb").patternLine("bba").patternLine("bab")
+                .addCriterion("has_timber_framing",hasItem(ItemRegistry.timber_framing)).build(consumer);
+
+        ShapedRecipeBuilder.shapedRecipe(BlockRegistry.daub_cob_arrow2,4)
+                .key('a',BlockRegistry.wattle_and_daub).key('b',ItemRegistry.timber_framing)
+                .patternLine("bab").patternLine("abb").patternLine("bbb")
+                .addCriterion("has_timber_framing",hasItem(ItemRegistry.timber_framing)).build(consumer);
+
+        ShapedRecipeBuilder.shapedRecipe(BlockRegistry.daub_cob_arrow3,4)
+                .key('a',BlockRegistry.wattle_and_daub).key('b',ItemRegistry.timber_framing)
+                .patternLine("bbb").patternLine("abb").patternLine("bab")
+                .addCriterion("has_timber_framing",hasItem(ItemRegistry.timber_framing)).build(consumer);
     }
 
     private static void shapelessPlanksNew(Consumer<IFinishedRecipe> recipeConsumer, IItemProvider planks, IItemProvider input) {
