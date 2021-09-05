@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "earthworks:cordwood"
+    ]
+  },
+  "criteria": {
+    "has_oak_log": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:oak_log"
+          }
+        ]
+      }
+    },
+    "has_lime_plaster": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "earthworks:lime_plaster"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "earthworks:cordwood"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_oak_log",
+      "has_lime_plaster",
+      "has_the_recipe"
+    ]
+  ]
+}

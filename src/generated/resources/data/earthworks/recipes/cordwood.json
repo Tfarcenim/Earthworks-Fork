@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "aba",
+    "bab",
+    "aba"
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:oak_log"
+    },
+    "b": {
+      "item": "earthworks:lime_plaster"
+    }
+  },
+  "result": {
+    "item": "earthworks:cordwood",
+    "count": 5
+  }
+}

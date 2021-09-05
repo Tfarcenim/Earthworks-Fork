@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "aaa",
+    "a a",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:stone"
+    }
+  },
+  "result": {
+    "item": "earthworks:dry_fitted_stone",
+    "count": 8
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:clay"
+    },
+    {
+      "tag": "earthworks:material_binding"
+    },
+    {
+      "item": "earthworks:mud"
+    }
+  ],
+  "result": {
+    "item": "earthworks:cob",
+    "count": 2
+  }
+}

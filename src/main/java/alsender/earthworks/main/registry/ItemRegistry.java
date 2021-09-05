@@ -7,7 +7,6 @@ import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraftforge.event.RegistryEvent;
-import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.IForgeRegistry;
 
 import java.lang.reflect.Field;
@@ -18,7 +17,6 @@ import java.util.Locale;
 /**
  * Created by alsender on 12/12/16.
  */
-@Mod.EventBusSubscriber
 public class ItemRegistry {
 
     public static Item adobe_brick;
@@ -29,6 +27,7 @@ public class ItemRegistry {
     public static Item quicklime;
     public static Item slaked_lime;
     public static Item timber_framing;
+    public static Item dirt_ball;
 
     public static Item square;
     public static Item acheulean;
@@ -331,6 +330,7 @@ public class ItemRegistry {
         quicklime = new Item(new Item.Properties().group(Earthworks.creativeTab));
         slaked_lime = new Item(new Item.Properties().group(Earthworks.creativeTab));
         timber_framing = new Item(new Item.Properties().group(Earthworks.creativeTab));
+        dirt_ball = new Item(new Item.Properties().group(Earthworks.creativeTab));
 
         square = new ModItemTool(new Item.Properties().group(Earthworks.creativeTab).maxDamage(60));
         acheulean = new ModItemTool(new Item.Properties().group(Earthworks.creativeTab).maxDamage(132));
