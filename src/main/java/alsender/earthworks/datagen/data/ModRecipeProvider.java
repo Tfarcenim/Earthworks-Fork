@@ -233,6 +233,23 @@ public class ModRecipeProvider extends RecipeProvider {
                 .key('a',BlockRegistry.wattle_and_daub).key('b',ItemRegistry.timber_framing)
                 .patternLine("bbb").patternLine("abb").patternLine("bab")
                 .addCriterion("has_timber_framing",hasItem(ItemRegistry.timber_framing)).build(consumer);
+
+        ShapedRecipeBuilder.shapedRecipe(BlockRegistry.daub_cob_barndoor0,4)
+                .key('a',BlockRegistry.wattle_and_daub).key('b',ItemRegistry.timber_framing)
+                .patternLine("bab").patternLine("bbb").patternLine("bab")
+                .addCriterion("has_timber_framing",hasItem(ItemRegistry.timber_framing)).build(consumer);
+
+        //1 - 7 in order
+        singleItemShapeless(consumer,BlockRegistry.daub_cob_barndoor1,BlockRegistry.daub_cob_barndoor0);
+        singleItemShapeless(consumer,BlockRegistry.daub_cob_barndoor2,BlockRegistry.daub_cob_barndoor1);
+        singleItemShapeless(consumer,BlockRegistry.daub_cob_barndoor3,BlockRegistry.daub_cob_barndoor2);
+        singleItemShapeless(consumer,BlockRegistry.daub_cob_barndoor4,BlockRegistry.daub_cob_barndoor3);
+        singleItemShapeless(consumer,BlockRegistry.daub_cob_barndoor5,BlockRegistry.daub_cob_barndoor4);
+        singleItemShapeless(consumer,BlockRegistry.daub_cob_barndoor6,BlockRegistry.daub_cob_barndoor5);
+        singleItemShapeless(consumer,BlockRegistry.daub_cob_barndoor7,BlockRegistry.daub_cob_barndoor6);
+
+        singleItemShapelessAlt(consumer,BlockRegistry.daub_cob_barndoor0,BlockRegistry.daub_cob_xdoor3);
+
     }
 
     private static void shapelessPlanksNew(Consumer<IFinishedRecipe> recipeConsumer, IItemProvider planks, IItemProvider input) {
@@ -323,5 +340,19 @@ public class ModRecipeProvider extends RecipeProvider {
                 .addIngredient(input)
                 .addCriterion("has_"+input.asItem().getRegistryName().getPath(), hasItem(input))
                 .build(recipeConsumer,name);
+    }
+
+    private static void singleItemShapeless(Consumer<IFinishedRecipe> recipeConsumer,IItemProvider output, IItemProvider input) {
+        ShapelessRecipeBuilder.shapelessRecipe(output)
+                .addIngredient(input)
+                .addCriterion("has_item",hasItem(input))
+                .build(recipeConsumer);
+    }
+
+    private static void singleItemShapelessAlt(Consumer<IFinishedRecipe> recipeConsumer,IItemProvider output, IItemProvider input) {
+        ShapelessRecipeBuilder.shapelessRecipe(output)
+                .addIngredient(input)
+                .addCriterion("has_item",hasItem(input))
+                .build(recipeConsumer,output.asItem().getRegistryName().getPath()+"_alt");
     }
 }
