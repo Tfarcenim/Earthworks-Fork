@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " l ",
+    "lpl",
+    " l "
+  ],
+  "key": {
+    "l": {
+      "item": "earthworks:lime_plaster"
+    },
+    "p": {
+      "tag": "minecraft:planks"
+    }
+  },
+  "result": {
+    "item": "earthworks:lath_and_plaster"
+  }
+}

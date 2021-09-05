@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "slab",
+  "pattern": [
+    "s",
+    "s"
+  ],
+  "key": {
+    "s": {
+      "item": "earthworks:lath_and_plaster_slab"
+    }
+  },
+  "result": {
+    "item": "earthworks:lath_and_plaster"
+  }
+}

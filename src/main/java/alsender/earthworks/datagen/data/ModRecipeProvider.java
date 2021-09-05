@@ -14,6 +14,7 @@ import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.util.IItemProvider;
+import net.minecraftforge.common.Tags;
 
 import java.util.function.Consumer;
 
@@ -85,6 +86,50 @@ public class ModRecipeProvider extends RecipeProvider {
 
         ring(consumer,BlockRegistry.dry_fitted_stone,Items.STONE,8);
         slabToBlock(consumer,ItemRegistry.dry_fitted_stone,BlockRegistry.dry_fitted_stone_slab);
+
+        ShapedRecipeBuilder.shapedRecipe(ItemRegistry.DIRT_GABION,2)
+                .key('a', Tags.Items.RODS_WOODEN)
+                .key('b',Items.WHEAT)
+                .key('c',Items.DIRT)
+                .patternLine("aba").patternLine("bcb").patternLine("aba")
+                .addCriterion("has_dirt",hasItem(Items.DIRT))
+                .build(consumer);
+        slabToBlock(consumer,ItemRegistry.DIRT_GABION,BlockRegistry.DIRT_GABION_SLAB);
+
+        ShapedRecipeBuilder.shapedRecipe(ItemRegistry.GRAVEL_GABION,2)
+                .key('a', Tags.Items.RODS_WOODEN)
+                .key('b',Items.WHEAT)
+                .key('c',Items.DIRT)
+                .patternLine("aba").patternLine("bcb").patternLine("aba")
+                .addCriterion("has_gravel",hasItem(Items.GRAVEL))
+                .build(consumer);
+        slabToBlock(consumer,ItemRegistry.GRAVEL_GABION,BlockRegistry.GRAVEL_GABION_SLAB);
+
+        ShapedRecipeBuilder.shapedRecipe(ItemRegistry.SAND_GABION,2)
+                .key('a', Tags.Items.RODS_WOODEN)
+                .key('b',Items.WHEAT)
+                .key('c',Items.DIRT)
+                .patternLine("aba").patternLine("bcb").patternLine("aba")
+                .addCriterion("has_sand",hasItem(Items.SAND))
+                .build(consumer);
+        slabToBlock(consumer,ItemRegistry.SAND_GABION,BlockRegistry.SAND_GABION_SLAB);
+
+        //should this be converted to accept anything with water?
+        ShapelessRecipeBuilder.shapelessRecipe(ItemRegistry.mud)
+                .addIngredient(Items.DIRT,8)
+                .addIngredient(Items.WATER_BUCKET)
+                .addCriterion("has_water",hasItem(Items.WATER_BUCKET))
+                .build(consumer,"mud_from_water");
+        slabToBlock(consumer,ItemRegistry.mud,BlockRegistry.mud_slab);
+        twoByTwo(consumer,ItemRegistry.mud,ItemRegistry.mud_ball);
+
+        ShapedRecipeBuilder.shapedRecipe(ItemRegistry.lath_and_plaster)
+                .key('l',ItemRegistry.lime_plaster)
+                .key('p',ItemTags.PLANKS)
+                .patternLine(" l ").patternLine("lpl").patternLine(" l ")
+                .addCriterion("has_lime_plaster",hasItem(ItemRegistry.lime_plaster))
+                .build(consumer);
+        slabToBlock(consumer,ItemRegistry.lath_and_plaster,BlockRegistry.lath_and_plaster_slab);
 
 
     }
