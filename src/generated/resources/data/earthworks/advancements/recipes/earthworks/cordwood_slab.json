@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "earthworks:cordwood_slab"
+    ]
+  },
+  "criteria": {
+    "has_cordwood": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "earthworks:cordwood"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "earthworks:cordwood_slab"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_cordwood",
+      "has_the_recipe"
+    ]
+  ]
+}

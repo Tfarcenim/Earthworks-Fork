@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "earthworks:lath_and_plaster_slab"
+    ]
+  },
+  "criteria": {
+    "has_lath_and_plaster": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "earthworks:lath_and_plaster"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "earthworks:lath_and_plaster_slab"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_lath_and_plaster",
+      "has_the_recipe"
+    ]
+  ]
+}

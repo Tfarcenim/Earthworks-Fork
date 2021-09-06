@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "earthworks:gravel_gabion_slab"
+    ]
+  },
+  "criteria": {
+    "has_gravel_gabion": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "earthworks:gravel_gabion"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "earthworks:gravel_gabion_slab"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_gravel_gabion",
+      "has_the_recipe"
+    ]
+  ]
+}
