@@ -52,6 +52,13 @@ public class ModRecipeProvider extends RecipeProvider {
         shapelessPlanks(consumer, ItemRegistry.vertical_acacia_planks, ItemRegistry.acacia_timber);
         shapelessPlanks(consumer, ItemRegistry.vertical_dark_oak_planks, ItemRegistry.dark_oak_timber);
 
+        blockToSlab(consumer, BlockRegistry.vertical_oak_slab, ItemRegistry.vertical_oak_planks);
+        blockToSlab(consumer, BlockRegistry.vertical_spruce_slab, ItemRegistry.vertical_spruce_planks);
+        blockToSlab(consumer, BlockRegistry.vertical_birch_slab, ItemRegistry.vertical_birch_planks);
+        blockToSlab(consumer, BlockRegistry.vertical_jungle_slab, ItemRegistry.vertical_jungle_planks);
+        blockToSlab(consumer, BlockRegistry.vertical_acacia_slab, ItemRegistry.vertical_acacia_planks);
+        blockToSlab(consumer, BlockRegistry.vertical_dark_oak_slab, ItemRegistry.vertical_dark_oak_planks);
+
         slabToBlock(consumer, ItemRegistry.vertical_oak_planks, BlockRegistry.vertical_oak_slab);
         slabToBlock(consumer, ItemRegistry.vertical_spruce_planks, BlockRegistry.vertical_spruce_slab);
         slabToBlock(consumer, ItemRegistry.vertical_birch_planks, BlockRegistry.vertical_birch_slab);
