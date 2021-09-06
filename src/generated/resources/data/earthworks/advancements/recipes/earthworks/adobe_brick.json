@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "earthworks:adobe_brick"
+    ]
+  },
+  "criteria": {
+    "has_material_binding": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "earthworks:material_binding"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "earthworks:adobe_brick"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_material_binding",
+      "has_the_recipe"
+    ]
+  ]
+}

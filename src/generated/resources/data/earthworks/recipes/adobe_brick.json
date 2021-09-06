@@ -1,8 +1,5 @@
 {
-  "result": {
-    "item": "earthworks:item_adobe",
-    "count": 8
-  },
+  "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
       "item": "minecraft:clay_ball"
@@ -17,20 +14,23 @@
       "item": "minecraft:clay_ball"
     },
     {
-      "type": "forge:ore_dict", "ore": "materialBinding"
-    },
-    {
       "item": "minecraft:clay_ball"
     },
     {
       "item": "minecraft:clay_ball"
     },
     {
-      "type": "forge:ore_dict", "ore": "pileSand"
+      "tag": "earthworks:material_binding"
     },
     {
-      "type": "forge:ore_dict", "ore": "pileSand"
+      "item": "earthworks:sand_pile"
+    },
+    {
+      "item": "earthworks:sand_pile"
     }
   ],
-  "type": "forge:ore_shapeless"
+  "result": {
+    "item": "earthworks:adobe_brick",
+    "count": 8
+  }
 }

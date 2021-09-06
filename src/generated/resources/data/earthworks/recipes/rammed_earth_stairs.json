@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "earthworks:rammed_earth"
+    }
+  },
+  "result": {
+    "item": "earthworks:rammed_earth_stairs",
+    "count": 4
+  }
+}

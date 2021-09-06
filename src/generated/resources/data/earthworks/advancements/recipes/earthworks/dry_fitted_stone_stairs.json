@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "earthworks:dry_fitted_stone_stairs"
+    ]
+  },
+  "criteria": {
+    "has_dry_fitted_stone": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "earthworks:dry_fitted_stone"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "earthworks:dry_fitted_stone_stairs"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_dry_fitted_stone",
+      "has_the_recipe"
+    ]
+  ]
+}

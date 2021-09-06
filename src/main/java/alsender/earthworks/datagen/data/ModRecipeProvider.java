@@ -39,6 +39,14 @@ public class ModRecipeProvider extends RecipeProvider {
 
     @Override
     protected void registerRecipes(Consumer<IFinishedRecipe> consumer) {
+
+        ShapelessRecipeBuilder.shapelessRecipe(ItemRegistry.adobe_brick,8)
+                .addIngredient(Items.CLAY_BALL,6)
+                .addIngredient(ModTags.material_binding)
+                .addIngredient(ItemRegistry.sand_pile,2)
+                .addCriterion("has_material_binding",hasItem(ModTags.material_binding))
+                .build(consumer);
+
         CookingRecipeBuilder.smeltingRecipe(Ingredient.fromItems(ItemRegistry.chalk_dust), ItemRegistry.quicklime, .1f, 200)
                 .addCriterion("has_chalk_dust", hasItem(ItemRegistry.chalk_dust))
                 .build(consumer);
@@ -67,12 +75,22 @@ public class ModRecipeProvider extends RecipeProvider {
         slabToBlock(consumer, ItemRegistry.vertical_acacia_planks, BlockRegistry.vertical_acacia_slab);
         slabToBlock(consumer, ItemRegistry.vertical_dark_oak_planks, BlockRegistry.vertical_dark_oak_slab);
 
+        stairs(consumer, BlockRegistry.vertical_oak_stairs, ItemRegistry.vertical_oak_planks);
+        stairs(consumer, BlockRegistry.vertical_spruce_stairs, ItemRegistry.vertical_spruce_planks);
+        stairs(consumer, BlockRegistry.vertical_birch_stairs, ItemRegistry.vertical_birch_planks);
+        stairs(consumer, BlockRegistry.vertical_jungle_stairs, ItemRegistry.vertical_jungle_planks);
+        stairs(consumer, BlockRegistry.vertical_acacia_stairs, ItemRegistry.vertical_acacia_planks);
+        stairs(consumer, BlockRegistry.vertical_dark_oak_stairs, ItemRegistry.vertical_dark_oak_planks);
+
         twoByTwo(consumer, ItemRegistry.adobe, ItemRegistry.adobe_brick);
+        blockToSlab(consumer, BlockRegistry.adobe_slab, BlockRegistry.adobe);
         slabToBlock(consumer, ItemRegistry.adobe, BlockRegistry.adobe_slab);
+        stairs(consumer,BlockRegistry.adobe_stairs,BlockRegistry.adobe);
 
         twoByTwo(consumer, ItemRegistry.chalk, ItemRegistry.chalk_dust);
         blockToSlab(consumer, BlockRegistry.chalk_slab, ItemRegistry.chalk);
         slabToBlock(consumer, ItemRegistry.chalk, BlockRegistry.chalk_slab);
+        stairs(consumer,BlockRegistry.chalk_stairs,BlockRegistry.chalk);
 
         ShapedRecipeBuilder.shapedRecipe(ItemRegistry.cinder_blocks).key('#', ItemRegistry.concrete)
                 .patternLine("##").patternLine("##")
@@ -83,6 +101,7 @@ public class ModRecipeProvider extends RecipeProvider {
         twoByTwo(consumer, ItemRegistry.cob, ItemRegistry.cob_ball);
         blockToSlab(consumer, BlockRegistry.cob_slab, ItemRegistry.cob);
         slabToBlock(consumer, ItemRegistry.cob, BlockRegistry.cob_slab);
+        stairs(consumer,BlockRegistry.cob_stairs,BlockRegistry.cob);
 
         ShapelessRecipeBuilder.shapelessRecipe(BlockRegistry.cob, 2)
                 .addIngredient(Blocks.CLAY)
@@ -106,10 +125,12 @@ public class ModRecipeProvider extends RecipeProvider {
                 .build(consumer);
         blockToSlab(consumer, BlockRegistry.concrete_slab, ItemRegistry.concrete);
         slabToBlock(consumer, ItemRegistry.concrete, BlockRegistry.concrete_slab);
+        stairs(consumer,BlockRegistry.concrete_stairs,BlockRegistry.concrete);
 
         checkerboard(consumer, ItemRegistry.cordwood, Blocks.OAK_LOG, ItemRegistry.lime_plaster, 5);
         blockToSlab(consumer, BlockRegistry.cordwood_slab, ItemRegistry.cordwood);
         slabToBlock(consumer, ItemRegistry.cordwood, BlockRegistry.cordwood_slab);
+        stairs(consumer,BlockRegistry.cordwood_stairs,BlockRegistry.cordwood);
 
         twoByTwo(consumer, Items.DIRT, ItemRegistry.dirt_ball);
         singleItemShapeless(consumer,ItemRegistry.dirt_ball,Items.DIRT,4);
@@ -117,6 +138,7 @@ public class ModRecipeProvider extends RecipeProvider {
         ring(consumer, BlockRegistry.dry_fitted_stone, Items.STONE, 8);
         blockToSlab(consumer, BlockRegistry.dry_fitted_stone_slab, ItemRegistry.dry_fitted_stone);
         slabToBlock(consumer, ItemRegistry.dry_fitted_stone, BlockRegistry.dry_fitted_stone_slab);
+        stairs(consumer,BlockRegistry.dry_fitted_stone_stairs,BlockRegistry.dry_fitted_stone);
 
         ShapedRecipeBuilder.shapedRecipe(ItemRegistry.DIRT_GABION, 2)
                 .key('a', Tags.Items.RODS_WOODEN)
@@ -127,6 +149,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .build(consumer);
         blockToSlab(consumer, BlockRegistry.DIRT_GABION_SLAB, ItemRegistry.DIRT_GABION);
         slabToBlock(consumer, ItemRegistry.DIRT_GABION, BlockRegistry.DIRT_GABION_SLAB);
+        stairs(consumer,BlockRegistry.DIRT_GABION_STAIRS,BlockRegistry.DIRT_GABION);
 
         ShapedRecipeBuilder.shapedRecipe(ItemRegistry.GRAVEL_GABION, 2)
                 .key('a', Tags.Items.RODS_WOODEN)
@@ -137,6 +160,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .build(consumer);
         blockToSlab(consumer, BlockRegistry.GRAVEL_GABION_SLAB, ItemRegistry.GRAVEL_GABION);
         slabToBlock(consumer, ItemRegistry.GRAVEL_GABION, BlockRegistry.GRAVEL_GABION_SLAB);
+        stairs(consumer,BlockRegistry.GRAVEL_GABION_STAIRS,BlockRegistry.GRAVEL_GABION);
 
         ShapedRecipeBuilder.shapedRecipe(ItemRegistry.SAND_GABION, 2)
                 .key('a', Tags.Items.RODS_WOODEN)
@@ -147,6 +171,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .build(consumer);
         blockToSlab(consumer, BlockRegistry.SAND_GABION_SLAB, ItemRegistry.SAND_GABION);
         slabToBlock(consumer, ItemRegistry.SAND_GABION, BlockRegistry.SAND_GABION_SLAB);
+        stairs(consumer,BlockRegistry.SAND_GABION_STAIRS,BlockRegistry.SAND_GABION);
 
         twoByTwo(consumer,Items.SAND,ItemRegistry.sand_pile);
         singleItemShapeless(consumer,ItemRegistry.sand_pile,Items.SAND,4);
@@ -159,6 +184,8 @@ public class ModRecipeProvider extends RecipeProvider {
                 .build(consumer, "mud_from_water");
         blockToSlab(consumer, BlockRegistry.mud_slab, ItemRegistry.mud);
         slabToBlock(consumer, ItemRegistry.mud, BlockRegistry.mud_slab);
+        stairs(consumer,BlockRegistry.mud_stairs,BlockRegistry.mud);
+
         twoByTwo(consumer, ItemRegistry.mud, ItemRegistry.mud_ball);
 
         ShapedRecipeBuilder.shapedRecipe(ItemRegistry.lath_and_plaster)
@@ -169,15 +196,17 @@ public class ModRecipeProvider extends RecipeProvider {
                 .build(consumer);
         blockToSlab(consumer, BlockRegistry.lath_and_plaster_slab, ItemRegistry.lath_and_plaster);
         slabToBlock(consumer, ItemRegistry.lath_and_plaster, BlockRegistry.lath_and_plaster_slab);
+        stairs(consumer,BlockRegistry.lath_and_plaster_stairs,BlockRegistry.lath_and_plaster);
 
         threeByTwo(consumer, ItemRegistry.rammed_earth, Items.DIRT, 3);
         blockToSlab(consumer, BlockRegistry.rammed_earth_slab, ItemRegistry.rammed_earth);
         slabToBlock(consumer, ItemRegistry.rammed_earth, BlockRegistry.rammed_earth_slab);
+        stairs(consumer,BlockRegistry.rammed_earth_stairs,BlockRegistry.rammed_earth);
 
         twoByTwo(consumer, ItemRegistry.reed, Items.SUGAR_CANE);
         blockToSlab(consumer, BlockRegistry.reed_slab, ItemRegistry.reed);
         slabToBlock(consumer, ItemRegistry.reed, BlockRegistry.reed_slab);
-
+        stairs(consumer,BlockRegistry.reed_stairs,BlockRegistry.reed);
 
         blockToSlab(consumer, BlockRegistry.blue_slate_slab, ItemRegistry.blue_slate);
         blockToSlab(consumer, BlockRegistry.green_slate_slab, ItemRegistry.green_slate);

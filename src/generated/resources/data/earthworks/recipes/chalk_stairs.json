@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "earthworks:chalk"
+    }
+  },
+  "result": {
+    "item": "earthworks:chalk_stairs",
+    "count": 4
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "earthworks:reed"
+    }
+  },
+  "result": {
+    "item": "earthworks:reed_stairs",
+    "count": 4
+  }
+}

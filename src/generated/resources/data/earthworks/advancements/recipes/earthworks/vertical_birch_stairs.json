@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "earthworks:vertical_birch_stairs"
+    ]
+  },
+  "criteria": {
+    "has_vertical_birch_planks": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "earthworks:vertical_birch_planks"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "earthworks:vertical_birch_stairs"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_vertical_birch_planks",
+      "has_the_recipe"
+    ]
+  ]
+}

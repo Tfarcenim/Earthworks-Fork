@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "earthworks:cob"
+    }
+  },
+  "result": {
+    "item": "earthworks:cob_stairs",
+    "count": 4
+  }
+}

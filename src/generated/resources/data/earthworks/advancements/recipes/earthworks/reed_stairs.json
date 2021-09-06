@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "earthworks:reed_stairs"
+    ]
+  },
+  "criteria": {
+    "has_reed": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "earthworks:reed"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "earthworks:reed_stairs"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_reed",
+      "has_the_recipe"
+    ]
+  ]
+}

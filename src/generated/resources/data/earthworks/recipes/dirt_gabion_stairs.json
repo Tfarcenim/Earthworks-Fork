@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "earthworks:dirt_gabion"
+    }
+  },
+  "result": {
+    "item": "earthworks:dirt_gabion_stairs",
+    "count": 4
+  }
+}

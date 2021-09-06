@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "earthworks:dirt_gabion_stairs"
+    ]
+  },
+  "criteria": {
+    "has_dirt_gabion": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "earthworks:dirt_gabion"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "earthworks:dirt_gabion_stairs"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_dirt_gabion",
+      "has_the_recipe"
+    ]
+  ]
+}
