@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "aaa",
+    "aba",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "earthworks:timber_framing"
+    },
+    "b": {
+      "item": "earthworks:wattle_and_daub"
+    }
+  },
+  "result": {
+    "item": "earthworks:daub_cob_square",
+    "count": 4
+  }
+}

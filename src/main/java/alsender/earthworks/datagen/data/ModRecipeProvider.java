@@ -1,12 +1,15 @@
 package alsender.earthworks.datagen.data;
 
+import alsender.earthworks.block.timber.Daub_Cob;
 import alsender.earthworks.datagen.data.builders.CookingRecipeBuilderFullStack;
 import alsender.earthworks.datagen.data.builders.ShapelessReturnRecipeBuilder;
+import alsender.earthworks.main.Earthworks;
 import alsender.earthworks.main.crafting.ShapelessReturnRecipe;
 import alsender.earthworks.main.registry.BlockRegistry;
 import alsender.earthworks.main.registry.ItemRegistry;
 import alsender.earthworks.main.registry.ModBlockTags;
 import alsender.earthworks.main.registry.ModTags;
+import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.SlabBlock;
 import net.minecraft.data.*;
@@ -16,9 +19,13 @@ import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.util.IItemProvider;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.Tags;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Consumer;
+import java.util.stream.Collectors;
 
 public class ModRecipeProvider extends RecipeProvider {
     public ModRecipeProvider(DataGenerator generatorIn) {
@@ -196,60 +203,55 @@ public class ModRecipeProvider extends RecipeProvider {
         checkerboardNoCenter(consumer, BlockRegistry.wicker, Items.STICK, Items.WHEAT, 2);
         slabToBlock(consumer, BlockRegistry.wicker, BlockRegistry.wicker_slab);
 
-        woodShakesMain(consumer,BlockRegistry.oak_wood_shakes,Blocks.OAK_LOG,6);
-        woodShakesAlt(consumer,BlockRegistry.oak_wood_shakes,BlockRegistry.oak_timber,6);
+        woodShakesMain(consumer, BlockRegistry.oak_wood_shakes, Blocks.OAK_LOG, 6);
+        woodShakesAlt(consumer, BlockRegistry.oak_wood_shakes, BlockRegistry.oak_timber, 6);
 
-        woodShakesMain(consumer,BlockRegistry.spruce_wood_shakes,Blocks.SPRUCE_LOG,6);
-        woodShakesAlt(consumer,BlockRegistry.spruce_wood_shakes,BlockRegistry.spruce_timber,6);
+        woodShakesMain(consumer, BlockRegistry.spruce_wood_shakes, Blocks.SPRUCE_LOG, 6);
+        woodShakesAlt(consumer, BlockRegistry.spruce_wood_shakes, BlockRegistry.spruce_timber, 6);
 
-        woodShakesMain(consumer,BlockRegistry.birch_wood_shakes,Blocks.BIRCH_LOG,6);
-        woodShakesAlt(consumer,BlockRegistry.birch_wood_shakes,BlockRegistry.birch_timber,6);
+        woodShakesMain(consumer, BlockRegistry.birch_wood_shakes, Blocks.BIRCH_LOG, 6);
+        woodShakesAlt(consumer, BlockRegistry.birch_wood_shakes, BlockRegistry.birch_timber, 6);
 
-        woodShakesMain(consumer,BlockRegistry.jungle_wood_shakes,Blocks.JUNGLE_LOG,6);
-        woodShakesAlt(consumer,BlockRegistry.jungle_wood_shakes,BlockRegistry.jungle_timber,6);
+        woodShakesMain(consumer, BlockRegistry.jungle_wood_shakes, Blocks.JUNGLE_LOG, 6);
+        woodShakesAlt(consumer, BlockRegistry.jungle_wood_shakes, BlockRegistry.jungle_timber, 6);
 
-        woodShakesMain(consumer,BlockRegistry.acacia_wood_shakes,Blocks.ACACIA_LOG,6);
-        woodShakesAlt(consumer,BlockRegistry.acacia_wood_shakes,BlockRegistry.acacia_timber,6);
+        woodShakesMain(consumer, BlockRegistry.acacia_wood_shakes, Blocks.ACACIA_LOG, 6);
+        woodShakesAlt(consumer, BlockRegistry.acacia_wood_shakes, BlockRegistry.acacia_timber, 6);
 
-        woodShakesMain(consumer,BlockRegistry.dark_oak_wood_shakes,Blocks.DARK_OAK_LOG,6);
-        woodShakesAlt(consumer,BlockRegistry.dark_oak_wood_shakes,BlockRegistry.dark_oak_timber,6);
+        woodShakesMain(consumer, BlockRegistry.dark_oak_wood_shakes, Blocks.DARK_OAK_LOG, 6);
+        woodShakesAlt(consumer, BlockRegistry.dark_oak_wood_shakes, BlockRegistry.dark_oak_timber, 6);
 
-        ShapedRecipeBuilder.shapedRecipe(BlockRegistry.daub_cob_arrow0,4)
-                .key('a',BlockRegistry.wattle_and_daub).key('b',ItemRegistry.timber_framing)
-                .patternLine("bab").patternLine("bba").patternLine("bbb")
-                .addCriterion("has_timber_framing",hasItem(ItemRegistry.timber_framing)).build(consumer);
+        //instead of copying all of the 1.12 recipes since they no longer work, use the stonecutter instead
+        ringCenter(consumer, BlockRegistry.daub_cob_square, ItemRegistry.timber_framing, BlockRegistry.wattle_and_daub, 4);
 
-        ShapedRecipeBuilder.shapedRecipe(BlockRegistry.daub_cob_arrow1,4)
-                .key('a',BlockRegistry.wattle_and_daub).key('b',ItemRegistry.timber_framing)
-                .patternLine("bbb").patternLine("bba").patternLine("bab")
-                .addCriterion("has_timber_framing",hasItem(ItemRegistry.timber_framing)).build(consumer);
+        List<Block> duab_cob_variants = BlockRegistry.getAllBlocks().stream().filter(Daub_Cob.class::isInstance).collect(Collectors.toList());
 
-        ShapedRecipeBuilder.shapedRecipe(BlockRegistry.daub_cob_arrow2,4)
-                .key('a',BlockRegistry.wattle_and_daub).key('b',ItemRegistry.timber_framing)
-                .patternLine("bab").patternLine("abb").patternLine("bbb")
-                .addCriterion("has_timber_framing",hasItem(ItemRegistry.timber_framing)).build(consumer);
+        List<Block> done = new ArrayList<>();
 
-        ShapedRecipeBuilder.shapedRecipe(BlockRegistry.daub_cob_arrow3,4)
-                .key('a',BlockRegistry.wattle_and_daub).key('b',ItemRegistry.timber_framing)
-                .patternLine("bbb").patternLine("abb").patternLine("bab")
-                .addCriterion("has_timber_framing",hasItem(ItemRegistry.timber_framing)).build(consumer);
 
-        ShapedRecipeBuilder.shapedRecipe(BlockRegistry.daub_cob_barndoor0,4)
-                .key('a',BlockRegistry.wattle_and_daub).key('b',ItemRegistry.timber_framing)
-                .patternLine("bab").patternLine("bbb").patternLine("bab")
-                .addCriterion("has_timber_framing",hasItem(ItemRegistry.timber_framing)).build(consumer);
+        //1 2 3 4 5 6 7 8
+        //2 3 4 5 6 7 8
+        //3 4 5 6 7 8
 
-        //1 - 7 in order
-        singleItemShapeless(consumer,BlockRegistry.daub_cob_barndoor1,BlockRegistry.daub_cob_barndoor0);
-        singleItemShapeless(consumer,BlockRegistry.daub_cob_barndoor2,BlockRegistry.daub_cob_barndoor1);
-        singleItemShapeless(consumer,BlockRegistry.daub_cob_barndoor3,BlockRegistry.daub_cob_barndoor2);
-        singleItemShapeless(consumer,BlockRegistry.daub_cob_barndoor4,BlockRegistry.daub_cob_barndoor3);
-        singleItemShapeless(consumer,BlockRegistry.daub_cob_barndoor5,BlockRegistry.daub_cob_barndoor4);
-        singleItemShapeless(consumer,BlockRegistry.daub_cob_barndoor6,BlockRegistry.daub_cob_barndoor5);
-        singleItemShapeless(consumer,BlockRegistry.daub_cob_barndoor7,BlockRegistry.daub_cob_barndoor6);
+        //1 - 2
+        //1 - 3
+        //...
+        //1 - 8
+        //2 - 3
+        for (int i = 0; i < duab_cob_variants.size(); i++) {
+            for (int j = i + 1; j < duab_cob_variants.size(); j++) {
+                Block block1 = duab_cob_variants.get(i);
+                Block block2 = duab_cob_variants.get(j);
 
-        singleItemShapelessAlt(consumer,BlockRegistry.daub_cob_barndoor0,BlockRegistry.daub_cob_xdoor3);
+                SingleItemRecipeBuilder.stonecuttingRecipe(Ingredient.fromItems(block1), block2)
+                        .addCriterion("has_item", hasItem(BlockRegistry.daub_cob_square))
+                        .build(consumer, new ResourceLocation(Earthworks.mod_id, block2.getRegistryName().getPath() + "_from_" + block1.getRegistryName().getPath()));
 
+                SingleItemRecipeBuilder.stonecuttingRecipe(Ingredient.fromItems(block2), block1)
+                        .addCriterion("has_item", hasItem(BlockRegistry.daub_cob_square))
+                        .build(consumer, new ResourceLocation(Earthworks.mod_id, block1.getRegistryName().getPath() + "_from_" + block2.getRegistryName().getPath()));
+            }
+        }
     }
 
     private static void shapelessPlanksNew(Consumer<IFinishedRecipe> recipeConsumer, IItemProvider planks, IItemProvider input) {
@@ -325,34 +327,34 @@ public class ModRecipeProvider extends RecipeProvider {
                 .build(recipeConsumer, name);
     }
 
-    private static void woodShakesMain(Consumer<IFinishedRecipe> recipeConsumer, IItemProvider output,IItemProvider input, int count) {
-        woodShakes(recipeConsumer,output,input,count,output.asItem().getRegistryName().getPath());
+    private static void woodShakesMain(Consumer<IFinishedRecipe> recipeConsumer, IItemProvider output, IItemProvider input, int count) {
+        woodShakes(recipeConsumer, output, input, count, output.asItem().getRegistryName().getPath());
     }
 
-    private static void woodShakesAlt(Consumer<IFinishedRecipe> recipeConsumer, IItemProvider output,IItemProvider input, int count) {
-        woodShakes(recipeConsumer,output,input,count,output.asItem().getRegistryName().getPath()+"_alt");
+    private static void woodShakesAlt(Consumer<IFinishedRecipe> recipeConsumer, IItemProvider output, IItemProvider input, int count) {
+        woodShakes(recipeConsumer, output, input, count, output.asItem().getRegistryName().getPath() + "_alt");
     }
 
-    private static void woodShakes(Consumer<IFinishedRecipe> recipeConsumer, IItemProvider output, IItemProvider input, int count,String name) {
+    private static void woodShakes(Consumer<IFinishedRecipe> recipeConsumer, IItemProvider output, IItemProvider input, int count, String name) {
         ShapelessReturnRecipeBuilder.shapelessRecipe(output, count)
                 .setReturnItem(Items.FLINT)
                 .addIngredient(Items.FLINT)
                 .addIngredient(input)
-                .addCriterion("has_"+input.asItem().getRegistryName().getPath(), hasItem(input))
-                .build(recipeConsumer,name);
+                .addCriterion("has_" + input.asItem().getRegistryName().getPath(), hasItem(input))
+                .build(recipeConsumer, name);
     }
 
-    private static void singleItemShapeless(Consumer<IFinishedRecipe> recipeConsumer,IItemProvider output, IItemProvider input) {
+    private static void singleItemShapeless(Consumer<IFinishedRecipe> recipeConsumer, IItemProvider output, IItemProvider input) {
         ShapelessRecipeBuilder.shapelessRecipe(output)
                 .addIngredient(input)
-                .addCriterion("has_item",hasItem(input))
+                .addCriterion("has_item", hasItem(input))
                 .build(recipeConsumer);
     }
 
-    private static void singleItemShapelessAlt(Consumer<IFinishedRecipe> recipeConsumer,IItemProvider output, IItemProvider input) {
+    private static void singleItemShapelessAlt(Consumer<IFinishedRecipe> recipeConsumer, IItemProvider output, IItemProvider input) {
         ShapelessRecipeBuilder.shapelessRecipe(output)
                 .addIngredient(input)
-                .addCriterion("has_item",hasItem(input))
-                .build(recipeConsumer,output.asItem().getRegistryName().getPath()+"_alt");
+                .addCriterion("has_item", hasItem(input))
+                .build(recipeConsumer, output.asItem().getRegistryName().getPath() + "_alt");
     }
 }

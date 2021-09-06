@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "earthworks:daub_cob_square_x"
+  },
+  "result": "earthworks:daub_cob_xright",
+  "count": 1
+}
