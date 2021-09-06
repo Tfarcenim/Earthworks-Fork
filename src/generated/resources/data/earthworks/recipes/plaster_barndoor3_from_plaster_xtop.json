@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "earthworks:plaster_xtop"
+  },
+  "result": "earthworks:plaster_barndoor3",
+  "count": 1
+}

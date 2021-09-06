@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "earthworks:plaster_arrow3"
+  },
+  "result": "earthworks:plaster_slash_back",
+  "count": 1
+}

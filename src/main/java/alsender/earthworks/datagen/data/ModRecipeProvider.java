@@ -1,6 +1,7 @@
 package alsender.earthworks.datagen.data;
 
 import alsender.earthworks.block.timber.Daub_Cob;
+import alsender.earthworks.block.timber.Plaster;
 import alsender.earthworks.datagen.data.builders.CookingRecipeBuilderFullStack;
 import alsender.earthworks.datagen.data.builders.ShapelessReturnRecipeBuilder;
 import alsender.earthworks.main.Earthworks;
@@ -226,9 +227,6 @@ public class ModRecipeProvider extends RecipeProvider {
 
         List<Block> duab_cob_variants = BlockRegistry.getAllBlocks().stream().filter(Daub_Cob.class::isInstance).collect(Collectors.toList());
 
-        List<Block> done = new ArrayList<>();
-
-
         //1 2 3 4 5 6 7 8
         //2 3 4 5 6 7 8
         //3 4 5 6 7 8
@@ -249,6 +247,25 @@ public class ModRecipeProvider extends RecipeProvider {
 
                 SingleItemRecipeBuilder.stonecuttingRecipe(Ingredient.fromItems(block2), block1)
                         .addCriterion("has_item", hasItem(BlockRegistry.daub_cob_square))
+                        .build(consumer, new ResourceLocation(Earthworks.mod_id, block1.getRegistryName().getPath() + "_from_" + block2.getRegistryName().getPath()));
+            }
+        }
+
+        ringCenter(consumer, BlockRegistry.plaster_square, ItemRegistry.timber_framing, BlockRegistry.lath_and_plaster, 4);
+
+        List<Block> plaster_variants = BlockRegistry.getAllBlocks().stream().filter(Plaster.class::isInstance).collect(Collectors.toList());
+
+        for (int i = 0; i < plaster_variants.size(); i++) {
+            for (int j = i + 1; j < plaster_variants.size(); j++) {
+                Block block1 = plaster_variants.get(i);
+                Block block2 = plaster_variants.get(j);
+
+                SingleItemRecipeBuilder.stonecuttingRecipe(Ingredient.fromItems(block1), block2)
+                        .addCriterion("has_item", hasItem(BlockRegistry.plaster_square))
+                        .build(consumer, new ResourceLocation(Earthworks.mod_id, block2.getRegistryName().getPath() + "_from_" + block1.getRegistryName().getPath()));
+
+                SingleItemRecipeBuilder.stonecuttingRecipe(Ingredient.fromItems(block2), block1)
+                        .addCriterion("has_item", hasItem(BlockRegistry.plaster_square))
                         .build(consumer, new ResourceLocation(Earthworks.mod_id, block1.getRegistryName().getPath() + "_from_" + block2.getRegistryName().getPath()));
             }
         }

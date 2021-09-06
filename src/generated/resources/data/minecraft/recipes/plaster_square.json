@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "aaa",
+    "aba",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "earthworks:timber_framing"
+    },
+    "b": {
+      "item": "earthworks:lath_and_plaster"
+    }
+  },
+  "result": {
+    "item": "earthworks:plaster_square",
+    "count": 4
+  }
+}

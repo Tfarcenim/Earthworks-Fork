@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "earthworks:plaster_bottom_l"
+  },
+  "result": "earthworks:plaster_x",
+  "count": 1
+}
