@@ -80,6 +80,13 @@ public class ModRecipeProvider extends RecipeProvider {
                 .addCriterion("has_clay", hasItem(Items.CLAY))
                 .build(consumer, "bulk_cob");
 
+        ShapelessRecipeBuilder.shapelessRecipe(ItemRegistry.cob_ball,8)
+                .addIngredient(Items.CLAY_BALL,4)
+                .addIngredient(ModTags.material_binding)
+                .addIngredient(ItemRegistry.mud_ball,4)
+                .addCriterion("has_clay_ball",hasItem(Items.CLAY_BALL))
+                .build(consumer);
+
         ShapelessRecipeBuilder.shapelessRecipe(BlockRegistry.concrete, 2)
                 .addIngredient(Blocks.GRAVEL)
                 .addIngredient(ItemRegistry.lime_plaster)
@@ -91,8 +98,8 @@ public class ModRecipeProvider extends RecipeProvider {
         checkerboard(consumer, ItemRegistry.cordwood, Blocks.OAK_LOG, ItemRegistry.lime_plaster, 5);
         slabToBlock(consumer, ItemRegistry.cordwood, BlockRegistry.cordwood_slab);
 
-        //used pileDirt before
         twoByTwo(consumer, Items.DIRT, ItemRegistry.dirt_ball);
+        singleItemShapeless(consumer,ItemRegistry.dirt_ball,Items.DIRT,4);
 
         ring(consumer, BlockRegistry.dry_fitted_stone, Items.STONE, 8);
         slabToBlock(consumer, ItemRegistry.dry_fitted_stone, BlockRegistry.dry_fitted_stone_slab);
@@ -123,6 +130,9 @@ public class ModRecipeProvider extends RecipeProvider {
                 .addCriterion("has_sand", hasItem(Items.SAND))
                 .build(consumer);
         slabToBlock(consumer, ItemRegistry.SAND_GABION, BlockRegistry.SAND_GABION_SLAB);
+
+        twoByTwo(consumer,Items.SAND,ItemRegistry.sand_pile);
+        singleItemShapeless(consumer,ItemRegistry.sand_pile,Items.SAND,4);
 
         //should this be converted to accept anything with water?
         ShapelessRecipeBuilder.shapelessRecipe(ItemRegistry.mud)
@@ -370,17 +380,11 @@ public class ModRecipeProvider extends RecipeProvider {
                 .build(recipeConsumer, name);
     }
 
-    private static void singleItemShapeless(Consumer<IFinishedRecipe> recipeConsumer, IItemProvider output, IItemProvider input) {
-        ShapelessRecipeBuilder.shapelessRecipe(output)
+    private static void singleItemShapeless(Consumer<IFinishedRecipe> recipeConsumer, IItemProvider output, IItemProvider input,int count) {
+        ShapelessRecipeBuilder.shapelessRecipe(output,count)
                 .addIngredient(input)
                 .addCriterion("has_item", hasItem(input))
                 .build(recipeConsumer);
     }
 
-    private static void singleItemShapelessAlt(Consumer<IFinishedRecipe> recipeConsumer, IItemProvider output, IItemProvider input) {
-        ShapelessRecipeBuilder.shapelessRecipe(output)
-                .addIngredient(input)
-                .addCriterion("has_item", hasItem(input))
-                .build(recipeConsumer, output.asItem().getRegistryName().getPath() + "_alt");
-    }
 }

@@ -24,6 +24,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         makeOneLayerItem(ItemRegistry.adobe_brick);
         makeOneLayerItem(ItemRegistry.chalk_dust);
         makeOneLayerItem(ItemRegistry.cob_ball);
+        makeOneLayerItem(ItemRegistry.dirt_ball);
         makeOneLayerItem(ItemRegistry.lime_plaster);
         makeOneLayerItem(ItemRegistry.mud_ball);
         makeOneLayerItem(ItemRegistry.quicklime);

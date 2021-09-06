@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:clay_ball"
+    },
+    {
+      "item": "minecraft:clay_ball"
+    },
+    {
+      "item": "minecraft:clay_ball"
+    },
+    {
+      "item": "minecraft:clay_ball"
+    },
+    {
+      "tag": "earthworks:material_binding"
+    },
+    {
+      "item": "earthworks:mud_ball"
+    },
+    {
+      "item": "earthworks:mud_ball"
+    },
+    {
+      "item": "earthworks:mud_ball"
+    },
+    {
+      "item": "earthworks:mud_ball"
+    }
+  ],
+  "result": {
+    "item": "earthworks:cob_ball",
+    "count": 8
+  }
+}

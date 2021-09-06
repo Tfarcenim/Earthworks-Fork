@@ -28,6 +28,7 @@ public class ItemRegistry {
     public static Item slaked_lime;
     public static Item timber_framing;
     public static Item dirt_ball;
+    public static Item sand_pile;
 
     public static Item square;
     public static Item acheulean;
@@ -331,6 +332,7 @@ public class ItemRegistry {
         slaked_lime = new Item(new Item.Properties().group(Earthworks.creativeTab));
         timber_framing = new Item(new Item.Properties().group(Earthworks.creativeTab));
         dirt_ball = new Item(new Item.Properties().group(Earthworks.creativeTab));
+        sand_pile = new Item(new Item.Properties().group(Earthworks.creativeTab));
 
         square = new ModItemTool(new Item.Properties().group(Earthworks.creativeTab).maxDamage(60));
         acheulean = new ModItemTool(new Item.Properties().group(Earthworks.creativeTab).maxDamage(132));
