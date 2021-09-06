@@ -211,7 +211,7 @@ public class ModRecipeProvider extends RecipeProvider {
         slabToBlock(consumer, BlockRegistry.birch_timber, BlockRegistry.birch_timber_slab);
 
         column(consumer, BlockRegistry.jungle_timber, Blocks.JUNGLE_LOG, 3);
-        blockToSlab(consumer, BlockRegistry.blue_slate_shingles_slab, ItemRegistry.blue_slate_shingles);
+        blockToSlab(consumer, BlockRegistry.jungle_timber_slab, BlockRegistry.jungle_timber);
         slabToBlock(consumer, BlockRegistry.jungle_timber, BlockRegistry.jungle_timber_slab);
 
         column(consumer, BlockRegistry.acacia_timber, Blocks.ACACIA_LOG, 3);
@@ -228,7 +228,7 @@ public class ModRecipeProvider extends RecipeProvider {
         slabToBlock(consumer, BlockRegistry.wattle_and_daub, BlockRegistry.wattle_and_daub_slab);
 
         checkerboardNoCenter(consumer, BlockRegistry.wicker, Items.STICK, Items.WHEAT, 2);
-        blockToSlab(consumer, BlockRegistry.blue_slate_shingles_slab, ItemRegistry.blue_slate_shingles);
+        blockToSlab(consumer, BlockRegistry.wicker_slab, BlockRegistry.wicker);
         slabToBlock(consumer, BlockRegistry.wicker, BlockRegistry.wicker_slab);
 
         woodShakesMain(consumer, BlockRegistry.oak_wood_shakes, Blocks.OAK_LOG, 6);

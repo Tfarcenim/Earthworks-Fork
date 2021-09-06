@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "earthworks:acacia_timber"
+    }
+  },
+  "result": {
+    "item": "earthworks:acacia_timber_slab",
+    "count": 6
+  }
+}
