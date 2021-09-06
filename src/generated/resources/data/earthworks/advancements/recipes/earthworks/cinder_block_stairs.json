@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "earthworks:cinder_block_stairs"
+    ]
+  },
+  "criteria": {
+    "has_cinder_blocks": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "earthworks:cinder_blocks"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "earthworks:cinder_block_stairs"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_cinder_blocks",
+      "has_the_recipe"
+    ]
+  ]
+}

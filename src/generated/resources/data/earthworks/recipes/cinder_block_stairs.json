@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "earthworks:cinder_blocks"
+    }
+  },
+  "result": {
+    "item": "earthworks:cinder_block_stairs",
+    "count": 4
+  }
+}

@@ -10,10 +10,7 @@ import alsender.earthworks.main.registry.BlockRegistry;
 import alsender.earthworks.main.registry.ItemRegistry;
 import alsender.earthworks.main.registry.ModBlockTags;
 import alsender.earthworks.main.registry.ModTags;
-import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.SlabBlock;
-import net.minecraft.block.StairsBlock;
+import net.minecraft.block.*;
 import net.minecraft.data.*;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -61,26 +58,12 @@ public class ModRecipeProvider extends RecipeProvider {
         shapelessPlanks(consumer, ItemRegistry.vertical_acacia_planks, ItemRegistry.acacia_timber);
         shapelessPlanks(consumer, ItemRegistry.vertical_dark_oak_planks, ItemRegistry.dark_oak_timber);
 
-        blockToSlab(consumer, BlockRegistry.vertical_oak_slab, ItemRegistry.vertical_oak_planks);
-        blockToSlab(consumer, BlockRegistry.vertical_spruce_slab, ItemRegistry.vertical_spruce_planks);
-        blockToSlab(consumer, BlockRegistry.vertical_birch_slab, ItemRegistry.vertical_birch_planks);
-        blockToSlab(consumer, BlockRegistry.vertical_jungle_slab, ItemRegistry.vertical_jungle_planks);
-        blockToSlab(consumer, BlockRegistry.vertical_acacia_slab, ItemRegistry.vertical_acacia_planks);
-        blockToSlab(consumer, BlockRegistry.vertical_dark_oak_slab, ItemRegistry.vertical_dark_oak_planks);
-
-        slabToBlock(consumer, ItemRegistry.vertical_oak_planks, BlockRegistry.vertical_oak_slab);
-        slabToBlock(consumer, ItemRegistry.vertical_spruce_planks, BlockRegistry.vertical_spruce_slab);
-        slabToBlock(consumer, ItemRegistry.vertical_birch_planks, BlockRegistry.vertical_birch_slab);
-        slabToBlock(consumer, ItemRegistry.vertical_jungle_planks, BlockRegistry.vertical_jungle_slab);
-        slabToBlock(consumer, ItemRegistry.vertical_acacia_planks, BlockRegistry.vertical_acacia_slab);
-        slabToBlock(consumer, ItemRegistry.vertical_dark_oak_planks, BlockRegistry.vertical_dark_oak_slab);
-
-        stairs(consumer, BlockRegistry.vertical_oak_stairs, ItemRegistry.vertical_oak_planks);
-        stairs(consumer, BlockRegistry.vertical_spruce_stairs, ItemRegistry.vertical_spruce_planks);
-        stairs(consumer, BlockRegistry.vertical_birch_stairs, ItemRegistry.vertical_birch_planks);
-        stairs(consumer, BlockRegistry.vertical_jungle_stairs, ItemRegistry.vertical_jungle_planks);
-        stairs(consumer, BlockRegistry.vertical_acacia_stairs, ItemRegistry.vertical_acacia_planks);
-        stairs(consumer, BlockRegistry.vertical_dark_oak_stairs, ItemRegistry.vertical_dark_oak_planks);
+        slabsStairs(consumer,BlockRegistry.vertical_oak_planks,BlockRegistry.vertical_oak_slab,BlockRegistry.vertical_oak_stairs);
+        slabsStairs(consumer,BlockRegistry.vertical_spruce_planks,BlockRegistry.vertical_spruce_slab,BlockRegistry.vertical_spruce_stairs);
+        slabsStairs(consumer,BlockRegistry.vertical_birch_planks,BlockRegistry.vertical_birch_slab,BlockRegistry.vertical_birch_stairs);
+        slabsStairs(consumer,BlockRegistry.vertical_jungle_planks,BlockRegistry.vertical_jungle_slab,BlockRegistry.vertical_jungle_stairs);
+        slabsStairs(consumer,BlockRegistry.vertical_acacia_planks,BlockRegistry.vertical_acacia_slab,BlockRegistry.vertical_acacia_stairs);
+        slabsStairs(consumer,BlockRegistry.vertical_dark_oak_planks,BlockRegistry.vertical_dark_oak_slab,BlockRegistry.vertical_dark_oak_stairs);
 
         twoByTwo(consumer, ItemRegistry.adobe, ItemRegistry.adobe_brick);
         blockToSlab(consumer, BlockRegistry.adobe_slab, BlockRegistry.adobe);
@@ -542,5 +525,22 @@ public class ModRecipeProvider extends RecipeProvider {
         ShapedRecipeBuilder.shapedRecipe(output, 4).key('#', input)
                 .patternLine("#  ").patternLine("## ").patternLine("###")
                 .addCriterion("has_"+input.asItem().getRegistryName().getPath(), hasItem(input)).build(recipeConsumer);
+    }
+
+    private static void wall(Consumer<IFinishedRecipe> recipeConsumer, WallBlock output, IItemProvider input) {
+        ShapedRecipeBuilder.shapedRecipe(output, 6).key('#', input)
+                .patternLine("###").patternLine("###")
+                .addCriterion("has_"+input.asItem().getRegistryName().getPath(), hasItem(input)).build(recipeConsumer);
+    }
+
+    private static void slabsStairs(Consumer<IFinishedRecipe> recipeConsumer, IItemProvider input, SlabBlock slab,StairsBlock stairs) {
+        blockToSlab(recipeConsumer,slab,input);
+        slabToBlock(recipeConsumer,input,slab);
+        stairs(recipeConsumer,stairs,input);
+    }
+
+    private static void slabsWallsStairs(Consumer<IFinishedRecipe> recipeConsumer, IItemProvider input, SlabBlock slab, WallBlock wall,StairsBlock stairs) {
+        slabsStairs(recipeConsumer, input, slab, stairs);
+        wall(recipeConsumer,wall,input);
     }
 }
