@@ -45,12 +45,12 @@ public class ModRecipeProvider extends RecipeProvider {
                 .addCriterion("has_chalk", hasItem(ItemRegistry.chalk))
                 .build(consumer, "quicklime_from_chalk_dust");
 
-        shapelessPlanksNew(consumer, ItemRegistry.vertical_oak_planks, ItemRegistry.oak_timber);
-        shapelessPlanksNew(consumer, ItemRegistry.vertical_spruce_planks, ItemRegistry.spruce_timber);
-        shapelessPlanksNew(consumer, ItemRegistry.vertical_birch_planks, ItemRegistry.birch_timber);
-        shapelessPlanksNew(consumer, ItemRegistry.vertical_jungle_planks, ItemRegistry.jungle_timber);
-        shapelessPlanksNew(consumer, ItemRegistry.vertical_acacia_planks, ItemRegistry.acacia_timber);
-        shapelessPlanksNew(consumer, ItemRegistry.vertical_dark_oak_planks, ItemRegistry.dark_oak_timber);
+        shapelessPlanks(consumer, ItemRegistry.vertical_oak_planks, ItemRegistry.oak_timber);
+        shapelessPlanks(consumer, ItemRegistry.vertical_spruce_planks, ItemRegistry.spruce_timber);
+        shapelessPlanks(consumer, ItemRegistry.vertical_birch_planks, ItemRegistry.birch_timber);
+        shapelessPlanks(consumer, ItemRegistry.vertical_jungle_planks, ItemRegistry.jungle_timber);
+        shapelessPlanks(consumer, ItemRegistry.vertical_acacia_planks, ItemRegistry.acacia_timber);
+        shapelessPlanks(consumer, ItemRegistry.vertical_dark_oak_planks, ItemRegistry.dark_oak_timber);
 
         slabToBlock(consumer, ItemRegistry.vertical_oak_planks, BlockRegistry.vertical_oak_slab);
         slabToBlock(consumer, ItemRegistry.vertical_spruce_planks, BlockRegistry.vertical_spruce_slab);
@@ -269,9 +269,18 @@ public class ModRecipeProvider extends RecipeProvider {
                         .build(consumer, new ResourceLocation(Earthworks.mod_id, block1.getRegistryName().getPath() + "_from_" + block2.getRegistryName().getPath()));
             }
         }
+
+
+        shapedWoodenFence(consumer, BlockRegistry.vertical_oak_fence, BlockRegistry.vertical_oak_planks);
+        shapedWoodenFence(consumer, BlockRegistry.vertical_spruce_fence, BlockRegistry.vertical_acacia_planks);
+        shapedWoodenFence(consumer, BlockRegistry.vertical_birch_fence, BlockRegistry.vertical_birch_planks);
+        shapedWoodenFence(consumer, BlockRegistry.vertical_jungle_fence, BlockRegistry.vertical_jungle_planks);
+        shapedWoodenFence(consumer, BlockRegistry.vertical_acacia_fence, BlockRegistry.vertical_acacia_planks);
+        shapedWoodenFence(consumer, BlockRegistry.vertical_dark_oak_fence, BlockRegistry.vertical_dark_oak_planks);
+
     }
 
-    private static void shapelessPlanksNew(Consumer<IFinishedRecipe> recipeConsumer, IItemProvider planks, IItemProvider input) {
+    private static void shapelessPlanks(Consumer<IFinishedRecipe> recipeConsumer, IItemProvider planks, IItemProvider input) {
         ShapelessRecipeBuilder.shapelessRecipe(planks, 4).addIngredient(input).setGroup("planks").addCriterion("has_log", hasItem(input)).build(recipeConsumer);
     }
 
