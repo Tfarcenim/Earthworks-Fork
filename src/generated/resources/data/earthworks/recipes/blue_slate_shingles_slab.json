@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "earthworks:blue_slate_shingles"
+    }
+  },
+  "result": {
+    "item": "earthworks:blue_slate_shingles_slab",
+    "count": 6
+  }
+}

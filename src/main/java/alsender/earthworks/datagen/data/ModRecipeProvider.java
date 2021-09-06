@@ -163,55 +163,72 @@ public class ModRecipeProvider extends RecipeProvider {
         slabToBlock(consumer, ItemRegistry.purple_slate, BlockRegistry.purple_slate_slab);
 
         twoByTwo(consumer, ItemRegistry.blue_slate_shingles, ItemRegistry.blue_slate, 4);
+        blockToSlab(consumer, BlockRegistry.blue_slate_shingles_slab, ItemRegistry.blue_slate_shingles);
         slabToBlock(consumer, ItemRegistry.blue_slate_shingles, BlockRegistry.blue_slate_shingles_slab);
 
         twoByTwo(consumer, ItemRegistry.green_slate_shingles, ItemRegistry.green_slate, 4);
+        blockToSlab(consumer, BlockRegistry.green_slate_shingles_slab, ItemRegistry.green_slate_shingles);
         slabToBlock(consumer, ItemRegistry.green_slate_shingles, BlockRegistry.green_slate_shingles_slab);
 
         twoByTwo(consumer, ItemRegistry.purple_slate_shingles, ItemRegistry.purple_slate, 4);
+        blockToSlab(consumer, BlockRegistry.purple_slate_shingles_slab, ItemRegistry.purple_slate_shingles);
         slabToBlock(consumer, ItemRegistry.purple_slate_shingles, BlockRegistry.purple_slate_shingles_slab);
 
         ring(consumer, ItemRegistry.polished_blue_slate, ItemRegistry.blue_slate, 8);
+        blockToSlab(consumer, BlockRegistry.polished_blue_slate_slab, ItemRegistry.polished_blue_slate);
         slabToBlock(consumer, ItemRegistry.polished_blue_slate, BlockRegistry.polished_blue_slate_slab);
 
         ring(consumer, ItemRegistry.polished_green_slate, ItemRegistry.green_slate, 8);
+        blockToSlab(consumer, BlockRegistry.polished_green_slate_slab, ItemRegistry.polished_green_slate);
         slabToBlock(consumer, ItemRegistry.polished_green_slate, BlockRegistry.polished_green_slate_slab);
 
         ring(consumer, ItemRegistry.polished_purple_slate, ItemRegistry.purple_slate, 8);
+        blockToSlab(consumer, BlockRegistry.polished_purple_slate_slab, ItemRegistry.polished_purple_slate);
         slabToBlock(consumer, ItemRegistry.polished_purple_slate, BlockRegistry.polished_purple_slate_slab);
 
         twoByTwo(consumer, ItemRegistry.blue_slate_tiles, ItemRegistry.polished_blue_slate, 4);
+        blockToSlab(consumer, BlockRegistry.blue_slate_tiles_slab, ItemRegistry.blue_slate_tiles);
         slabToBlock(consumer, ItemRegistry.blue_slate_tiles, BlockRegistry.blue_slate_tiles_slab);
 
         twoByTwo(consumer, ItemRegistry.green_slate_tiles, ItemRegistry.polished_green_slate, 4);
+        blockToSlab(consumer, BlockRegistry.green_slate_tiles_slab, ItemRegistry.green_slate_tiles);
         slabToBlock(consumer, ItemRegistry.green_slate_tiles, BlockRegistry.green_slate_tiles_slab);
 
         twoByTwo(consumer, ItemRegistry.purple_slate_tiles, ItemRegistry.polished_purple_slate, 4);
+        blockToSlab(consumer, BlockRegistry.purple_slate_tiles_slab, ItemRegistry.purple_slate_tiles);
         slabToBlock(consumer, ItemRegistry.purple_slate_tiles, BlockRegistry.purple_slate_tiles_slab);
 
         twoByTwo(consumer, BlockRegistry.thatch, Items.WHEAT);
+        blockToSlab(consumer, BlockRegistry.thatch_slab, BlockRegistry.thatch);
         slabToBlock(consumer, BlockRegistry.thatch, BlockRegistry.thatch_slab);
 
         column(consumer, BlockRegistry.spruce_timber, Blocks.SPRUCE_LOG, 3);
+        blockToSlab(consumer, BlockRegistry.spruce_timber_slab, BlockRegistry.spruce_timber);
         slabToBlock(consumer, BlockRegistry.spruce_timber, BlockRegistry.spruce_timber_slab);
 
         column(consumer, BlockRegistry.birch_timber, Blocks.BIRCH_LOG, 3);
+        blockToSlab(consumer, BlockRegistry.birch_timber_slab, BlockRegistry.birch_timber);
         slabToBlock(consumer, BlockRegistry.birch_timber, BlockRegistry.birch_timber_slab);
 
         column(consumer, BlockRegistry.jungle_timber, Blocks.JUNGLE_LOG, 3);
+        blockToSlab(consumer, BlockRegistry.blue_slate_shingles_slab, ItemRegistry.blue_slate_shingles);
         slabToBlock(consumer, BlockRegistry.jungle_timber, BlockRegistry.jungle_timber_slab);
 
         column(consumer, BlockRegistry.acacia_timber, Blocks.ACACIA_LOG, 3);
+        blockToSlab(consumer, BlockRegistry.acacia_timber_slab, BlockRegistry.acacia_timber);
         slabToBlock(consumer, BlockRegistry.acacia_timber, BlockRegistry.acacia_timber_slab);
 
         column(consumer, BlockRegistry.dark_oak_timber, Blocks.DARK_OAK_LOG, 3);
+        blockToSlab(consumer, BlockRegistry.dark_oak_timber_slab, BlockRegistry.dark_oak_timber);
         slabToBlock(consumer, BlockRegistry.dark_oak_timber, BlockRegistry.dark_oak_timber_slab);
 
         ringCenter(consumer, BlockRegistry.wattle_and_daub, ItemRegistry.cob_ball, BlockRegistry.wicker, 2);
         ringCenter(consumer, BlockRegistry.wattle_and_daub, BlockRegistry.cob, BlockRegistry.wicker, 8, "bulk_wattle_and_daub");
+        blockToSlab(consumer, BlockRegistry.wattle_and_daub_slab, BlockRegistry.wattle_and_daub);
         slabToBlock(consumer, BlockRegistry.wattle_and_daub, BlockRegistry.wattle_and_daub_slab);
 
         checkerboardNoCenter(consumer, BlockRegistry.wicker, Items.STICK, Items.WHEAT, 2);
+        blockToSlab(consumer, BlockRegistry.blue_slate_shingles_slab, ItemRegistry.blue_slate_shingles);
         slabToBlock(consumer, BlockRegistry.wicker, BlockRegistry.wicker_slab);
 
         woodShakesMain(consumer, BlockRegistry.oak_wood_shakes, Blocks.OAK_LOG, 6);
@@ -297,6 +314,11 @@ public class ModRecipeProvider extends RecipeProvider {
     private static void slabToBlock(Consumer<IFinishedRecipe> recipeConsumer, IItemProvider block, SlabBlock slab) {
         ShapedRecipeBuilder.shapedRecipe(block).key('s', slab).patternLine("s").patternLine("s")
                 .setGroup("slab").addCriterion("has_slab", hasItem(slab)).build(recipeConsumer, block.asItem().getRegistryName().getPath() + "_from_slabs");
+    }
+
+    private static void blockToSlab(Consumer<IFinishedRecipe> recipeConsumer, SlabBlock slab, IItemProvider block) {
+        ShapedRecipeBuilder.shapedRecipe(slab, 6).key('#', block)
+                .patternLine("###").addCriterion("has_"+block.asItem().getRegistryName().getPath(), hasItem(block)).build(recipeConsumer);
     }
 
     private static void twoByTwo(Consumer<IFinishedRecipe> recipeConsumer, IItemProvider output, IItemProvider input) {
