@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "earthworks:oak_timber_stairs"
+    ]
+  },
+  "criteria": {
+    "has_oak_timber": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "earthworks:oak_timber"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "earthworks:oak_timber_stairs"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_oak_timber",
+      "has_the_recipe"
+    ]
+  ]
+}

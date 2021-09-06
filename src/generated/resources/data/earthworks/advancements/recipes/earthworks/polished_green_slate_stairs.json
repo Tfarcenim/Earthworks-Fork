@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "earthworks:polished_green_slate_stairs"
+    ]
+  },
+  "criteria": {
+    "has_polished_green_slate": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "earthworks:polished_green_slate"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "earthworks:polished_green_slate_stairs"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_polished_green_slate",
+      "has_the_recipe"
+    ]
+  ]
+}

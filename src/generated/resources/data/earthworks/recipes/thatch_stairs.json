@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "earthworks:thatch"
+    }
+  },
+  "result": {
+    "item": "earthworks:thatch_stairs",
+    "count": 4
+  }
+}

@@ -97,6 +97,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .addCriterion("has_item", hasItem(ItemRegistry.concrete)).build(consumer);
         blockToSlab(consumer, BlockRegistry.cinder_block_slab, ItemRegistry.cinder_blocks);
         slabToBlock(consumer, ItemRegistry.cinder_blocks, BlockRegistry.cinder_block_slab);
+        stairs(consumer,BlockRegistry.cinder_block_stairs,BlockRegistry.cinder_blocks);
 
         twoByTwo(consumer, ItemRegistry.cob, ItemRegistry.cob_ball);
         blockToSlab(consumer, BlockRegistry.cob_slab, ItemRegistry.cob);
@@ -214,105 +215,136 @@ public class ModRecipeProvider extends RecipeProvider {
         slabToBlock(consumer, ItemRegistry.blue_slate, BlockRegistry.blue_slate_slab);
         slabToBlock(consumer, ItemRegistry.green_slate, BlockRegistry.green_slate_slab);
         slabToBlock(consumer, ItemRegistry.purple_slate, BlockRegistry.purple_slate_slab);
+        stairs(consumer, BlockRegistry.blue_slate_stairs, ItemRegistry.blue_slate);
+        stairs(consumer, BlockRegistry.green_slate_stairs, ItemRegistry.green_slate);
+        stairs(consumer, BlockRegistry.purple_slate_stairs, ItemRegistry.purple_slate);
 
         twoByTwo(consumer, ItemRegistry.blue_slate_shingles, ItemRegistry.blue_slate, 4);
         blockToSlab(consumer, BlockRegistry.blue_slate_shingles_slab, ItemRegistry.blue_slate_shingles);
         slabToBlock(consumer, ItemRegistry.blue_slate_shingles, BlockRegistry.blue_slate_shingles_slab);
+        stairs(consumer, BlockRegistry.blue_slate_shingles_stairs, ItemRegistry.blue_slate_shingles);
 
         twoByTwo(consumer, ItemRegistry.green_slate_shingles, ItemRegistry.green_slate, 4);
         blockToSlab(consumer, BlockRegistry.green_slate_shingles_slab, ItemRegistry.green_slate_shingles);
         slabToBlock(consumer, ItemRegistry.green_slate_shingles, BlockRegistry.green_slate_shingles_slab);
+        stairs(consumer, BlockRegistry.green_slate_shingles_stairs, ItemRegistry.green_slate_shingles);
 
         twoByTwo(consumer, ItemRegistry.purple_slate_shingles, ItemRegistry.purple_slate, 4);
         blockToSlab(consumer, BlockRegistry.purple_slate_shingles_slab, ItemRegistry.purple_slate_shingles);
         slabToBlock(consumer, ItemRegistry.purple_slate_shingles, BlockRegistry.purple_slate_shingles_slab);
+        stairs(consumer, BlockRegistry.purple_slate_shingles_stairs, ItemRegistry.purple_slate_shingles);
 
         ring(consumer, ItemRegistry.polished_blue_slate, ItemRegistry.blue_slate, 8);
         blockToSlab(consumer, BlockRegistry.polished_blue_slate_slab, ItemRegistry.polished_blue_slate);
         slabToBlock(consumer, ItemRegistry.polished_blue_slate, BlockRegistry.polished_blue_slate_slab);
+        stairs(consumer, BlockRegistry.polished_blue_slate_stairs, ItemRegistry.polished_blue_slate);
 
         ring(consumer, ItemRegistry.polished_green_slate, ItemRegistry.green_slate, 8);
         blockToSlab(consumer, BlockRegistry.polished_green_slate_slab, ItemRegistry.polished_green_slate);
         slabToBlock(consumer, ItemRegistry.polished_green_slate, BlockRegistry.polished_green_slate_slab);
+        stairs(consumer, BlockRegistry.polished_green_slate_stairs, ItemRegistry.polished_green_slate);
 
         ring(consumer, ItemRegistry.polished_purple_slate, ItemRegistry.purple_slate, 8);
         blockToSlab(consumer, BlockRegistry.polished_purple_slate_slab, ItemRegistry.polished_purple_slate);
         slabToBlock(consumer, ItemRegistry.polished_purple_slate, BlockRegistry.polished_purple_slate_slab);
+        stairs(consumer, BlockRegistry.polished_purple_slate_stairs, ItemRegistry.polished_purple_slate);
 
         twoByTwo(consumer, ItemRegistry.blue_slate_tiles, ItemRegistry.polished_blue_slate, 4);
         blockToSlab(consumer, BlockRegistry.blue_slate_tiles_slab, ItemRegistry.blue_slate_tiles);
         slabToBlock(consumer, ItemRegistry.blue_slate_tiles, BlockRegistry.blue_slate_tiles_slab);
+        stairs(consumer, BlockRegistry.blue_slate_tiles_stairs, ItemRegistry.blue_slate_tiles);
 
         twoByTwo(consumer, ItemRegistry.green_slate_tiles, ItemRegistry.polished_green_slate, 4);
         blockToSlab(consumer, BlockRegistry.green_slate_tiles_slab, ItemRegistry.green_slate_tiles);
         slabToBlock(consumer, ItemRegistry.green_slate_tiles, BlockRegistry.green_slate_tiles_slab);
+        stairs(consumer, BlockRegistry.green_slate_tiles_stairs, ItemRegistry.green_slate_tiles);
 
         twoByTwo(consumer, ItemRegistry.purple_slate_tiles, ItemRegistry.polished_purple_slate, 4);
         blockToSlab(consumer, BlockRegistry.purple_slate_tiles_slab, ItemRegistry.purple_slate_tiles);
         slabToBlock(consumer, ItemRegistry.purple_slate_tiles, BlockRegistry.purple_slate_tiles_slab);
+        stairs(consumer, BlockRegistry.purple_slate_tiles_stairs, ItemRegistry.purple_slate_tiles);
 
         twoByTwo(consumer, BlockRegistry.thatch, Items.WHEAT);
         blockToSlab(consumer, BlockRegistry.thatch_slab, BlockRegistry.thatch);
         slabToBlock(consumer, BlockRegistry.thatch, BlockRegistry.thatch_slab);
+        stairs(consumer, BlockRegistry.thatch_stairs, ItemRegistry.thatch);
+
+        column(consumer, BlockRegistry.oak_timber, Blocks.OAK_LOG, 3);
+        blockToSlab(consumer, BlockRegistry.oak_timber_slab, BlockRegistry.oak_timber);
+        slabToBlock(consumer, BlockRegistry.oak_timber, BlockRegistry.oak_timber_slab);
+        stairs(consumer, BlockRegistry.oak_timber_stairs, ItemRegistry.oak_timber);
 
         column(consumer, BlockRegistry.spruce_timber, Blocks.SPRUCE_LOG, 3);
         blockToSlab(consumer, BlockRegistry.spruce_timber_slab, BlockRegistry.spruce_timber);
         slabToBlock(consumer, BlockRegistry.spruce_timber, BlockRegistry.spruce_timber_slab);
+        stairs(consumer, BlockRegistry.spruce_timber_stairs, ItemRegistry.spruce_timber);
 
         column(consumer, BlockRegistry.birch_timber, Blocks.BIRCH_LOG, 3);
         blockToSlab(consumer, BlockRegistry.birch_timber_slab, BlockRegistry.birch_timber);
         slabToBlock(consumer, BlockRegistry.birch_timber, BlockRegistry.birch_timber_slab);
+        stairs(consumer, BlockRegistry.birch_timber_stairs, ItemRegistry.birch_timber);
 
         column(consumer, BlockRegistry.jungle_timber, Blocks.JUNGLE_LOG, 3);
         blockToSlab(consumer, BlockRegistry.jungle_timber_slab, BlockRegistry.jungle_timber);
         slabToBlock(consumer, BlockRegistry.jungle_timber, BlockRegistry.jungle_timber_slab);
+        stairs(consumer, BlockRegistry.jungle_timber_stairs, ItemRegistry.jungle_timber);
 
         column(consumer, BlockRegistry.acacia_timber, Blocks.ACACIA_LOG, 3);
         blockToSlab(consumer, BlockRegistry.acacia_timber_slab, BlockRegistry.acacia_timber);
         slabToBlock(consumer, BlockRegistry.acacia_timber, BlockRegistry.acacia_timber_slab);
+        stairs(consumer, BlockRegistry.acacia_timber_stairs, ItemRegistry.acacia_timber);
 
         column(consumer, BlockRegistry.dark_oak_timber, Blocks.DARK_OAK_LOG, 3);
         blockToSlab(consumer, BlockRegistry.dark_oak_timber_slab, BlockRegistry.dark_oak_timber);
         slabToBlock(consumer, BlockRegistry.dark_oak_timber, BlockRegistry.dark_oak_timber_slab);
+        stairs(consumer, BlockRegistry.dark_oak_timber_stairs, ItemRegistry.dark_oak_timber);
 
         ringCenter(consumer, BlockRegistry.wattle_and_daub, ItemRegistry.cob_ball, BlockRegistry.wicker, 2);
         ringCenter(consumer, BlockRegistry.wattle_and_daub, BlockRegistry.cob, BlockRegistry.wicker, 8, "bulk_wattle_and_daub");
         blockToSlab(consumer, BlockRegistry.wattle_and_daub_slab, BlockRegistry.wattle_and_daub);
         slabToBlock(consumer, BlockRegistry.wattle_and_daub, BlockRegistry.wattle_and_daub_slab);
+        stairs(consumer, BlockRegistry.wattle_and_daub_stairs, ItemRegistry.wattle_and_daub);
 
         checkerboardNoCenter(consumer, BlockRegistry.wicker, Items.STICK, Items.WHEAT, 2);
         blockToSlab(consumer, BlockRegistry.wicker_slab, BlockRegistry.wicker);
         slabToBlock(consumer, BlockRegistry.wicker, BlockRegistry.wicker_slab);
+        stairs(consumer, BlockRegistry.wicker_stairs, ItemRegistry.wicker);
 
         woodShakesMain(consumer, BlockRegistry.oak_wood_shakes, Blocks.OAK_LOG, 6);
         woodShakesAlt(consumer, BlockRegistry.oak_wood_shakes, BlockRegistry.oak_timber, 6);
         blockToSlab(consumer,BlockRegistry.oak_wood_shakes_slab,BlockRegistry.oak_wood_shakes);
         slabToBlock(consumer,BlockRegistry.oak_wood_shakes,BlockRegistry.oak_wood_shakes_slab);
+        stairs(consumer, BlockRegistry.oak_wood_shakes_stairs, ItemRegistry.oak_wood_shakes);
 
         woodShakesMain(consumer, BlockRegistry.spruce_wood_shakes, Blocks.SPRUCE_LOG, 6);
         woodShakesAlt(consumer, BlockRegistry.spruce_wood_shakes, BlockRegistry.spruce_timber, 6);
         blockToSlab(consumer,BlockRegistry.spruce_wood_shakes_slab,BlockRegistry.spruce_wood_shakes);
         slabToBlock(consumer,BlockRegistry.spruce_wood_shakes,BlockRegistry.spruce_wood_shakes_slab);
+        stairs(consumer, BlockRegistry.spruce_wood_shakes_stairs, ItemRegistry.spruce_wood_shakes);
 
         woodShakesMain(consumer, BlockRegistry.birch_wood_shakes, Blocks.BIRCH_LOG, 6);
         woodShakesAlt(consumer, BlockRegistry.birch_wood_shakes, BlockRegistry.birch_timber, 6);
         blockToSlab(consumer,BlockRegistry.birch_wood_shakes_slab,BlockRegistry.birch_wood_shakes);
         slabToBlock(consumer,BlockRegistry.birch_wood_shakes,BlockRegistry.birch_wood_shakes_slab);
+        stairs(consumer, BlockRegistry.birch_wood_shakes_stairs, ItemRegistry.birch_wood_shakes);
 
         woodShakesMain(consumer, BlockRegistry.jungle_wood_shakes, Blocks.JUNGLE_LOG, 6);
         woodShakesAlt(consumer, BlockRegistry.jungle_wood_shakes, BlockRegistry.jungle_timber, 6);
         blockToSlab(consumer,BlockRegistry.jungle_wood_shakes_slab,BlockRegistry.jungle_wood_shakes);
         slabToBlock(consumer,BlockRegistry.jungle_wood_shakes,BlockRegistry.jungle_wood_shakes_slab);
+        stairs(consumer, BlockRegistry.jungle_wood_shakes_stairs, ItemRegistry.jungle_wood_shakes);
 
         woodShakesMain(consumer, BlockRegistry.acacia_wood_shakes, Blocks.ACACIA_LOG, 6);
         woodShakesAlt(consumer, BlockRegistry.acacia_wood_shakes, BlockRegistry.acacia_timber, 6);
         blockToSlab(consumer,BlockRegistry.acacia_wood_shakes_slab,BlockRegistry.acacia_wood_shakes);
         slabToBlock(consumer,BlockRegistry.acacia_wood_shakes,BlockRegistry.acacia_wood_shakes_slab);
+        stairs(consumer, BlockRegistry.acacia_wood_shakes_stairs, ItemRegistry.acacia_wood_shakes);
 
         woodShakesMain(consumer, BlockRegistry.dark_oak_wood_shakes, Blocks.DARK_OAK_LOG, 6);
         woodShakesAlt(consumer, BlockRegistry.dark_oak_wood_shakes, BlockRegistry.dark_oak_timber, 6);
         blockToSlab(consumer,BlockRegistry.dark_oak_wood_shakes_slab,BlockRegistry.dark_oak_wood_shakes);
         slabToBlock(consumer,BlockRegistry.dark_oak_wood_shakes,BlockRegistry.dark_oak_wood_shakes_slab);
+        stairs(consumer, BlockRegistry.dark_oak_wood_shakes_stairs, ItemRegistry.dark_oak_wood_shakes);
 
         //instead of copying all of the 1.12 recipes since they no longer work, use the stonecutter instead
         ringCenter(consumer, BlockRegistry.daub_cob_square, ItemRegistry.timber_framing, BlockRegistry.wattle_and_daub, 4);

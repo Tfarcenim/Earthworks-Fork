@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "earthworks:wicker_stairs"
+    ]
+  },
+  "criteria": {
+    "has_wicker": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "earthworks:wicker"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "earthworks:wicker_stairs"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_wicker",
+      "has_the_recipe"
+    ]
+  ]
+}

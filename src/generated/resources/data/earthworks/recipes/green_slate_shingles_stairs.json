@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "earthworks:green_slate_shingles"
+    }
+  },
+  "result": {
+    "item": "earthworks:green_slate_shingles_stairs",
+    "count": 4
+  }
+}

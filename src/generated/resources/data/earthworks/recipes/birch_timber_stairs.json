@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "earthworks:birch_timber"
+    }
+  },
+  "result": {
+    "item": "earthworks:birch_timber_stairs",
+    "count": 4
+  }
+}

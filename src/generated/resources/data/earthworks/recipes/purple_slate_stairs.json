@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "earthworks:purple_slate"
+    }
+  },
+  "result": {
+    "item": "earthworks:purple_slate_stairs",
+    "count": 4
+  }
+}

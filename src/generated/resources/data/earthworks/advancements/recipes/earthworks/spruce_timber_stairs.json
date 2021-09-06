@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "earthworks:spruce_timber_stairs"
+    ]
+  },
+  "criteria": {
+    "has_spruce_timber": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "earthworks:spruce_timber"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "earthworks:spruce_timber_stairs"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_spruce_timber",
+      "has_the_recipe"
+    ]
+  ]
+}
