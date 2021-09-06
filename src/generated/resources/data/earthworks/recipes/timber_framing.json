@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "a",
+    "a"
+  ],
+  "key": {
+    "a": {
+      "tag": "earthworks:timber_log"
+    }
+  },
+  "result": {
+    "item": "earthworks:timber_framing",
+    "count": 6
+  }
+}

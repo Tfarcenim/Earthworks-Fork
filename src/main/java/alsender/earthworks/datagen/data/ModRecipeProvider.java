@@ -13,6 +13,7 @@ import alsender.earthworks.main.registry.ModTags;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.SlabBlock;
+import net.minecraft.block.StairsBlock;
 import net.minecraft.data.*;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -256,21 +257,33 @@ public class ModRecipeProvider extends RecipeProvider {
 
         woodShakesMain(consumer, BlockRegistry.oak_wood_shakes, Blocks.OAK_LOG, 6);
         woodShakesAlt(consumer, BlockRegistry.oak_wood_shakes, BlockRegistry.oak_timber, 6);
+        blockToSlab(consumer,BlockRegistry.oak_wood_shakes_slab,BlockRegistry.oak_wood_shakes);
+        slabToBlock(consumer,BlockRegistry.oak_wood_shakes,BlockRegistry.oak_wood_shakes_slab);
 
         woodShakesMain(consumer, BlockRegistry.spruce_wood_shakes, Blocks.SPRUCE_LOG, 6);
         woodShakesAlt(consumer, BlockRegistry.spruce_wood_shakes, BlockRegistry.spruce_timber, 6);
+        blockToSlab(consumer,BlockRegistry.spruce_wood_shakes_slab,BlockRegistry.spruce_wood_shakes);
+        slabToBlock(consumer,BlockRegistry.spruce_wood_shakes,BlockRegistry.spruce_wood_shakes_slab);
 
         woodShakesMain(consumer, BlockRegistry.birch_wood_shakes, Blocks.BIRCH_LOG, 6);
         woodShakesAlt(consumer, BlockRegistry.birch_wood_shakes, BlockRegistry.birch_timber, 6);
+        blockToSlab(consumer,BlockRegistry.birch_wood_shakes_slab,BlockRegistry.birch_wood_shakes);
+        slabToBlock(consumer,BlockRegistry.birch_wood_shakes,BlockRegistry.birch_wood_shakes_slab);
 
         woodShakesMain(consumer, BlockRegistry.jungle_wood_shakes, Blocks.JUNGLE_LOG, 6);
         woodShakesAlt(consumer, BlockRegistry.jungle_wood_shakes, BlockRegistry.jungle_timber, 6);
+        blockToSlab(consumer,BlockRegistry.jungle_wood_shakes_slab,BlockRegistry.jungle_wood_shakes);
+        slabToBlock(consumer,BlockRegistry.jungle_wood_shakes,BlockRegistry.jungle_wood_shakes_slab);
 
         woodShakesMain(consumer, BlockRegistry.acacia_wood_shakes, Blocks.ACACIA_LOG, 6);
         woodShakesAlt(consumer, BlockRegistry.acacia_wood_shakes, BlockRegistry.acacia_timber, 6);
+        blockToSlab(consumer,BlockRegistry.acacia_wood_shakes_slab,BlockRegistry.acacia_wood_shakes);
+        slabToBlock(consumer,BlockRegistry.acacia_wood_shakes,BlockRegistry.acacia_wood_shakes_slab);
 
         woodShakesMain(consumer, BlockRegistry.dark_oak_wood_shakes, Blocks.DARK_OAK_LOG, 6);
         woodShakesAlt(consumer, BlockRegistry.dark_oak_wood_shakes, BlockRegistry.dark_oak_timber, 6);
+        blockToSlab(consumer,BlockRegistry.dark_oak_wood_shakes_slab,BlockRegistry.dark_oak_wood_shakes);
+        slabToBlock(consumer,BlockRegistry.dark_oak_wood_shakes,BlockRegistry.dark_oak_wood_shakes_slab);
 
         //instead of copying all of the 1.12 recipes since they no longer work, use the stonecutter instead
         ringCenter(consumer, BlockRegistry.daub_cob_square, ItemRegistry.timber_framing, BlockRegistry.wattle_and_daub, 4);
@@ -320,13 +333,44 @@ public class ModRecipeProvider extends RecipeProvider {
             }
         }
 
-
         shapedWoodenFence(consumer, BlockRegistry.vertical_oak_fence, BlockRegistry.vertical_oak_planks);
         shapedWoodenFence(consumer, BlockRegistry.vertical_spruce_fence, BlockRegistry.vertical_acacia_planks);
         shapedWoodenFence(consumer, BlockRegistry.vertical_birch_fence, BlockRegistry.vertical_birch_planks);
         shapedWoodenFence(consumer, BlockRegistry.vertical_jungle_fence, BlockRegistry.vertical_jungle_planks);
         shapedWoodenFence(consumer, BlockRegistry.vertical_acacia_fence, BlockRegistry.vertical_acacia_planks);
         shapedWoodenFence(consumer, BlockRegistry.vertical_dark_oak_fence, BlockRegistry.vertical_dark_oak_planks);
+
+        ShapelessRecipeBuilder.shapelessRecipe(ItemRegistry.slaked_lime,8)
+                .addIngredient(ItemRegistry.quicklime,8)
+                .addIngredient(Items.WATER_BUCKET)
+                .addCriterion("has_quicklime",hasItem(ItemRegistry.quicklime))
+                .build(consumer);
+
+        ShapelessRecipeBuilder.shapelessRecipe(ItemRegistry.lime_plaster,2)
+                .addIngredient(ItemRegistry.slaked_lime)
+                .addIngredient(ItemRegistry.sand_pile)
+                .addCriterion("has_slaked_lime",hasItem(ItemRegistry.slaked_lime))
+                .build(consumer);
+
+        ShapelessRecipeBuilder.shapelessRecipe(ItemRegistry.lime_plaster,8)
+                .addIngredient(ItemRegistry.quicklime,4)
+                .addIngredient(Items.WATER_BUCKET)
+                .addIngredient(ItemRegistry.sand_pile,4)
+                .addCriterion("has_slaked_lime",hasItem(ItemRegistry.slaked_lime))
+                .build(consumer,"lime_plaster_bulk");
+
+        ShapelessRecipeBuilder.shapelessRecipe(ItemRegistry.mud_ball,8)
+                .addIngredient(ItemRegistry.dirt_ball,8)
+                .addIngredient(Items.WATER_BUCKET)
+                .addCriterion("has_dirt_ball",hasItem(ItemRegistry.dirt_ball))
+                .build(consumer);
+
+        ShapedRecipeBuilder.shapedRecipe(ItemRegistry.timber_framing,6)
+                .key('a',ModTags.timber_log)
+                .patternLine("a").patternLine("a")
+                .addCriterion("has_timber",hasItem(ModTags.timber_log))
+                .build(consumer);
+
 
     }
 
@@ -432,4 +476,10 @@ public class ModRecipeProvider extends RecipeProvider {
                 .build(recipeConsumer);
     }
 
+
+    private static void stairs(Consumer<IFinishedRecipe> recipeConsumer, StairsBlock output, IItemProvider input) {
+        ShapedRecipeBuilder.shapedRecipe(output, 4).key('#', input)
+                .patternLine("#  ").patternLine("## ").patternLine("###")
+                .addCriterion("has_"+input.asItem().getRegistryName().getPath(), hasItem(input)).build(recipeConsumer);
+    }
 }

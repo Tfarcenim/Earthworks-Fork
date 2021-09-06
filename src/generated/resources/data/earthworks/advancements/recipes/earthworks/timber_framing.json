@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "earthworks:timber_framing"
+    ]
+  },
+  "criteria": {
+    "has_timber": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "earthworks:timber_log"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "earthworks:timber_framing"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_timber",
+      "has_the_recipe"
+    ]
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "earthworks:slaked_lime"
+    },
+    {
+      "item": "earthworks:sand_pile"
+    }
+  ],
+  "result": {
+    "item": "earthworks:lime_plaster",
+    "count": 2
+  }
+}

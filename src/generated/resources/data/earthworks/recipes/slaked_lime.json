@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "earthworks:quicklime"
+    },
+    {
+      "item": "earthworks:quicklime"
+    },
+    {
+      "item": "earthworks:quicklime"
+    },
+    {
+      "item": "earthworks:quicklime"
+    },
+    {
+      "item": "earthworks:quicklime"
+    },
+    {
+      "item": "earthworks:quicklime"
+    },
+    {
+      "item": "earthworks:quicklime"
+    },
+    {
+      "item": "earthworks:quicklime"
+    },
+    {
+      "item": "minecraft:water_bucket"
+    }
+  ],
+  "result": {
+    "item": "earthworks:slaked_lime",
+    "count": 8
+  }
+}

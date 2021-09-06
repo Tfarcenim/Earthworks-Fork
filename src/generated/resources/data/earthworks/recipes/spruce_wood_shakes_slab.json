@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "earthworks:spruce_wood_shakes"
+    }
+  },
+  "result": {
+    "item": "earthworks:spruce_wood_shakes_slab",
+    "count": 6
+  }
+}

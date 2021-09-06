@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "earthworks:dirt_ball"
+    },
+    {
+      "item": "earthworks:dirt_ball"
+    },
+    {
+      "item": "earthworks:dirt_ball"
+    },
+    {
+      "item": "earthworks:dirt_ball"
+    },
+    {
+      "item": "earthworks:dirt_ball"
+    },
+    {
+      "item": "earthworks:dirt_ball"
+    },
+    {
+      "item": "earthworks:dirt_ball"
+    },
+    {
+      "item": "earthworks:dirt_ball"
+    },
+    {
+      "item": "minecraft:water_bucket"
+    }
+  ],
+  "result": {
+    "item": "earthworks:mud_ball",
+    "count": 8
+  }
+}

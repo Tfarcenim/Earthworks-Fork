@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "earthworks:mud_ball"
+    ]
+  },
+  "criteria": {
+    "has_dirt_ball": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "earthworks:dirt_ball"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "earthworks:mud_ball"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_dirt_ball",
+      "has_the_recipe"
+    ]
+  ]
+}

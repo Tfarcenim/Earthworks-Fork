@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "earthworks:quicklime"
+    },
+    {
+      "item": "earthworks:quicklime"
+    },
+    {
+      "item": "earthworks:quicklime"
+    },
+    {
+      "item": "earthworks:quicklime"
+    },
+    {
+      "item": "minecraft:water_bucket"
+    },
+    {
+      "item": "earthworks:sand_pile"
+    },
+    {
+      "item": "earthworks:sand_pile"
+    },
+    {
+      "item": "earthworks:sand_pile"
+    },
+    {
+      "item": "earthworks:sand_pile"
+    }
+  ],
+  "result": {
+    "item": "earthworks:lime_plaster",
+    "count": 8
+  }
+}
