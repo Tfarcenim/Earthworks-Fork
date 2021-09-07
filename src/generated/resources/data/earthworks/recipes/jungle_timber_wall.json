@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "earthworks:jungle_timber"
+    }
+  },
+  "result": {
+    "item": "earthworks:jungle_timber_wall",
+    "count": 6
+  }
+}

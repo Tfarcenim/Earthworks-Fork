@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "earthworks:cordwood"
+    }
+  },
+  "result": {
+    "item": "earthworks:cordwood_wall",
+    "count": 6
+  }
+}

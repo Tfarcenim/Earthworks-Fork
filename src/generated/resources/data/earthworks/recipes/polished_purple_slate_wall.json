@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "earthworks:polished_purple_slate"
+    }
+  },
+  "result": {
+    "item": "earthworks:polished_purple_slate_wall",
+    "count": 6
+  }
+}

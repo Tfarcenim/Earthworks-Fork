@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "earthworks:adobe"
+    }
+  },
+  "result": {
+    "item": "earthworks:adobe_wall",
+    "count": 6
+  }
+}

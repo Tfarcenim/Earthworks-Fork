@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "earthworks:sand_gabion"
+    }
+  },
+  "result": {
+    "item": "earthworks:sand_gabion_wall",
+    "count": 6
+  }
+}

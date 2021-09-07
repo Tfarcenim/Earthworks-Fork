@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "earthworks:sand_gabion_wall"
+    ]
+  },
+  "criteria": {
+    "has_sand_gabion": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "earthworks:sand_gabion"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "earthworks:sand_gabion_wall"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_sand_gabion",
+      "has_the_recipe"
+    ]
+  ]
+}

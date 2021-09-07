@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "earthworks:polished_blue_slate_wall"
+    ]
+  },
+  "criteria": {
+    "has_polished_blue_slate": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "earthworks:polished_blue_slate"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "earthworks:polished_blue_slate_wall"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_polished_blue_slate",
+      "has_the_recipe"
+    ]
+  ]
+}

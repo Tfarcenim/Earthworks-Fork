@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "earthworks:purple_slate_shingles_wall"
+    ]
+  },
+  "criteria": {
+    "has_purple_slate_shingles": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "earthworks:purple_slate_shingles"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "earthworks:purple_slate_shingles_wall"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_purple_slate_shingles",
+      "has_the_recipe"
+    ]
+  ]
+}

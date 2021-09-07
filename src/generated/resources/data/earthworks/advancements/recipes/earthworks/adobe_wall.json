@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "earthworks:adobe_wall"
+    ]
+  },
+  "criteria": {
+    "has_adobe": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "earthworks:adobe"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "earthworks:adobe_wall"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_adobe",
+      "has_the_recipe"
+    ]
+  ]
+}

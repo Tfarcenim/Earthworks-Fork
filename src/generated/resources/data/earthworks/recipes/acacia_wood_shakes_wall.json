@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "earthworks:acacia_wood_shakes"
+    }
+  },
+  "result": {
+    "item": "earthworks:acacia_wood_shakes_wall",
+    "count": 6
+  }
+}

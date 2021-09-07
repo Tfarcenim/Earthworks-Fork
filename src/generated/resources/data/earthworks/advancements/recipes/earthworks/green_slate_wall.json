@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "earthworks:green_slate_wall"
+    ]
+  },
+  "criteria": {
+    "has_green_slate": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "earthworks:green_slate"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "earthworks:green_slate_wall"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_green_slate",
+      "has_the_recipe"
+    ]
+  ]
+}

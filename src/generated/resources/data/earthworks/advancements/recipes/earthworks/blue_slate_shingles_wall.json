@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "earthworks:blue_slate_shingles_wall"
+    ]
+  },
+  "criteria": {
+    "has_blue_slate_shingles": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "earthworks:blue_slate_shingles"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "earthworks:blue_slate_shingles_wall"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_blue_slate_shingles",
+      "has_the_recipe"
+    ]
+  ]
+}

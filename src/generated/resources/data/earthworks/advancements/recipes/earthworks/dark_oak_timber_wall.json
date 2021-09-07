@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "earthworks:dark_oak_timber_wall"
+    ]
+  },
+  "criteria": {
+    "has_dark_oak_timber": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "earthworks:dark_oak_timber"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "earthworks:dark_oak_timber_wall"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_dark_oak_timber",
+      "has_the_recipe"
+    ]
+  ]
+}

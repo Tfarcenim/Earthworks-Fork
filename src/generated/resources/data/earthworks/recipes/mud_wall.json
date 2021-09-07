@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "earthworks:mud"
+    }
+  },
+  "result": {
+    "item": "earthworks:mud_wall",
+    "count": 6
+  }
+}
