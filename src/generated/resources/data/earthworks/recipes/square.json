@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "a  ",
+    "a  ",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "tag": "minecraft:planks"
+    }
+  },
+  "result": {
+    "item": "earthworks:square"
+  }
+}

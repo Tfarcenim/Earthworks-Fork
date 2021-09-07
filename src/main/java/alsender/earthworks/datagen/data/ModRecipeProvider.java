@@ -331,7 +331,43 @@ public class ModRecipeProvider extends RecipeProvider {
                 .addCriterion("has_timber",hasItem(ModTags.timber_log))
                 .build(consumer);
 
+        ShapedRecipeBuilder.shapedRecipe(ItemRegistry.adz)
+                .key('a',Tags.Items.RODS_WOODEN).key('i',Tags.Items.INGOTS_IRON)
+                .patternLine("ia").patternLine(" a").patternLine(" a")
+                .addCriterion("has_iron",hasItem(Tags.Items.INGOTS_IRON))
+                .build(consumer);
 
+        hammer(consumer,ItemRegistry.stone_hammer,Blocks.COBBLESTONE);
+        hammer(consumer,ItemRegistry.iron_hammer,Items.IRON_INGOT);
+        hammer(consumer,ItemRegistry.gold_hammer,Items.GOLD_INGOT);
+        hammer(consumer,ItemRegistry.diamond_hammer,Items.DIAMOND);
+
+        ShapelessRecipeBuilder.shapelessRecipe(ItemRegistry.acheulean)
+                .addIngredient(Items.FLINT).addIngredient(ItemTags.STONE_TOOL_MATERIALS)
+        .addCriterion("has_flint",hasItem(Items.FLINT)).build(consumer);
+
+        row(consumer,ItemRegistry.level,Items.GOLD_INGOT,1);
+
+        ShapedRecipeBuilder.shapedRecipe(ItemRegistry.saw)
+                .key('a',Items.IRON_INGOT)
+                .key('b',Items.STICK)
+                .key('c',Items.DIAMOND)
+                .patternLine("aab").patternLine("ccb")
+                .addCriterion("has_diamond",hasItem(Items.DIAMOND))
+                .build(consumer);
+
+        ShapedRecipeBuilder.shapedRecipe(ItemRegistry.square)
+                .key('a',ItemTags.PLANKS)
+                .patternLine("a  ").patternLine("a  ").patternLine("aaa")
+                .addCriterion("has_planks",hasItem(ItemTags.PLANKS))
+                .build(consumer);
+
+        ShapedRecipeBuilder.shapedRecipe(ItemRegistry.froe)
+                .key('a',Items.IRON_INGOT)
+                .key('b',Items.STICK)
+                .patternLine("aa").patternLine(" b")
+                .addCriterion("has_iron",hasItem(Items.IRON_INGOT))
+                .build(consumer);
     }
 
     private static void shapelessPlanks(Consumer<IFinishedRecipe> recipeConsumer, IItemProvider planks, IItemProvider input) {
@@ -400,6 +436,14 @@ public class ModRecipeProvider extends RecipeProvider {
                 .build(recipeConsumer);
     }
 
+    private static void row(Consumer<IFinishedRecipe> recipeConsumer, IItemProvider output, IItemProvider input, int count) {
+        ShapedRecipeBuilder.shapedRecipe(output, count)
+                .key('a', input)
+                .patternLine("aaa")
+                .addCriterion("has_" + input.asItem().getRegistryName().getPath(), hasItem(input))
+                .build(recipeConsumer);
+    }
+
     private static void ringCenter(Consumer<IFinishedRecipe> recipeConsumer, IItemProvider output, IItemProvider ring, IItemProvider center, int count) {
         ringCenter(recipeConsumer, output, ring, center, count, output.asItem().getRegistryName().getPath());
     }
@@ -458,5 +502,12 @@ public class ModRecipeProvider extends RecipeProvider {
     private static void slabsWallsStairs(Consumer<IFinishedRecipe> recipeConsumer, IItemProvider input, SlabBlock slab, WallBlock wall,StairsBlock stairs) {
         slabsStairs(recipeConsumer, input, slab, stairs);
         wall(recipeConsumer,wall,input);
+    }
+
+    private static void hammer(Consumer<IFinishedRecipe> recipeConsumer, IItemProvider output,IItemProvider input) {
+        ShapedRecipeBuilder.shapedRecipe(output)
+                .key('g', input).key('s',Tags.Items.RODS_WOODEN)
+                .patternLine("ggg").patternLine("gsg").patternLine(" s ")
+                .addCriterion("has_"+input.asItem().getRegistryName().getPath(), hasItem(input)).build(recipeConsumer);
     }
 }

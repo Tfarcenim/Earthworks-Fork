@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ia",
+    " a",
+    " a"
+  ],
+  "key": {
+    "a": {
+      "tag": "forge:rods/wooden"
+    },
+    "i": {
+      "tag": "forge:ingots/iron"
+    }
+  },
+  "result": {
+    "item": "earthworks:adz"
+  }
+}

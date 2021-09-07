@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "aab",
+    "ccb"
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:iron_ingot"
+    },
+    "b": {
+      "item": "minecraft:stick"
+    },
+    "c": {
+      "item": "minecraft:diamond"
+    }
+  },
+  "result": {
+    "item": "earthworks:saw"
+  }
+}

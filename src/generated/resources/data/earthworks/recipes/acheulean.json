@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:flint"
+    },
+    {
+      "tag": "minecraft:stone_tool_materials"
+    }
+  ],
+  "result": {
+    "item": "earthworks:acheulean"
+  }
+}
